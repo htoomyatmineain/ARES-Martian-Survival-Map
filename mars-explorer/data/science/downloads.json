@@ -1,0 +1,29 @@
+{
+  "MEDA": {
+    "error": "Command '['curl.exe', '-fsSL', '--max-time', '75', 'https://pds-atmospheres.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/']' returned non-zero exit status 35."
+  },
+  "PIXL": [
+    {
+      "file": "pixl-pe__0463_0708059673_000r08__02606301616778290004___j09.csv",
+      "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_pixl/data_processed/sol_00463/pe__0463_0708059673_000r08__02606301616778290004___j09.csv",
+      "bytes": 431528
+    },
+    {
+      "file": "pixl-pe__0463_0708059673_000r08__02606301616778290004___j09.xml",
+      "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_pixl/data_processed/sol_00463/pe__0463_0708059673_000r08__02606301616778290004___j09.xml",
+      "bytes": 91191
+    }
+  ],
+  "SuperCam": [
+    {
+      "file": "supercam-scam_0466_0708311854_826_cl1_scam01466_reids_gap____________01p01.fits",
+      "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_supercam/data_calibrated_spectra/sol_00466/scam_0466_0708311854_826_cl1_scam01466_reids_gap____________01p01.fits",
+      "bytes": 1696320
+    },
+    {
+      "file": "supercam-scam_0466_0708311854_826_cl1_scam01466_reids_gap____________01p01.xml",
+      "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_supercam/data_calibrated_spectra/sol_00466/scam_0466_0708311854_826_cl1_scam01466_reids_gap____________01p01.xml",
+      "bytes": 157243
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+node_modules/
+.expo/
+dist/
+*.part
+/Expo-Go-QR.png
+/data/hirise-grid-ranges/
+/data/ortho-parts/
+/data/hirise-ortho-complete.jp2
+/assets/jezero-delta.jpg
+/data/jezero-delta.jpg

@@ -1,0 +1,4 @@
+*.bin binary
+*.fits binary
+*.lbl -text -whitespace
+mars-explorer/data/science/*.xml -text -whitespace
