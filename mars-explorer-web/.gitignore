@@ -1,0 +1,8 @@
+node_modules/
+dist/
+test-results/
+*.log
+*.blend1
+*.tsbuildinfo
+.DS_Store
+scripts/.cache/

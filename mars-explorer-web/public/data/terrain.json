@@ -1,0 +1,45 @@
+{
+  "width": 501,
+  "height": 501,
+  "size": 10000,
+  "center": {
+    "lat": 18.46,
+    "lon": 77.42
+  },
+  "min": -2649.5633378510356,
+  "max": -2266.8032517705437,
+  "source": "USGS / JPL · Mars 2020 CTX DEM",
+  "sourceUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/CTX/ScienceInvestigationMaps_JPL/M20_JezeroCrater_CTXDEM_20m.tif",
+  "resolution": 20,
+  "bounds": [
+    77.33107113608344,
+    18.375646975709426,
+    77.50892886391657,
+    18.544353024290576
+  ],
+  "projection": "Mars 2000 sphere (R=3396190 m); equirectangular source, local east/north render coordinates",
+  "processing": "Bilinear sampled from source elevation at 20 m grid spacing; no synthetic elevation; renderer exaggeration is display-only",
+  "retrieved": "2026-11-08",
+  "sourceGeoKeys": {
+    "GTModelTypeGeoKey": 1,
+    "GTRasterTypeGeoKey": 1,
+    "GTCitationGeoKey": "Jezero_Crater_Projection",
+    "GeographicTypeGeoKey": 32767,
+    "GeogCitationGeoKey": "GCS Name = GCS_Mars_2000_Sphere|Datum = Mars_2000_(Sphere)|Ellipsoid = Mars_2000_Sphere|Primem = Reference_Meridian|",
+    "GeogGeodeticDatumGeoKey": 32767,
+    "GeogAngularUnitsGeoKey": 9102,
+    "GeogEllipsoidGeoKey": 32767,
+    "GeogSemiMajorAxisGeoKey": 3396190,
+    "GeogSemiMinorAxisGeoKey": 3396190,
+    "GeogPrimeMeridianLongGeoKey": 0,
+    "ProjectedCSTypeGeoKey": 32767,
+    "ProjectionGeoKey": 32767,
+    "ProjCoordTransGeoKey": 17,
+    "ProjLinearUnitsGeoKey": 9001,
+    "ProjStdParallel1GeoKey": 18.4663,
+    "ProjFalseEastingGeoKey": 0,
+    "ProjFalseNorthingGeoKey": 0,
+    "ProjCenterLongGeoKey": 0,
+    "ProjCenterLatGeoKey": 0
+  }
+}

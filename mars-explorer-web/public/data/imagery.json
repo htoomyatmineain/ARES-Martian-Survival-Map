@@ -1,0 +1,16 @@
+{
+  "source": "USGS Mars 2020 Terrain Relative Navigation CTX orthoimage mosaic",
+  "sourceUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/CTX/JEZ_ctx_B_soc_008_orthoMosaic_6m_Eqc_latTs0_lon0.tif",
+  "resolution": 6,
+  "output": [
+    2048,
+    2048
+  ],
+  "center": {
+    "lat": 18.46,
+    "lon": 77.42
+  },
+  "size": 10000,
+  "processing": "Bilinear resampled, 2–98 percentile grayscale contrast stretch; artistic Mars color applied by renderer",
+  "retrieved": "2026-11-08"
+}

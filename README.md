@@ -1,5 +1,20 @@
 # Martian Map
 
+## Three.js web explorer
+
+Explore Jezero from the rocky ridge in the restored Final Realism view. The browser app includes HiRISE and CTX terrain, a simulated scanner, keyboard and touch controls, and editable Blender assets.
+
+```sh
+cd mars-explorer-web
+npm ci
+npm run build
+npm start
+```
+
+Open [Mars Explorer](http://localhost:4173/?view=final-realism) and choose **Enter Exploration**. The [web explorer notes](mars-explorer-web/README.md) describe the terrain sources and reconstructed scenery.
+
+## Expo simulator
+
 Explore a measured sector of Jezero Crater in a first-person suitcam. Follow the cyan route to Delta Outlook. Hold **Walk**, use the joystick, or press **WASD** to move. Drag the scene to look around.
 
 ```sh

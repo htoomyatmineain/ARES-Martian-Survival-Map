@@ -1,0 +1,99 @@
+{
+  "generator": "Blender 5.2.3 LTS",
+  "scene": "Real Jezero HiRISE field site",
+  "scientific": true,
+  "terrain": {
+    "center": {
+      "lat": 18.48024472582974,
+      "lon": 77.38087129987672
+    },
+    "heading": 285,
+    "size": 512,
+    "width": 513,
+    "height": 513,
+    "min": -2493.643872134415,
+    "max": -2424.688305954179,
+    "imagerySize": 1024,
+    "imageryPixels": 4096,
+    "dtmUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/HiRISE/JEZ_hirise_soc_006_DTM_MOLAtopography_DeltaGeoid_1m_Eqc_latTs0_lon0_blend40.tif",
+    "orthoUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/HiRISE/JEZ_hirise_soc_007_orthoMosaic_25cm_Ortho_blend120.tif",
+    "dtmPostSpacing": 1,
+    "imageryResolution": 0.25,
+    "referenceCenter": {
+      "lat": 18.46,
+      "lon": 77.42
+    },
+    "sourceOffset": {
+      "x": -2200,
+      "z": -1200
+    },
+    "elevationOrigin": -2499,
+    "credit": "NASA/JPL-Caltech/University of Arizona/USGS",
+    "processing": "Real HiRISE stereo elevations and orbital grayscale resampled into a local rotated east/north grid. No sculpted mountains or added elevation. Color is a presentation tint. Rock props and microtexture are reconstructed detail.",
+    "retrieved": "2026-11-08",
+    "sourceProjection": {
+      "GTModelTypeGeoKey": 1,
+      "GTRasterTypeGeoKey": 1,
+      "GTCitationGeoKey": "unnamed",
+      "GeographicTypeGeoKey": 32767,
+      "GeogCitationGeoKey": "GCS Name = Geographic Coordinate System|Datum = D_Mars_2000_Sphere|Ellipsoid = Mars_2000_Sphere_IAU|Primem = Reference_Meridian|",
+      "GeogGeodeticDatumGeoKey": 32767,
+      "GeogAngularUnitsGeoKey": 9102,
+      "GeogEllipsoidGeoKey": 32767,
+      "GeogSemiMajorAxisGeoKey": 3396190,
+      "GeogSemiMinorAxisGeoKey": 3396190,
+      "GeogPrimeMeridianLongGeoKey": 0,
+      "ProjectedCSTypeGeoKey": 32767,
+      "ProjectionGeoKey": 32767,
+      "ProjCoordTransGeoKey": 21,
+      "ProjLinearUnitsGeoKey": 9001,
+      "ProjFalseEastingGeoKey": 0,
+      "ProjFalseNorthingGeoKey": 0,
+      "ProjCenterLongGeoKey": 77.4298,
+      "ProjCenterLatGeoKey": 18.4663
+    }
+  },
+  "verticalExaggeration": 1,
+  "reconstructed": [
+    "sub-resolution ground microtexture",
+    "foreground rock props and specimen mesh",
+    "illustrative sky and lighting"
+  ],
+  "sources": [
+    "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/HiRISE/JEZ_hirise_soc_006_DTM_MOLAtopography_DeltaGeoid_1m_Eqc_latTs0_lon0_blend40.tif",
+    "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/HiRISE/JEZ_hirise_soc_007_orthoMosaic_25cm_Ortho_blend120.tif",
+    "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/CTX/ScienceInvestigationMaps_JPL/M20_JezeroCrater_CTXDEM_20m.tif"
+  ],
+  "source": "scripts/build-jezero-real.py",
+  "visualDetailSources": {
+    "license": "CC0",
+    "provider": "Poly Haven",
+    "licenseUrl": "https://polyhaven.com/license",
+    "assets": [
+      {
+        "id": "namaqualand_boulder_02",
+        "url": "https://polyhaven.com/a/namaqualand_boulder_02",
+        "usage": "Visual rock reconstruction; not a NASA-sampled specimen"
+      },
+      {
+        "id": "dry_ground_rocks",
+        "url": "https://polyhaven.com/a/dry_ground_rocks",
+        "usage": "Near-field PBR surface reconstruction; no modification of observed elevation"
+      }
+    ],
+    "note": "NASA HiRISE/CTX remain the terrain and orbital data sources. These material-detail assets are not measurements of this Jezero site."
+  },
+  "refinement": "Photo-scanned PBR detail. Observed terrain vertex count and coordinate sums verified unchanged.",
+  "colorTreatment": {
+    "mode": "reference-based presentation tint",
+    "observedInput": "Georeferenced NASA HiRISE / CTX grayscale reflectance",
+    "palette": {
+      "rust": "#ad5031",
+      "copper": "#d57a50",
+      "peachHaze": "#cd927f",
+      "dusk": "#493934"
+    },
+    "calibratedNaturalColor": false,
+    "note": "Elevation and orbital brightness remain observed data. Sky, lighting, pigment and sub-resolution rock detail are visual reconstruction."
+  }
+}

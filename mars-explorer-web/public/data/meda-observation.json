@@ -1,0 +1,21 @@
+{
+  "instrument": "MEDA",
+  "mission": "Perseverance",
+  "observedSols": [
+    43,
+    44
+  ],
+  "earthDates": [
+    "2021-04-03",
+    "2021-04-04"
+  ],
+  "temperatureC": {
+    "low": -83,
+    "high": -22
+  },
+  "windGustMps": 10,
+  "type": "Historical observation",
+  "source": "https://www.nasa.gov/directorates/stmd/nasas-first-weather-report-from-jezero-crater-on-mars/",
+  "published": "2021-04-06",
+  "note": "Historical readings, not a live feed or current forecast. No ionizing radiation dose measurement is supplied."
+}
