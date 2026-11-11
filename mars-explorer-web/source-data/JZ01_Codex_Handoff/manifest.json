@@ -1,0 +1,64 @@
+{
+  "project": "Martian Map",
+  "zone": "JZ-01",
+  "zone_description": "Sand ripple exploration candidate",
+  "source": "NASA MRO HiRISE / USGS MSR TRN v003",
+  "source_doi": "10.5066/P13CPYYU",
+  "extent_m": [
+    4583750,
+    1091750,
+    4584250,
+    1092250
+  ],
+  "size_m": [
+    500,
+    500
+  ],
+  "dtm_resolution_m": 1.0,
+  "orthomosaic_resolution_m": 0.25,
+  "mesh_spacing_m": 2.0,
+  "mesh_vertices": 63001,
+  "mesh_triangles": 125000,
+  "mesh_coordinate_system": {
+    "x": "east_m - 250",
+    "y": "250 - south_m",
+    "z": "elevation_m - elevation_offset_m",
+    "units": "meters",
+    "vertical_exaggeration": 1.0
+  },
+  "elevation_offset_m": -2425.92626953125,
+  "route_coordinate_system": {
+    "east_m": "meters east from western zone boundary",
+    "south_m": "meters south from northern zone boundary",
+    "elevation_m": "original DTM elevation in meters"
+  },
+  "routes": {
+    "route_dijkstra.csv": 201,
+    "route_slope_aware_astar.csv": 202
+  },
+  "files_sha256": {
+    "terrain.obj": "55d567a78ccb8e3340a9c0ba2510d72e1027d7dd1353bc109072ca0d78c38df9",
+    "texture.png": "b1dbd9deb8d772d73017c348fc4e58d98bb93da4cd4d0f039af621ba88a4876a",
+    "dtm_1m.tif": "1bdfdc8b199dcd099bd41109073b00cd43ad1ff6cdb1010ccb7010e635f7164c",
+    "orthomosaic_025m.tif": "eea80aca7413798da8a4a6d337d8bfffdfbc3b2ec10a4aad6d62b7fd87558610",
+    "slope_preliminary_deg.tif": "efb7c6f1fb357a2158d06c4f0212262ed804bee63040131af96f6fb565d58a1a",
+    "route_dijkstra.csv": "e931cd970915d0c878f40f0dc9070a19e84bbb98b86a6a93f09299342ff96c53",
+    "route_slope_aware_astar.csv": "240fff90876e4b8f28f62dd4fbd5f33109db4182d10b137b8774d47c10149bcd",
+    "route_metrics.csv": "d5bbfa5bdd2aea863e1dbf53744ee6035384e4b3315531d394cc0dd756d23a11",
+    "route_comparison.png": "e5141f80ff686e8a3227f97151df5251bc54ebf0e700519f766bfd1f98a8a4a6",
+    "route_1m_validation.csv": "d9d5c453d98e012f72f2acd1d1064626a0c07c2796ea0c835e671f3897d6e1dc",
+    "threshold_test.csv": "01f4ba62db81074bc18e2da3ed1635380b546c55739f60d3f792ec3e60ca7207",
+    "corridor_test.csv": "e6e592212c99df1ee640c1a4654217980bdc94a5fef4ad0b665d2ff62c8831b9",
+    "robustness.csv": "840fc615d746899e6970fe8e7ac7b9c9c43865eb7b00b721cde6c6f0f5ec16a5",
+    "original_handoff_manifest.json": "8777bc5cbad0835f91e0d53aed13f6c2c97e44f914abbf271f864e721ea0f4f2",
+    "data_provenance.json": "08b2dccc814adaf3cf9217c41e640bc18068bc0f042111c4e8b5c121762d30d0"
+  },
+  "scientific_notes": [
+    "Terrain and orthomosaic are NASA-derived data.",
+    "Slope is a derived preliminary raster.",
+    "Routing safety thresholds are simulation assumptions.",
+    "Routes are not NASA-certified astronaut-safe paths.",
+    "Do not label JZ-01 Western Delta without verification.",
+    "Keep true horizontal and vertical meter scales."
+  ]
+}

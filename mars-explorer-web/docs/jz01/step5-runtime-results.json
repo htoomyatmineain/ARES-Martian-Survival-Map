@@ -1,0 +1,739 @@
+{
+  "url": "http://localhost:4173/?workspace=jz01",
+  "tests": [
+    {
+      "name": "React application and JZ-01 preview start",
+      "status": "PASS"
+    },
+    {
+      "name": "World-space geometry, topology, scale and orientation",
+      "status": "PASS",
+      "detail": {
+        "meshes": 1,
+        "exportedVertices": 374356,
+        "sourceSamples": 63001,
+        "triangles": 125000,
+        "maxPositionErrorM": 4.999999987376214e-7,
+        "maxUVError": 4.3869018528930326e-8,
+        "unmatched": 0,
+        "topologyEquivalent": true,
+        "bounds": {
+          "min": [
+            -249.5,
+            0,
+            -249.5
+          ],
+          "max": [
+            249.5,
+            58.42236328125,
+            249.5
+          ]
+        },
+        "corners": {
+          "NW": {
+            "source": [
+              -249.5,
+              249.5,
+              58.420898
+            ],
+            "three": [
+              -249.5,
+              58.4208984375,
+              -249.5
+            ]
+          },
+          "NE": {
+            "source": [
+              249.5,
+              249.5,
+              1.572021
+            ],
+            "three": [
+              249.5,
+              1.5720210075378418,
+              -249.5
+            ]
+          },
+          "SW": {
+            "source": [
+              -249.5,
+              -249.5,
+              54.569824
+            ],
+            "three": [
+              -249.5,
+              54.56982421875,
+              249.5
+            ]
+          },
+          "SE": {
+            "source": [
+              249.5,
+              -249.5,
+              6.937256
+            ],
+            "three": [
+              249.5,
+              6.937255859375,
+              249.5
+            ]
+          }
+        },
+        "textures": [
+          {
+            "name": "JZ01_Mars_Surface",
+            "width": 2000,
+            "height": 2000,
+            "flipY": false,
+            "colorSpace": "srgb",
+            "metallic": 0,
+            "roughness": 0.94
+          }
+        ]
+      }
+    },
+    {
+      "name": "Original UV registration and loaded texture",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "JZ01_Mars_Surface",
+          "width": 2000,
+          "height": 2000,
+          "flipY": false,
+          "colorSpace": "srgb",
+          "metallic": 0,
+          "roughness": 0.94
+        }
+      ]
+    },
+    {
+      "name": "NW / NE / SW coordinate directions",
+      "status": "PASS",
+      "detail": {
+        "NW": {
+          "source": [
+            -249.5,
+            249.5,
+            58.420898
+          ],
+          "three": [
+            -249.5,
+            58.4208984375,
+            -249.5
+          ]
+        },
+        "NE": {
+          "source": [
+            249.5,
+            249.5,
+            1.572021
+          ],
+          "three": [
+            249.5,
+            1.5720210075378418,
+            -249.5
+          ]
+        },
+        "SW": {
+          "source": [
+            -249.5,
+            -249.5,
+            54.569824
+          ],
+          "three": [
+            -249.5,
+            54.56982421875,
+            249.5
+          ]
+        },
+        "SE": {
+          "source": [
+            249.5,
+            -249.5,
+            6.937256
+          ],
+          "three": [
+            249.5,
+            6.937255859375,
+            249.5
+          ]
+        }
+      }
+    },
+    {
+      "name": "Scientific neutral imagery and cinematic presentation",
+      "status": "PASS",
+      "detail": {
+        "scientific": [
+          "ffffff"
+        ],
+        "cinematic": [
+          "cba183"
+        ],
+        "sameGeometry": true,
+        "sameImageAndUV": true,
+        "sameTransforms": true,
+        "clonedMaterials": true,
+        "sourceColors": [
+          "ffffff"
+        ],
+        "sourceUnchanged": true,
+        "memory": {
+          "geometries": 5,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "name": "Modes preserve geometry, texture, UVs, transforms and cached source",
+      "status": "PASS",
+      "detail": {
+        "scientific": [
+          "ffffff"
+        ],
+        "cinematic": [
+          "cba183"
+        ],
+        "sameGeometry": true,
+        "sameImageAndUV": true,
+        "sameTransforms": true,
+        "clonedMaterials": true,
+        "sourceColors": [
+          "ffffff"
+        ],
+        "sourceUnchanged": true,
+        "memory": {
+          "geometries": 5,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "name": "Repeated mode changes do not accumulate background textures",
+      "status": "PASS",
+      "detail": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "Pointer orbit works",
+      "status": "PASS",
+      "detail": {
+        "before": [
+          609.9999999999999,
+          520,
+          740.0000000000002
+        ],
+        "after": [
+          -456.3796707336315,
+          716.7236472834755,
+          691.34722963928
+        ]
+      }
+    },
+    {
+      "name": "Wheel zoom works",
+      "status": "PASS",
+      "detail": {
+        "before": 1079.2242584375128,
+        "after": 1035.8350036996549
+      }
+    },
+    {
+      "name": "Reset animates through intermediate camera positions",
+      "status": "PASS",
+      "detail": {
+        "samples": [
+          [
+            -440.83104938258407,
+            689.5533338777667,
+            661.0529534172427
+          ],
+          [
+            -440.8392234237722,
+            689.5552059832914,
+            661.0456203478657
+          ],
+          [
+            -208.95203807371342,
+            652.1397016887213,
+            678.4683701467758
+          ],
+          [
+            609.9999999999999,
+            520,
+            740.0000000000001
+          ]
+        ],
+        "immediate": 0.01113973226471923,
+        "intermediate": 235.52272183171596,
+        "completed": 1067.3457094773503
+      }
+    },
+    {
+      "name": "Reset restores framing",
+      "status": "PASS"
+    },
+    {
+      "name": "Zoom and polar limits keep camera above terrain",
+      "status": "PASS",
+      "detail": {
+        "distance": 1035.835003699655,
+        "height": 500.09896374425944,
+        "minDistance": 520,
+        "maxPolarAngle": 1.2566370614359172,
+        "worstClearance": 127.26647379372267
+      }
+    },
+    {
+      "name": "Reduced-motion reset is immediate",
+      "status": "PASS"
+    },
+    {
+      "name": "Accessible zoom button works",
+      "status": "PASS"
+    },
+    {
+      "name": "Browser screenshot captured",
+      "status": "PASS"
+    },
+    {
+      "name": "Browser interaction performance measured",
+      "status": "PASS",
+      "detail": {
+        "frames": 639,
+        "meanFrameMs": 9.386071987479273,
+        "fps": 106.54084065559786,
+        "medianFrameMs": 7.5,
+        "p95FrameMs": 20.5,
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00004626) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (Intel)",
+        "dpr": 1,
+        "viewport": [
+          1280,
+          800
+        ],
+        "drawingBuffer": [
+          1280,
+          661
+        ],
+        "calls": 5,
+        "triangles": 127004,
+        "geometryCount": 5,
+        "textures": 3,
+        "shadows": false,
+        "method": "Headless Chrome, six seconds of warmed continuous OrbitControls auto-rotation; CPU-observed rendered frame intervals, not GPU timer queries."
+      }
+    },
+    {
+      "name": "Demand rendering settles after interaction",
+      "status": "PASS",
+      "detail": {
+        "idleStart": 1158,
+        "idleMiddle": 1245,
+        "idleEnd": 1245
+      }
+    },
+    {
+      "name": "Mobile resize retains visible canvas and controls",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile native touch orbit",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile native pinch zoom",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile reset frames complete terrain bounds",
+      "status": "PASS",
+      "detail": {
+        "maxX": 0.9478363335817015,
+        "maxY": 0.35243457098545766
+      }
+    },
+    {
+      "name": "Mobile terrain occupies more overview area than Step 4 pose",
+      "status": "PASS",
+      "detail": {
+        "step4ProjectedCanvasFraction": 0.13499064386667425,
+        "step5ProjectedCanvasFraction": 0.2119748534674002
+      }
+    },
+    {
+      "name": "POV starts grounded with 1.7 m clearance",
+      "status": "PASS",
+      "detail": {
+        "x": -170,
+        "z": 100,
+        "yaw": -1.5707963267948966,
+        "pitch": -0.07,
+        "y": 46.10869140625,
+        "dtm": 44.40869140625,
+        "mesh": 44.402587890625,
+        "eye": 46.10869140625
+      }
+    },
+    {
+      "name": "POV presentation switches preserve position",
+      "status": "PASS"
+    },
+    {
+      "name": "Simultaneous mobile POV movement and look",
+      "status": "PASS",
+      "detail": {
+        "p1": {
+          "x": -170,
+          "z": 100,
+          "yaw": -1.5707963267948966,
+          "pitch": -0.07,
+          "y": 46.10869140625,
+          "dtm": 44.40869140625,
+          "mesh": 44.402587890625,
+          "eye": 46.10869140625
+        },
+        "p2": {
+          "x": -168.91911912664068,
+          "z": 100.02255549240587,
+          "yaw": -1.6207963267948966,
+          "pitch": -0.07,
+          "y": 45.951442715398755,
+          "dtm": 44.25144271539875,
+          "mesh": 44.23927482133422,
+          "eye": 45.951442715398755
+        }
+      }
+    },
+    {
+      "name": "Releasing mobile controls stops movement",
+      "status": "PASS"
+    },
+    {
+      "name": "Tactical / POV switching preserves ground position",
+      "status": "PASS"
+    },
+    {
+      "name": "Desktop drag look",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit pointer lock enters successfully",
+      "status": "PASS"
+    },
+    {
+      "name": "Escape releases pointer lock",
+      "status": "PASS"
+    },
+    {
+      "name": "WASD follows actual surface",
+      "status": "PASS",
+      "detail": {
+        "x": -167.9975772607536,
+        "z": 98.63812495998064,
+        "yaw": -0.5872962657597398,
+        "pitch": -0.8005702972412109,
+        "y": 45.79581581452858,
+        "dtm": 44.09581581452858,
+        "mesh": 44.080019857242405,
+        "eye": 45.79581581452858
+      }
+    },
+    {
+      "name": "WASD release settles",
+      "status": "PASS"
+    },
+    {
+      "name": "All four boundary corners block crossing and remain grounded",
+      "status": "PASS",
+      "detail": [
+        {
+          "x": 247.5,
+          "z": 247.24539275422825,
+          "yaw": -0.5872962657597398,
+          "pitch": -0.8005702972412109,
+          "y": 8.606138172788814,
+          "dtm": 6.904857144465495,
+          "mesh": 6.906138172788815,
+          "eye": 8.606138172788814
+        },
+        {
+          "x": -247.31882475911618,
+          "z": 247.2278207919967,
+          "yaw": -0.5872962657597398,
+          "pitch": -0.8005702972412109,
+          "y": 55.97936722989489,
+          "dtm": 54.27936722989489,
+          "mesh": 54.27631414525786,
+          "eye": 55.97936722989489
+        },
+        {
+          "x": -247.32015819084017,
+          "z": -247.5,
+          "yaw": -0.5872962657597398,
+          "pitch": -0.8005702972412109,
+          "y": 59.7914564849295,
+          "dtm": 58.08783418286521,
+          "mesh": 58.091456484929495,
+          "eye": 59.7914564849295
+        },
+        {
+          "x": 247.5,
+          "z": -247.5,
+          "yaw": -0.5872962657597398,
+          "pitch": -0.8005702972412109,
+          "y": 3.3400146484375,
+          "dtm": 1.63427734375,
+          "mesh": 1.6400146484375,
+          "eye": 3.3400146484375
+        }
+      ]
+    },
+    {
+      "name": "Underground camera perturbation is corrected",
+      "status": "PASS"
+    },
+    {
+      "name": "Flying camera perturbation is corrected",
+      "status": "PASS"
+    },
+    {
+      "name": "POV reset restores valid spawn",
+      "status": "PASS",
+      "detail": {
+        "x": -170,
+        "z": 100,
+        "yaw": -1.5707963267948966,
+        "pitch": -0.07,
+        "y": 46.10869140625,
+        "dtm": 44.40869140625,
+        "mesh": 44.402587890625,
+        "eye": 46.10869140625
+      }
+    },
+    {
+      "name": "POV moving FPS measured",
+      "status": "PASS",
+      "detail": {
+        "frames": 542,
+        "fps": 90.03471818470975,
+        "meanMs": 11.106826568262933,
+        "p95ms": 25.200000001117587,
+        "drawCalls": 2,
+        "triangles": 125002
+      }
+    },
+    {
+      "name": "Focus loss clears held movement",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing exploration view preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing science view preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "Asset loading failure is recoverable",
+      "status": "PASS"
+    },
+    {
+      "name": "Retry reloads real asset",
+      "status": "PASS"
+    },
+    {
+      "name": "All 17 original handoff files unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "Validated GLB and Blender scene unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "Successful flows have no browser console or asset errors",
+      "status": "PASS",
+      "detail": {
+        "errors": [],
+        "requests": []
+      }
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "cancelledRequests": [],
+  "warnings": [
+    "Service Worker registration blocked by Playwright",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "Service Worker registration blocked by Playwright",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "Service Worker registration blocked by Playwright",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ],
+  "browserVersion": "157.0.8103.39",
+  "geometry": {
+    "meshes": 1,
+    "exportedVertices": 374356,
+    "sourceSamples": 63001,
+    "triangles": 125000,
+    "maxPositionErrorM": 4.999999987376214e-7,
+    "maxUVError": 4.3869018528930326e-8,
+    "unmatched": 0,
+    "topologyEquivalent": true,
+    "bounds": {
+      "min": [
+        -249.5,
+        0,
+        -249.5
+      ],
+      "max": [
+        249.5,
+        58.42236328125,
+        249.5
+      ]
+    },
+    "corners": {
+      "NW": {
+        "source": [
+          -249.5,
+          249.5,
+          58.420898
+        ],
+        "three": [
+          -249.5,
+          58.4208984375,
+          -249.5
+        ]
+      },
+      "NE": {
+        "source": [
+          249.5,
+          249.5,
+          1.572021
+        ],
+        "three": [
+          249.5,
+          1.5720210075378418,
+          -249.5
+        ]
+      },
+      "SW": {
+        "source": [
+          -249.5,
+          -249.5,
+          54.569824
+        ],
+        "three": [
+          -249.5,
+          54.56982421875,
+          249.5
+        ]
+      },
+      "SE": {
+        "source": [
+          249.5,
+          -249.5,
+          6.937256
+        ],
+        "three": [
+          249.5,
+          6.937255859375,
+          249.5
+        ]
+      }
+    },
+    "textures": [
+      {
+        "name": "JZ01_Mars_Surface",
+        "width": 2000,
+        "height": 2000,
+        "flipY": false,
+        "colorSpace": "srgb",
+        "metallic": 0,
+        "roughness": 0.94
+      }
+    ]
+  },
+  "presentation": {
+    "scientific": [
+      "ffffff"
+    ],
+    "cinematic": [
+      "cba183"
+    ],
+    "sameGeometry": true,
+    "sameImageAndUV": true,
+    "sameTransforms": true,
+    "clonedMaterials": true,
+    "sourceColors": [
+      "ffffff"
+    ],
+    "sourceUnchanged": true,
+    "memory": {
+      "geometries": 5,
+      "textures": 2
+    }
+  },
+  "performance": {
+    "frames": 639,
+    "meanFrameMs": 9.386071987479273,
+    "fps": 106.54084065559786,
+    "medianFrameMs": 7.5,
+    "p95FrameMs": 20.5,
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00004626) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "vendor": "Google Inc. (Intel)",
+    "dpr": 1,
+    "viewport": [
+      1280,
+      800
+    ],
+    "drawingBuffer": [
+      1280,
+      661
+    ],
+    "calls": 5,
+    "triangles": 127004,
+    "geometryCount": 5,
+    "textures": 3,
+    "shadows": false,
+    "method": "Headless Chrome, six seconds of warmed continuous OrbitControls auto-rotation; CPU-observed rendered frame intervals, not GPU timer queries."
+  },
+  "mobileFraming": {
+    "step4ProjectedCanvasFraction": 0.13499064386667425,
+    "step5ProjectedCanvasFraction": 0.2119748534674002
+  },
+  "povPerformance": {
+    "frames": 542,
+    "fps": 90.03471818470975,
+    "meanMs": 11.106826568262933,
+    "p95ms": 25.200000001117587,
+    "drawCalls": 2,
+    "triangles": 125002
+  },
+  "inputHashes": {
+    "terrain.obj": "55d567a78ccb8e3340a9c0ba2510d72e1027d7dd1353bc109072ca0d78c38df9",
+    "texture.png": "b1dbd9deb8d772d73017c348fc4e58d98bb93da4cd4d0f039af621ba88a4876a",
+    "dtm_1m.tif": "1bdfdc8b199dcd099bd41109073b00cd43ad1ff6cdb1010ccb7010e635f7164c",
+    "orthomosaic_025m.tif": "eea80aca7413798da8a4a6d337d8bfffdfbc3b2ec10a4aad6d62b7fd87558610",
+    "slope_preliminary_deg.tif": "efb7c6f1fb357a2158d06c4f0212262ed804bee63040131af96f6fb565d58a1a",
+    "route_dijkstra.csv": "e931cd970915d0c878f40f0dc9070a19e84bbb98b86a6a93f09299342ff96c53",
+    "route_slope_aware_astar.csv": "240fff90876e4b8f28f62dd4fbd5f33109db4182d10b137b8774d47c10149bcd",
+    "route_metrics.csv": "d5bbfa5bdd2aea863e1dbf53744ee6035384e4b3315531d394cc0dd756d23a11",
+    "route_comparison.png": "e5141f80ff686e8a3227f97151df5251bc54ebf0e700519f766bfd1f98a8a4a6",
+    "route_1m_validation.csv": "d9d5c453d98e012f72f2acd1d1064626a0c07c2796ea0c835e671f3897d6e1dc",
+    "threshold_test.csv": "01f4ba62db81074bc18e2da3ed1635380b546c55739f60d3f792ec3e60ca7207",
+    "corridor_test.csv": "e6e592212c99df1ee640c1a4654217980bdc94a5fef4ad0b665d2ff62c8831b9",
+    "robustness.csv": "840fc615d746899e6970fe8e7ac7b9c9c43865eb7b00b721cde6c6f0f5ec16a5",
+    "original_handoff_manifest.json": "8777bc5cbad0835f91e0d53aed13f6c2c97e44f914abbf271f864e721ea0f4f2",
+    "data_provenance.json": "08b2dccc814adaf3cf9217c41e640bc18068bc0f042111c4e8b5c121762d30d0",
+    "terrain.glb": "a53e6d64dc9b59a0f94eb91aac3ce1d98582d71c8f0b2c35483e5097c3782f78",
+    "JZ01_terrain_scene.blend": "d4156a056f2da25d8a82c9a1a6b8a11e82bc02c4482d5e014d2636720ecd4ca4"
+  }
+}

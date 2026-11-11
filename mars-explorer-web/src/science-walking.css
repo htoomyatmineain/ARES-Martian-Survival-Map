@@ -1,0 +1,19 @@
+.science-walk-inputs{position:absolute;inset:0;pointer-events:none;z-index:28;}
+.science-walk-inputs .jz01-pov-touch{position:absolute;left:300px;right:300px;bottom:180px;display:flex;justify-content:space-between;}
+.science-walk-inputs .jz01-pov-touch button{pointer-events:auto;touch-action:none;width:84px;height:84px;border-radius:50%;background:#25241fbd;border:1px solid #d6af8277;color:#ead9c0;font-size:12px;line-height:1.4;}
+.science-walk-inputs>small{position:absolute;bottom:164px;left:50%;transform:translateX(-50%);font-size:10px;color:#e5cfaf;white-space:nowrap;text-shadow:0 1px 3px #000;}
+@media(max-width:1000px){.science-walk-inputs .jz01-pov-touch{left:18px;right:18px;}.science-walk-inputs>small{font-size:8px;}}
+
+/* Minimal science viewer: retain terrain and camera interactions, remove dashboard chrome. */
+.app-shell.science-minimal{height:100dvh;min-height:0;}
+.science-minimal>.topbar,.science-minimal>.location-bar,.science-minimal>.statusbar,
+.science-minimal .left-panel,.science-minimal .right-panel,.science-minimal .bottom-dock,
+.science-minimal .scene-heading,.science-minimal .landmark-card,.science-minimal .map-scale,
+.science-minimal .mobile-panel-toggle,.science-minimal .projected-markers,
+.science-minimal .map-tools .compass,.science-minimal .overview-button,
+.science-minimal~.mx-back-to-surface{display:none!important;}
+.science-minimal .map-top-controls{top:16px;left:50%;right:auto;transform:translateX(-50%);z-index:35;}
+.science-minimal .map-tools{top:auto;right:20px;bottom:28px;z-index:35;}
+.science-minimal[data-view="Explore"] .map-tools{top:80px;bottom:auto;}
+.science-minimal .science-walk-inputs .jz01-pov-touch{left:24px;right:24px;bottom:42px;}
+.science-minimal .science-walk-inputs>small{bottom:12px;max-width:calc(100% - 24px);white-space:normal;text-align:center;}

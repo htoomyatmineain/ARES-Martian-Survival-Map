@@ -1,0 +1,3 @@
+route,length_m,ascent_m,descent_m,slope10_distance_m,slope15_distance_m,slope10_exposure_pct
+Dijkstra Shortest,400.0,1.14,45.03,80.0,11.0,20.0
+Slope-Aware Astar,434.31,0.21,44.09,49.03,0.0,11.29

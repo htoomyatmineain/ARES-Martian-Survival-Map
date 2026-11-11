@@ -1,0 +1,15 @@
+{
+  "source": "dtm_1m.tif",
+  "source_sha256": "1bdfdc8b199dcd099bd41109073b00cd43ad1ff6cdb1010ccb7010e635f7164c",
+  "width": 500,
+  "height": 500,
+  "spacing_m": 1,
+  "row_order": "north to south",
+  "format": "little-endian float32 original elevation meters",
+  "pixel_center_three_xz_min": [
+    -249.5,
+    -249.5
+  ],
+  "local_height_offset_m": 2425.92626953125,
+  "processing": "Lossless copy of decoded samples; no resampling or terrain modification"
+}

@@ -1,0 +1,810 @@
+{
+  "url": "http://localhost:4173/?workspace=jz01",
+  "tests": [
+    {
+      "name": "React application and JZ-01 preview start",
+      "status": "PASS"
+    },
+    {
+      "name": "Minimal viewer has no information cards or mission UI",
+      "status": "PASS"
+    },
+    {
+      "name": "Exactly one simple two-option view switch",
+      "status": "PASS"
+    },
+    {
+      "name": "World-space geometry, topology, scale and orientation",
+      "status": "PASS",
+      "detail": {
+        "meshes": 1,
+        "exportedVertices": 374356,
+        "sourceSamples": 63001,
+        "triangles": 125000,
+        "maxPositionErrorM": 4.999999987376214e-7,
+        "maxUVError": 4.3869018528930326e-8,
+        "unmatched": 0,
+        "topologyEquivalent": true,
+        "bounds": {
+          "min": [
+            -249.5,
+            0,
+            -249.5
+          ],
+          "max": [
+            249.5,
+            58.42236328125,
+            249.5
+          ]
+        },
+        "corners": {
+          "NW": {
+            "source": [
+              -249.5,
+              249.5,
+              58.420898
+            ],
+            "three": [
+              -249.5,
+              58.4208984375,
+              -249.5
+            ]
+          },
+          "NE": {
+            "source": [
+              249.5,
+              249.5,
+              1.572021
+            ],
+            "three": [
+              249.5,
+              1.5720210075378418,
+              -249.5
+            ]
+          },
+          "SW": {
+            "source": [
+              -249.5,
+              -249.5,
+              54.569824
+            ],
+            "three": [
+              -249.5,
+              54.56982421875,
+              249.5
+            ]
+          },
+          "SE": {
+            "source": [
+              249.5,
+              -249.5,
+              6.937256
+            ],
+            "three": [
+              249.5,
+              6.937255859375,
+              249.5
+            ]
+          }
+        },
+        "textures": [
+          {
+            "name": "JZ01_Mars_Surface",
+            "width": 2000,
+            "height": 2000,
+            "flipY": false,
+            "colorSpace": "srgb",
+            "metallic": 0,
+            "roughness": 0.94
+          }
+        ]
+      }
+    },
+    {
+      "name": "Original UV registration and loaded texture",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "JZ01_Mars_Surface",
+          "width": 2000,
+          "height": 2000,
+          "flipY": false,
+          "colorSpace": "srgb",
+          "metallic": 0,
+          "roughness": 0.94
+        }
+      ]
+    },
+    {
+      "name": "NW / NE / SW coordinate directions",
+      "status": "PASS",
+      "detail": {
+        "NW": {
+          "source": [
+            -249.5,
+            249.5,
+            58.420898
+          ],
+          "three": [
+            -249.5,
+            58.4208984375,
+            -249.5
+          ]
+        },
+        "NE": {
+          "source": [
+            249.5,
+            249.5,
+            1.572021
+          ],
+          "three": [
+            249.5,
+            1.5720210075378418,
+            -249.5
+          ]
+        },
+        "SW": {
+          "source": [
+            -249.5,
+            -249.5,
+            54.569824
+          ],
+          "three": [
+            -249.5,
+            54.56982421875,
+            249.5
+          ]
+        },
+        "SE": {
+          "source": [
+            249.5,
+            -249.5,
+            6.937256
+          ],
+          "three": [
+            249.5,
+            6.937255859375,
+            249.5
+          ]
+        }
+      }
+    },
+    {
+      "name": "Scientific neutral imagery and cinematic presentation",
+      "status": "PASS",
+      "detail": {
+        "scientific": [
+          "ffffff"
+        ],
+        "cinematic": [
+          "cba183"
+        ],
+        "sameGeometry": true,
+        "sameImageAndUV": true,
+        "sameTransforms": true,
+        "clonedMaterials": true,
+        "sourceColors": [
+          "ffffff"
+        ],
+        "sourceUnchanged": true,
+        "memory": {
+          "geometries": 5,
+          "textures": 3
+        }
+      }
+    },
+    {
+      "name": "Modes preserve geometry, texture, UVs, transforms and cached source",
+      "status": "PASS",
+      "detail": {
+        "scientific": [
+          "ffffff"
+        ],
+        "cinematic": [
+          "cba183"
+        ],
+        "sameGeometry": true,
+        "sameImageAndUV": true,
+        "sameTransforms": true,
+        "clonedMaterials": true,
+        "sourceColors": [
+          "ffffff"
+        ],
+        "sourceUnchanged": true,
+        "memory": {
+          "geometries": 5,
+          "textures": 3
+        }
+      }
+    },
+    {
+      "name": "Repeated mode changes do not accumulate background textures",
+      "status": "PASS",
+      "detail": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "Pointer orbit works",
+      "status": "PASS",
+      "detail": {
+        "before": [
+          609.9999999999999,
+          520.1216162109376,
+          740.0000000000002
+        ],
+        "after": [
+          -296.37941541422794,
+          717.3873726406615,
+          773.0797918672448
+        ]
+      }
+    },
+    {
+      "name": "Right-drag tactical pan works without height drift",
+      "status": "PASS",
+      "detail": {
+        "panBefore": [
+          0,
+          25.1216162109375,
+          0
+        ],
+        "panAfter": [
+          -59.730385942091054,
+          25.1216162109375,
+          -41.84742424548609
+        ]
+      }
+    },
+    {
+      "name": "Wheel zoom works",
+      "status": "PASS",
+      "detail": {
+        "before": 1079.2242584375133,
+        "after": 723.4284937950752
+      }
+    },
+    {
+      "name": "Wheel zoom passes through intermediate distances",
+      "status": "PASS",
+      "detail": {
+        "before": 1079.2242584375133,
+        "after": 723.4284937950752,
+        "sampleCount": 79
+      }
+    },
+    {
+      "name": "Reset animates through intermediate camera positions",
+      "status": "PASS",
+      "detail": {
+        "samples": [
+          [
+            -258.4484101261262,
+            489.17099620678016,
+            476.3333655609174
+          ],
+          [
+            -258.4484101261262,
+            489.17099620678016,
+            476.3333655609174
+          ],
+          [
+            12.863529635252078,
+            498.84027840274354,
+            558.7054503110438
+          ],
+          [
+            609.9999999999999,
+            520.1216162109375,
+            740.0000000000001
+          ]
+        ],
+        "immediate": 0,
+        "intermediate": 283.7055234241112,
+        "completed": 908.119307164907
+      }
+    },
+    {
+      "name": "Reset restores framing",
+      "status": "PASS"
+    },
+    {
+      "name": "Zoom and polar limits keep camera above terrain",
+      "status": "PASS",
+      "detail": {
+        "distance": 723.4256545986125,
+        "height": 356.93003899857894,
+        "minDistance": 520,
+        "maxPolarAngle": 1.2566370614359172,
+        "worstClearance": 127.38809000466017
+      }
+    },
+    {
+      "name": "Reduced-motion reset is immediate",
+      "status": "PASS"
+    },
+    {
+      "name": "Accessible zoom button works",
+      "status": "PASS"
+    },
+    {
+      "name": "Browser screenshot captured",
+      "status": "PASS"
+    },
+    {
+      "name": "Browser interaction performance measured",
+      "status": "PASS",
+      "detail": {
+        "frames": 686,
+        "meanFrameMs": 8.774489795919454,
+        "fps": 113.96674031862759,
+        "medianFrameMs": 8.099999999627471,
+        "p95FrameMs": 13.300000000745058,
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00004626) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (Intel)",
+        "dpr": 1,
+        "viewport": [
+          1280,
+          800
+        ],
+        "drawingBuffer": [
+          1280,
+          800
+        ],
+        "calls": 5,
+        "triangles": 127004,
+        "geometryCount": 5,
+        "textures": 3,
+        "shadows": false,
+        "method": "Headless Chrome, six seconds of warmed continuous OrbitControls auto-rotation; CPU-observed rendered frame intervals, not GPU timer queries."
+      }
+    },
+    {
+      "name": "Demand rendering settles after interaction",
+      "status": "PASS",
+      "detail": {
+        "idleStart": 1436,
+        "idleMiddle": 1523,
+        "idleEnd": 1523
+      }
+    },
+    {
+      "name": "Mobile resize retains visible canvas and controls",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile native touch orbit",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile native pinch zoom",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile reset frames complete terrain bounds",
+      "status": "PASS",
+      "detail": {
+        "maxX": 0.9479441287882022,
+        "maxY": 0.35638978785964437
+      }
+    },
+    {
+      "name": "Mobile terrain occupies more overview area than Step 4 pose",
+      "status": "PASS",
+      "detail": {
+        "step4ProjectedCanvasFraction": 0.1034900189730397,
+        "step5ProjectedCanvasFraction": 0.24595721946077828
+      }
+    },
+    {
+      "name": "POV starts grounded with 1.7 m clearance",
+      "status": "PASS",
+      "detail": {
+        "x": -170,
+        "z": 100,
+        "yaw": -1.5707963267948966,
+        "pitch": -0.12,
+        "y": 46.10869140625,
+        "dtm": 44.40869140625,
+        "mesh": 44.402587890625,
+        "eye": 46.10869140625
+      }
+    },
+    {
+      "name": "POV presentation switches preserve position",
+      "status": "PASS"
+    },
+    {
+      "name": "Simultaneous mobile POV movement and look",
+      "status": "PASS",
+      "detail": {
+        "p1": {
+          "x": -170,
+          "z": 100,
+          "yaw": -1.5707963267948966,
+          "pitch": -0.12,
+          "y": 46.10869140625,
+          "dtm": 44.40869140625,
+          "mesh": 44.402587890625,
+          "eye": 46.10869140625
+        },
+        "p2": {
+          "x": -168.9456499039147,
+          "z": 100.01953375530869,
+          "yaw": -1.6207963267948966,
+          "pitch": -0.12,
+          "y": 45.956000182586834,
+          "dtm": 44.25600018258683,
+          "mesh": 44.244781317026536,
+          "eye": 45.956000182586834
+        }
+      }
+    },
+    {
+      "name": "Releasing mobile controls stops movement",
+      "status": "PASS"
+    },
+    {
+      "name": "Tactical / POV switching preserves ground position",
+      "status": "PASS"
+    },
+    {
+      "name": "Desktop drag look",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit pointer lock enters successfully",
+      "status": "PASS"
+    },
+    {
+      "name": "Escape releases pointer lock",
+      "status": "PASS"
+    },
+    {
+      "name": "WASD follows actual surface",
+      "status": "PASS",
+      "detail": {
+        "x": -168.02954671431584,
+        "z": 98.57378076947032,
+        "yaw": -0.5647962657597398,
+        "pitch": -0.9625,
+        "y": 45.805181205534794,
+        "dtm": 44.10518120553479,
+        "mesh": 44.08643466793637,
+        "eye": 45.805181205534794
+      }
+    },
+    {
+      "name": "WASD release settles",
+      "status": "PASS"
+    },
+    {
+      "name": "All four boundary corners block crossing and remain grounded",
+      "status": "PASS",
+      "detail": [
+        {
+          "x": 247.5,
+          "z": 247.22797396625813,
+          "yaw": -0.5647962657597398,
+          "pitch": -0.9625,
+          "y": 8.606523036145699,
+          "dtm": 6.905129313026919,
+          "mesh": 6.9065230361457,
+          "eye": 8.606523036145699
+        },
+        {
+          "x": -247.32671826767918,
+          "z": 247.2265345380974,
+          "yaw": -0.5647962657597398,
+          "pitch": -0.9625,
+          "y": 55.98065099500691,
+          "dtm": 54.28065099500691,
+          "mesh": 54.27756839033145,
+          "eye": 55.98065099500691
+        },
+        {
+          "x": -247.32752713839903,
+          "z": -247.5,
+          "yaw": -0.5647962657597398,
+          "pitch": -0.9625,
+          "y": 59.79209065339019,
+          "dtm": 58.088616773731246,
+          "mesh": 58.09209065339019,
+          "eye": 59.79209065339019
+        },
+        {
+          "x": 247.5,
+          "z": -247.5,
+          "yaw": -0.5647962657597398,
+          "pitch": -0.9625,
+          "y": 3.3400146484375,
+          "dtm": 1.63427734375,
+          "mesh": 1.6400146484375,
+          "eye": 3.3400146484375
+        }
+      ]
+    },
+    {
+      "name": "Underground camera perturbation is corrected",
+      "status": "PASS"
+    },
+    {
+      "name": "Flying camera perturbation is corrected",
+      "status": "PASS"
+    },
+    {
+      "name": "POV reset restores valid spawn",
+      "status": "PASS",
+      "detail": {
+        "x": -170,
+        "z": 100,
+        "yaw": -1.5707963267948966,
+        "pitch": -0.12,
+        "y": 46.10869140625,
+        "dtm": 44.40869140625,
+        "mesh": 44.402587890625,
+        "eye": 46.10869140625
+      }
+    },
+    {
+      "name": "POV moving FPS measured",
+      "status": "PASS",
+      "detail": {
+        "frames": 797,
+        "fps": 132.36124489320602,
+        "meanMs": 7.555081555834846,
+        "p95ms": 10.799999998882413,
+        "drawCalls": 2,
+        "triangles": 125002
+      }
+    },
+    {
+      "name": "Focus loss clears held movement",
+      "status": "PASS"
+    },
+    {
+      "name": "Host UI focus does not move the embedded POV",
+      "status": "PASS"
+    },
+    {
+      "name": "View switches do not navigate or reload",
+      "status": "PASS",
+      "detail": {
+        "navigationEntries": 1,
+        "meshes": 1
+      }
+    },
+    {
+      "name": "Reusable viewer respects a 640 by 480 parent",
+      "status": "PASS",
+      "detail": {
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 640,
+          "height": 480
+        },
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 640,
+          "height": 480
+        }
+      }
+    },
+    {
+      "name": "Camera controls work without a diagnostic global",
+      "status": "PASS",
+      "detail": {
+        "start": 1079.224258437513,
+        "end": 863.3794067500107
+      }
+    },
+    {
+      "name": "Existing exploration view preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing science view preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "Asset loading failure is recoverable",
+      "status": "PASS"
+    },
+    {
+      "name": "Retry reloads real asset",
+      "status": "PASS"
+    },
+    {
+      "name": "All 17 original handoff files unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "Validated GLB and Blender scene unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "Successful flows have no browser console or asset errors",
+      "status": "PASS",
+      "detail": {
+        "errors": [],
+        "requests": []
+      }
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "cancelledRequests": [],
+  "warnings": [
+    "Service Worker registration blocked by Playwright",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "Service Worker registration blocked by Playwright",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "Service Worker registration blocked by Playwright",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ],
+  "browserVersion": "157.0.8103.39",
+  "geometry": {
+    "meshes": 1,
+    "exportedVertices": 374356,
+    "sourceSamples": 63001,
+    "triangles": 125000,
+    "maxPositionErrorM": 4.999999987376214e-7,
+    "maxUVError": 4.3869018528930326e-8,
+    "unmatched": 0,
+    "topologyEquivalent": true,
+    "bounds": {
+      "min": [
+        -249.5,
+        0,
+        -249.5
+      ],
+      "max": [
+        249.5,
+        58.42236328125,
+        249.5
+      ]
+    },
+    "corners": {
+      "NW": {
+        "source": [
+          -249.5,
+          249.5,
+          58.420898
+        ],
+        "three": [
+          -249.5,
+          58.4208984375,
+          -249.5
+        ]
+      },
+      "NE": {
+        "source": [
+          249.5,
+          249.5,
+          1.572021
+        ],
+        "three": [
+          249.5,
+          1.5720210075378418,
+          -249.5
+        ]
+      },
+      "SW": {
+        "source": [
+          -249.5,
+          -249.5,
+          54.569824
+        ],
+        "three": [
+          -249.5,
+          54.56982421875,
+          249.5
+        ]
+      },
+      "SE": {
+        "source": [
+          249.5,
+          -249.5,
+          6.937256
+        ],
+        "three": [
+          249.5,
+          6.937255859375,
+          249.5
+        ]
+      }
+    },
+    "textures": [
+      {
+        "name": "JZ01_Mars_Surface",
+        "width": 2000,
+        "height": 2000,
+        "flipY": false,
+        "colorSpace": "srgb",
+        "metallic": 0,
+        "roughness": 0.94
+      }
+    ]
+  },
+  "presentation": {
+    "scientific": [
+      "ffffff"
+    ],
+    "cinematic": [
+      "cba183"
+    ],
+    "sameGeometry": true,
+    "sameImageAndUV": true,
+    "sameTransforms": true,
+    "clonedMaterials": true,
+    "sourceColors": [
+      "ffffff"
+    ],
+    "sourceUnchanged": true,
+    "memory": {
+      "geometries": 5,
+      "textures": 3
+    }
+  },
+  "performance": {
+    "frames": 686,
+    "meanFrameMs": 8.774489795919454,
+    "fps": 113.96674031862759,
+    "medianFrameMs": 8.099999999627471,
+    "p95FrameMs": 13.300000000745058,
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00004626) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "vendor": "Google Inc. (Intel)",
+    "dpr": 1,
+    "viewport": [
+      1280,
+      800
+    ],
+    "drawingBuffer": [
+      1280,
+      800
+    ],
+    "calls": 5,
+    "triangles": 127004,
+    "geometryCount": 5,
+    "textures": 3,
+    "shadows": false,
+    "method": "Headless Chrome, six seconds of warmed continuous OrbitControls auto-rotation; CPU-observed rendered frame intervals, not GPU timer queries."
+  },
+  "mobileFraming": {
+    "step4ProjectedCanvasFraction": 0.1034900189730397,
+    "step5ProjectedCanvasFraction": 0.24595721946077828
+  },
+  "povPerformance": {
+    "frames": 797,
+    "fps": 132.36124489320602,
+    "meanMs": 7.555081555834846,
+    "p95ms": 10.799999998882413,
+    "drawCalls": 2,
+    "triangles": 125002
+  },
+  "inputHashes": {
+    "terrain.obj": "55d567a78ccb8e3340a9c0ba2510d72e1027d7dd1353bc109072ca0d78c38df9",
+    "texture.png": "b1dbd9deb8d772d73017c348fc4e58d98bb93da4cd4d0f039af621ba88a4876a",
+    "dtm_1m.tif": "1bdfdc8b199dcd099bd41109073b00cd43ad1ff6cdb1010ccb7010e635f7164c",
+    "orthomosaic_025m.tif": "eea80aca7413798da8a4a6d337d8bfffdfbc3b2ec10a4aad6d62b7fd87558610",
+    "slope_preliminary_deg.tif": "efb7c6f1fb357a2158d06c4f0212262ed804bee63040131af96f6fb565d58a1a",
+    "route_dijkstra.csv": "e931cd970915d0c878f40f0dc9070a19e84bbb98b86a6a93f09299342ff96c53",
+    "route_slope_aware_astar.csv": "240fff90876e4b8f28f62dd4fbd5f33109db4182d10b137b8774d47c10149bcd",
+    "route_metrics.csv": "d5bbfa5bdd2aea863e1dbf53744ee6035384e4b3315531d394cc0dd756d23a11",
+    "route_comparison.png": "e5141f80ff686e8a3227f97151df5251bc54ebf0e700519f766bfd1f98a8a4a6",
+    "route_1m_validation.csv": "d9d5c453d98e012f72f2acd1d1064626a0c07c2796ea0c835e671f3897d6e1dc",
+    "threshold_test.csv": "01f4ba62db81074bc18e2da3ed1635380b546c55739f60d3f792ec3e60ca7207",
+    "corridor_test.csv": "e6e592212c99df1ee640c1a4654217980bdc94a5fef4ad0b665d2ff62c8831b9",
+    "robustness.csv": "840fc615d746899e6970fe8e7ac7b9c9c43865eb7b00b721cde6c6f0f5ec16a5",
+    "original_handoff_manifest.json": "8777bc5cbad0835f91e0d53aed13f6c2c97e44f914abbf271f864e721ea0f4f2",
+    "data_provenance.json": "08b2dccc814adaf3cf9217c41e640bc18068bc0f042111c4e8b5c121762d30d0",
+    "terrain.glb": "a53e6d64dc9b59a0f94eb91aac3ce1d98582d71c8f0b2c35483e5097c3782f78",
+    "JZ01_terrain_scene.blend": "d4156a056f2da25d8a82c9a1a6b8a11e82bc02c4482d5e014d2636720ecd4ca4"
+  }
+}

@@ -1,0 +1,89 @@
+[
+  {
+    "name": "Original ARES science workspace retained",
+    "status": "PASS"
+  },
+  {
+    "name": "Original four-times map relief retained",
+    "status": "PASS"
+  },
+  {
+    "name": "Original 2D map still works",
+    "status": "PASS"
+  },
+  {
+    "name": "Walking starts with 1.7 meter terrain clearance",
+    "status": "PASS",
+    "detail": {
+      "x": 2020,
+      "z": 1500,
+      "y": 74.65567542314533,
+      "ground": 72.95567542314534,
+      "yaw": 0.9792244344190525,
+      "elevation": -2576.6076624278903
+    }
+  },
+  {
+    "name": "Walking uses true scale without altering saved map exaggeration",
+    "status": "PASS"
+  },
+  {
+    "name": "Free WASD walking follows this CTX terrain",
+    "status": "PASS",
+    "detail": {
+      "x": 2019.1479149386935,
+      "z": 1499.4275397520917,
+      "y": 74.71729099697583,
+      "ground": 73.01729099697583,
+      "yaw": 0.9792244344190525,
+      "elevation": -2576.5460468540596
+    }
+  },
+  {
+    "name": "Mouse drag changes walking look",
+    "status": "PASS"
+  },
+  {
+    "name": "Existing reset camera resets walking",
+    "status": "PASS"
+  },
+  {
+    "name": "Original 3D and four-times relief restored",
+    "status": "PASS"
+  },
+  {
+    "name": "Walking survives view switching",
+    "status": "PASS"
+  },
+  {
+    "name": "Mobile move and look work on science page",
+    "status": "PASS",
+    "detail": {
+      "p0": {
+        "x": 2020,
+        "z": 1500,
+        "y": 74.65567542314533,
+        "ground": 72.95567542314534,
+        "yaw": 0.9792244344190525,
+        "elevation": -2576.6076624278903
+      },
+      "p1": {
+        "x": 2019.3283640551547,
+        "z": 1499.536197059409,
+        "y": 74.70501928732071,
+        "ground": 73.0050192873207,
+        "yaw": 0.9292244344190524,
+        "elevation": -2576.5583185637147
+      }
+    }
+  },
+  {
+    "name": "Page did not reload when switching",
+    "status": "PASS"
+  },
+  {
+    "name": "No browser runtime errors",
+    "status": "PASS",
+    "detail": []
+  }
+]

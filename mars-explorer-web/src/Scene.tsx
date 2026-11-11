@@ -4,9 +4,13 @@ import { Line, OrbitControls, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import type { OrbitControls as OrbitImpl } from 'three-stdlib';
 import { elevation, slope, sites, type Terrain, type Point, type Route } from './terrain';
+import ScienceWalking from './ScienceWalking';
+import {POVTouchControls,type POVInput} from './jz01/POVCamera';
+import './science-walking.css';
 
 export type SceneProps = { terrain: Terrain; layer: string; contours: boolean; exaggeration: number; mode: string; cameraAction: { kind: string; tick: number }; route: Route | null; selected: string; onSelect: (id: string) => void; onPick: (p: Point) => void; planning: boolean; progress: number; storm: boolean; markers: boolean; running: boolean };
 const SCALE = 1000;
+const SCIENCE_CAMERA={position:[10,9,11] as [number,number,number],fov:39,near:.05,far:100};
 function ground(t: Terrain, p: Point, ex: number): [number, number, number] { return [p.x / SCALE, (elevation(t, p.x, p.z) - t.meta.min) / SCALE * ex, p.z / SCALE]; }
 function TerrainMesh({ terrain, layer, contours, exaggeration, onPick, planning }: SceneProps) {
   const sourceTexture = useTexture('/data/ortho.jpg');
@@ -109,26 +113,28 @@ function MarkerProjection({ terrain, exaggeration, markerRefs }: { terrain: Terr
   });
   return null;
 }
-function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | null)[]> }) {
+function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | null)[]>;input:RefObject<POVInput> }) {
   const { terrain, exaggeration, route, progress, markers } = props;
   const routePoints = useMemo(() => route?.points.map(p => { const a = ground(terrain, p, exaggeration); a[1] += .018; return a; }) || [], [terrain, route, exaggeration]);
   const cursor = routePoints[Math.min(routePoints.length - 1, Math.floor(progress / 100 * (routePoints.length - 1)))];
   return <>
-    <color attach="background" args={['#292924']} />
-    <fog attach="fog" args={[props.storm ? '#75604a' : '#292924', props.storm ? 5 : 22, props.storm ? 22 : 55]} />
+    <color attach="background" args={[props.mode==='Explore'?'#9b846f':'#292924']} />
+    <fog attach="fog" args={[props.storm ? '#75604a' : props.mode==='Explore'?'#9b846f':'#292924', props.mode==='Explore'?1.5:props.storm ? 5 : 22, props.mode==='Explore'?18:props.storm ? 22 : 55]} />
     <ambientLight intensity={1.5} color="#d5c7ad" />
     <directionalLight position={[-8, 9, -5]} intensity={3.5} color="#ffe1b8" />
     <hemisphereLight args={['#c9cbd0', '#332118', .7]} />
-    <TerrainMesh {...props} /><Skirt terrain={terrain} exaggeration={exaggeration} />
+    <TerrainMesh {...props} />
+    {props.mode!=='Explore'&&<><Skirt terrain={terrain} exaggeration={exaggeration} />
     <gridHelper args={[30, 60, '#4b4b40', '#36382f']} position={[0, -.56, 0]} />
-    <Habitat position={ground(terrain, sites[0], exaggeration)} />
-    {routePoints.length > 1 && <Line points={routePoints} color={props.storm ? '#ffad64' : '#f5bb70'} lineWidth={3} />}
-    {cursor && progress > 0 && <mesh position={[cursor[0], cursor[1] + .055, cursor[2]]}><sphereGeometry args={[.055, 16, 16]} /><meshBasicMaterial color="#fff5c4" /></mesh>}
-    {markers && sites.map((s, i) => { const p = ground(terrain, s, exaggeration); return <group key={s.id} position={p}>
+    <Habitat position={ground(terrain, sites[0], exaggeration)} /></>}
+    {props.mode!=='Explore'&&routePoints.length > 1 && <Line points={routePoints} color={props.storm ? '#ffad64' : '#f5bb70'} lineWidth={3} />}
+    {props.mode!=='Explore'&&cursor && progress > 0 && <mesh position={[cursor[0], cursor[1] + .055, cursor[2]]}><sphereGeometry args={[.055, 16, 16]} /><meshBasicMaterial color="#fff5c4" /></mesh>}
+    {props.mode!=='Explore'&&markers && sites.map((s, i) => { const p = ground(terrain, s, exaggeration); return <group key={s.id} position={p}>
       <mesh position={[0, .025, 0]} rotation={[-Math.PI / 2, 0, 0]}><ringGeometry args={[.07, .095, 32]} /><meshBasicMaterial color={i === 0 ? '#c9dfca' : '#efb875'} side={THREE.DoubleSide} /></mesh>
     </group>; })}
-    <Controls {...props} />
-    <MarkerProjection terrain={terrain} exaggeration={exaggeration} markerRefs={props.markerRefs}/>
+    {props.mode!=='Explore'&&<Controls {...props} />}
+    <ScienceWalking terrain={terrain} active={props.mode==='Explore'} input={props.input} action={props.cameraAction}/>
+    {props.mode!=='Explore'&&<MarkerProjection terrain={terrain} exaggeration={exaggeration} markerRefs={props.markerRefs}/>}
   </>;
 }
 class CanvasBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
@@ -138,5 +144,6 @@ class CanvasBoundary extends Component<{ children: ReactNode }, { failed: boolea
 }
 export default function Scene(props: SceneProps) {
   const markerRefs = useRef<(HTMLDivElement | null)[]>([]);
-  return <CanvasBoundary><Canvas frameloop="demand" dpr={[1, 1.75]} camera={{ position: [10, 9, 11], fov: 39, near: .05, far: 100 }} gl={{ antialias: true, powerPreference: 'high-performance' }} fallback={<div className="canvas-fallback">WebGL is unavailable. Use a browser with hardware acceleration.</div>} onCreated={({ gl }) => { gl.toneMapping = THREE.ACESFilmicToneMapping; gl.toneMappingExposure = 1.05; }}><Contents {...props} markerRefs={markerRefs}/></Canvas><div className="projected-markers" style={{ display: props.markers ? undefined : 'none' }}>{sites.map((s, i) => <div className={`projected-marker projected-${s.id}`} key={s.id} ref={el => { markerRefs.current[i] = el; }}><button className={`map-marker ${props.selected === s.id ? 'selected' : ''}`} onClick={() => props.onSelect(s.id)}><span className="marker-stem"/><span className="marker-dot">{i === 0 ? '⌂' : i === 2 ? '⊕' : '◇'}</span><span>{s.name}<small>{i === 0 ? 'HAB-01' : i === 2 ? '18.4446° N · 77.4509° E' : `SCI-0${i}`}</small></span></button></div>)}</div></CanvasBoundary>;
+  const input=useRef<POVInput>({moveX:0,moveY:0,lookX:0,lookY:0});
+  return <CanvasBoundary><Canvas frameloop="demand" dpr={[1, 1.75]} camera={SCIENCE_CAMERA} gl={{ antialias: true, powerPreference: 'high-performance' }} fallback={<div className="canvas-fallback">WebGL is unavailable. Use a browser with hardware acceleration.</div>} onCreated={({ gl }) => { gl.toneMapping = THREE.ACESFilmicToneMapping; gl.toneMappingExposure = 1.05; }}><Contents {...props} markerRefs={markerRefs} input={input}/></Canvas><div className="projected-markers" style={{ display: props.markers && props.mode!=='Explore' ? undefined : 'none' }}>{sites.map((s, i) => <div className={`projected-marker projected-${s.id}`} key={s.id} ref={el => { markerRefs.current[i] = el; }}><button className={`map-marker ${props.selected === s.id ? 'selected' : ''}`} onClick={() => props.onSelect(s.id)}><span className="marker-stem"/><span className="marker-dot">{i === 0 ? '⌂' : i === 2 ? '⊕' : '◇'}</span><span>{s.name}<small>{i === 0 ? 'HAB-01' : i === 2 ? '18.4446° N · 77.4509° E' : `SCI-0${i}`}</small></span></button></div>)}</div>{props.mode==='Explore'&&<div className="science-walk-inputs"><POVTouchControls input={input} onInput={()=>document.querySelector('.terrain-viewport canvas')?.dispatchEvent(new Event('mars-pov-input'))}/><small>WASD / arrows: walk · Drag: look · Shift: faster · R: reset · True-scale CTX terrain</small></div>}</CanvasBoundary>;
 }
