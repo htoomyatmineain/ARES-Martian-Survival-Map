@@ -1,6 +1,8 @@
 import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 import { ArrowLeft, Layers, Map, Mountain, Route as RouteIcon, Crosshair } from 'lucide-react';
-import { elevation, planRoute, sites, toGeo, type Terrain, type Point } from './terrain';
+import { elevation, toGeo, type Terrain, type Point } from './terrain';
+import { DEMO_RULES, type RoutingRules } from './nativeRouting';
+import { useNativeRoute } from './useNativeRoute';
 import { loadSharedRegional, type SharedRegionalMap } from './sharedRegionalData';
 import RegionalMap2D from './RegionalMap2D';
 import type { AnalysisLayer } from './regionalLayers';
@@ -15,7 +17,7 @@ import './regional-map.css';
 const Scene = lazy(() => import('./Scene'));
 const DEFAULT_DESTINATION = { x: -1850, z: -1100 };
 export default function RegionalWorkspace() {
-  const [terrain, setTerrain] = useState<Terrain | null>(null), [error, setError] = useState(''), [retry, setRetry] = useState(0);
+  const [baseTerrain, setTerrain] = useState<Terrain | null>(null), [error, setError] = useState(''), [retry, setRetry] = useState(0);
   const [shared, setShared] = useState<SharedRegionalMap | null>(null);
   const [view, setView] = useState<'2D' | '3D'>('2D'), [analysis, setAnalysis] = useState<AnalysisLayer>('none');
   const [imagery, setImagery] = useState(true), [opacity, setOpacity] = useState(.65), [contours, setContours] = useState(false);
@@ -38,6 +40,9 @@ export default function RegionalWorkspace() {
   },[orbitalMeta,orbitalRetry]);
   const [destination, setDestination] = useState<Point>(DEFAULT_DESTINATION), [picking, setPicking] = useState(false);
   const [routeVisible, setRouteVisible] = useState(true), [slopePriority, setSlopePriority] = useState(true), [blocked, setBlocked] = useState(false);
+  const [rules,setRules]=useState<RoutingRules>(DEMO_RULES),[routeRetry,setRouteRetry]=useState(0);
+  const routing=useNativeRoute(shared,destination,slopePriority,blocked,rules,routeRetry);
+  const terrain=useMemo(()=>baseTerrain?{...baseTerrain,nativeSlope:routing.grid??undefined}:null,[baseTerrain,routing.grid]);
   const [cameraAction, setCameraAction] = useState({ kind: 'reset', tick: 0 });
   useEffect(() => {
     const c = new AbortController(); let loaded: SharedRegionalMap | undefined; setError('');
@@ -45,7 +50,7 @@ export default function RegionalWorkspace() {
     return () => { c.abort(); if (loaded) URL.revokeObjectURL(loaded.imageryUrl); };
   }, [retry]);
   useEffect(() => { const key = (e: KeyboardEvent) => { if (e.key === 'Escape') { setPicking(false); setSelectedScienceId(null); setObservationOpen(false); setOrbitalOpen(false); } }; window.addEventListener('keydown', key); return () => window.removeEventListener('keydown', key); }, []);
-  const route = useMemo(() => terrain ? planRoute(terrain, sites[0], destination, slopePriority, blocked) : null, [terrain, destination, slopePriority, blocked]);
+  const route = routing.route;
   const geo = toGeo(destination);
   const pick = useCallback((at: Point) => setDestination(at), []);
   const selectScience = useCallback((id: string) => { if (SCIENCE_SITES.some(s => s.id === id)) { setSelectedScienceId(id); setPicking(false); setObservationOpen(false); setOrbitalOpen(false); } }, []);
@@ -86,7 +91,9 @@ export default function RegionalWorkspace() {
         <button className="rm-pick-button" aria-pressed={picking} onClick={() => setPicking(v => !v)}><Crosshair size={15}/>{picking ? 'Finish selection' : 'Set destination'}</button>
         <label className="rm-check"><span>Simulated exclusion<small>800 m radius at local E +100, S +300 m</small></span><input type="checkbox" checked={blocked} onChange={e => setBlocked(e.target.checked)}/></label>
         <div className="rm-coordinates" data-testid="destination-coordinates">{geo.lat.toFixed(5)}° N · {geo.lon.toFixed(5)}° E</div>
-        <p className="rm-fineprint">Simulated base and demo destination. 100 m routing grid using the 10 m HiRISE display grid; results are preliminary, not validated EVA routes.</p>
+        <p className="rm-fineprint">Simulated base and destination. 20 m search grid; each segment checks conservative 10 m envelopes built from every overlapping native 1 m DEM cell. These are not validated EVA routes.</p>
+        <details className="rm-route-rules"><summary>Demo slope rules</summary><p>Same limits for both strategies. These are configurable demonstration choices, not NASA astronaut limits.</p>{([{key:'alongLimit',label:'Along-route limit (degrees)'},{key:'crossLimit',label:'Sideways limit (degrees)'},{key:'totalLimit',label:'Ground slope limit (degrees)'}] as const).map(({key,label})=><label key={key}>{label}<input aria-label={label} type="number" min="1" max="45" step="1" value={rules[key]} onChange={e=>{const value=Number(e.target.value);if(Number.isFinite(value)&&value>=1&&value<=45)setRules(r=>({...r,[key]:value}));}}/></label>)}<p>Red route sections reach 80% of a configured limit. Bounds are conservative and can exclude passable ground.</p></details>
+        <p className="rm-fineprint" role="status">{routing.status}</p>{routing.error&&<p role="alert">{routing.error}</p>}{routing.error&&<button className="rm-pick-button" onClick={()=>setRouteRetry(v=>v+1)}>Retry native routing</button>}
       </section>
       <div className="rm-validation-note"><strong>HiRISE point coverage checked</strong><p>Both reported site positions have valid local 1 m elevation and 25 cm imagery pixels at the reported coordinates; both markers agree with NASA report-map targets.</p><p>NASA 1 m elevation and 25 cm imagery are retained in shared tiles. Both views use a 10 m display mesh and 2.44 m imagery overview. Relative NASA map alignment is checked. Absolute position accuracy and vertical datum compatibility remain unverified.</p></div>
     </aside>
@@ -96,16 +103,16 @@ export default function RegionalWorkspace() {
         <RegionalMap2D shared={shared} terrain={terrain} analysis={analysis} opacity={opacity} imagery={imagery} contours={contours} destination={destination} route={route} routeVisible={routeVisible} picking={picking} onPick={pick} hidden={view !== '2D'} blocked={blocked} grid={grid} scienceVisible={scienceVisible} selectedScienceId={selectedScienceId} scienceFocus={scienceFocus} onScienceSelect={selectScience} observations={observations} observationFocus={observationFocus} onObservationSelect={openObservation} orbital={orbital?.meta.id === orbitalId ? orbital : null} onOrbitalInspect={inspectOrbital}/>
         {view === '3D' && <div className="rm-scene"><Suspense fallback={<div className="rm-empty">Loading tactical view…</div>}><Scene imageryUrl={shared?.imageryUrl} terrain={terrain} layer={analysis === 'none' ? 'surface' : analysis} contours={contours} exaggeration={1} mode="3D" cameraAction={cameraAction} route={routeVisible ? route : null} selected="custom" onSelect={() => {}} onPick={pick} planning={picking} progress={0} storm={false} markers={false} running={false} destination={destination} blocked={blocked} accentColor="#f39b58" scienceSitesVisible={scienceVisible} selectedScienceId={selectedScienceId} onScienceSelect={selectScience} observations={observations} onObservationSelect={openObservation} orbital={orbital?.meta.id === orbitalId ? orbital : null} orbitalOpacity={opacity} onOrbitalInspect={inspectOrbital}/></Suspense><button className="rm-3d-reset" onClick={() => setCameraAction(a => ({ kind: 'reset', tick: a.tick + 1 }))}>Reset 3D camera</button></div>}
         {blocked && view === '2D' && <div className="rm-exclusion-note">Simulated exclusion active · see hatched area</div>}
-        {analysis !== 'none' && <div className="rm-legend" aria-label="Map legend"><strong>{analysis === 'slope' ? 'Slope · degrees' : 'Elevation · metres'}</strong>{analysis === 'slope' ? <><div className="rm-slope-scale"><i/><i/><i/></div><div className="rm-legend-labels"><span>0–10°</span><span>10–18°</span><span>&gt;18°</span></div><small>Display bands · not safety limits</small></> : <><div className="rm-height-scale"/><div className="rm-legend-labels"><span>{Math.round(terrain.meta.min)} m</span><span>{Math.round(terrain.meta.max)} m</span></div></>}</div>}
+        {analysis !== 'none' && <div className="rm-legend" aria-label="Map legend"><strong>{analysis === 'slope' ? 'Slope bound · degrees' : 'Elevation · metres'}</strong>{analysis === 'slope' ? <><div className="rm-slope-scale"><i/><i/><i/></div><div className="rm-legend-labels"><span>0–10°</span><span>10–18°</span><span>&gt;18°</span></div><small>{routing.grid?'Native 1 m terrain · 10 m conservative cells':'Native slopes not ready · display-grid preview'}<br/>Display bands · not safety limits</small></> : <><div className="rm-height-scale"/><div className="rm-legend-labels"><span>{Math.round(terrain.meta.min)} m</span><span>{Math.round(terrain.meta.max)} m</span></div></>}</div>}
         {orbitalMeta && orbital && <div className="rm-legend rm-orbital-legend" aria-label="Orbital indicator legend"><strong>{orbitalMeta.parameter} · index</strong><div className="rm-height-scale" style={{background:`linear-gradient(90deg,#191f28,${orbitalMeta.color})`}}/><div className="rm-legend-labels"><span>{orbitalMeta.displayMin.toFixed(4)}</span><span>{orbitalMeta.displayMax.toFixed(4)}</span></div><small>Colour stretch, not confidence<br/>Uncoloured = no data · {orbitalMeta.observedStart.slice(0,10)}</small></div>}
         <section className="rm-telemetry" aria-label="Route data" data-testid="route-data-card">
           <button className="rm-telemetry-toggle" aria-expanded={telemetryOpen} aria-controls="rm-route-data" aria-label={telemetryOpen ? 'Collapse route data' : 'Expand route data'} onClick={() => setTelemetryOpen(v => !v)}><span>ROUTE DATA</span><span aria-hidden="true">{telemetryOpen ? '−' : '+'}</span></button>
           {telemetryOpen && <div id="rm-route-data" aria-live="polite"><div className="rm-telemetry-grid">
-            <div><small>DEMO ROUTE</small><strong>{route ? <>{(route.distance / 1000).toFixed(2)}<span className="rm-unit"> km</span></> : <span className="rm-no-route">No route found</span>}</strong></div>
-            <div><small>UPHILL CLIMB</small><strong>{route ? <>{Math.round(route.ascent)}<span className="rm-unit"> m</span></> : '—'}</strong></div>
-            <div><small>MAX SEGMENT SLOPE</small><strong>{route ? <>{route.maxSlope.toFixed(1)}<span className="rm-unit">°</span></> : '—'}</strong></div>
+            <div><small>DEMO ROUTE</small><strong>{route?.profileStatus==='verified' ? <>{(route.distance / 1000).toFixed(2)}<span className="rm-unit"> km</span></> : <span className="rm-no-route">{route?'Checking…':'—'}</span>}</strong></div>
+            <div><small>UPHILL CLIMB</small><strong>{route?.profileStatus==='verified' ? <>{Math.round(route.ascent)}<span className="rm-unit"> m</span></> : '—'}</strong></div>
+            <div><small>MAX ALONG / SIDEWAYS BOUNDS</small><strong>{route ? <>{route.maxAlongSlope.toFixed(1)} / {route.maxCrossSlope.toFixed(1)}<span className="rm-unit">°</span></> : '—'}</strong></div>
             <div><small>DESTINATION HEIGHT</small><strong>{Number.isFinite(elevation(terrain,destination.x,destination.z)) ? <>{Math.round(elevation(terrain,destination.x,destination.z))}<span className="rm-unit"> m</span></> : 'No data'}</strong></div>
-          </div><p className="rm-telemetry-foot">DEMO / 100 M ROUTING GRID</p></div>}
+          </div><p className="rm-telemetry-foot">{routing.status}{route&&` · Max ground slope bound ${route.maxSlope.toFixed(1)}° · ${route.warnings.length} flagged segments · ${route.profileSamples} profile samples`} · DEMO LIMITS / NOT EVA CERTIFIED</p></div>}
         </section>
         {scienceVisible && selectedScience && <ScienceSitePopup store={shared?.store} site={selectedScience} terrain={terrain} onClose={() => setSelectedScienceId(null)} onSelect={selectScience} onZoom={zoomScience}/>}
         {observationLayer !== 'none' && observationOpen && <ObservationPanel key={observationLayer} layer={observationLayer} reading={reading} onReading={setThermalId} onClose={() => setObservationOpen(false)} onLocate={locateObservation}/>}

@@ -1,4 +1,7 @@
 import { fromGeo, slope, toGeo, type Terrain, type TerrainMeta } from './terrain.ts';
+import type { HazardGrid } from './nativeRouting.ts';
+
+export function nativeSlopePixels(g:HazardGrid){const pixels=new Uint8ClampedArray(g.width*g.height*4);for(let i=0;i<g.width*g.height;i++){const at=i*5;if(!Number.isFinite(g.values[at+4]))continue;const s=Math.atan(Math.hypot(Math.max(Math.abs(g.values[at]),Math.abs(g.values[at+1])),Math.max(Math.abs(g.values[at+2]),Math.abs(g.values[at+3]))))*180/Math.PI;pixels.set([...(s>18?[225,101,76]:s>10?[230,189,100]:[95,151,139]),255],i*4);}return pixels;}
 
 export function coordinateGrid(meta: Pick<TerrainMeta, 'size' | 'center'>, step: number) {
   if (!Number.isFinite(step) || step <= 0) throw Error('Invalid coordinate grid interval');
@@ -32,6 +35,7 @@ export function analysisPixels(t: Terrain, layer: Exclude<AnalysisLayer, 'none'>
     let color: number[];
     if (layer === 'slope') {
       const s = slope(t, col / (width - 1) * size - size / 2, row / (height - 1) * size - size / 2);
+      if(!Number.isFinite(s)) continue;
       color = s > 18 ? [225, 101, 76] : s > 10 ? [230, 189, 100] : [95, 151, 139];
     } else {
       const f = Math.max(0, Math.min(1, (t.values[i] - min) / Math.max(1, max - min)));

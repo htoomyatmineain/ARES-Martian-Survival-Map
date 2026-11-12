@@ -1,6 +1,6 @@
 export type Point = { x: number; z: number };
 export type TerrainMeta = { width: number; height: number; size: number; center: { lat: number; lon: number }; min: number; max: number; source: string; sourceUrl: string; resolution: number; bounds: number[]; projection: string };
-export type Terrain = { meta: TerrainMeta; values: Float32Array };
+export type Terrain = { meta: TerrainMeta; values: Float32Array; nativeSlope?: { width:number; height:number; spacing:number; size:number; values:Float32Array } };
 export const MARS_RADIUS = 3396190;
 export function toGeo(p: Point, center = { lat: 18.46, lon: 77.42 }) {
   return { lat: center.lat - p.z / MARS_RADIUS * 180 / Math.PI, lon: center.lon + p.x / (MARS_RADIUS * Math.cos(center.lat * Math.PI / 180)) * 180 / Math.PI };
@@ -16,6 +16,7 @@ export function elevation(t: Terrain, x: number, z: number) {
   return (t.values[b * width + a] * (1 - fx) + t.values[b * width + a + 1] * fx) * (1 - fy) + (t.values[(b + 1) * width + a] * (1 - fx) + t.values[(b + 1) * width + a + 1] * fx) * fy;
 }
 export function slope(t: Terrain, x: number, z: number) {
+  if(t.nativeSlope){const g=t.nativeSlope,c=Math.min(g.width-1,Math.floor((x+g.size/2)/g.spacing)),r=Math.min(g.height-1,Math.floor((z+g.size/2)/g.spacing));if(c<0||r<0||Math.abs(x)>g.size/2||Math.abs(z)>g.size/2)return NaN;const i=(r*g.width+c)*5;if(!Number.isFinite(g.values[i+4]))return NaN;return Math.atan(Math.hypot(Math.max(Math.abs(g.values[i]),Math.abs(g.values[i+1])),Math.max(Math.abs(g.values[i+2]),Math.abs(g.values[i+3]))))*180/Math.PI;}
   const s = t.meta.size / (t.meta.width - 1);
   return Math.atan(Math.hypot((elevation(t, x + s, z) - elevation(t, x - s, z)) / (2 * s), (elevation(t, x, z + s) - elevation(t, x, z - s)) / (2 * s))) * 180 / Math.PI;
 }

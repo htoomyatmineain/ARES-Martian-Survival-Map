@@ -1,0 +1,37 @@
+{
+  "reports": [
+    {
+      "strategy": "distance",
+      "sourcePointsChecked": 8314,
+      "maxHeightDifferenceMetres": 2.2737367544323206e-10,
+      "nativeDirectionalChecksExceededBound": 0,
+      "sampledAlongMaxDegrees": 16.041796583887916,
+      "sampledCrossMaxDegrees": 11.295089583590498,
+      "independentDistanceMetres": 8263.671138281956,
+      "independentAscentMetres": 270.2767760732263
+    },
+    {
+      "strategy": "slope",
+      "sourcePointsChecked": 10107,
+      "maxHeightDifferenceMetres": 1.6052581486292183e-10,
+      "nativeDirectionalChecksExceededBound": 0,
+      "sampledAlongMaxDegrees": 16.43987041451786,
+      "sampledCrossMaxDegrees": 8.642509932869448,
+      "independentDistanceMetres": 10052.545272294064,
+      "independentAscentMetres": 231.13503133150198
+    },
+    {
+      "strategy": "exclusion",
+      "sourcePointsChecked": 8347,
+      "maxHeightDifferenceMetres": 2.2737367544323206e-10,
+      "nativeDirectionalChecksExceededBound": 0,
+      "sampledAlongMaxDegrees": 16.041796583887916,
+      "sampledCrossMaxDegrees": 11.295089583590498,
+      "independentDistanceMetres": 8300.005624204314,
+      "independentAscentMetres": 276.66251514198666
+    }
+  ],
+  "method": "Direct source-projected coordinates and NumPy bilinear TIFF sampling versus JS geographic conversion and hash-verified compressed tile sampling. Directional sample checks are supplementary to complete envelope edge checks.",
+  "maximumAllowedNumericDifferenceMetres": 1e-07,
+  "limits": "Computational agreement, not absolute terrain accuracy or astronaut limits."
+}

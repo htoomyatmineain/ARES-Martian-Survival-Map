@@ -26,7 +26,7 @@ export function nativePixel(product: Product, latitude: number, longitude: numbe
   };
 }
 
-// Reads numeric high-resolution samples only when requested. Not a safety/routing model.
+// Reads hash-verified native elevation tiles on demand; cache is bounded.
 export class RegionalTileStore {
   private cache = new Map<string, Float32Array>();
   private cacheBytes = 0;
@@ -55,6 +55,11 @@ export class RegionalTileStore {
     if (!point) return null;
     const tile = p.tiles.find(t => point.col >= t.sourceWindow[0] && point.col < t.sourceWindow[2] && point.row >= t.sourceWindow[1] && point.row < t.sourceWindow[3]);
     if (!tile) return null;
+    const values = await this.valuesFor(tile, signal);
+    const value = values[(point.row - tile.sourceWindow[1]) * tile.width + point.col - tile.sourceWindow[0]];
+    return Number.isFinite(value) && value !== tile.nodata ? value : null;
+  }
+  private async valuesFor(tile: Tile, signal?: AbortSignal) {
     let values = this.cache.get(tile.file);
     if (values) { this.cache.delete(tile.file); this.cache.set(tile.file, values); }
     else {
@@ -76,7 +81,27 @@ export class RegionalTileStore {
         this.cache.set(tile.file, values); this.cacheBytes += values.byteLength;
       }
     }
-    const value = values[(point.row - tile.sourceWindow[1]) * tile.width + point.col - tile.sourceWindow[0]];
-    return Number.isFinite(value) && value !== tile.nodata ? value : null;
+    return values;
   }
+  async elevationProfile(positions: {lat:number;lon:number}[], signal?: AbortSignal, onProgress?:(done:number,total:number)=>void) {
+    signal?.throwIfAborted();
+    const p=this.manifest.products.elevation,k=p.sourceGeoKeys,radius=Number(k.GeogSemiMajorAxisGeoKey);
+    const queries=positions.map(g=>{
+      const x=(radius*g.lon*Math.PI/180-p.sourceOrigin[0])/p.sourceResolution[0]-.5;
+      const y=(radius*g.lat*Math.PI/180-p.sourceOrigin[1])/p.sourceResolution[1]-.5;
+      const c=Math.floor(x),r=Math.floor(y),u=x-c,v=y-r;
+      return [{col:c,row:r,w:(1-u)*(1-v)},{col:c+1,row:r,w:u*(1-v)},{col:c,row:r+1,w:(1-u)*v},{col:c+1,row:r+1,w:u*v}];
+    });
+    const sums=new Float64Array(positions.length),missing=new Uint8Array(positions.length);
+    const groups=new Map<Tile,{index:number;col:number;row:number;w:number}[]>();
+    queries.forEach((q,index)=>q.forEach(query=>{
+      const tile=p.tiles.find(t=>query.col>=t.sourceWindow[0]&&query.col<t.sourceWindow[2]&&query.row>=t.sourceWindow[1]&&query.row<t.sourceWindow[3]);
+      if(!tile){missing[index]=1;return;}const list=groups.get(tile)??[];list.push({...query,index});groups.set(tile,list);
+    }));
+    const entries=[...groups];let cursor=0,done=0;
+    const consume=async()=>{while(cursor<entries.length){const [tile,queries]=entries[cursor++];signal?.throwIfAborted();const values=await this.valuesFor(tile,signal);for(const q of queries){const value=values[(q.row-tile.sourceWindow[1])*tile.width+q.col-tile.sourceWindow[0]];if(!Number.isFinite(value)||value===tile.nodata)missing[q.index]=1;else sums[q.index]+=value*q.w;}onProgress?.(++done,entries.length);}};
+    await Promise.all(Array.from({length:Math.min(3,entries.length)},consume));
+    return Array.from(sums,(v,i)=>missing[i]?null:v);
+  }
+
 }

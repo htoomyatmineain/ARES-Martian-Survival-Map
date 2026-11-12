@@ -9,6 +9,7 @@ import { analysisPixels } from './regionalLayers';
 import { SCIENCE_SITES, sciencePoint } from './scienceSites';
 import type { ObservationMarker } from './environmentObservations';
 import type { OrbitalRaster } from './orbitalLayers';
+import { drapePoints, meshHeight, type NativeRoute } from './nativeRouting';
 import {POVTouchControls,type POVInput} from './jz01/POVCamera';
 import './science-walking.css';
 
@@ -133,7 +134,8 @@ function MarkerProjection({ terrain, exaggeration, markerRefs }: { terrain: Terr
 }
 function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | null)[]>;input:RefObject<POVInput> }) {
   const { terrain, exaggeration, route, progress, markers } = props;
-  const routePoints = useMemo(() => route?.points.map(p => { const a = ground(terrain, p, exaggeration); a[1] += .018; return a; }) || [], [terrain, route, exaggeration]);
+  const routePoints = useMemo(() => route ? drapePoints(terrain,route.points).map(p => [p.x/SCALE,(meshHeight(terrain,p)-terrain.meta.min)/SCALE*exaggeration+.0002,p.z/SCALE] as [number,number,number]) : [], [terrain, route, exaggeration]);
+  const warningLines = useMemo(() => (route as NativeRoute|null)?.warnings?.map(segment=>drapePoints(terrain,segment).map(p=>[p.x/SCALE,(meshHeight(terrain,p)-terrain.meta.min)/SCALE*exaggeration+.0003,p.z/SCALE] as [number,number,number]))??[],[terrain,route,exaggeration]);
   const cursor = routePoints[Math.min(routePoints.length - 1, Math.floor(progress / 100 * (routePoints.length - 1)))];
   const exclusion = useMemo(() => props.blocked ? Array.from({ length: 65 }, (_, i) => {
     const at = ground(terrain, { x: 100 + Math.cos(i / 64 * Math.PI * 2) * 800, z: 300 + Math.sin(i / 64 * Math.PI * 2) * 800 }, exaggeration); at[1] += .012; return at;
@@ -160,7 +162,8 @@ function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | 
     {props.mode!=='Explore'&&<><Skirt terrain={terrain} exaggeration={exaggeration} />
     <gridHelper args={[30, 60, '#4b4b40', '#36382f']} position={[0, -.56, 0]} />
     <Habitat position={ground(terrain, sites[0], exaggeration)} /></>}
-    {props.mode!=='Explore'&&routePoints.length > 1 && <Line points={routePoints} color={props.storm ? '#ffad64' : props.accentColor ?? '#f5bb70'} lineWidth={3} />}
+    {props.mode!=='Explore'&&routePoints.length > 1 && <><Line points={routePoints} color="#0b0d10" lineWidth={6} depthTest={false} depthWrite={false} renderOrder={5}/><Line points={routePoints} color={props.storm ? '#ffad64' : props.accentColor ?? '#f5bb70'} lineWidth={3} depthTest={false} depthWrite={false} renderOrder={6}/></>}
+    {props.mode!=='Explore'&&warningLines.map((points,i)=><Line key={i} points={points} color="#ff6556" lineWidth={4} depthTest={false} depthWrite={false} renderOrder={7}/>)}
     {props.mode!=='Explore'&&cursor && progress > 0 && <mesh position={[cursor[0], cursor[1] + .055, cursor[2]]}><sphereGeometry args={[.055, 16, 16]} /><meshBasicMaterial color="#fff5c4" /></mesh>}
     {props.mode!=='Explore'&&markers && sites.map((s, i) => { const p = ground(terrain, s, exaggeration); return <group key={s.id} position={p}>
       <mesh position={[0, .025, 0]} rotation={[-Math.PI / 2, 0, 0]}><ringGeometry args={[.07, .095, 32]} /><meshBasicMaterial color={i === 0 ? '#c9dfca' : '#efb875'} side={THREE.DoubleSide} /></mesh>
