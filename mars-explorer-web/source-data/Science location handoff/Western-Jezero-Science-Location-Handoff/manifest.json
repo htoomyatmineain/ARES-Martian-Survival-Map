@@ -1,0 +1,38 @@
+[
+  {
+    "Path": "D:\\Github project\\Mars Map\\generated\\science-location-handoff\\START-HERE.md",
+    "Hash": "410056180CBE8F4075B30C834EB1F39FD3B89D26BE675569AF8CE3A66C165A60"
+  },
+  {
+    "Path": "D:\\Github project\\Mars Map\\generated\\science-location-handoff\\docs\\ctx-alignment-preview.png",
+    "Hash": "B18F14F0E5592C96617028A897C5E59A07530F3266F2DE95CC37A87B36333B86"
+  },
+  {
+    "Path": "D:\\Github project\\Mars Map\\generated\\science-location-handoff\\docs\\science-layer-handoff.md",
+    "Hash": "32700063B3B6D6D0BB2A2800525DE0FE042D3E0680047D1825149DBFA0F3E381"
+  },
+  {
+    "Path": "D:\\Github project\\Mars Map\\generated\\science-location-handoff\\docs\\science-site-map-check.png",
+    "Hash": "FA4D35BC61D44E384D184C065A111CF034C3C42726BD34CD7FE34649997D6846"
+  },
+  {
+    "Path": "D:\\Github project\\Mars Map\\generated\\science-location-handoff\\docs\\science-sites.md",
+    "Hash": "FEA232D88CFBB5BB20420BAA5B6ABF910A76210E68635386B9176C303ECE1631"
+  },
+  {
+    "Path": "D:\\Github project\\Mars Map\\generated\\science-location-handoff\\scripts\\check_ctx_coverage.py",
+    "Hash": "A1EA74E4FB55243F2DFC829360E56ADD563DD62CAD29660D5DA7087726FC16B2"
+  },
+  {
+    "Path": "D:\\Github project\\Mars Map\\generated\\science-location-handoff\\scripts\\check_ctx_pixels.py",
+    "Hash": "D1EB05601B11B53E938A59981812EAA23823A541CAC72663B3E9326F9A6D8EB8"
+  },
+  {
+    "Path": "D:\\Github project\\Mars Map\\generated\\science-location-handoff\\scripts\\plot_science_sites.py",
+    "Hash": "394A9FC3CB3DCBFF9ECEB82CE1F7DA6294ABCC03C8D18258E774A76324EFDA9A"
+  },
+  {
+    "Path": "D:\\Github project\\Mars Map\\generated\\science-location-handoff\\scripts\\verify_ctx_dem.py",
+    "Hash": "EC0B16534C625C8EE70903FA635FBDE47C504BDEB23C2DA69EDE2A459F475BB7"
+  }
+]

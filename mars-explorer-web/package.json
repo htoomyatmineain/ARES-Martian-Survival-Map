@@ -9,6 +9,8 @@
     "start": "node server.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "pack:regional": "node --max-old-space-size=512 scripts/pack-regional-map.mjs",
+    "check:regional-package": "node scripts/check-map-package.mjs",
     "prepare:terrain": "node scripts/prepare-terrain.mjs",
     "prepare:imagery": "node scripts/prepare-imagery.mjs",
     "test:browser": "node scripts/test-real-jezero.mjs",

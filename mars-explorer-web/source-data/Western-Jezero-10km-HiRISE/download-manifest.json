@@ -1,0 +1,2292 @@
+{
+  "status": "complete",
+  "started": "2026-11-11T17:56:06.758Z",
+  "mission": "NASA Mars Reconnaissance Orbiter",
+  "instrument": "HiRISE",
+  "processorAndDistributor": "USGS Astrogeology",
+  "zone": {
+    "center": {
+      "lat": 18.46,
+      "lon": 77.42
+    },
+    "size_m": 10000,
+    "bounds_lon_lat": [
+      77.33107113608344,
+      18.375646975709426,
+      77.50892886391657,
+      18.544353024290576
+    ]
+  },
+  "products": {
+    "elevation": {
+      "sourceUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/HiRISE/JEZ_hirise_soc_006_DTM_MOLAtopography_DeltaGeoid_1m_Eqc_latTs0_lon0_blend40.tif",
+      "sourceDimensions": [
+        21400,
+        21488
+      ],
+      "sourceOrigin": [
+        4577366,
+        1106618,
+        0
+      ],
+      "sourceResolution": [
+        1,
+        -1,
+        0
+      ],
+      "sourceGeoKeys": {
+        "GTModelTypeGeoKey": 1,
+        "GTRasterTypeGeoKey": 1,
+        "GTCitationGeoKey": "Equirectangular Mars 2000 Sphere IAU",
+        "GeographicTypeGeoKey": 32767,
+        "GeogCitationGeoKey": "GCS Name = D_Mars_2000_Sphere|Datum = Mars_2000_(Sphere)|Ellipsoid = Mars_2000_Sphere_IAU|Primem = Reference_Meridian|",
+        "GeogGeodeticDatumGeoKey": 32767,
+        "GeogAngularUnitsGeoKey": 9102,
+        "GeogEllipsoidGeoKey": 32767,
+        "GeogSemiMajorAxisGeoKey": 3396190,
+        "GeogSemiMinorAxisGeoKey": 3396190,
+        "GeogPrimeMeridianLongGeoKey": 0,
+        "ProjectedCSTypeGeoKey": 32767,
+        "ProjectionGeoKey": 32767,
+        "ProjCoordTransGeoKey": 17,
+        "ProjLinearUnitsGeoKey": 9001,
+        "ProjStdParallel1GeoKey": 0,
+        "ProjFalseEastingGeoKey": 0,
+        "ProjFalseNorthingGeoKey": 0,
+        "ProjCenterLongGeoKey": 0,
+        "ProjCenterLatGeoKey": 0
+      },
+      "cropWindow": [
+        6409,
+        7407,
+        16953,
+        17408
+      ],
+      "nodata": -3.4028226550889045e+38,
+      "tiles": [
+        {
+          "file": "elevation-6409-7407.tif",
+          "sourceWindow": [
+            6409,
+            7407,
+            16953,
+            7919
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "4133f0f7b0e31a40474e1b63a1cc515c0860b6937dcd02c53fc7c665293490b3",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2554.71728515625,
+          "max": -2332.40087890625,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-7919.tif",
+          "sourceWindow": [
+            6409,
+            7919,
+            16953,
+            8431
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "eebe730591e09dc9875787555137894e72e456c1daee577e8fad12db9aae8332",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2559.497314453125,
+          "max": -2344.784912109375,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-8431.tif",
+          "sourceWindow": [
+            6409,
+            8431,
+            16953,
+            8943
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "599123e0cd6d0e7fcd65b56e2d44a6073dfab6681085dddf9f882cbb9842a782",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2563.377685546875,
+          "max": -2356.5009765625,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-9455.tif",
+          "sourceWindow": [
+            6409,
+            9455,
+            16953,
+            9967
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "68b3db7230c24a218e7daec266e476190174e3abd08216c8cec524e76eb231d2",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2569.40478515625,
+          "max": -2381.832763671875,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-9967.tif",
+          "sourceWindow": [
+            6409,
+            9967,
+            16953,
+            10479
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "be7a4d3ba8ec1e20c54e8665ff99651e4724baa4165984312942aa1b177a19d3",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2572.73046875,
+          "max": -2388.560302734375,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-8943.tif",
+          "sourceWindow": [
+            6409,
+            8943,
+            16953,
+            9455
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "209a12bd014c0026b7ab3d38d6c1226b154fe388bb0d1aeb7b98dcf50091f4a9",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2568.02490234375,
+          "max": -2367.79931640625,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-11503.tif",
+          "sourceWindow": [
+            6409,
+            11503,
+            16953,
+            12015
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "acb6371a7a4f001a78be1d2026378b72ad775e7e80a5feb9d4e181d5ac6ccced",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2580.13232421875,
+          "max": -2343.15478515625,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-10479.tif",
+          "sourceWindow": [
+            6409,
+            10479,
+            16953,
+            10991
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "4f6e10e7566ff9da70200453696ad2c53130c5efbefec721dc7f03a192eecd2d",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2575.8935546875,
+          "max": -2366.878662109375,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-10991.tif",
+          "sourceWindow": [
+            6409,
+            10991,
+            16953,
+            11503
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "ef75417582f0df00ce34a1984824897a79cb845809117805cf9aead797dca5bf",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2583.464111328125,
+          "max": -2342.986572265625,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-12015.tif",
+          "sourceWindow": [
+            6409,
+            12015,
+            16953,
+            12527
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "ec2560636f7ded6230adda8313793118a1c5b363121b7a3f63b24f47c9c45848",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2592.316162109375,
+          "max": -2358.1865234375,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-13039.tif",
+          "sourceWindow": [
+            6409,
+            13039,
+            16953,
+            13551
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "f069b7e605ddbb0788be1caf5b1e012fa14ee11d5d372a2b91cdbf751aa3b55f",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2642.223876953125,
+          "max": -2343.99267578125,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-12527.tif",
+          "sourceWindow": [
+            6409,
+            12527,
+            16953,
+            13039
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "9c5bda533e8261ef66cc1f894921cc879187c3eb929f07619a8bfae061519a68",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2628.859375,
+          "max": -2365.866943359375,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-13551.tif",
+          "sourceWindow": [
+            6409,
+            13551,
+            16953,
+            14063
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "d4c145880737ba3d6c770b35a0d5ac2edd6c6aecb74d2194e717ac66f4b19330",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2648.439208984375,
+          "max": -2345.2724609375,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-14063.tif",
+          "sourceWindow": [
+            6409,
+            14063,
+            16953,
+            14575
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "436e7b0bd19423bdc8efaaddffdb38202bf24a0dfeeea713ff3f9dbf20410181",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2649.190673828125,
+          "max": -2369.513916015625,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-14575.tif",
+          "sourceWindow": [
+            6409,
+            14575,
+            16953,
+            15087
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "63a948dfa003b3919f420274273391ab42625880740e98709c5ed4c6bd86c563",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2643.24365234375,
+          "max": -2377.2265625,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-15087.tif",
+          "sourceWindow": [
+            6409,
+            15087,
+            16953,
+            15599
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "7f1d1c210916a1ece482434d20d1f009de3f5925e4106b17f5b643482eb2accf",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2632.438232421875,
+          "max": -2354.655029296875,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-15599.tif",
+          "sourceWindow": [
+            6409,
+            15599,
+            16953,
+            16111
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "2345cddfbc92678ba023f6474048a01a2724af2aa623d24a8d8bdf8ea738a9f8",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2625.626953125,
+          "max": -2326.981689453125,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-16111.tif",
+          "sourceWindow": [
+            6409,
+            16111,
+            16953,
+            16623
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "883c3b1deca52e388c0b678cab05deac6c757d6c12ac1623c06d032ec5b8665c",
+          "validPixels": 5398528,
+          "missingPixels": 0,
+          "min": -2616.798095703125,
+          "max": -2304.335693359375,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-17135.tif",
+          "sourceWindow": [
+            6409,
+            17135,
+            16953,
+            17408
+          ],
+          "width": 10544,
+          "height": 273,
+          "bytes": 11515048,
+          "sha256": "9fbcac19df312efe775ce362c021849d1e6d87516363daac3064119c8812bfb9",
+          "validPixels": 2729715,
+          "missingPixels": 148797,
+          "min": -2614.380615234375,
+          "max": -2274.608642578125,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "elevation-6409-16623.tif",
+          "sourceWindow": [
+            6409,
+            16623,
+            16953,
+            17135
+          ],
+          "width": 10544,
+          "height": 512,
+          "bytes": 21595112,
+          "sha256": "1357afa5eb2109e62c1813682c8fa8bfa2dba66d2fe8a915a7a047fa2e8a482c",
+          "validPixels": 5334494,
+          "missingPixels": 64034,
+          "min": -2615.04736328125,
+          "max": -2275.463134765625,
+          "pixelRoundTripVerified": true
+        }
+      ],
+      "validPixels": 105237713,
+      "missingPixels": 212831,
+      "totalBytes": 421822176,
+      "status": "complete"
+    },
+    "imagery": {
+      "sourceUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/HiRISE/JEZ_hirise_soc_007_orthoMosaic_25cm_Ortho_blend120.tif",
+      "sourceDimensions": [
+        81064,
+        85936
+      ],
+      "sourceOrigin": [
+        -11612,
+        12036,
+        0
+      ],
+      "sourceResolution": [
+        0.25,
+        -0.25,
+        0
+      ],
+      "sourceGeoKeys": {
+        "GTModelTypeGeoKey": 1,
+        "GTRasterTypeGeoKey": 1,
+        "GTCitationGeoKey": "unnamed",
+        "GeographicTypeGeoKey": 32767,
+        "GeogCitationGeoKey": "GCS Name = Geographic Coordinate System|Datum = D_Mars_2000_Sphere|Ellipsoid = Mars_2000_Sphere_IAU|Primem = Reference_Meridian|",
+        "GeogGeodeticDatumGeoKey": 32767,
+        "GeogAngularUnitsGeoKey": 9102,
+        "GeogEllipsoidGeoKey": 32767,
+        "GeogSemiMajorAxisGeoKey": 3396190,
+        "GeogSemiMinorAxisGeoKey": 3396190,
+        "GeogPrimeMeridianLongGeoKey": 0,
+        "ProjectedCSTypeGeoKey": 32767,
+        "ProjectionGeoKey": 32767,
+        "ProjCoordTransGeoKey": 21,
+        "ProjLinearUnitsGeoKey": 9001,
+        "ProjFalseEastingGeoKey": 0,
+        "ProjFalseNorthingGeoKey": 0,
+        "ProjCenterLongGeoKey": 77.4298,
+        "ProjCenterLatGeoKey": 18.4663
+      },
+      "cropWindow": [
+        24233,
+        29631,
+        64253,
+        69638
+      ],
+      "nodata": 0,
+      "tiles": [
+        {
+          "file": "imagery-24233-29631.tif",
+          "sourceWindow": [
+            24233,
+            29631,
+            28329,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "97dceabd82fdbf55d49749172cbc226a254dbf23acf44f9a6b5ce74ec8626772",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-28329-29631.tif",
+          "sourceWindow": [
+            28329,
+            29631,
+            32425,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "77e1ca7f67d6c65f9e3f2a9d3d239e17f3f62d55c38e7dea139cb6c2dfc000df",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-32425-29631.tif",
+          "sourceWindow": [
+            32425,
+            29631,
+            36521,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "98de7b0261c802dbd715be079cff6ecd77125c9464ca03335d4e22a9961932b8",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-36521-29631.tif",
+          "sourceWindow": [
+            36521,
+            29631,
+            40617,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "d59045d3d420ab436cffdc3cd2225ad76c2f938e46ab1fb9fdc24739a5173b8f",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-40617-29631.tif",
+          "sourceWindow": [
+            40617,
+            29631,
+            44713,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "8a13c287d16e3c6674b6c7203d4f3b8a4cc1c19e910e99acea215248a8d67922",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-44713-29631.tif",
+          "sourceWindow": [
+            44713,
+            29631,
+            48809,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "f1a75041fab182aee31ee7933278a663bc2c48a9747cf9d508fb7050e7036a57",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-48809-29631.tif",
+          "sourceWindow": [
+            48809,
+            29631,
+            52905,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "4f40655b3025e65aadaf16b290610612a218395e0791c46471b09a63c7d63357",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-52905-29631.tif",
+          "sourceWindow": [
+            52905,
+            29631,
+            57001,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "543b3d57381a8cffedb07b783dfccffc7bcdb43744bfa4b592ae140c4e2e614d",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-57001-29631.tif",
+          "sourceWindow": [
+            57001,
+            29631,
+            61097,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "f3efe3dc8dbb68541e42d0826b33d1123776e98f1d7f274f674d0384b45206f0",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-61097-29631.tif",
+          "sourceWindow": [
+            61097,
+            29631,
+            64253,
+            33727
+          ],
+          "width": 3156,
+          "height": 4096,
+          "bytes": 12927976,
+          "sha256": "f4d0ae54d26a68614ebad1d792a564ee42dbe519c2fd074fce963d6b743442b1",
+          "validPixels": 12926976,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-24233-33727.tif",
+          "sourceWindow": [
+            24233,
+            33727,
+            28329,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "4223d711a8b7053c3d630aa78946cf73725f6bc4938de5192a5f958b0b618d04",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-28329-33727.tif",
+          "sourceWindow": [
+            28329,
+            33727,
+            32425,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "ed7dbeac79001db2313ec81339f53a0ca9c0f03a5ad9c7b8ce28a1e8e7f57265",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-32425-33727.tif",
+          "sourceWindow": [
+            32425,
+            33727,
+            36521,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "d26dc5ca573c8cc5a0dff4a2a8e637627de50f45ae0482b5e0af485459093405",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-36521-33727.tif",
+          "sourceWindow": [
+            36521,
+            33727,
+            40617,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "d1346e336a4cb82ef03c2c80d3d1b4e7b4aa3c582f867ea2963f67879f7ff285",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-40617-33727.tif",
+          "sourceWindow": [
+            40617,
+            33727,
+            44713,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "5d004c5aaa90539824b8051750c76a06b244b6422f55178fdb39823fb40c7f4b",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-44713-33727.tif",
+          "sourceWindow": [
+            44713,
+            33727,
+            48809,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "553803577936756139436a5dc626d130bcbce25d2584ee09c2aa039cc4456282",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-48809-33727.tif",
+          "sourceWindow": [
+            48809,
+            33727,
+            52905,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "e99bda1a5f208642c88ce7767fc9846faa61675a88db7c66a95d83360ba88b68",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-52905-33727.tif",
+          "sourceWindow": [
+            52905,
+            33727,
+            57001,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "f71da25479667ee991634a1ff3a99d8459ecdec1fa255ad4bf1612d8ca68d0c3",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-57001-33727.tif",
+          "sourceWindow": [
+            57001,
+            33727,
+            61097,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "cdf9dd8d07b9aab801567c419f7e384ce7dade26948a4f8d5343ce537f47a0c6",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 2,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-61097-33727.tif",
+          "sourceWindow": [
+            61097,
+            33727,
+            64253,
+            37823
+          ],
+          "width": 3156,
+          "height": 4096,
+          "bytes": 12927976,
+          "sha256": "914df3fd8414b53b5e2d6e68565531303868f2b967cda2a97a28fedf7c47e692",
+          "validPixels": 12926976,
+          "missingPixels": 0,
+          "min": 2,
+          "max": 252,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-24233-37823.tif",
+          "sourceWindow": [
+            24233,
+            37823,
+            28329,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "8c7618c6a5375eb8f1f6eb97086654ecfb751cca549bfabb194c86eb96924e9f",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-32425-37823.tif",
+          "sourceWindow": [
+            32425,
+            37823,
+            36521,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "d757d2b492e63409c2cad0719b345939984426183141fc298518bfba6a0912cc",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-28329-37823.tif",
+          "sourceWindow": [
+            28329,
+            37823,
+            32425,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "8e8d709d9fd12b5a92d47511270c5f5f3666a0a08a154a52e1d95616494cdbd7",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-36521-37823.tif",
+          "sourceWindow": [
+            36521,
+            37823,
+            40617,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "dc8fa484835acba36f780e335cb0d10442fc8c4090872ba2b99c3a1a152b3475",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-40617-37823.tif",
+          "sourceWindow": [
+            40617,
+            37823,
+            44713,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "8452f66737e32400d751030d6eb06f883522c9a358124e5887fe620e4083efd7",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-48809-37823.tif",
+          "sourceWindow": [
+            48809,
+            37823,
+            52905,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "f3c09100b9cd104ed8daa29bb8d19f1b178f95de137263bb63fb756ce5a93e85",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-44713-37823.tif",
+          "sourceWindow": [
+            44713,
+            37823,
+            48809,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "6f156f487553653fb19fc65facda2d01efacb167cda9017e79cb32d56c6344bb",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-57001-37823.tif",
+          "sourceWindow": [
+            57001,
+            37823,
+            61097,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "22588cc14bc74160fda71d98b37894c829f053a88b1592dbecc468d12a3f493a",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-52905-37823.tif",
+          "sourceWindow": [
+            52905,
+            37823,
+            57001,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "658ccf9618797ae5f3aab8a5645200d89eaf1f68e68b720e2936ccd8907205b7",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-61097-37823.tif",
+          "sourceWindow": [
+            61097,
+            37823,
+            64253,
+            41919
+          ],
+          "width": 3156,
+          "height": 4096,
+          "bytes": 12927976,
+          "sha256": "3d88bb58f54cb0e12f6a48e707774304261a62e7e591bab28eeabfed2ec19ddf",
+          "validPixels": 12926976,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 251,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-28329-41919.tif",
+          "sourceWindow": [
+            28329,
+            41919,
+            32425,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "3093347c4dd445dfc28d4b683a48de12465dd79d8d9311ce83be58a3cbc9f360",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 2,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-24233-41919.tif",
+          "sourceWindow": [
+            24233,
+            41919,
+            28329,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "ddd47ca669900b91c55876c5ef8b999e70c065209f6d893e4d02e0915fa40f97",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-32425-41919.tif",
+          "sourceWindow": [
+            32425,
+            41919,
+            36521,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "6ef6c89170538bb86ef5d0f9122d82bc9f4cf82e174ac390f6ca6db59fa789f0",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 3,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-40617-41919.tif",
+          "sourceWindow": [
+            40617,
+            41919,
+            44713,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "7677347afd55810926b92383da531a0e5cd3323c3d30fde6fdc7ab5aaf7a200b",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-36521-41919.tif",
+          "sourceWindow": [
+            36521,
+            41919,
+            40617,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "1d00cd8797926db51259cfe2518c0a7db82df95311cfee2e09e164ffa3f0a438",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-44713-41919.tif",
+          "sourceWindow": [
+            44713,
+            41919,
+            48809,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "58605c96cd67beba65dccfdf257a7c98247f84c958e9e11dd06b3188b375e976",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-61097-41919.tif",
+          "sourceWindow": [
+            61097,
+            41919,
+            64253,
+            46015
+          ],
+          "width": 3156,
+          "height": 4096,
+          "bytes": 12927976,
+          "sha256": "e4f6df52749f8773c0ca22a72a99cfaf7216d1876a286881e0dcbb25afcffa36",
+          "validPixels": 12926976,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-57001-41919.tif",
+          "sourceWindow": [
+            57001,
+            41919,
+            61097,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "2790de704ef4a7d4b1c220aed03668ed9eb296acc39521e3f67290ac69204c2b",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-52905-41919.tif",
+          "sourceWindow": [
+            52905,
+            41919,
+            57001,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "59114da1d42109f387c990010cff04754737b9b7401d4c60714093d18a1a3999",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 250,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-48809-41919.tif",
+          "sourceWindow": [
+            48809,
+            41919,
+            52905,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "1a802cc7d06b59b3e4cff1d689b5e2ba2ff3e3fe158ccdf9156e4f3d471ab4c5",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 245,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-24233-46015.tif",
+          "sourceWindow": [
+            24233,
+            46015,
+            28329,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "afde0bfde43055f83648588eaccf39171eeba81152c4a5ff24bab6b238a7f88d",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-44713-46015.tif",
+          "sourceWindow": [
+            44713,
+            46015,
+            48809,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "f95db851c8c2f058f681bc5979673ff05b9cf796c55baf48d6c51f077bbf5086",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-40617-46015.tif",
+          "sourceWindow": [
+            40617,
+            46015,
+            44713,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "8ac4dfd1ee88714942c0dd3d5adaa9d6b36c28864a36981a2fa0313560536545",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-36521-46015.tif",
+          "sourceWindow": [
+            36521,
+            46015,
+            40617,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "c45ed3288165098cc96307e63c0e5105f5bba3e635b9438138e6fb427c73bc7c",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-48809-46015.tif",
+          "sourceWindow": [
+            48809,
+            46015,
+            52905,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "306d686a1a4678aecd1f468e47e1fc7b509758447d9458206e4e64dae971fc0f",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-32425-46015.tif",
+          "sourceWindow": [
+            32425,
+            46015,
+            36521,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "7e4646d7d303b3c35d3dcc3400d5f81d68fa34cf4944a44784a20a1c0e42d32f",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-52905-46015.tif",
+          "sourceWindow": [
+            52905,
+            46015,
+            57001,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "6e82c8a56cca27ff04f25a72afc50557d2e727044b4ccafa6f94ea775a386327",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 253,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-28329-46015.tif",
+          "sourceWindow": [
+            28329,
+            46015,
+            32425,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "01aa77c23f0cfcd0780fa2a91ac3491f6fc337fff57acc7bcd6766abfffdaec6",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-28329-50111.tif",
+          "sourceWindow": [
+            28329,
+            50111,
+            32425,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "2e6cf28b61adf79d85b70d8390d322099736755bb14f60892a648e1b2615c61b",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-61097-46015.tif",
+          "sourceWindow": [
+            61097,
+            46015,
+            64253,
+            50111
+          ],
+          "width": 3156,
+          "height": 4096,
+          "bytes": 12927976,
+          "sha256": "7c3e3cbf4eade2beb78d3b96b707b032b44f7b5e16cdad6ef6e0dd3aa7144d28",
+          "validPixels": 12926976,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-57001-46015.tif",
+          "sourceWindow": [
+            57001,
+            46015,
+            61097,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "7eab8dc0f553d99fae87789871e66fa4ba39fcfc33ab0a248e4983ee01b71ee0",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 2,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-32425-50111.tif",
+          "sourceWindow": [
+            32425,
+            50111,
+            36521,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "09369e78000f79cd355e3ffc9d1bc15cdc078866e935971a82ed2c999c2b5447",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-24233-50111.tif",
+          "sourceWindow": [
+            24233,
+            50111,
+            28329,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "487a7752c08856661fa90976f08f32753669924f5e934c4220c3955c9753c682",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-40617-50111.tif",
+          "sourceWindow": [
+            40617,
+            50111,
+            44713,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "e2f02b121f15b3a691d04f11b3f7f11417c5e92f25aa10c8bd7dc1fa09b0bf16",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-36521-50111.tif",
+          "sourceWindow": [
+            36521,
+            50111,
+            40617,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "d74e9e3bcd04515d1a6fd6860bd0546dfd85efc71e0165cab245f5b1f14bce73",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-44713-50111.tif",
+          "sourceWindow": [
+            44713,
+            50111,
+            48809,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "0e9d4d4ef390245478cebea0116f856ff6537c82a9999c883e189a916c92f7d7",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-52905-50111.tif",
+          "sourceWindow": [
+            52905,
+            50111,
+            57001,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "e6272c78abb0ac7042550067941d5f22cba801cdd7133d54a1d713785ecdf2fc",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-57001-50111.tif",
+          "sourceWindow": [
+            57001,
+            50111,
+            61097,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "ee3b6ce99ceca1dd25697ea540ed35c57c15514f63eaf67ec109484ef1e08b81",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-61097-50111.tif",
+          "sourceWindow": [
+            61097,
+            50111,
+            64253,
+            54207
+          ],
+          "width": 3156,
+          "height": 4096,
+          "bytes": 12927976,
+          "sha256": "d814f097b9b1b563087a18c314978ab5730676551388a33815b6c3fe1b9e3cdb",
+          "validPixels": 12926976,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-48809-50111.tif",
+          "sourceWindow": [
+            48809,
+            50111,
+            52905,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "d6d901b5708753d21282a02e22b637bd5a3c42b2422096a6784cf9185a3011fb",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-28329-54207.tif",
+          "sourceWindow": [
+            28329,
+            54207,
+            32425,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "696021365e4ca71086cd37db80bb93825f549e0c7f7e1c9b83d0853392b5006f",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-24233-54207.tif",
+          "sourceWindow": [
+            24233,
+            54207,
+            28329,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "0c5c55706d5fc922dd676425ff02932bcf34296747af82f110f348290ec63d63",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-32425-54207.tif",
+          "sourceWindow": [
+            32425,
+            54207,
+            36521,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "e5e2740e6d8b22879b289020edd4282c0f2875ae2b01330d4a5fb8f17f4e1b87",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 250,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-40617-54207.tif",
+          "sourceWindow": [
+            40617,
+            54207,
+            44713,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "cd8b51a79cd1da516b7737a3b50bb20d7c1c474bc0473c6cd8a2d04b5f8cdbd4",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-52905-54207.tif",
+          "sourceWindow": [
+            52905,
+            54207,
+            57001,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "5da5950528ab0d724ebddcee5735008a174099c96efbe0baa934cae22405c3b7",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-48809-54207.tif",
+          "sourceWindow": [
+            48809,
+            54207,
+            52905,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "2bc790978ca335eaea124eefe96f5c3e1d712fd934d373d55e2053091eef5d58",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 253,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-57001-54207.tif",
+          "sourceWindow": [
+            57001,
+            54207,
+            61097,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "45e1bd0d551e8e51f2a41628ea3dca8bed349d858bbce9a35608d09f8354ab46",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 250,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-61097-54207.tif",
+          "sourceWindow": [
+            61097,
+            54207,
+            64253,
+            58303
+          ],
+          "width": 3156,
+          "height": 4096,
+          "bytes": 12927976,
+          "sha256": "9df23807cdaf0016d27200d8492eed2d2d4131b29bcc5d51357b79ebe459e195",
+          "validPixels": 12926976,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 250,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-36521-54207.tif",
+          "sourceWindow": [
+            36521,
+            54207,
+            40617,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "e961112d94c5d3a2e6a4829b768f40103acec7954280f71a0d81065b2a0fc0f8",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-24233-58303.tif",
+          "sourceWindow": [
+            24233,
+            58303,
+            28329,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "eee151cf1472f1d1515d830d27667ae17c74044d8d1eb20c652adaed6117962a",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 15,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-44713-54207.tif",
+          "sourceWindow": [
+            44713,
+            54207,
+            48809,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "f9ae1b08154a8b457e0fc2bbcb4321e54e7c119ecd3a8e345b5c658be822d286",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-36521-58303.tif",
+          "sourceWindow": [
+            36521,
+            58303,
+            40617,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "74dfc370c394db5edd204b58110c828c23031438499f83178f55f45f4dea7fa6",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-32425-58303.tif",
+          "sourceWindow": [
+            32425,
+            58303,
+            36521,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "bbc0f24c82d9dbb933b065545d5480c644947cd006fe2001352f6a0dd3264558",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 246,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-40617-58303.tif",
+          "sourceWindow": [
+            40617,
+            58303,
+            44713,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "8d2bfd85b99d7c082e307e8457d0108e38d3d3db6e7f571103b80c42d9576af7",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-44713-58303.tif",
+          "sourceWindow": [
+            44713,
+            58303,
+            48809,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "801f8667c192e21678300f8642a598c191386d47d3340c8cd6a5d60a90755911",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-48809-58303.tif",
+          "sourceWindow": [
+            48809,
+            58303,
+            52905,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "02831abe5b4b88ebb2cfc0e0e65b5ab837a70741bb5b4f5242266fcea6d30881",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-57001-58303.tif",
+          "sourceWindow": [
+            57001,
+            58303,
+            61097,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "eb21dd7cf15391cfcfeccc0bed00a31167ef48365be9ba4bba307afb9b48330a",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 253,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-61097-58303.tif",
+          "sourceWindow": [
+            61097,
+            58303,
+            64253,
+            62399
+          ],
+          "width": 3156,
+          "height": 4096,
+          "bytes": 12927976,
+          "sha256": "ab0ad5e50d6ea959c92cff3ef49dd775df16f76ddd4572c29c167d5804cff2a9",
+          "validPixels": 12926976,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 244,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-28329-58303.tif",
+          "sourceWindow": [
+            28329,
+            58303,
+            32425,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "7a2de9ec8ad39174ba42dea49e77474236b819ad85eb56d3d34b639cf051c381",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-24233-62399.tif",
+          "sourceWindow": [
+            24233,
+            62399,
+            28329,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "d70d46a2c6ecdfb44a41737f1faf57d15b7ec327d0a85bbe70534df427e9bbc0",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-28329-62399.tif",
+          "sourceWindow": [
+            28329,
+            62399,
+            32425,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "537c4269b249843309c8eb486f56ff72d80e8aaa8d59f6f7312cb411aa6dfd19",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-52905-58303.tif",
+          "sourceWindow": [
+            52905,
+            58303,
+            57001,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "aa5e3531d655df4b117ceae01120d0f1393d13409b53830470c12ea0087b49a8",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-32425-62399.tif",
+          "sourceWindow": [
+            32425,
+            62399,
+            36521,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "8490c03c0a64ed864d67b5369a1a0908e4753c91b81ad90df9ccc8bc9b024949",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-36521-62399.tif",
+          "sourceWindow": [
+            36521,
+            62399,
+            40617,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "7d6149dc6e5d5985119da4e3313bdb14d525efe4537886fe803a637e12dd8632",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-40617-62399.tif",
+          "sourceWindow": [
+            40617,
+            62399,
+            44713,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "6ba114ec40045a1d456219dcc7d34b2d6e7018313ab2fdddeb5e2bd2533da60b",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 253,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-48809-62399.tif",
+          "sourceWindow": [
+            48809,
+            62399,
+            52905,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "a6c60b0662d905e4739de90276a438e843db3e2d1b26abc61883c5994b070185",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 247,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-44713-62399.tif",
+          "sourceWindow": [
+            44713,
+            62399,
+            48809,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "3675aaa312152d4c91512ac718c0c911a691d471e3db454b8cd530325885c072",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 253,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-57001-62399.tif",
+          "sourceWindow": [
+            57001,
+            62399,
+            61097,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "d2e1e5613c8fd3dc78b400200dbf7516853d1cf27d840f383ac31567591e7bc0",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 253,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-28329-66495.tif",
+          "sourceWindow": [
+            28329,
+            66495,
+            32425,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "bytes": 12874728,
+          "sha256": "e3bb76fea8064566f28ddb119f540bce4828c06bb0bb00b04863f8e41bb8d92a",
+          "validPixels": 12873728,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-61097-62399.tif",
+          "sourceWindow": [
+            61097,
+            62399,
+            64253,
+            66495
+          ],
+          "width": 3156,
+          "height": 4096,
+          "bytes": 12927976,
+          "sha256": "62834bc249978519838a2d08adea09d3aa7636c54838157cbe604488f46496b1",
+          "validPixels": 12926976,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 242,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-52905-62399.tif",
+          "sourceWindow": [
+            52905,
+            62399,
+            57001,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "bytes": 16778216,
+          "sha256": "f53d51a9c77b8711e885a27b5eb382aa676879ee7b9aac887adf69c1f3691a41",
+          "validPixels": 16777216,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-40617-66495.tif",
+          "sourceWindow": [
+            40617,
+            66495,
+            44713,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "bytes": 12874728,
+          "sha256": "9aa3fd0ff109f8dd5f2ed510db88fd3b65f48b5312565791b185a3aead8b5860",
+          "validPixels": 12873728,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-32425-66495.tif",
+          "sourceWindow": [
+            32425,
+            66495,
+            36521,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "bytes": 12874728,
+          "sha256": "b941ad2d758a76583d9ad25e8bdee9fc60230cc428e7788913e81f04863b4698",
+          "validPixels": 12873728,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-24233-66495.tif",
+          "sourceWindow": [
+            24233,
+            66495,
+            28329,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "bytes": 12874728,
+          "sha256": "8a6a4e31b22025462ca41e9541dec69cc170af9f32ef8e7744fa05e5a578ce64",
+          "validPixels": 9640862,
+          "missingPixels": 3232866,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-52905-66495.tif",
+          "sourceWindow": [
+            52905,
+            66495,
+            57001,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "bytes": 12874728,
+          "sha256": "5e6f8166a1a8b15febbc27024a49c533e65760f0a0055f5b38f26a272daef006",
+          "validPixels": 12873728,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-44713-66495.tif",
+          "sourceWindow": [
+            44713,
+            66495,
+            48809,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "bytes": 12874728,
+          "sha256": "131869f34a441033d7d0a28763358fcd3a72409431815524400997b938ecac63",
+          "validPixels": 12873728,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 238,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-57001-66495.tif",
+          "sourceWindow": [
+            57001,
+            66495,
+            61097,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "bytes": 12874728,
+          "sha256": "26bd19ebe402f23d9c6b102a88919c13cf466b4488c24c5e446030a384e0eae7",
+          "validPixels": 12873728,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 254,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-61097-66495.tif",
+          "sourceWindow": [
+            61097,
+            66495,
+            64253,
+            69638
+          ],
+          "width": 3156,
+          "height": 3143,
+          "bytes": 9920308,
+          "sha256": "edf4094fa09ca7318383de0f8d44c6e995ca4ac4f66a266163060725c6de24cd",
+          "validPixels": 9919308,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 251,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-36521-66495.tif",
+          "sourceWindow": [
+            36521,
+            66495,
+            40617,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "bytes": 12874728,
+          "sha256": "24436e61b879c467e7c3fdc6d0a85ad99115e0608680edcd9b9024cc08c55452",
+          "validPixels": 12873728,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 252,
+          "pixelRoundTripVerified": true
+        },
+        {
+          "file": "imagery-48809-66495.tif",
+          "sourceWindow": [
+            48809,
+            66495,
+            52905,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "bytes": 12874728,
+          "sha256": "5342ac3c1aed08ea9a41b6c9fcf6433c5b0e0374436fa1b4b3beadf1c0d50e9d",
+          "validPixels": 12873728,
+          "missingPixels": 0,
+          "min": 1,
+          "max": 248,
+          "pixelRoundTripVerified": true
+        }
+      ],
+      "validPixels": 1597847274,
+      "missingPixels": 3232866,
+      "totalBytes": 1601180140,
+      "status": "complete"
+    }
+  },
+  "notes": [
+    "Native source pixels retained without interpolation, invented filling, color changes, or elevation exaggeration.",
+    "Rectangular native-grid crops enclose the requested region; small margins outside its exact boundary are retained.",
+    "No-data values are preserved. Pixel spacing is not a statement of absolute positional or vertical accuracy.",
+    "Original application data is unchanged. GeoTIFF chunks share the source projection and can be loaded together in QGIS."
+  ],
+  "completed": "2026-11-11T19:07:57.493Z"
+}

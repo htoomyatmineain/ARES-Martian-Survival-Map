@@ -1,33 +1,40 @@
 import { Component, useEffect, useMemo, useRef, type ReactNode, type RefObject } from 'react';
 import { Canvas, useFrame, useThree, type ThreeEvent } from '@react-three/fiber';
-import { Line, OrbitControls, useTexture } from '@react-three/drei';
+import { Html, Line, OrbitControls, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import type { OrbitControls as OrbitImpl } from 'three-stdlib';
-import { elevation, slope, sites, type Terrain, type Point, type Route } from './terrain';
+import { elevation, sites, type Terrain, type Point, type Route } from './terrain';
 import ScienceWalking from './ScienceWalking';
+import { analysisPixels } from './regionalLayers';
+import { SCIENCE_SITES, sciencePoint } from './scienceSites';
 import {POVTouchControls,type POVInput} from './jz01/POVCamera';
 import './science-walking.css';
 
-export type SceneProps = { terrain: Terrain; layer: string; contours: boolean; exaggeration: number; mode: string; cameraAction: { kind: string; tick: number }; route: Route | null; selected: string; onSelect: (id: string) => void; onPick: (p: Point) => void; planning: boolean; progress: number; storm: boolean; markers: boolean; running: boolean };
+export type SceneProps = { imageryUrl?: string; terrain: Terrain; layer: string; contours: boolean; exaggeration: number; mode: string; cameraAction: { kind: string; tick: number }; route: Route | null; selected: string; onSelect: (id: string) => void; onPick: (p: Point) => void; planning: boolean; progress: number; storm: boolean; markers: boolean; running: boolean; destination?: Point; blocked?: boolean; accentColor?: string; scienceSitesVisible?: boolean; selectedScienceId?: string | null; onScienceSelect?: (id: string) => void };
 const SCALE = 1000;
 const SCIENCE_CAMERA={position:[10,9,11] as [number,number,number],fov:39,near:.05,far:100};
 function ground(t: Terrain, p: Point, ex: number): [number, number, number] { return [p.x / SCALE, (elevation(t, p.x, p.z) - t.meta.min) / SCALE * ex, p.z / SCALE]; }
-function TerrainMesh({ terrain, layer, contours, exaggeration, onPick, planning }: SceneProps) {
-  const sourceTexture = useTexture('/data/ortho.jpg');
+function TerrainMesh({ terrain, layer, contours, exaggeration, onPick, planning, imageryUrl }: SceneProps) {
+  const sourceTexture = useTexture(imageryUrl ?? '/data/ortho.jpg');
   const texture = useMemo(() => { const t = sourceTexture.clone(); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; t.needsUpdate = true; return t; }, [sourceTexture]);
   useEffect(() => () => texture.dispose(), [texture]);
   const geometry = useMemo(() => {
     const { width, height, size, min } = terrain.meta;
     const g = new THREE.PlaneGeometry(size / SCALE, size / SCALE, width - 1, height - 1); g.rotateX(-Math.PI / 2);
     const p = g.attributes.position;
-    for (let i = 0; i < p.count; i++) p.setY(i, (terrain.values[i] - min) / SCALE * exaggeration);
+    for (let i = 0; i < p.count; i++) p.setY(i, Number.isFinite(terrain.values[i]) ? (terrain.values[i] - min) / SCALE * exaggeration : 0);
+    if (g.index) {
+      const valid: number[] = [], indices = g.index.array;
+      for (let i = 0; i < indices.length; i += 3) if (Number.isFinite(terrain.values[indices[i]]) && Number.isFinite(terrain.values[indices[i+1]]) && Number.isFinite(terrain.values[indices[i+2]])) valid.push(indices[i], indices[i+1], indices[i+2]);
+      g.setIndex(valid);
+    }
     g.computeVertexNormals();
     const colors = new Float32Array(p.count * 3), c = new THREE.Color();
+    const analysis = layer === 'slope' || layer === 'elevation' ? analysisPixels(terrain, layer) : null;
     for (let i = 0; i < p.count; i++) {
       const x = p.getX(i) * SCALE, z = p.getZ(i) * SCALE, h = terrain.values[i];
-      const steep = slope(terrain, x, z), fraction = (h - min) / (terrain.meta.max - min);
-      if (layer === 'slope') c.set(steep > 18 ? '#e26c43' : steep > 10 ? '#b6a56c' : '#758981');
-      else if (layer === 'elevation') c.setHSL(.065 + fraction * .09, .32, .29 + fraction * .3);
+      const fraction = Number.isFinite(h) ? (h - min) / (terrain.meta.max - min) : 0;
+      if (analysis) c.setRGB(analysis[i * 4] / 255, analysis[i * 4 + 1] / 255, analysis[i * 4 + 2] / 255, THREE.SRGBColorSpace);
       else {
         const grain = Math.sin(x * .038 + Math.sin(z * .031) * 3) * Math.sin(z * .042 + x * .009);
         c.setHSL(.045 + fraction * .015, .36 + fraction * .07, .44 + fraction * .12 + grain * .008);
@@ -45,14 +52,14 @@ function TerrainMesh({ terrain, layer, contours, exaggeration, onPick, planning 
       shader.fragmentShader = 'varying vec3 vLocal;\n' + shader.fragmentShader.replace('#include <color_fragment>', `#include <color_fragment>
         float grain = fract(sin(dot(vLocal.xz,vec2(127.1,311.7)))*43758.5453);
         diffuseColor.rgb *= 0.92 + grain*0.16;
-        ${contours ? `float h=vLocal.y/${exaggeration.toFixed(2)}*1000.0;
+        ${contours ? `float h=vLocal.y/${exaggeration.toFixed(2)}*1000.0+(${terrain.meta.min.toFixed(6)});
         float band=abs(fract(h/20.0-0.5)-0.5)/max(fwidth(h/20.0),0.0001);
         diffuseColor.rgb=mix(diffuseColor.rgb,vec3(0.85,0.73,0.54),0.4*(1.0-min(band,1.0)));` : ''}
       `);
     };
-    m.customProgramCacheKey = () => `terrain-${contours}-${exaggeration}`;
+    m.customProgramCacheKey = () => `terrain-${contours}-${exaggeration}-${terrain.meta.min}`;
     return m;
-  }, [contours, exaggeration, texture, layer]);
+  }, [contours, exaggeration, texture, layer, terrain.meta.min]);
   useEffect(() => () => material.dispose(), [material]);
   const pick = (e: ThreeEvent<MouseEvent>) => { if (!planning) return; e.stopPropagation(); onPick({ x: e.point.x * SCALE, z: e.point.z * SCALE }); };
   return <mesh geometry={geometry} material={material} onClick={pick} onAfterRender={() => { document.documentElement.dataset.terrainReady = 'true'; }} receiveShadow />;
@@ -64,7 +71,7 @@ function Skirt({ terrain, exaggeration }: { terrain: Terrain; exaggeration: numb
     for (let edge = 0; edge < 4; edge++) for (let i = 0; i <= n; i++) {
       const s = i / n * 10000 - 5000;
       const p = edge === 0 ? { x: s, z: -5000 } : edge === 1 ? { x: 5000, z: s } : edge === 2 ? { x: -s, z: 5000 } : { x: -5000, z: -s };
-      const a = ground(terrain, p, exaggeration); const v = pos.length / 3;
+      const a = ground(terrain, p, exaggeration); if (!Number.isFinite(a[1])) a[1] = -.55; const v = pos.length / 3;
       pos.push(...a, a[0], -.55, a[2]);
       if (i < n) idx.push(v, v + 1, v + 2, v + 1, v + 3, v + 2);
     }
@@ -117,17 +124,26 @@ function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | 
   const { terrain, exaggeration, route, progress, markers } = props;
   const routePoints = useMemo(() => route?.points.map(p => { const a = ground(terrain, p, exaggeration); a[1] += .018; return a; }) || [], [terrain, route, exaggeration]);
   const cursor = routePoints[Math.min(routePoints.length - 1, Math.floor(progress / 100 * (routePoints.length - 1)))];
+  const exclusion = useMemo(() => props.blocked ? Array.from({ length: 65 }, (_, i) => {
+    const at = ground(terrain, { x: 100 + Math.cos(i / 64 * Math.PI * 2) * 800, z: 300 + Math.sin(i / 64 * Math.PI * 2) * 800 }, exaggeration); at[1] += .012; return at;
+  }) : [], [props.blocked, terrain, exaggeration]);
   return <>
-    <color attach="background" args={[props.mode==='Explore'?'#9b846f':'#292924']} />
-    <fog attach="fog" args={[props.storm ? '#75604a' : props.mode==='Explore'?'#9b846f':'#292924', props.mode==='Explore'?1.5:props.storm ? 5 : 22, props.mode==='Explore'?18:props.storm ? 22 : 55]} />
+    <color attach="background" args={[props.mode==='Explore'?'#9b846f':props.accentColor?'#0b0d10':'#292924']} />
+    <fog attach="fog" args={[props.storm ? '#75604a' : props.mode==='Explore'?'#9b846f':props.accentColor?'#0b0d10':'#292924', props.mode==='Explore'?1.5:props.storm ? 5 : 22, props.mode==='Explore'?18:props.storm ? 22 : 55]} />
     <ambientLight intensity={1.5} color="#d5c7ad" />
     <directionalLight position={[-8, 9, -5]} intensity={3.5} color="#ffe1b8" />
     <hemisphereLight args={['#c9cbd0', '#332118', .7]} />
     <TerrainMesh {...props} />
+    {props.scienceSitesVisible && SCIENCE_SITES.map((site, index) => {
+      const at = ground(terrain, sciencePoint(site, terrain.meta.center), exaggeration); at[1] += .01;
+      return <Html key={site.id} position={at} center zIndexRange={[8, 0]}><div className="rm-science-pin" style={{ transform: `translate(${index === 0 ? 24 : -24}px, ${index === 0 ? -32 : 32}px)` }}><svg aria-hidden="true" viewBox="-50 -50 100 100" style={{ position: 'absolute', left: -50, top: -50, width: 100, height: 100, pointerEvents: 'none' }}><line x1={index === 0 ? -24 : 24} y1={index === 0 ? 32 : -32} x2={0} y2={0} stroke="#f39b58" /><circle cx={index === 0 ? -24 : 24} cy={index === 0 ? 32 : -32} r={2} fill="white" /></svg><button aria-label={`Open ${site.name} / ${site.sample}`} aria-pressed={props.selectedScienceId === site.id} onPointerDown={e => e.stopPropagation()} onClick={e => { e.stopPropagation(); props.onScienceSelect?.(site.id); }}>{site.code}</button></div></Html>;
+    })}
+    {props.destination && Number.isFinite(elevation(terrain,props.destination.x,props.destination.z)) && <mesh position={ground(terrain, props.destination, exaggeration)}><sphereGeometry args={[.055, 16, 16]}/><meshBasicMaterial color={props.accentColor ?? '#8ee3d3'}/></mesh>}
+    {exclusion.length > 0 && <Line points={exclusion} color="#f0b276" lineWidth={2}/>}
     {props.mode!=='Explore'&&<><Skirt terrain={terrain} exaggeration={exaggeration} />
     <gridHelper args={[30, 60, '#4b4b40', '#36382f']} position={[0, -.56, 0]} />
     <Habitat position={ground(terrain, sites[0], exaggeration)} /></>}
-    {props.mode!=='Explore'&&routePoints.length > 1 && <Line points={routePoints} color={props.storm ? '#ffad64' : '#f5bb70'} lineWidth={3} />}
+    {props.mode!=='Explore'&&routePoints.length > 1 && <Line points={routePoints} color={props.storm ? '#ffad64' : props.accentColor ?? '#f5bb70'} lineWidth={3} />}
     {props.mode!=='Explore'&&cursor && progress > 0 && <mesh position={[cursor[0], cursor[1] + .055, cursor[2]]}><sphereGeometry args={[.055, 16, 16]} /><meshBasicMaterial color="#fff5c4" /></mesh>}
     {props.mode!=='Explore'&&markers && sites.map((s, i) => { const p = ground(terrain, s, exaggeration); return <group key={s.id} position={p}>
       <mesh position={[0, .025, 0]} rotation={[-Math.PI / 2, 0, 0]}><ringGeometry args={[.07, .095, 32]} /><meshBasicMaterial color={i === 0 ? '#c9dfca' : '#efb875'} side={THREE.DoubleSide} /></mesh>

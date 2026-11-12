@@ -10,7 +10,7 @@ const EYE = 1.75;
 export default function FreeCameraRig({ ground, moving, guided, progress, returning, returnOrigin, returnProgress, overhead, action, input, interactive, onPosition, onManualInput }: CinemaProps) {
   const orbit = useRef<OrbitImpl>(null), { camera, gl, invalidate } = useThree();
   const view = useRef({ yaw: 0, pitch: -.095 }), keys = useRef(new Set<string>()), pointers = useRef(new Map<number,{x:number;y:number}>());
-  const lastReported = useRef({ x: NaN, z: NaN, time: 0 });
+  const lastReported = useRef({ x: NaN, z: NaN, heading: NaN, time: 0 });
   const groundPose=useRef<THREE.Vector3|null>(null);
   const lastSurfacePose=useRef(new THREE.Vector3(0,0,DEPARTURE_Z));
   const applyView = () => { camera.rotation.set(view.current.pitch, view.current.yaw, 0, 'YXZ'); invalidate(); };
@@ -83,8 +83,8 @@ export default function FreeCameraRig({ ground, moving, guided, progress, return
     if(!overhead)lastSurfacePose.current.copy(camera.position);
     document.documentElement.dataset.playerPosition=JSON.stringify({x:camera.position.x,z:camera.position.z,y:camera.position.y,yaw:view.current.yaw,fov:camera instanceof THREE.PerspectiveCamera?camera.fov:0,mode:overhead?'overhead':'ground'});
     const last=lastReported.current;
-    if(!overhead&&clock.elapsedTime-last.time>.15&&(!Number.isFinite(last.x)||Math.hypot(camera.position.x-last.x,camera.position.z-last.z)>.1)){
-      lastReported.current={x:camera.position.x,z:camera.position.z,time:clock.elapsedTime};onPosition({x:camera.position.x,z:camera.position.z,elevation:groundHeight(ground,camera.position.x,camera.position.z)+ground.elevationOrigin,heading:bearing});
+    if(!overhead&&clock.elapsedTime-last.time>.15&&(!Number.isFinite(last.x)||Math.hypot(camera.position.x-last.x,camera.position.z-last.z)>.1||Math.abs(((bearing-last.heading+540)%360)-180)>1)){
+      lastReported.current={x:camera.position.x,z:camera.position.z,heading:bearing,time:clock.elapsedTime};onPosition({x:camera.position.x,z:camera.position.z,elevation:groundHeight(ground,camera.position.x,camera.position.z)+ground.elevationOrigin,heading:bearing});
     }
   });
   return overhead?<OrbitControls ref={orbit} makeDefault target={[0,groundHeight(ground,0,TARGET_Z),TARGET_Z]} enableDamping dampingFactor={.08} minPolarAngle={0} maxPolarAngle={Math.PI*.45}/>:null;

@@ -1,0 +1,40 @@
+[
+  {
+    "id": "skinner-ridge-skyland",
+    "code": "S1",
+    "name": "Skinner Ridge",
+    "sample": "Skyland",
+    "designation": "M2020-495-12",
+    "latitude": 18.458931,
+    "longitude": 77.40617078,
+    "pdsElevationMetres": -2520.185,
+    "geology": "Fine-to-medium-grained sandstone",
+    "interest": "Sedimentary layers, transported mineral grains and evidence of water-rock alteration.",
+    "reportPage": 20,
+    "reportUrl": "https://pds-geosciences.wustl.edu/missions/mars2020/Mars%202020%20Initial%20Reports%20Volume%202%20Release%202.pdf",
+    "archiveUrl": "https://pds-geosciences.wustl.edu/missions/mars2020/returned_sample_science.htm",
+    "nasaUrl": "https://science.nasa.gov/resource/two-perseverance-sampling-locations-in-jezeros-delta/",
+    "coordinateStatus": "Provisional: reported PDS latitude interpreted as planetocentric on the Mars sphere; convention still pending confirmation.",
+    "verticalDatumStatus": "PDS elevation datum and compatibility with the terrain datum remain unverified.",
+    "handoff": "Science location handoff/Western-Jezero-Science-Location-Handoff/docs/science-layer-handoff.md"
+  },
+  {
+    "id": "wildcat-ridge-hazeltop",
+    "code": "S2",
+    "name": "Wildcat Ridge",
+    "sample": "Hazeltop",
+    "designation": "M2020-509-14",
+    "latitude": 18.45863707,
+    "longitude": 77.40588851,
+    "pdsElevationMetres": -2523.0974,
+    "geology": "Sulfate-bearing coarse mudstone",
+    "interest": "Ancient lake deposition, sulfate and clay minerals, and evidence of interaction with water.",
+    "reportPage": 63,
+    "reportUrl": "https://pds-geosciences.wustl.edu/missions/mars2020/Mars%202020%20Initial%20Reports%20Volume%202%20Release%202.pdf",
+    "archiveUrl": "https://pds-geosciences.wustl.edu/missions/mars2020/returned_sample_science.htm",
+    "nasaUrl": "https://science.nasa.gov/resource/two-perseverance-sampling-locations-in-jezeros-delta/",
+    "coordinateStatus": "Provisional: reported PDS latitude interpreted as planetocentric on the Mars sphere; convention still pending confirmation.",
+    "verticalDatumStatus": "PDS elevation datum and compatibility with the terrain datum remain unverified.",
+    "handoff": "Science location handoff/Western-Jezero-Science-Location-Handoff/docs/science-layer-handoff.md"
+  }
+]

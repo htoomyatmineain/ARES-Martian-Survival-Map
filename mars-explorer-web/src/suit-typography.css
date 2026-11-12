@@ -1,0 +1,48 @@
+/* Larger, wider typography for the terminal and visor. */
+.mx-hub { --suit-font: 'DM Sans', Arial, sans-serif; font-family: var(--suit-font); }
+.mx-hub .mx-forearm *, .mx-hub .mx-hud-viewport *, .mx-hub .mx-display-toggle *, .mx-hub .mx-gauge:nth-child(3)::after { font-family: var(--suit-font); }
+.mx-hub .mx-panel-description { font-size: 14px; letter-spacing: 0; line-height: 1.5; }
+.mx-hub .mx-forearm-title h1 { font-size: 26px; font-weight: 600; letter-spacing: -.02em; }
+.mx-hub .mx-forearm-title p { font-size: 12px; letter-spacing: .04em; }
+.mx-hub .mx-forearm-hardware, .mx-hub .mx-forearm-screen > header, .mx-hub .mx-forearm-screen > footer, .mx-hub .mx-forearm-section-label, .mx-hub .mx-forearm-layer-status > span { font-size: 11px; font-weight: 500; letter-spacing: .04em; line-height: 1.5; }
+.mx-hub .mx-forearm-layer-controls button { font-size: 16px; font-weight: 500; letter-spacing: 0; min-height: 52px; text-transform: none; }
+.mx-hub .mx-forearm-layer-status strong { font-size: 18px; font-weight: 600; }
+.mx-hub .mx-forearm-layer-status p { font-size: 14px; line-height: 1.6; }
+.mx-hub .mx-tablet-navigation nav > button { font-size: 12px; letter-spacing: 0; gap: 8px; padding-block: 10px; }
+.mx-hub .mx-tablet-navigation nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.mx-hub .mx-forearm .mx-panel-title h2 { font-size: 20px; }
+.mx-hub .mx-forearm :is(.mx-mission-intro h3, .mx-rock-card h3) { font-size: 17px; }
+.mx-hub .mx-forearm :is(.mx-mission-intro p, .mx-rock-card p, .mx-objectives > button, .mx-outline-button, .mx-scan-button) { font-size: 14px; line-height: 1.6; }
+.mx-hub .mx-forearm .mx-route-analysis > div { grid-template-columns: 1fr; }
+.mx-hub .mx-forearm .mx-route-analysis :is(h3, span) { font-size: 13px; }
+.mx-hub .mx-forearm .mx-route-analysis strong { font-size: 18px; }
+.mx-hub .mx-forearm .mx-modal :is(p, button, input, .mx-scan-results > span) { font-size: 14px; line-height: 1.6; }
+.mx-hub .mx-visor-label span { font-size: 13px; letter-spacing: .08em; }
+.mx-hub .mx-visor-label strong { font-size: 26px; font-weight: 500; letter-spacing: .03em; }
+.mx-hub .mx-gauge { height: auto; min-height: 64px; }
+.mx-hub .mx-gauge > div:first-child { height: auto; flex-wrap: wrap; gap: 6px; }
+.mx-hub .mx-gauge span { font-size: 12px; font-weight: 500; letter-spacing: 0; }
+.mx-hub .mx-gauge strong { font-size: 24px; font-weight: 500; font-variant-numeric: tabular-nums; line-height: 1.2; letter-spacing: 0; }
+.mx-hub .mx-gauge:last-child strong { font-size: 17px; }
+.mx-hub .mx-gauge:nth-child(3)::after { font-size: 9px; }
+.mx-hub .mx-meda-range > span { font-size: 28px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.mx-hub .mx-layer-observation :is(p, a, button, small, .mx-observation-tag) { font-size: 13px; }
+.mx-hub .mx-layer-observation h3 { font-size: 16px; }
+.mx-hub .mx-explore-button { font-size: 15px; }
+.mx-hub .mx-display-toggle button { font-size: 14px; min-height: 40px; }
+.mx-hub .mx-control-mode { font-size: 13px; }
+.mx-hub .mx-lock-mouse { font-size: 12px !important; }
+@container (max-width: 800px) {
+  .mx-hub .mx-bottom-hud { flex-direction: column; align-items: stretch; }
+  .mx-hub .mx-telemetry { width: 100%; flex-wrap: wrap; }
+  .mx-hub .mx-gauge { flex: 1 1 40%; width: auto !important; }
+  .mx-hub .mx-explore-button { width: 100%; }
+}
+@media (max-width: 700px) {
+  .mx-hub .mx-panel-description { font-size: 11px; }
+  .mx-hub .mx-forearm-title h1 { font-size: 18px; }
+  .mx-hub .mx-tablet-navigation nav { grid-template-columns: 1fr; }
+  .mx-hub .mx-forearm-layer-controls button { font-size: 13px; }
+  .mx-hub .mx-forearm-layer-status strong { font-size: 14px; overflow-wrap: anywhere; }
+  .mx-hub .mx-gauge strong { font-size: 20px; }
+}

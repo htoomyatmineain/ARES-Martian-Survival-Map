@@ -1,0 +1,33 @@
+{
+  "verified": "2026-11-11T19:08:09.741Z",
+  "scope": "Downloaded native-grid bounding rectangles, including small margins outside the exact requested boundary",
+  "sourceAccuracy": "Not independently validated against ground measurements",
+  "products": [
+    {
+      "kind": "elevation",
+      "tiles": 20,
+      "pixels": 105450544,
+      "validPixels": 105237713,
+      "missingPixels": 212831,
+      "validPercent": 99.79816984158944,
+      "bytes": 421822176,
+      "checksums": "PASS",
+      "projectionAndGrid": "PASS",
+      "completeCrop": "PASS",
+      "virtualMosaic": "elevation.vrt"
+    },
+    {
+      "kind": "imagery",
+      "tiles": 100,
+      "pixels": 1601080140,
+      "validPixels": 1597847274,
+      "missingPixels": 3232866,
+      "validPercent": 99.79808218719145,
+      "bytes": 1601180140,
+      "checksums": "PASS",
+      "projectionAndGrid": "PASS",
+      "completeCrop": "PASS",
+      "virtualMosaic": "imagery.vrt"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+/* The visor projects information over the landscape; detailed cards live on the wrist. */
+.mx-hub { grid-template-rows: minmax(0, 1fr); }
+.mx-hub > :is(.mx-forearm, .mx-hud-viewport) { min-height: 0; }
+.mx-hud-viewport .mx-bottom-hud { bottom: 80px; }
+.mx-hud-viewport .mx-footnote { bottom: 18px; }
+.mx-hud-viewport .mx-app { position: relative; --mx-border: #e1f5ef66; }
+.mx-hud-viewport .mx-header {
+  position: absolute; inset: 0 0 auto; z-index: 30;
+  background: transparent; border: 0; box-shadow: none;
+}
+.mx-hud-viewport .mx-surface { height: 100%; }
+.mx-hud-viewport .mx-header .mx-brand > img { width: 36px; height: 36px; }
+.mx-hud-viewport .mx-brand strong { font-size: 18px; color: #edf7f2; }
+.mx-hud-viewport .mx-header nav > button,
+.mx-hud-viewport .mx-header-actions > button {
+  background: transparent; box-shadow: none; border-radius: 0; color: #e1ede9;
+}
+.mx-hud-viewport .mx-header nav > button.active { color: #a7f0e4; box-shadow: inset 0 -1px #a7f0e4; }
+.mx-hud-viewport .mx-world-grade {
+  background: linear-gradient(#07111845, transparent 17%, transparent 78%, #07111845);
+  pointer-events: none;
+}
+.mx-hud-viewport :is(.mx-glass, .mx-gauge, .mx-explore-button, .mx-tool, .mx-zoom, .mx-compass, .mx-toast, .mx-control-mode > div, .mx-lock-mouse, .mx-touch-actions button) {
+  background: transparent; backdrop-filter: none; box-shadow: none;
+  border-color: #dceee85c; border-radius: 0; color: #edf7f2;
+}
+.mx-hud-viewport :is(.mx-brand, .mx-gauge, .mx-location, .mx-visor-label, .mx-layer-observation, .mx-footnote, .mx-waypoint, .mx-exploring-hint, .mx-control-mode, .mx-tool, .mx-explore-button, .mx-toast) {
+  text-shadow: 0 1px 3px #061016, 0 0 8px #06101699;
+}
+.mx-hud-viewport .mx-hud-frame { opacity: .35; filter: grayscale(1) brightness(1.8); }
+.mx-visor-label { position: absolute; top: 88px; left: 32px; display: grid; gap: 6px; pointer-events: none; color: #e5f5ef; }
+.mx-visor-label span { font-size: 10px; letter-spacing: .18em; }
+.mx-visor-label strong { font-size: 22px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase; }
+.mx-hud-viewport .mx-location { top: 92px; left: auto; right: 105px; color: #e1ede9; }
+.mx-hud-viewport .mx-layer-observation { top: 150px; left: 32px; right: auto; width: 220px; padding: 0 0 0 14px; border: 0; border-left: 1px solid #dceee880; }
+.mx-hud-viewport .mx-layer-observation :is(h3, p, a, button, small, .mx-observation-tag, .mx-meda-range > span) { color: #e1ede9; }
+.mx-hud-viewport .mx-layer-observation p { font-size: 12px; }
+.mx-hud-viewport .mx-meda-range { border-color: #dceee84d; }
+.mx-hud-viewport .mx-gauge { border: 0; border-left: 1px solid #dceee880; padding-left: 12px; }
+.mx-hud-viewport .mx-gauge :is(span, strong) { color: #edf7f2; }
+.mx-hud-viewport .mx-gauge-track { height: 2px; background: #e5f3ee24; }
+.mx-hud-viewport .mx-gauge-track > i { box-shadow: none; }
+.mx-hud-viewport .mx-explore-button { border: 1px solid #dceee880; min-height: 42px; }
+.mx-hud-viewport .mx-explore-button:hover { background: #d8fff015; }
+.mx-hud-viewport .mx-waypoint > div { background: transparent; box-shadow: none; border-color: #dceee880; }
+.mx-hud-viewport .mx-waypoint :is(span, small) { background: transparent; color: #edf7f2; }
+.mx-hud-viewport .mx-reticle { opacity: .55; filter: grayscale(1) brightness(2); }
+.mx-hud-viewport .mx-toast { top: 80px; border: 0; border-left: 2px solid #a7f0e4; max-width: min(420px, 70%); }
+.mx-hud-viewport .mx-mobile-mission { display: none; }
+.mx-hud-viewport .mx-footnote { color: #d6e6df; }
+.mx-hud-viewport .mx-control-mode { top: 80px; }
+.mx-hud-viewport .mx-control-mode > div > button.active { background: #a7f0e415; box-shadow: inset 0 -1px #a7f0e4; color: #c9fff4; }
+.mx-hud-viewport .mx-stick-group small { color: #e1ede9; }
+.mx-hud-viewport .mx-joystick { background: radial-gradient(transparent 45%, #c1efe00a); border-color: #dceee866; box-shadow: none; }
+.mx-hud-viewport .mx-joystick > span { background: #d1f0e914; border-color: #dceee880; box-shadow: none; color: #e1ede9; }
+
+/* Wrist information stays readable on its own physical screen. */
+.mx-forearm { position: relative; }
+.mx-forearm-title { padding-block: 18px; }
+.mx-forearm-layer-controls { gap: 5px; margin-top: 12px; }
+.mx-forearm-layer-controls button { min-height: 40px; padding-block: 8px; }
+.mx-forearm-layer-status { margin-top: 14px; padding-block: 12px; }
+.mx-forearm .mx-glass {
+  position: static; inset: auto; transform: none; width: 100%;
+  margin: 20px 0 0; padding: 14px 0; border: 0; border-top: 1px solid #87aa9b40;
+  border-radius: 0; background: transparent; box-shadow: none; backdrop-filter: none;
+  color: #d4e1da;
+}
+.mx-forearm .mx-panel-title { padding: 0 0 12px; }
+.mx-forearm .mx-panel-title h2 { font-size: 17px; }
+.mx-forearm .mx-mission-intro { display: block; }
+.mx-forearm .mx-mission-intro > img { width: 100%; height: 90px; object-fit: cover; margin-bottom: 12px; }
+.mx-forearm .mx-mission-intro :is(h3, p) { color: #d4e1da; }
+.mx-forearm .mx-objectives > button { font-size: 12px; color: #b6ccc1; }
+.mx-forearm .mx-objectives > button.complete { color: #b4ead5; }
+.mx-forearm .mx-rock-card { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 10px; }
+.mx-forearm .mx-rock-preview { width: 64px; height: 75px; }
+.mx-forearm .mx-rock-card :is(h3, p) { color: #d4e1da; }
+.mx-forearm .mx-rock-card h3 { font-size: 14px; }
+.mx-forearm .mx-rock-card p { font-size: 11px; }
+.mx-forearm .mx-scan-button { grid-column: 1 / -1; width: 100%; margin-top: 4px; }
+.mx-forearm :is(.mx-scan-button, .mx-outline-button) { background: transparent; border-color: #87aa9b66; color: #d4e1da; box-shadow: none; }
+.mx-forearm .mx-route-analysis > div { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 8px; }
+.mx-forearm .mx-route-analysis > div > div { border: 0; padding: 0; }
+.mx-forearm .mx-route-analysis h3 { font-size: 13px; }
+.mx-forearm .mx-route-analysis strong { color: #d4e1da; font-size: 14px; }
+.mx-forearm .mx-modal-backdrop { position: absolute; padding: 12px; background: #081210ee; backdrop-filter: none; }
+.mx-forearm .mx-modal { max-height: 100%; padding: 30px 16px 20px; border-radius: 6px; background: #11211e; border-color: #87aa9b66; box-shadow: none; }
+.mx-forearm .mx-modal h2 { font-size: 26px; }
+.mx-forearm .mx-modal-actions { flex-wrap: wrap; }
+.mx-forearm .mx-instruction-grid { grid-template-columns: 1fr; }
+.mx-forearm-screen > .mx-tablet-navigation {
+  display: flex; flex-direction: column; align-items: stretch;
+  gap: 10px; padding: 14px 0; border-bottom: 1px solid #87aa9b30;
+  flex-shrink: 0;
+}
+.mx-tablet-navigation nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
+.mx-tablet-navigation nav > button {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; min-width: 0; min-height: 48px; padding: 7px 2px;
+  border: 1px solid transparent; border-radius: 4px; color: #a5b7af;
+  font-size: 10px; letter-spacing: .03em; cursor: pointer;
+}
+.mx-tablet-navigation nav > button.active { background: #a7f0e415; border-color: #a7f0e44d; color: #c9fff4; }
+.mx-tablet-navigation nav > button:hover { background: #ffffff0a; }
+.mx-tablet-navigation .mx-header-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.mx-tablet-navigation .mx-header-actions > button { display: grid; place-items: center; min-width: 34px; min-height: 34px; border: 1px solid #87aa9b30; border-radius: 4px; background: transparent; color: #c5d7ce; }
+.mx-tablet-navigation .mx-header-actions .mx-user { width: 34px; height: 34px; }
+.mx-tablet-navigation .mx-header-actions .mx-notification-button { display: grid; }
+.mx-tablet-navigation button:focus-visible { outline: 2px solid #a4ded0; outline-offset: 2px; }
+@media (max-width: 700px) {
+  .mx-tablet-navigation nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mx-tablet-navigation nav > button > span { display: none; }
+  .mx-tablet-navigation .mx-header-actions { flex-wrap: wrap; justify-content: center; }
+}
+@container (max-width: 700px) {
+  .mx-hud-viewport .mx-header { padding-inline: 14px; }
+  .mx-hud-viewport .mx-brand strong { font-size: 14px; }
+  .mx-hud-viewport .mx-header-actions { display: none; }
+  .mx-visor-label { left: 20px; }
+  .mx-hud-viewport .mx-layer-observation { left: 20px; width: min(200px, 65%); }
+}

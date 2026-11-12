@@ -1,0 +1,2320 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-12T08:20:19.671Z",
+  "zone": {
+    "center": {
+      "lat": 18.46,
+      "lon": 77.42
+    },
+    "size_m": 10000,
+    "bounds_lon_lat": [
+      77.33107113608344,
+      18.375646975709426,
+      77.50892886391657,
+      18.544353024290576
+    ]
+  },
+  "status": "complete",
+  "lossless": true,
+  "products": {
+    "elevation": {
+      "sourceUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/HiRISE/JEZ_hirise_soc_006_DTM_MOLAtopography_DeltaGeoid_1m_Eqc_latTs0_lon0_blend40.tif",
+      "sourceDimensions": [
+        21400,
+        21488
+      ],
+      "sourceOrigin": [
+        4577366,
+        1106618,
+        0
+      ],
+      "sourceResolution": [
+        1,
+        -1,
+        0
+      ],
+      "sourceGeoKeys": {
+        "GTModelTypeGeoKey": 1,
+        "GTRasterTypeGeoKey": 1,
+        "GTCitationGeoKey": "Equirectangular Mars 2000 Sphere IAU",
+        "GeographicTypeGeoKey": 32767,
+        "GeogCitationGeoKey": "GCS Name = D_Mars_2000_Sphere|Datum = Mars_2000_(Sphere)|Ellipsoid = Mars_2000_Sphere_IAU|Primem = Reference_Meridian|",
+        "GeogGeodeticDatumGeoKey": 32767,
+        "GeogAngularUnitsGeoKey": 9102,
+        "GeogEllipsoidGeoKey": 32767,
+        "GeogSemiMajorAxisGeoKey": 3396190,
+        "GeogSemiMinorAxisGeoKey": 3396190,
+        "GeogPrimeMeridianLongGeoKey": 0,
+        "ProjectedCSTypeGeoKey": 32767,
+        "ProjectionGeoKey": 32767,
+        "ProjCoordTransGeoKey": 17,
+        "ProjLinearUnitsGeoKey": 9001,
+        "ProjStdParallel1GeoKey": 0,
+        "ProjFalseEastingGeoKey": 0,
+        "ProjFalseNorthingGeoKey": 0,
+        "ProjCenterLongGeoKey": 0,
+        "ProjCenterLatGeoKey": 0
+      },
+      "cropWindow": [
+        6409,
+        7407,
+        16953,
+        17408
+      ],
+      "nodata": -3.4028226550889045e+38,
+      "tiles": [
+        {
+          "file": "elevation-6409-7407.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-7407.tif",
+          "sourceWindow": [
+            6409,
+            7407,
+            16953,
+            7919
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7775370,
+          "sha256": "47386e5cd80842fb5f5358ea5be167ef41fac9481d3365327ef40232bc618836",
+          "decodedSha256": "e0a738e316f512306d11f4a5465d476800f81b0d720efa556cd42cd01209b40b",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-7919.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-7919.tif",
+          "sourceWindow": [
+            6409,
+            7919,
+            16953,
+            8431
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7706573,
+          "sha256": "6f0db391d5ce204cdc51fb11d4be1273e51b318ec9c6a5d399a01d6b2c9efe42",
+          "decodedSha256": "0bfc0e22c67bce12180c4083b8adb96d8dd26475400850c9e8e66665d890e352",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-8431.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-8431.tif",
+          "sourceWindow": [
+            6409,
+            8431,
+            16953,
+            8943
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7784709,
+          "sha256": "c22fce4b24d53be8fabafed77fb8ebbf6509c5f2b37170985d0198c3f706c0ea",
+          "decodedSha256": "e2211963acf108841f94f7edb1e02097d7c3f7d09f8f1afc50f8f16196e16c57",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-9455.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-9455.tif",
+          "sourceWindow": [
+            6409,
+            9455,
+            16953,
+            9967
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7630838,
+          "sha256": "3df0441c61bf6bd1f712be5bf4cd7a93eee7936b7b0cf6943566aac19ace578b",
+          "decodedSha256": "963e3eaf445f2fa6e514961e01bfd658bfbfcf1315a0592af9807dab7cc003ad",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-9967.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-9967.tif",
+          "sourceWindow": [
+            6409,
+            9967,
+            16953,
+            10479
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7563008,
+          "sha256": "1fdbd0369208a2bf9f1cf38ad64fcf824f0ac925210ae74755d03efea9de35b2",
+          "decodedSha256": "0dea0c2baad8e05c1ace856be6a16e0540280ad62983fc0fd0cbb1c3cd4306d5",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-8943.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-8943.tif",
+          "sourceWindow": [
+            6409,
+            8943,
+            16953,
+            9455
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7867376,
+          "sha256": "b6a33d1b5f74f4d31d60759ec931225670a2d95580c264c563a43fdfcb185dce",
+          "decodedSha256": "0ceb3a3346df1364ffdddf70a703aed8ec8b4618105724997887b644f38c0712",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-11503.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-11503.tif",
+          "sourceWindow": [
+            6409,
+            11503,
+            16953,
+            12015
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7783265,
+          "sha256": "8636999f88955011d193762180d1c4191a7d8ab57e2e506e346820744fdbebb4",
+          "decodedSha256": "4802b0f88228e0a6b0e918fda707b7a5f199516ec45d8c5ae7c7ae03f06ebd30",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-10479.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-10479.tif",
+          "sourceWindow": [
+            6409,
+            10479,
+            16953,
+            10991
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7626224,
+          "sha256": "d85358f210c855cf25895977e3f4ff230978e2d76a45b9f2330cd7c98bf89b14",
+          "decodedSha256": "f5eab5c4e8aa3f2f9d1472ca02de01d2b3cc50f5e128e4e19ab385ec12ee78e8",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-10991.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-10991.tif",
+          "sourceWindow": [
+            6409,
+            10991,
+            16953,
+            11503
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7719021,
+          "sha256": "bc34f9462d0b6eaa7ab10a942c315c97c0551176e94b6969341b5fc605b836a1",
+          "decodedSha256": "9bbf7591ff932d10fdd180ee6853d7967062af3245b6e85a18614ec0faabe382",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-12015.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-12015.tif",
+          "sourceWindow": [
+            6409,
+            12015,
+            16953,
+            12527
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7860270,
+          "sha256": "d8e903a27ac90c3564354670aa690c51fcfcb1db02951eda5655d36e2b3eb5a4",
+          "decodedSha256": "8a3691cd83d7ee6ba5bae7ffb95d7787e2489005e1cf1f3219a66e4c98db45af",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-13039.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-13039.tif",
+          "sourceWindow": [
+            6409,
+            13039,
+            16953,
+            13551
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7853008,
+          "sha256": "65c672489fa5a0661c07cb82ead7931b74f4c2239174214b4c6c5d1f3b212fa2",
+          "decodedSha256": "5b3ed4c6608b95f2204780dc32eaab8fb4aa349e1fbfacd5820acf7bb97fc763",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-12527.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-12527.tif",
+          "sourceWindow": [
+            6409,
+            12527,
+            16953,
+            13039
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7822151,
+          "sha256": "e3321be1135eb423c6dfd1d03e596111952086c63ab479141509a58f3922ce13",
+          "decodedSha256": "feb4ab6873c8c107e4284edf64a4fbf9430534cd1e879f0c44b16418dd711611",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-13551.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-13551.tif",
+          "sourceWindow": [
+            6409,
+            13551,
+            16953,
+            14063
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7907499,
+          "sha256": "4b825d6efbc26851a183f1dd266daf52b35af1ff8fcdb22b54d6f5325f8a8959",
+          "decodedSha256": "e698867a6467058f78802138235b0f7f19891b8a44e4a7ab7207bc68c00517ba",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-14063.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-14063.tif",
+          "sourceWindow": [
+            6409,
+            14063,
+            16953,
+            14575
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7804019,
+          "sha256": "46993adb01b8e5537198c8b1fc78246c666c8661df745f681577cb3f45e35c1f",
+          "decodedSha256": "4d2ca39041d78e453d523c31bf8a344563147ba4a28bed7c356e774fbc012d7b",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-14575.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-14575.tif",
+          "sourceWindow": [
+            6409,
+            14575,
+            16953,
+            15087
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7855460,
+          "sha256": "00349ad3c6ab6b714f13c97d04587ed48f31b0c4e64411e53df1f25cedcf77be",
+          "decodedSha256": "a0c8caeb34e1245fd44ec7fcd5a390ea602d5cf47cefff58cf222f31aeeb2378",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-15087.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-15087.tif",
+          "sourceWindow": [
+            6409,
+            15087,
+            16953,
+            15599
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7883772,
+          "sha256": "a884f046992daa424730cb40f8785b14c2331b9df61fdc8304b204b8d80b0eb0",
+          "decodedSha256": "3fbb747c8de1fdd2563d54a3d5467fe330d52a4321c2726b1e38954e3d2389bc",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-15599.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-15599.tif",
+          "sourceWindow": [
+            6409,
+            15599,
+            16953,
+            16111
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7875924,
+          "sha256": "b7e108a90e2cbb7bdfb1374d4b3f1b9a021bd843de3323f5edac95ba4feb8fc8",
+          "decodedSha256": "8f77b74a29b47c7d8fb5eb6785e18b12b4f3828eb8d044733edf594bde4da207",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-16111.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-16111.tif",
+          "sourceWindow": [
+            6409,
+            16111,
+            16953,
+            16623
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 7995539,
+          "sha256": "4ef66f24e6903f76adadff72d864700e243363ab60ffff909d9bd1b967de0093",
+          "decodedSha256": "f51b88bac0c9ef9e2100d94ff40bca695a3e6447cb179d429dee4c7a9e2a9625",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-17135.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-17135.tif",
+          "sourceWindow": [
+            6409,
+            17135,
+            16953,
+            17408
+          ],
+          "width": 10544,
+          "height": 273,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 4121143,
+          "sha256": "8254c893e6f46170234a3e79ee6fd812fe3b2a54f82bd56e901dc91e3c77ac26",
+          "decodedSha256": "f7aa3484f77506276c488e50f2ef687e33abba79f0d36b3a14ec0e4257f0cd81",
+          "verifiedExact": true
+        },
+        {
+          "file": "elevation-6409-16623.f32-shuffle.deflate",
+          "sourceFile": "elevation-6409-16623.tif",
+          "sourceWindow": [
+            6409,
+            16623,
+            16953,
+            17135
+          ],
+          "width": 10544,
+          "height": 512,
+          "nodata": -3.4028226550889045e+38,
+          "encoding": "zlib-deflate-byte-shuffled-float32-little-endian",
+          "bytes": 8015803,
+          "sha256": "31f06627a2b748eb4af03029628f8e5e9addc9176f00ef9408eff42cf687d259",
+          "decodedSha256": "e597b2e4e2e7fbdea01993831cf3c0b9c187c9c38a265912b0224bf75cb6e3b6",
+          "verifiedExact": true
+        }
+      ],
+      "validPixels": 105237713,
+      "missingPixels": 212831,
+      "totalBytes": 421822176,
+      "status": "complete",
+      "sourceBytes": 421822176,
+      "packedBytes": 152450972
+    },
+    "imagery": {
+      "sourceUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/HiRISE/JEZ_hirise_soc_007_orthoMosaic_25cm_Ortho_blend120.tif",
+      "sourceDimensions": [
+        81064,
+        85936
+      ],
+      "sourceOrigin": [
+        -11612,
+        12036,
+        0
+      ],
+      "sourceResolution": [
+        0.25,
+        -0.25,
+        0
+      ],
+      "sourceGeoKeys": {
+        "GTModelTypeGeoKey": 1,
+        "GTRasterTypeGeoKey": 1,
+        "GTCitationGeoKey": "unnamed",
+        "GeographicTypeGeoKey": 32767,
+        "GeogCitationGeoKey": "GCS Name = Geographic Coordinate System|Datum = D_Mars_2000_Sphere|Ellipsoid = Mars_2000_Sphere_IAU|Primem = Reference_Meridian|",
+        "GeogGeodeticDatumGeoKey": 32767,
+        "GeogAngularUnitsGeoKey": 9102,
+        "GeogEllipsoidGeoKey": 32767,
+        "GeogSemiMajorAxisGeoKey": 3396190,
+        "GeogSemiMinorAxisGeoKey": 3396190,
+        "GeogPrimeMeridianLongGeoKey": 0,
+        "ProjectedCSTypeGeoKey": 32767,
+        "ProjectionGeoKey": 32767,
+        "ProjCoordTransGeoKey": 21,
+        "ProjLinearUnitsGeoKey": 9001,
+        "ProjFalseEastingGeoKey": 0,
+        "ProjFalseNorthingGeoKey": 0,
+        "ProjCenterLongGeoKey": 77.4298,
+        "ProjCenterLatGeoKey": 18.4663
+      },
+      "cropWindow": [
+        24233,
+        29631,
+        64253,
+        69638
+      ],
+      "nodata": 0,
+      "tiles": [
+        {
+          "file": "imagery-24233-29631.webp",
+          "sourceFile": "imagery-24233-29631.tif",
+          "sourceWindow": [
+            24233,
+            29631,
+            28329,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5814906,
+          "sha256": "372d1f1c8316fa55db807c3abc5fb0d779ee916d510af0ce4fb944d7cc6943cd",
+          "decodedSha256": "25df84be1931c8fc9dd9106ef6b5f4e02b38760064e84360b3494115a89bfc0d",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-28329-29631.webp",
+          "sourceFile": "imagery-28329-29631.tif",
+          "sourceWindow": [
+            28329,
+            29631,
+            32425,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 7172872,
+          "sha256": "0e875d01b68023d60964283a6de1e3a6ff585d6b6fa6e6d252c2d2bc2640f77d",
+          "decodedSha256": "55c7f7c76510bdf5832b1dda5a28706b526358d7ef923971edb39164724aa1c0",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-32425-29631.webp",
+          "sourceFile": "imagery-32425-29631.tif",
+          "sourceWindow": [
+            32425,
+            29631,
+            36521,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6269806,
+          "sha256": "7083c0da8096f3b3bd5a484b6a21da9a3482547cd7b342cf6fb0bac6928f6a91",
+          "decodedSha256": "4c5ca2b7bba5b085798805af8e3e12303c7227dd82d74f220dc7cab75aec6271",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-36521-29631.webp",
+          "sourceFile": "imagery-36521-29631.tif",
+          "sourceWindow": [
+            36521,
+            29631,
+            40617,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5623386,
+          "sha256": "47d8417aa95fbe6d4385960e27e7e97587aaf949561748492890f5159fc45ec2",
+          "decodedSha256": "4c7c88ef937a2dbce6d265c3f4c90009494e48c7420ecba45d57c53ebbcbb36b",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-40617-29631.webp",
+          "sourceFile": "imagery-40617-29631.tif",
+          "sourceWindow": [
+            40617,
+            29631,
+            44713,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5444732,
+          "sha256": "9a1ac6e94f545933bcd71d8599469f6bab82c5392bb54782a0b844e41038cea8",
+          "decodedSha256": "720104330552bf919f19febbd49123bca15b9c52bc7af53817af5195befb6b64",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-44713-29631.webp",
+          "sourceFile": "imagery-44713-29631.tif",
+          "sourceWindow": [
+            44713,
+            29631,
+            48809,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4678386,
+          "sha256": "5b2fcdf24f2c42b753ef4a545cb8cd2309625b87261ec11fb280a39c6be735cb",
+          "decodedSha256": "da1583ddab7cff4cb397b9fb052c88fb6ee637893798e6e190bc2ed6b2de7f2b",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-48809-29631.webp",
+          "sourceFile": "imagery-48809-29631.tif",
+          "sourceWindow": [
+            48809,
+            29631,
+            52905,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5024780,
+          "sha256": "534378a4477278d56b3eae7e513d2d2449cb63071d64cdf1da549a61a38c7a96",
+          "decodedSha256": "6942d5bb43e5cf01fe6a4e16ed5fdd363c8f8466f07e940c26795612ced6cfad",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-52905-29631.webp",
+          "sourceFile": "imagery-52905-29631.tif",
+          "sourceWindow": [
+            52905,
+            29631,
+            57001,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5765008,
+          "sha256": "03d8c33fc7627c077f50814b1a121aaaec09530a23556327ce8c0572f7b01f80",
+          "decodedSha256": "573f87a38c8ace9fcce0592931d00dfb5f2777d405ca5862ec4dc889c831bb29",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-57001-29631.webp",
+          "sourceFile": "imagery-57001-29631.tif",
+          "sourceWindow": [
+            57001,
+            29631,
+            61097,
+            33727
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6250110,
+          "sha256": "5db16303844962a8180bf37a58d84efa5104a883ca7cad6006b40f06231a3087",
+          "decodedSha256": "abb3382fe73ee826a9e79cf98b724c280a70c234d57fe91b805f43c57eb4b5a1",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-61097-29631.webp",
+          "sourceFile": "imagery-61097-29631.tif",
+          "sourceWindow": [
+            61097,
+            29631,
+            64253,
+            33727
+          ],
+          "width": 3156,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5337298,
+          "sha256": "8450bbbdbe40d4fda98971ea49ef24274109416797ed187e56485fa3ccf0f31f",
+          "decodedSha256": "c04b6ab12e0283345d9d9ddf35f68b1980c50fa2c5771f84a9dfcb71f0d0f4ff",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-24233-33727.webp",
+          "sourceFile": "imagery-24233-33727.tif",
+          "sourceWindow": [
+            24233,
+            33727,
+            28329,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5979464,
+          "sha256": "ef73fd67e9929398e79b3dd0a04f264d8e6e85a32dead016d22b81ca1cc280f1",
+          "decodedSha256": "7fae53ffb1117740b322ebe0b03e8f9e22024541d3b20a413694dceba8eabc21",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-28329-33727.webp",
+          "sourceFile": "imagery-28329-33727.tif",
+          "sourceWindow": [
+            28329,
+            33727,
+            32425,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6792068,
+          "sha256": "8af08940f0f5f6c701e04b6ca3c08600fa5dfaa275db81599524f574566c146b",
+          "decodedSha256": "6baf3a7f457cdfdbc9dd1f4880aebc5f3b4caf0522c368d2104676558f0f418c",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-32425-33727.webp",
+          "sourceFile": "imagery-32425-33727.tif",
+          "sourceWindow": [
+            32425,
+            33727,
+            36521,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6147050,
+          "sha256": "41ce7e1201af925ee22e29c47688888c24682915344230bfa9ec812d601d3819",
+          "decodedSha256": "239c72f6103674f2f6c9ba3a935fba02921642f85233cd310721a7d46b732447",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-36521-33727.webp",
+          "sourceFile": "imagery-36521-33727.tif",
+          "sourceWindow": [
+            36521,
+            33727,
+            40617,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5413230,
+          "sha256": "c034c03d9095ece54dd931745cee0a3ec9c296884307630bad78b3b433eb21a7",
+          "decodedSha256": "fc99bfbd871fbf14d8e6f7ae665881628339e7a3cf1be253d991882ec6c5229e",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-40617-33727.webp",
+          "sourceFile": "imagery-40617-33727.tif",
+          "sourceWindow": [
+            40617,
+            33727,
+            44713,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5311608,
+          "sha256": "4528e4d5162bc454c6ebe42c0cb1bcd6789ed239bd480914e4d1db853ec4949e",
+          "decodedSha256": "8188a08443701d6c73b0ecd88d219dd5c7ad8f096f19e27fbe723c4a218ffd92",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-44713-33727.webp",
+          "sourceFile": "imagery-44713-33727.tif",
+          "sourceWindow": [
+            44713,
+            33727,
+            48809,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5128960,
+          "sha256": "173e001946bbe133d44622e43d26fb23a9f1e691468f2f1a3fff3d11c7519a65",
+          "decodedSha256": "04f0587821f4bbf58048f57f1cf8688ef70dbd9430255f99f5c5189130c0af15",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-48809-33727.webp",
+          "sourceFile": "imagery-48809-33727.tif",
+          "sourceWindow": [
+            48809,
+            33727,
+            52905,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5173826,
+          "sha256": "4fd47cdd8d77353c7b5023806bd9bb314928dcb20d83edce3a4be3617d28220b",
+          "decodedSha256": "b99812a611b752737f4f56ddfd97b5a00ae456ab8b91e5cbbfffdc385e0dc90e",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-52905-33727.webp",
+          "sourceFile": "imagery-52905-33727.tif",
+          "sourceWindow": [
+            52905,
+            33727,
+            57001,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5607686,
+          "sha256": "64fc3a81267338d1d1474499996d3a09a6b51f337097884ecbdf0fb4c0dfb1b8",
+          "decodedSha256": "a80eb84fcdf152bf547b18cc122b07b9098ed7e944c5e95229e33d345b5e4b1a",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-57001-33727.webp",
+          "sourceFile": "imagery-57001-33727.tif",
+          "sourceWindow": [
+            57001,
+            33727,
+            61097,
+            37823
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6507000,
+          "sha256": "bda7297494767243a6d8aa269be2ff419af2387ca07dd97cfb3ef6fc3e94501a",
+          "decodedSha256": "03736329e7f2b07cc1d6ceefedaed1b9f147a4d4afc8776cffb91e845a6b13fd",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-61097-33727.webp",
+          "sourceFile": "imagery-61097-33727.tif",
+          "sourceWindow": [
+            61097,
+            33727,
+            64253,
+            37823
+          ],
+          "width": 3156,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5228220,
+          "sha256": "f2f12d4c440661aff068e769d3284fd4cd260e4132b78b003c5544474e6f2cf9",
+          "decodedSha256": "155d2ac227d74cc192012ecd3e739843a217d8023f074fe110af66435b9f78da",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-24233-37823.webp",
+          "sourceFile": "imagery-24233-37823.tif",
+          "sourceWindow": [
+            24233,
+            37823,
+            28329,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5918100,
+          "sha256": "fcd40f96df37d85d81ab33cff4753a67d79bfa1bb53e577bfac9f0c38392bee9",
+          "decodedSha256": "0b83a3b084128c368fd7a3e6d599c719de93bf4d68e234fd1739ac4065d4e174",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-32425-37823.webp",
+          "sourceFile": "imagery-32425-37823.tif",
+          "sourceWindow": [
+            32425,
+            37823,
+            36521,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6382430,
+          "sha256": "ff9672e52d3cea29d4835bf872fcc809ca109a046502c1f17c4731c216a2cd1e",
+          "decodedSha256": "9b214fe59223362c8247a6ce5bfe31ede43d8eecc8e680701bb551afa8cc5090",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-28329-37823.webp",
+          "sourceFile": "imagery-28329-37823.tif",
+          "sourceWindow": [
+            28329,
+            37823,
+            32425,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6979728,
+          "sha256": "8eb79f85356b4a429064366cf9cd69306952ddcbd5e40b9561d81f51c5c86601",
+          "decodedSha256": "1bca07b7ea25d2f9193e27d8dc04829f98bb46bb3a65b734816264de4ce805d2",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-36521-37823.webp",
+          "sourceFile": "imagery-36521-37823.tif",
+          "sourceWindow": [
+            36521,
+            37823,
+            40617,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5828182,
+          "sha256": "218f6b7d956f7d535bc97541cbed0758d12dd8dcd3eba8452bc15b619292a8cd",
+          "decodedSha256": "7971a428c59140b952716439cbd74119e3bb3cdc48935da84fd845e8ba7a6b7e",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-40617-37823.webp",
+          "sourceFile": "imagery-40617-37823.tif",
+          "sourceWindow": [
+            40617,
+            37823,
+            44713,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5719730,
+          "sha256": "d1ccec19b05155d4d0db019949853515eedb64084eef4ffc70643858ed85910d",
+          "decodedSha256": "4856ef4fa7551472eda6319b632f06e0b9d969b0b487e5939cad345a726185b6",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-48809-37823.webp",
+          "sourceFile": "imagery-48809-37823.tif",
+          "sourceWindow": [
+            48809,
+            37823,
+            52905,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5008296,
+          "sha256": "81d848ed1f593a6be9f9cf9b0b2b2844695fe03224da036b260857bf2a36abfc",
+          "decodedSha256": "de5a260d19968776b724c8bb3197ff5148b31b88dcf8203872377ce183a868b6",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-44713-37823.webp",
+          "sourceFile": "imagery-44713-37823.tif",
+          "sourceWindow": [
+            44713,
+            37823,
+            48809,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5138956,
+          "sha256": "176e1b18199610be3ddad28a75a0581bc1cf4e4603ec5d9cfcf4156e6a5baed8",
+          "decodedSha256": "a2b2277eb9869d33a1b9205b4b8a92fb4ab9740cc8c6633c7ddbc942bd5d2483",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-57001-37823.webp",
+          "sourceFile": "imagery-57001-37823.tif",
+          "sourceWindow": [
+            57001,
+            37823,
+            61097,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6100480,
+          "sha256": "4a26d0d73977a4a2fcbf81d2e117c2fdfeba7d9cb0cdb98f2b4fdc4b2e1f4a34",
+          "decodedSha256": "0abb835a42f40f7e9701d902199916c23825af5e7a6f3ff62201d6bd0c986fa2",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-52905-37823.webp",
+          "sourceFile": "imagery-52905-37823.tif",
+          "sourceWindow": [
+            52905,
+            37823,
+            57001,
+            41919
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5246060,
+          "sha256": "cb00dc2a01d8f15cfc3076ef7c8754fc8d6448004d96f781099bca09486592dd",
+          "decodedSha256": "9f891b7688ff0b383d70621d7d990886b938542390a0ad2e2fb29538b47f80e5",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-61097-37823.webp",
+          "sourceFile": "imagery-61097-37823.tif",
+          "sourceWindow": [
+            61097,
+            37823,
+            64253,
+            41919
+          ],
+          "width": 3156,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5016530,
+          "sha256": "8a83fd8c59ddf06b6ff9d8709fe63f21795ad3cfa333d24a07d0bfd1f35392f9",
+          "decodedSha256": "83e5cf4aed6070c2644521871864ddbc96dfd54172ac2f071c952c71c27a69f8",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-28329-41919.webp",
+          "sourceFile": "imagery-28329-41919.tif",
+          "sourceWindow": [
+            28329,
+            41919,
+            32425,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6622258,
+          "sha256": "0afaf44140370932ee32974ff317d9a7ced1ec9749eb1858530b154ea8004e79",
+          "decodedSha256": "8645ddabddfa6644ce783eb92796c2bedb5ebca02a42a9a2f1b54f6b837c6106",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-24233-41919.webp",
+          "sourceFile": "imagery-24233-41919.tif",
+          "sourceWindow": [
+            24233,
+            41919,
+            28329,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6600650,
+          "sha256": "9e6ed096e6b15d6a7322a8ab45d40624d4011df37fc7003dd0e406376249cf3d",
+          "decodedSha256": "2607a4303fc89d770e08aafe767553f8aa33ba141451e8bc809eebe8853ce36b",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-32425-41919.webp",
+          "sourceFile": "imagery-32425-41919.tif",
+          "sourceWindow": [
+            32425,
+            41919,
+            36521,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5820390,
+          "sha256": "c9cdf0002352adf1e4794ae77ad1f62c1a1f75fe79bc4bcf6f6031f235a0948d",
+          "decodedSha256": "067f0bcad641b95a0f7315cbbedf9bf791a9fa57c930afc9c1e41aff2ce79ae9",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-40617-41919.webp",
+          "sourceFile": "imagery-40617-41919.tif",
+          "sourceWindow": [
+            40617,
+            41919,
+            44713,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5386248,
+          "sha256": "e3d365ad069e461193db4cf2db0e2047c7d9f02f223b379a7e0ada5be19e8111",
+          "decodedSha256": "f0d45d71392403a6a1dee253b8649347409f3973b08596a07bdcf1ff8f0af04c",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-36521-41919.webp",
+          "sourceFile": "imagery-36521-41919.tif",
+          "sourceWindow": [
+            36521,
+            41919,
+            40617,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5291336,
+          "sha256": "763d0e51ac8281440b51cf3f68921e883cf0a04b23b2cbfc268abc145d1a8469",
+          "decodedSha256": "6c78480532df7a3049162a60cfd341fcac35a5f3e31824e6bef0ccd1e8f64e5f",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-44713-41919.webp",
+          "sourceFile": "imagery-44713-41919.tif",
+          "sourceWindow": [
+            44713,
+            41919,
+            48809,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5230114,
+          "sha256": "330fe0efba6c02d43c9f5d97ed28e9360eb3846a8db0a9f8c583848f20564bc7",
+          "decodedSha256": "65a09cfd7c27292fb08962b65534b656e28b599165996bedc30100e34cf16b7d",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-61097-41919.webp",
+          "sourceFile": "imagery-61097-41919.tif",
+          "sourceWindow": [
+            61097,
+            41919,
+            64253,
+            46015
+          ],
+          "width": 3156,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4676994,
+          "sha256": "8905397363c206347c36bef9f4f2d2a7c0f69a26625be526382fa69e2e1d231e",
+          "decodedSha256": "99c6e924d1cd5440768a50b9107fd4f64670049707ebcbcc1e271acb60ac6db0",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-57001-41919.webp",
+          "sourceFile": "imagery-57001-41919.tif",
+          "sourceWindow": [
+            57001,
+            41919,
+            61097,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5637872,
+          "sha256": "af9bdc65156b81746e9710a0d0747153c88ae367efba0133d33b6fa4b5ced270",
+          "decodedSha256": "a2a0ce950e9fc22610659d9dc5cbcc11ec40896f204c3b2da0f5e2e4b2fa1584",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-52905-41919.webp",
+          "sourceFile": "imagery-52905-41919.tif",
+          "sourceWindow": [
+            52905,
+            41919,
+            57001,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4963834,
+          "sha256": "03679da5b4d885c070ed1b3d9beaafab58df322eddf308a3c9279d59a68f00c7",
+          "decodedSha256": "8536b08d2713e1b59be98ee7c9a04e45c6e2ca2a8b818da2efaddb1f876a8da4",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-48809-41919.webp",
+          "sourceFile": "imagery-48809-41919.tif",
+          "sourceWindow": [
+            48809,
+            41919,
+            52905,
+            46015
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4870260,
+          "sha256": "8eebc6d56cdd582fd9b56cb8a7d751a8e5cecb95f8744286b647a44f1152b70e",
+          "decodedSha256": "e9d4667f4b59d624f5c6c7be89c6a4f8f3c8ec9fa8a68019b979c9d62e704092",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-24233-46015.webp",
+          "sourceFile": "imagery-24233-46015.tif",
+          "sourceWindow": [
+            24233,
+            46015,
+            28329,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5848190,
+          "sha256": "c9cd5e9b9ba68105ba97eacc4b5196e92495270e1872594699389d4e381b03a7",
+          "decodedSha256": "dc62261729941d2655a1388e75c3ad3abd7f8ea3937ed3e17addd6d3ae97620f",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-44713-46015.webp",
+          "sourceFile": "imagery-44713-46015.tif",
+          "sourceWindow": [
+            44713,
+            46015,
+            48809,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4723162,
+          "sha256": "0f6aa423e5f5b8c094890669be808a25e32ab32d417672b1a0273a7c5b0e9281",
+          "decodedSha256": "11218e50e487d00ccaaa32044a6e0f28a6b985ad29723d2f35bae3d21bc29402",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-40617-46015.webp",
+          "sourceFile": "imagery-40617-46015.tif",
+          "sourceWindow": [
+            40617,
+            46015,
+            44713,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5318526,
+          "sha256": "b2e521f2bd6aa9feadffe8d4575a037007026910b86ee04efc2903715d7e81b3",
+          "decodedSha256": "5e50dbf2e259c3f265b8fb14774d56ffa6716639bbf13dfd9246f6d602f1e878",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-36521-46015.webp",
+          "sourceFile": "imagery-36521-46015.tif",
+          "sourceWindow": [
+            36521,
+            46015,
+            40617,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5349330,
+          "sha256": "5de3aeda6dfde779dc51fb8a5af914656073d3ff788e36f8d247ab96703a5ff8",
+          "decodedSha256": "62958924ca27f0411766d35a3ad57d04150dd6c8cb1c093f28dbd45626fd9149",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-48809-46015.webp",
+          "sourceFile": "imagery-48809-46015.tif",
+          "sourceWindow": [
+            48809,
+            46015,
+            52905,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5190666,
+          "sha256": "0399337b33be3c2f87768bb5641c1b53b6fd0e03113368fe9d95ffddb3bd899f",
+          "decodedSha256": "f8cbd638f6b1d4e8f6dc18c27a46794b2e955316d9f94f85984c0f3aefaaaf68",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-32425-46015.webp",
+          "sourceFile": "imagery-32425-46015.tif",
+          "sourceWindow": [
+            32425,
+            46015,
+            36521,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6046372,
+          "sha256": "91ec0cdec3db996f24acca28ab48deed38d477947f7e810c821b1bc764f15cc2",
+          "decodedSha256": "c2fc0d6fa3d0c780f134725319d4e9dad7cfe737cd8e47153bc360f73b3c5c43",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-52905-46015.webp",
+          "sourceFile": "imagery-52905-46015.tif",
+          "sourceWindow": [
+            52905,
+            46015,
+            57001,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4900090,
+          "sha256": "c8acbab58e2459fec1259ee59452b37ca06dd5da41d50074200c264126486634",
+          "decodedSha256": "7be0b54bcfa5a748eff26ed3a7fd7b309e5e631413e4e22ef3c32e0dcbc6a71f",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-28329-46015.webp",
+          "sourceFile": "imagery-28329-46015.tif",
+          "sourceWindow": [
+            28329,
+            46015,
+            32425,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6044864,
+          "sha256": "1d9a549b8b318087a9025310c682f50f6a6b5838a9ff0a14c118c8f9859f7e9a",
+          "decodedSha256": "a9c235aaaf3a1f47b9bd9d85767f824e744a7edd4b5048c35abb63fbacc2c1cd",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-28329-50111.webp",
+          "sourceFile": "imagery-28329-50111.tif",
+          "sourceWindow": [
+            28329,
+            50111,
+            32425,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5888898,
+          "sha256": "c737da54b87b2cecd60558a31f00f0bc129de3e2a82c9f639502b540f39922fc",
+          "decodedSha256": "1bf1820482c4430eb06de1dad5f0d59ab528624480f697df4544f6f752ad073f",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-61097-46015.webp",
+          "sourceFile": "imagery-61097-46015.tif",
+          "sourceWindow": [
+            61097,
+            46015,
+            64253,
+            50111
+          ],
+          "width": 3156,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4685166,
+          "sha256": "bdb7a7e2b890f43e43dbacf528c45ae9ae339f97b80e2a651f7dff56e31f03a7",
+          "decodedSha256": "e95d684a306a677cfe47d9ff247eb66a1d9daf1797bb4312393fefea1146c945",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-57001-46015.webp",
+          "sourceFile": "imagery-57001-46015.tif",
+          "sourceWindow": [
+            57001,
+            46015,
+            61097,
+            50111
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5433100,
+          "sha256": "86fce9c3727d58d6f066baeed2885b5f6667a38d21d76bee5fce3f27cf6f2af9",
+          "decodedSha256": "c4948d46fe6e143dcca4ae560fc89e2559677ed0a730c1ac2922c582971eeaeb",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-32425-50111.webp",
+          "sourceFile": "imagery-32425-50111.tif",
+          "sourceWindow": [
+            32425,
+            50111,
+            36521,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6119888,
+          "sha256": "693e87ee557d99fb039bb25374a381edf1b57845c99505d13d038902dc415e35",
+          "decodedSha256": "2ac2e5700f87c6f2fe0a45435dcb3d59da82d64c6a02ab3e7bb3b4580f5c1674",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-24233-50111.webp",
+          "sourceFile": "imagery-24233-50111.tif",
+          "sourceWindow": [
+            24233,
+            50111,
+            28329,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5511618,
+          "sha256": "676139b967b8422764cd0e469d4f194fc720051dbe302eb4064bd6cdc4221ba1",
+          "decodedSha256": "a233cfe6e5e4931fda81af19989f9bf4ed3a46cf44f12d7a3dca03aae7a3b89a",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-40617-50111.webp",
+          "sourceFile": "imagery-40617-50111.tif",
+          "sourceWindow": [
+            40617,
+            50111,
+            44713,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4909032,
+          "sha256": "46a588eb785e7e5f9a3e2c8ace4892210ab7ffdc7b155509eba7a9cecb9609f6",
+          "decodedSha256": "a697b44ff19297e2a7255b9726d38e7f5b07c28579468b05106008a28789c5eb",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-36521-50111.webp",
+          "sourceFile": "imagery-36521-50111.tif",
+          "sourceWindow": [
+            36521,
+            50111,
+            40617,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5726732,
+          "sha256": "0517d731f6a121321be25cde868e7c38f2a35fc1b81c65c251c3364c99439d71",
+          "decodedSha256": "413bf7846385a8d24e2c7c37db2987cd997bf947bfe2f5faf1f174f2cf6155c2",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-44713-50111.webp",
+          "sourceFile": "imagery-44713-50111.tif",
+          "sourceWindow": [
+            44713,
+            50111,
+            48809,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5607064,
+          "sha256": "6407f6e5055a8311c862fe2548465f733aa8a1251b5d3e22e35b782ba2ae0f88",
+          "decodedSha256": "c2d3b8391b02ceb0304f234b470bdc136398032cd85070a1fb7fd3f3d32df89f",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-52905-50111.webp",
+          "sourceFile": "imagery-52905-50111.tif",
+          "sourceWindow": [
+            52905,
+            50111,
+            57001,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5492248,
+          "sha256": "b35b012d55bc8690b9c4c7b87b92256f1bc52f1167a66f305cb69e074fbde038",
+          "decodedSha256": "6bb7da1039a63a66f0b517c856246f2ce7aac5a45816a6b3ceef2a6bd9a823d8",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-57001-50111.webp",
+          "sourceFile": "imagery-57001-50111.tif",
+          "sourceWindow": [
+            57001,
+            50111,
+            61097,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5731014,
+          "sha256": "c5d8055964660b67533c92a84c47404008e4f851db9f927745e98b2d4583d472",
+          "decodedSha256": "29b6b316eb844b64a2aa8adba88a70c0497adfd4da87b5ea332a3bc56f85943b",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-61097-50111.webp",
+          "sourceFile": "imagery-61097-50111.tif",
+          "sourceWindow": [
+            61097,
+            50111,
+            64253,
+            54207
+          ],
+          "width": 3156,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4944630,
+          "sha256": "6a2c71948cbe1ce0820a0e89472ead99538312b45721d0e7c0c0ef7d8462d5aa",
+          "decodedSha256": "0b86ad52449bb9064b07ee29f18c82e4079e16122709f1dc53fd0ff9f5d98470",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-48809-50111.webp",
+          "sourceFile": "imagery-48809-50111.tif",
+          "sourceWindow": [
+            48809,
+            50111,
+            52905,
+            54207
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5631432,
+          "sha256": "e48fa4f7ffbbb7748987bda0eda8a88c2b77459518cd0fa834b4de3d2b59bd19",
+          "decodedSha256": "dfdc5968ad307b04cefdd1f68f67ea66ca790e73411dc1b428cde250fbaae105",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-28329-54207.webp",
+          "sourceFile": "imagery-28329-54207.tif",
+          "sourceWindow": [
+            28329,
+            54207,
+            32425,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5982654,
+          "sha256": "fe18938907011cd9fc6f094a25b24b1159cba084d4914778dce261dce8614e61",
+          "decodedSha256": "110e6b97e34e34644c69b997e33731d00d6c9bbdf218ce09bbc5ea1004796c01",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-24233-54207.webp",
+          "sourceFile": "imagery-24233-54207.tif",
+          "sourceWindow": [
+            24233,
+            54207,
+            28329,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5404334,
+          "sha256": "86187eb93ab1d86ce694e78a07296ca34c4f41b7ea88dce47acc556176b57ffb",
+          "decodedSha256": "c560c4ea86fa9e36edcec3a15f070c6b481b71724647b0875a0068d6244d2571",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-32425-54207.webp",
+          "sourceFile": "imagery-32425-54207.tif",
+          "sourceWindow": [
+            32425,
+            54207,
+            36521,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6513756,
+          "sha256": "a697f5b2e41023d1a5e7c57b56b8192a6ab346b5d4b31292bff8690d5f52cdc2",
+          "decodedSha256": "916a6696ec5189209baf2d788a97e470149b7abd07ee5e5762d9140980e1734e",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-40617-54207.webp",
+          "sourceFile": "imagery-40617-54207.tif",
+          "sourceWindow": [
+            40617,
+            54207,
+            44713,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4980910,
+          "sha256": "7485ee8a61bb3ef0422c867e597908178c87a007d41bd437aaf6a5f543549f3e",
+          "decodedSha256": "6bff5a34c4729013ad2ecc660633884233bde8572d0f4bee8812d2be23f230c1",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-52905-54207.webp",
+          "sourceFile": "imagery-52905-54207.tif",
+          "sourceWindow": [
+            52905,
+            54207,
+            57001,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5420212,
+          "sha256": "c97056d43a4992cdfee9f6df77dcbdf1eb0cc8552b39b673479ffbb4a69eff88",
+          "decodedSha256": "426d42bbc7fbea598e3f5ecffc994620c026a063cbfbaf679319ff9df9e0ca40",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-48809-54207.webp",
+          "sourceFile": "imagery-48809-54207.tif",
+          "sourceWindow": [
+            48809,
+            54207,
+            52905,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5400542,
+          "sha256": "7793de484ad0d1e7d2b3b68986a2585398fa6917673cdb06ca9f8a1f563f1008",
+          "decodedSha256": "4879fb6c5d0e93f9b0b8802428c05b2c5526cab29a6ed6c4afa6e7365b115534",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-57001-54207.webp",
+          "sourceFile": "imagery-57001-54207.tif",
+          "sourceWindow": [
+            57001,
+            54207,
+            61097,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5434494,
+          "sha256": "f5e904a9c007c6a0a95dbb8e867e2b44ddad9968cf35d469853acc0a0620cbff",
+          "decodedSha256": "fb87c380ebc6b1f72d7e15f6e90f795b99b8adddb605073c7d19f68b52151ca1",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-61097-54207.webp",
+          "sourceFile": "imagery-61097-54207.tif",
+          "sourceWindow": [
+            61097,
+            54207,
+            64253,
+            58303
+          ],
+          "width": 3156,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4905810,
+          "sha256": "cd1f4dde386a0d6c13fc7bdce683372b50d822364fb5e8ca7e682d780849c26e",
+          "decodedSha256": "0e5ec343312833e7d0168f364bedeb04e8fc92c24bd0096e0933f9e0bcd56951",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-36521-54207.webp",
+          "sourceFile": "imagery-36521-54207.tif",
+          "sourceWindow": [
+            36521,
+            54207,
+            40617,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5420314,
+          "sha256": "d4c9fb47d12eecd49b01452013e0012550cb2a0399db09d5a0f96412041dd14b",
+          "decodedSha256": "96f7dc5ac86c53e6a5fb66311be821e79dc18fdced65c80a3e85ddf5ce2eeb79",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-24233-58303.webp",
+          "sourceFile": "imagery-24233-58303.tif",
+          "sourceWindow": [
+            24233,
+            58303,
+            28329,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5198826,
+          "sha256": "8b0e96f6feae14473922fd842d55745cb1dc7523af092ced8f7b7ef9b3b50741",
+          "decodedSha256": "b6d0a9e410eba6ce25d917803f5400bb55aa1c63a078779656b2fbdce0f03ac9",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-44713-54207.webp",
+          "sourceFile": "imagery-44713-54207.tif",
+          "sourceWindow": [
+            44713,
+            54207,
+            48809,
+            58303
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5519118,
+          "sha256": "424c489b2659aa6eb007061de6d92b6ad83f8251599f27b574e562e0c4c239fe",
+          "decodedSha256": "07a02bffc7792e6a7fcac0e592ceaab6ded6f22b0724cb3e35db5c2114121a74",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-36521-58303.webp",
+          "sourceFile": "imagery-36521-58303.tif",
+          "sourceWindow": [
+            36521,
+            58303,
+            40617,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5266872,
+          "sha256": "a1da0c4501fb538c2ba9d58bc8fd2c58c4c89da257c66fac0e689111cdb07943",
+          "decodedSha256": "9267608f152eab41a00d9e84ade627d41c6375e96d8afe0258db478714839f4b",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-32425-58303.webp",
+          "sourceFile": "imagery-32425-58303.tif",
+          "sourceWindow": [
+            32425,
+            58303,
+            36521,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6461698,
+          "sha256": "93d35b5a9ba59af9a8a9b1c586ade12d8b8a9b7b07d35249e807c465a5cf979b",
+          "decodedSha256": "824d81b094c82311b548b35bdf3ca151cd2dca14319bfdad50a32a7e06028a38",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-40617-58303.webp",
+          "sourceFile": "imagery-40617-58303.tif",
+          "sourceWindow": [
+            40617,
+            58303,
+            44713,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5600686,
+          "sha256": "c54448e141792ce38efff958bc6522b82cd823a1fd6598f5582cb0f82c462c05",
+          "decodedSha256": "8c913a6faf99aa2402830fa004aace8e5a4888dae0f545d4cc590979c9753ccd",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-44713-58303.webp",
+          "sourceFile": "imagery-44713-58303.tif",
+          "sourceWindow": [
+            44713,
+            58303,
+            48809,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4866678,
+          "sha256": "ddc21ceddde8291f6c1288352ab5eae05e9b939d696422febf96e116d8cebde6",
+          "decodedSha256": "45c65f4d529a52aa95ce577cfdc1372c4115ef41d6eb965b8593d6c3fc6236e1",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-48809-58303.webp",
+          "sourceFile": "imagery-48809-58303.tif",
+          "sourceWindow": [
+            48809,
+            58303,
+            52905,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5233816,
+          "sha256": "b9399ea0d6e7d9f7681850c500227677f7d1d25c2757e11caae164b556d88969",
+          "decodedSha256": "559673b846a4610f3bfde8bdc6537fee3ca9cff7ec5877799245f37b1f7165de",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-57001-58303.webp",
+          "sourceFile": "imagery-57001-58303.tif",
+          "sourceWindow": [
+            57001,
+            58303,
+            61097,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5147246,
+          "sha256": "f05963056ffe4db37d200c0452d4bd5152087c2a3b888b94ef819dbe50f05910",
+          "decodedSha256": "91d9218712b1d0bfc8eac251221bde0d83459612096e9105b2ce8869d60f7ad2",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-61097-58303.webp",
+          "sourceFile": "imagery-61097-58303.tif",
+          "sourceWindow": [
+            61097,
+            58303,
+            64253,
+            62399
+          ],
+          "width": 3156,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4634668,
+          "sha256": "74acaf067c725628f0aca5b1accd7f1b72af9dbb6260bf48e4c1829a1689d690",
+          "decodedSha256": "08601ad9fd0c0e3922bb2d275395079475c59dc6634248445aafe3fe893c319f",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-28329-58303.webp",
+          "sourceFile": "imagery-28329-58303.tif",
+          "sourceWindow": [
+            28329,
+            58303,
+            32425,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5572304,
+          "sha256": "437fc3c7d05327b43bb536a48eef030c2b934414b821e371764201f374e1c755",
+          "decodedSha256": "492ba73caa85ac3b3b8a4e8d32d5a4ad30bd800fa93b8703c57473a05cf2bee6",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-24233-62399.webp",
+          "sourceFile": "imagery-24233-62399.tif",
+          "sourceWindow": [
+            24233,
+            62399,
+            28329,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5484546,
+          "sha256": "8042c3fe340f602ac8295355d88c39b4613dfa974bee36ca1b7e870054bd908e",
+          "decodedSha256": "8e9a23284aa83e2f854aeff5c41fd16d80789878dc95a132d1fccb5cff0466b5",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-28329-62399.webp",
+          "sourceFile": "imagery-28329-62399.tif",
+          "sourceWindow": [
+            28329,
+            62399,
+            32425,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5544162,
+          "sha256": "cca73367a9f2891b523bdbb6725d3bc0d3c7225e34570e33eded1a65dd71ac4d",
+          "decodedSha256": "43b55dd1f71fd27c39b8b6db10d653206a1264ab97a348b1d757664a38e04b9c",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-52905-58303.webp",
+          "sourceFile": "imagery-52905-58303.tif",
+          "sourceWindow": [
+            52905,
+            58303,
+            57001,
+            62399
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5359646,
+          "sha256": "27fb9f26fac6f8dfc54dcd16dbc2fcb4aa4ec8c0d24b5a916057c925ef1265c2",
+          "decodedSha256": "a2112bf0ae064e536bf1c9f3939128721277b07bf75ce72c53af33567b2dca7c",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-32425-62399.webp",
+          "sourceFile": "imagery-32425-62399.tif",
+          "sourceWindow": [
+            32425,
+            62399,
+            36521,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 6455100,
+          "sha256": "fbe93a8897718dc363d88ee5dc9b553221c42499057e1fea3188598c5f31ccd7",
+          "decodedSha256": "6a8cab9f84059c7312de174b51c7ce979268f73f19c476270cf554f1ea4454fc",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-36521-62399.webp",
+          "sourceFile": "imagery-36521-62399.tif",
+          "sourceWindow": [
+            36521,
+            62399,
+            40617,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5862536,
+          "sha256": "b5bd07395cc937f5c867ccff07e61310a076a69a8b7d8b5f2924d2ba1b5b967b",
+          "decodedSha256": "116da7689050e9ed30f2566ff5dfc9c6c51b8cd7d1f7ba3eeaa342acb21768b0",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-40617-62399.webp",
+          "sourceFile": "imagery-40617-62399.tif",
+          "sourceWindow": [
+            40617,
+            62399,
+            44713,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5192814,
+          "sha256": "3d4142e4e99c0937dccb26bbca1c0fd367047d9e329d497d5c93cd50120bb734",
+          "decodedSha256": "7034710afb63c09092e4f68407f588e241147c05e91b55d9940042094f62b14d",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-48809-62399.webp",
+          "sourceFile": "imagery-48809-62399.tif",
+          "sourceWindow": [
+            48809,
+            62399,
+            52905,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5028972,
+          "sha256": "8cbca251fdca224eacc93c4695c9efdf883bbe1ed6dd8e030f123bdffef03c6e",
+          "decodedSha256": "42e8c1ae1cb199fb81ba3643b319eac1b37ebcc35c7a6b11b2c7ad44107dd000",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-44713-62399.webp",
+          "sourceFile": "imagery-44713-62399.tif",
+          "sourceWindow": [
+            44713,
+            62399,
+            48809,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4422532,
+          "sha256": "393b8a3ca6a309674878ff150ae8be6b7fa7099254c45770ef75caf206808d14",
+          "decodedSha256": "76da936900bc878373bfc617554896fc04438f23469e27c13c258fc6673568f5",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-57001-62399.webp",
+          "sourceFile": "imagery-57001-62399.tif",
+          "sourceWindow": [
+            57001,
+            62399,
+            61097,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5252248,
+          "sha256": "30e6ac18bd28e1bf5b83a5725c8182cced6f29e2ea70332bd236a327243d1d34",
+          "decodedSha256": "3aff9f633cc317b7cc6d8805a45de5c721abfd8ad706c57fee960e6f4938ca28",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-28329-66495.webp",
+          "sourceFile": "imagery-28329-66495.tif",
+          "sourceWindow": [
+            28329,
+            66495,
+            32425,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4514006,
+          "sha256": "056c7195fabb12e0dccad71dd8f848ffe03d5c3ca7d939c2f84fcbd068bfed15",
+          "decodedSha256": "2cac96ab3e25f1780c14353b9c0de6c712ac546ba1fb35b3dff59a20dc6094cc",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-61097-62399.webp",
+          "sourceFile": "imagery-61097-62399.tif",
+          "sourceWindow": [
+            61097,
+            62399,
+            64253,
+            66495
+          ],
+          "width": 3156,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4629910,
+          "sha256": "0c94069f1550d97def4b27647e50f283f3be4c7565bc5c65858e5411532a67e0",
+          "decodedSha256": "6cadf57667fc4064a1d1d2e8990d40ebe61adc54637147c0c80fdd69dfbe0596",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-52905-62399.webp",
+          "sourceFile": "imagery-52905-62399.tif",
+          "sourceWindow": [
+            52905,
+            62399,
+            57001,
+            66495
+          ],
+          "width": 4096,
+          "height": 4096,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 5146676,
+          "sha256": "638e68a62fa9d18f59e2c4dd60b68424301866c9b78bc43337c532df670171c8",
+          "decodedSha256": "9c51edfbea22281d7b9fb3a4a5b130ab027ae02d7c7aea114449f2df8d37e9a7",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-40617-66495.webp",
+          "sourceFile": "imagery-40617-66495.tif",
+          "sourceWindow": [
+            40617,
+            66495,
+            44713,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 3847050,
+          "sha256": "ea27d7e81ae12cd70417172a70d8c7e512d59a2859a4bca065a93a9b140f15d9",
+          "decodedSha256": "c4b756dbbddee2331d92a808f4f158c1969714dbe2d04de9a89a1755bf2ada09",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-32425-66495.webp",
+          "sourceFile": "imagery-32425-66495.tif",
+          "sourceWindow": [
+            32425,
+            66495,
+            36521,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4307180,
+          "sha256": "077bef757721ed1454fce05a1de90bed876e27db30459bc7df31bca8b444689f",
+          "decodedSha256": "11878710a8b679b780b085d0dfd2e9b30f5c1a5f00109a6f5b603329a40d487d",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-24233-66495.webp",
+          "sourceFile": "imagery-24233-66495.tif",
+          "sourceWindow": [
+            24233,
+            66495,
+            28329,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 3445190,
+          "sha256": "c8fde442a5f6da64cc9e244f683728eebc88977b16cb1fc40ecad9a3d0eb9e6e",
+          "decodedSha256": "b2b32ac92b9ab9948476a80433d0bf9364c7dfb436c06bf5229bfa9f684a787b",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-52905-66495.webp",
+          "sourceFile": "imagery-52905-66495.tif",
+          "sourceWindow": [
+            52905,
+            66495,
+            57001,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4035688,
+          "sha256": "17b5cad9b21738063288eefdaa023f6414d711432bb2abf96094e2b362b72f13",
+          "decodedSha256": "b711887af310b46ea12cd5af3478ced2c1d23c9abbf2c23cec90b7b69dcb8eb7",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-44713-66495.webp",
+          "sourceFile": "imagery-44713-66495.tif",
+          "sourceWindow": [
+            44713,
+            66495,
+            48809,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 3734658,
+          "sha256": "f750e1e80f889b2b913210c163fe1705fab8efcfa559e6a5f3710830f93e868a",
+          "decodedSha256": "79f990ab7c2f9e4939fd5069b123bdd568f871bc27d272fdfba5bd11913b67fd",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-57001-66495.webp",
+          "sourceFile": "imagery-57001-66495.tif",
+          "sourceWindow": [
+            57001,
+            66495,
+            61097,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4321028,
+          "sha256": "1f9da7622d03e901e193db714fda7c85c470c1dbdb1a92087ed8a9da07ecf503",
+          "decodedSha256": "eb53802007ee02bd5730f001afd3fe8e87ba0b5181815ab6c4c1b27c615824e3",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-61097-66495.webp",
+          "sourceFile": "imagery-61097-66495.tif",
+          "sourceWindow": [
+            61097,
+            66495,
+            64253,
+            69638
+          ],
+          "width": 3156,
+          "height": 3143,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 3661368,
+          "sha256": "448e34b034712d556347ed1a5e3defbc8d2e9f0287d1c54146deadfb6d8c9b98",
+          "decodedSha256": "e2dd8142918385b42322361a21cad47fe1216ee8cc60116f246c98f3f4f1df7a",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-36521-66495.webp",
+          "sourceFile": "imagery-36521-66495.tif",
+          "sourceWindow": [
+            36521,
+            66495,
+            40617,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 4161648,
+          "sha256": "d9cab5bedc6587d1731999fa1e21d2e2904a7ba5925919a59125e098d2ee3bf3",
+          "decodedSha256": "65b129c20e12384e006f3e844b3625f3f7602bcf89e0f61901d60282c9b8b53d",
+          "verifiedExact": true
+        },
+        {
+          "file": "imagery-48809-66495.webp",
+          "sourceFile": "imagery-48809-66495.tif",
+          "sourceWindow": [
+            48809,
+            66495,
+            52905,
+            69638
+          ],
+          "width": 4096,
+          "height": 3143,
+          "nodata": 0,
+          "encoding": "webp-lossless-uint8",
+          "bytes": 3937174,
+          "sha256": "0442f409f172fa9cc7d5e5525e28d2c8c0c4255254ba1acf31b37f0588e6f875",
+          "decodedSha256": "822be857434990563a68d26543f3714bc21b3ee7c66ed586b2e944d3294ab850",
+          "verifiedExact": true
+        }
+      ],
+      "validPixels": 1597847274,
+      "missingPixels": 3232866,
+      "totalBytes": 1601180140,
+      "status": "complete",
+      "sourceBytes": 1601180140,
+      "packedBytes": 537519936
+    }
+  },
+  "limitations": [
+    "Native projections retained; layers have not been registered to a common display grid.",
+    "This is an offline storage package, not an integrated browser tile layer.",
+    "Source latitude convention and vertical datum compatibility remain provisional."
+  ],
+  "sourceBytes": 2023002316,
+  "packedBytes": 689970908,
+  "fitsStorageBudget700MB": true,
+  "display": {
+    "terrainMeta": "overview-terrain.json",
+    "terrainValues": "overview-terrain.bin",
+    "imagery": "overview-imagery.webp",
+    "gridSpacingMetres": 10,
+    "imageryPixelSpacingMetres": 2.44140625
+  },
+  "assets": [
+    {
+      "file": "overview-terrain.json",
+      "bytes": 614,
+      "sha256": "0156563b3bfa9e3d3c6877791d8c13bbb3096d4976178168f664df2478b52823"
+    },
+    {
+      "file": "overview-terrain.bin",
+      "bytes": 4008004,
+      "sha256": "9e2c421c8406d815c84eaaf71da75412e5ba96aef58b20f670a0ee344a252b4f"
+    },
+    {
+      "file": "overview-imagery.webp",
+      "bytes": 11678494,
+      "sha256": "49bc475f422c1ea9b378cd93ee2c64df4242f0149536c9540a2ac43f711030b2"
+    }
+  ]
+}

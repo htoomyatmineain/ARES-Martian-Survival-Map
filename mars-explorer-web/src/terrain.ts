@@ -28,6 +28,7 @@ export const sites = [
 export type Route = { points: Point[]; distance: number; ascent: number; maxSlope: number; minutes: number; oxygen: number; feasible: boolean };
 // A* on a 100 m navigation grid. Edge slopes use original, unexaggerated elevations.
 export function planRoute(t: Terrain, start: Point, end: Point, safe = true, blocked = false): Route | null {
+  if (!Number.isFinite(elevation(t, start.x, start.z)) || !Number.isFinite(elevation(t, end.x, end.z))) return null;
   const n = 101, step = 100, half = 5000;
   const index = (p: Point) => Math.max(0, Math.min(n - 1, Math.round((p.z + half) / step))) * n + Math.max(0, Math.min(n - 1, Math.round((p.x + half) / step)));
   const point = (i: number): Point => ({ x: (i % n) * step - half, z: Math.floor(i / n) * step - half });
@@ -45,6 +46,11 @@ export function planRoute(t: Terrain, start: Point, end: Point, safe = true, blo
       if (xx < 0 || xx >= n || zz < 0 || zz >= n) continue;
       const next = zz * n + xx, q = point(next), dist = step * Math.hypot(dx, dz);
       const angle = Math.atan(Math.abs(elevation(t, q.x, q.z) - h) / dist) * 180 / Math.PI;
+      if (!Number.isFinite(angle)) continue;
+      let crossesMissing = false;
+      const samples = Math.ceil(dist / (t.meta.size / (t.meta.width - 1)));
+      for (let sample = 1; sample < samples; sample++) if (!Number.isFinite(elevation(t, p.x + (q.x-p.x)*sample/samples, p.z + (q.z-p.z)*sample/samples))) { crossesMissing = true; break; }
+      if (crossesMissing) continue;
       const hazard = (r: Point) => blocked && Math.hypot(r.x - 100, r.z - 300) < 800;
       // Check edge midpoint as well, so diagonals cannot cut across the simulated exclusion zone.
       if (angle > (safe ? 18 : 28) || hazard(q) || hazard({ x: (p.x + q.x) / 2, z: (p.z + q.z) / 2 })) continue;
