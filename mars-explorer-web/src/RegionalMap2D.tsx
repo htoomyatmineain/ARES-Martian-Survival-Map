@@ -4,8 +4,10 @@ import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { MARS_RADIUS, sites, type Terrain, type Point, type Route } from './terrain';
 import { analysisPixels, contourPath, coordinateGrid, mapFrame, type AnalysisLayer } from './regionalLayers';
 import { SCIENCE_SITES, sciencePoint, type ScienceFocus } from './scienceSites';
+import type { ObservationMarker } from './environmentObservations';
+import type { OrbitalRaster } from './orbitalLayers';
 
-type Props = { shared: SharedRegionalMap | null; terrain: Terrain; analysis: AnalysisLayer; opacity: number; imagery: boolean; contours: boolean; route: Route | null; routeVisible: boolean; destination: Point; picking: boolean; onPick: (p: Point) => void; hidden: boolean; blocked: boolean; grid: boolean; scienceVisible: boolean; selectedScienceId: string | null; scienceFocus: ScienceFocus | null; onScienceSelect: (id: string) => void };
+type Props = { shared: SharedRegionalMap | null; terrain: Terrain; analysis: AnalysisLayer; opacity: number; imagery: boolean; contours: boolean; route: Route | null; routeVisible: boolean; destination: Point; picking: boolean; onPick: (p: Point) => void; hidden: boolean; blocked: boolean; grid: boolean; scienceVisible: boolean; selectedScienceId: string | null; scienceFocus: ScienceFocus | null; onScienceSelect: (id: string) => void; observations: ObservationMarker[]; observationFocus: { point: Point; tick: number } | null; onObservationSelect: () => void; orbital: OrbitalRaster | null; onOrbitalInspect: (point: Point) => void };
 export default memo(function RegionalMap2D(p: Props) {
   const svg = useRef<SVGSVGElement>(null);
   const drag = useRef<{ x: number; y: number; cx: number; cy: number; moved: boolean } | null>(null);
@@ -31,10 +33,18 @@ export default memo(function RegionalMap2D(p: Props) {
     return { elevation: height, slope, missing: canvas.toDataURL() };
   }, [p.terrain]);
   const contours = useMemo(() => p.contours ? contourPath(p.terrain) : '', [p.terrain, p.contours]);
+  const orbitalImage = useMemo(() => {
+    if (!p.orbital) return '';
+    const canvas = document.createElement('canvas'); canvas.width=p.orbital.meta.width; canvas.height=p.orbital.meta.height;
+    const context = canvas.getContext('2d'); if (!context) return '';
+    context.putImageData(new ImageData(new Uint8ClampedArray(p.orbital.rgba),canvas.width,canvas.height),0,0);
+    return canvas.toDataURL();
+  },[p.orbital]);
   useEffect(() => {
     const site = SCIENCE_SITES.find(s => s.id === p.scienceFocus?.id);
     if (site) { setFraming('fill'); setZoom(12); setCenter(sciencePoint(site, p.terrain.meta.center)); }
   }, [p.scienceFocus, p.terrain.meta.center]);
+  useEffect(() => { if (p.observationFocus) { setFraming('fill'); setZoom(12); setCenter(p.observationFocus.point); } }, [p.observationFocus]);
   useEffect(() => {
     const el = svg.current; if (!el) return;
     const observer = new ResizeObserver(() => { const r = el.getBoundingClientRect(); if (r.width > 0 && r.height > 0) setViewport({ width: r.width, height: r.height }); });
@@ -45,21 +55,22 @@ export default memo(function RegionalMap2D(p: Props) {
   const pick = (clientX: number, clientY: number) => {
     const el = svg.current, matrix = el?.getScreenCTM(); if (!el || !matrix) return;
     const at = new DOMPoint(clientX, clientY).matrixTransform(matrix.inverse());
-    if (Math.abs(at.x) <= half && Math.abs(at.y) <= half) p.onPick({ x: at.x, z: at.y });
+    if (Math.abs(at.x) <= half && Math.abs(at.y) <= half) { const point = {x:at.x,z:at.y}; if (p.picking) p.onPick(point); else if (p.orbital) p.onOrbitalInspect(point); }
   };
   return <div className="rm-map2d" hidden={p.hidden}>
     <svg ref={svg} className={p.picking ? 'rm-svg rm-picking' : 'rm-svg'} data-testid="regional-map" viewBox={`${cx - visibleWidth / 2} ${cz - visibleHeight / 2} ${visibleWidth} ${visibleHeight}`} role="group" aria-label="Regional terrain map" aria-describedby="rm-map-help" tabIndex={0}
       onPointerDown={e => { if (e.button !== 0) return; e.currentTarget.setPointerCapture(e.pointerId); drag.current = { x: e.clientX, y: e.clientY, cx, cy: cz, moved: false }; }}
       onPointerMove={e => { const a = drag.current; if (!a) return; if (Math.hypot(e.clientX - a.x, e.clientY - a.y) > 5) a.moved = true; if (a.moved) setCenter({ x: a.cx - (e.clientX - a.x) * unitsPerPixel, z: a.cy - (e.clientY - a.y) * unitsPerPixel }); }}
-      onPointerUp={e => { if (drag.current && !drag.current.moved && p.picking) pick(e.clientX, e.clientY); drag.current = null; }}
+      onPointerUp={e => { if (drag.current && !drag.current.moved && (p.picking || p.orbital)) pick(e.clientX, e.clientY); drag.current = null; }}
       onPointerCancel={() => { drag.current = null; }} onLostPointerCapture={() => { drag.current = null; }}
-      onKeyDown={e => { if (!p.picking) return; const delta: Record<string, [number, number]> = { ArrowLeft: [-100, 0], ArrowRight: [100, 0], ArrowUp: [0, -100], ArrowDown: [0, 100] }; const v = delta[e.key]; if (v) { e.preventDefault(); p.onPick({ x: Math.max(-half, Math.min(half, p.destination.x + v[0])), z: Math.max(-half, Math.min(half, p.destination.z + v[1])) }); } }}>
+      onKeyDown={e => { if (!p.picking) { if (p.orbital && e.key === 'Enter') { e.preventDefault(); p.onOrbitalInspect({x:cx,z:cz}); } return; } const delta: Record<string, [number, number]> = { ArrowLeft: [-100, 0], ArrowRight: [100, 0], ArrowUp: [0, -100], ArrowDown: [0, 100] }; const v = delta[e.key]; if (v) { e.preventDefault(); p.onPick({ x: Math.max(-half, Math.min(half, p.destination.x + v[0])), z: Math.max(-half, Math.min(half, p.destination.z + v[1])) }); } }}>
       <title>Western Jezero regional map</title>
       <defs><clipPath id="rm-footprint"><rect x={-half} y={-half} width={half * 2} height={half * 2}/></clipPath><pattern id="rm-hatch" width="150" height="150" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="150" height="150" fill="#c67e4530"/><path d="M0 0V150" stroke="#f0b276" strokeWidth="2" vectorEffect="non-scaling-stroke"/></pattern></defs>
       <rect x={-half} y={-half} width={half * 2} height={half * 2} fill="#252a30"/>
       {p.imagery && <image data-testid="orbital-layer" href={p.shared?.imageryUrl ?? '/data/ortho.jpg'} x={-half} y={-half} width={half * 2} height={half * 2} preserveAspectRatio="none"/>}
       {p.imagery && p.shared && zoom >= 8 && <SharedImageryTiles shared={p.shared} bounds={[cx-visibleWidth/2,cz-visibleHeight/2,cx+visibleWidth/2,cz+visibleHeight/2]}/>}
       {p.analysis !== 'none' && <image data-testid="analysis-layer" href={rasters[p.analysis]} opacity={p.opacity} x={-half} y={-half} width={half * 2} height={half * 2} preserveAspectRatio="none"/>}
+      {orbitalImage && <image data-testid="orbital-area-layer" href={orbitalImage} opacity={p.opacity} x={-half} y={-half} width={half*2} height={half*2} preserveAspectRatio="none" style={{imageRendering:'pixelated'}}><title>{p.orbital?.meta.title} · transparent means no data</title></image>}
       <image data-testid="missing-elevation-mask" href={rasters.missing} x={-half} y={-half} width={half*2} height={half*2} preserveAspectRatio="none"><title>Amber area: elevation unavailable; excluded from routing</title></image>
       <rect x={-half} y={-half} width={half * 2} height={half * 2} fill="none" stroke="#f39b58" strokeWidth="1.5" vectorEffect="non-scaling-stroke"/>
       {p.contours && <path data-testid="contour-layer" d={contours} stroke="#f4f3ef" opacity=".6" fill="none" strokeWidth=".7" vectorEffect="non-scaling-stroke" pointerEvents="none"/>}
@@ -84,9 +95,15 @@ export default memo(function RegionalMap2D(p: Props) {
           <text x={dx} y={dy + 3.5 * unitsPerPixel} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize={11 * unitsPerPixel} fill={active ? '#0b0d10' : '#fff'}>{site.code}</text>
         </g>;
       })}
+      {p.observations.map(marker => {
+        const dx = (marker.kind === 'thermal' ? 58 : -58) * unitsPerPixel, dy = -65 * unitsPerPixel;
+        return <g key={marker.id} data-testid={`${marker.kind}-marker`} role="button" tabIndex={0} aria-label={`Open ${marker.description}`} transform={`translate(${marker.point.x} ${marker.point.z})`} className="rm-science-marker" onPointerDown={e => e.stopPropagation()} onPointerUp={e => e.stopPropagation()} onClick={e => { e.stopPropagation(); p.onObservationSelect(); }} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); p.onObservationSelect(); } }}>
+          <title>{marker.description} · symbolic point, not coverage</title><line x2={dx} y2={dy} stroke={marker.color} strokeWidth="1.5" vectorEffect="non-scaling-stroke"/><circle r={3 * unitsPerPixel} fill={marker.color} stroke="#0b0d10" strokeWidth="1" vectorEffect="non-scaling-stroke"/><rect x={dx-14*unitsPerPixel} y={dy-13*unitsPerPixel} width={28*unitsPerPixel} height={26*unitsPerPixel} rx={3*unitsPerPixel} fill="#15191e" stroke={marker.color} strokeWidth="2" vectorEffect="non-scaling-stroke"/><text x={dx} y={dy+4*unitsPerPixel} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize={12*unitsPerPixel} fill={marker.color}>{marker.label}</text>
+        </g>;
+      })}
     </svg>
     <div className="rm-map-tools"><button aria-label="Zoom in" onClick={() => setZoom(v => Math.min(64, v * 1.3))}>+</button><button aria-label="Zoom out" onClick={() => setZoom(v => Math.max(1, v / 1.3))}>−</button><button aria-label="Reset map" title="Reset map" onClick={() => { setFraming('fill'); setZoom(1); setCenter({ x: (sites[0].x + p.destination.x) / 2, z: (sites[0].z + p.destination.z) / 2 }); }}>↺</button><button aria-label={framing === 'fill' ? 'Fit whole zone' : 'Fill map view'} title={framing === 'fill' ? 'Fit whole zone' : 'Fill map view'} onClick={() => { setFraming(v => v === 'fill' ? 'fit' : 'fill'); setZoom(1); setCenter({ x: 0, z: 0 }); }}>⛶</button></div>
     <div className="rm-north">N ↑</div><div className="rm-scale"><span>{framing === 'fill' ? 'Fill view' : 'Whole zone'} · {p.grid ? `Mars lat/lon · ${gridStep.toFixed(gridStep < .001 ? 4 : 3)}° grid · ` : ''}{zoom.toFixed(1)}× zoom</span></div>
-    <p id="rm-map-help" className="rm-map-help">Drag to pan · Scroll to zoom · {p.picking ? 'Click to choose destination, or focus map and use arrow keys' : 'Choose “Set destination” to place a waypoint'}</p>
+    <p id="rm-map-help" className="rm-map-help">Drag to pan · Scroll to zoom · {p.picking ? 'Click to choose destination, or focus map and use arrow keys' : p.orbital ? 'Click to inspect a spectral pixel · Enter inspects map centre' : 'Choose “Set destination” to place a waypoint'}</p>
   </div>;
 });

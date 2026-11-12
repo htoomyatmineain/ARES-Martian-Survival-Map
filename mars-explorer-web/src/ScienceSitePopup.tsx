@@ -21,14 +21,14 @@ export default function ScienceSitePopup({ site, terrain, store, onClose, onSele
     <header><span>NASA PERSEVERANCE / {site.code}</span><button ref={close} aria-label="Close science site" onClick={onClose}>×</button></header>
     <div className="rm-science-content">
       <div className="rm-site-tabs" role="group" aria-label="Choose science site">{SCIENCE_SITES.map(s => <button key={s.id} aria-pressed={s.id === site.id} onClick={() => onSelect(s.id)}>{s.name}</button>)}</div>
-      <small className="rm-science-status">HISTORICAL SAMPLING SITE · PROVISIONAL POSITION</small>
+      <small className="rm-science-status">HISTORICAL SAMPLING SITE · NASA MAP CROSS-CHECKED</small>
       <h2 id="rm-science-title">{site.name}</h2><p className="rm-science-sample">{site.sample} / {site.designation}</p>
       <p>{site.geology}</p><p>{site.interest}</p>
       <dl><dt>REPORTED LATITUDE</dt><dd>{site.latitude}° N</dd><dt>REPORTED LONGITUDE</dt><dd>{site.longitude}° E</dd><dt>PDS REPORTED ELEVATION</dt><dd>{site.pdsElevationMetres} m</dd><dt>HiRISE DISPLAY GRID / 10 M</dt><dd>{elevation(terrain, point.x, point.z).toFixed(2)} m</dd><dt>LOCAL HiRISE PIXEL</dt><dd>{checked?.samples.elevation.value.toFixed(4) ?? 'Unchecked'} m</dd></dl>
       <p className="rm-science-coverage">HiRISE point coverage: {checked?.samples.elevation.valid && checked.samples.imagery.valid ? 'valid elevation + imagery pixels, under the stated coordinate assumption.' : 'not confirmed.'} The map overview is sampled from HiRISE.</p>
       {store && <p data-testid="native-elevation">NATIVE 1 M TILE: {native?.id!==site.id?'Loading…':native.error?`Source tile could not load: ${native.error}`:native.value===null?'No valid elevation pixel.':`${native.value.toFixed(4)} m · file hash verified`}</p>}
       <button className="rm-science-zoom" onClick={() => onZoom(site)}>Zoom to {site.sample}</button>
-      <p className="rm-science-caution">{site.coordinateStatus} {site.verticalDatumStatus} Independent geolocation and vertical datum validation remain pending. Separate elevation values are not an accuracy comparison.</p>
+      <p className="rm-science-caution">{site.coordinateStatus} {site.verticalDatumStatus} Relative map agreement does not establish absolute survey accuracy. Separate elevation values are not an accuracy comparison.</p>
       <p className="rm-science-caution">The reported positions are {siteSeparationMetres(SCIENCE_SITES[0], SCIENCE_SITES[1]).toFixed(2)} m apart. Leader lines connect the offset labels to those positions. Selecting a science site does not change the demo route or certify EVA access.</p>
       <div className="rm-science-sources"><a href={`${site.reportUrl}#page=${site.reportPage}`} target="_blank" rel="noreferrer">PDS initial report · PDF p. {site.reportPage}</a><a href={site.archiveUrl} target="_blank" rel="noreferrer">PDS sample dossier archive</a><a href={site.nasaUrl} target="_blank" rel="noreferrer">NASA sampling context</a></div>
     </div>

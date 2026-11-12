@@ -1,0 +1,188 @@
+{
+  "checkedAt": "2026-11-12T12:13:19.340269+00:00",
+  "tools": {
+    "numpy": "2.5.4",
+    "rasterio": "1.5.2",
+    "GDAL": "3.12.2",
+    "pyproj": "3.8.0",
+    "PROJ": "9.8.1"
+  },
+  "limits": [
+    "Processing fidelity and display resampling error are not absolute terrain accuracy.",
+    "No independent survey/control-point accuracy claim is made.",
+    "No terrain pixels, cloud objects, routing rules or display settings are changed."
+  ],
+  "originalLabels": {
+    "sourceIndexUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/HiRISE/index.html",
+    "latitude": "Planetocentric",
+    "longitude": "Positive east",
+    "radiusMetres": 3396190,
+    "projection": "Equirectangular, standard parallel 0, central meridian 0",
+    "pixelSpacingMetres": 1,
+    "scalingFactor": 1,
+    "offset": 0,
+    "files": [
+      {
+        "file": "JEZ_hirise_soc_006_DTM_MOLAtopography_DeltaGeoid_1m_Eqc_latTs0_lon0_blend40.lbl",
+        "sha256": "2a5e50ea40f1965359f3fb8d3b316e69243b77cf63f435629be58163bca7efd7"
+      },
+      {
+        "file": "JEZ_hirise_soc_006_DTM_MOLAtopography_DeltaGeoid_1m_Eqc_latTs0_lon0_blend40.xml",
+        "sha256": "5455f7a0638aadda8358fc78e2b8c20dac4fa67b59aa0412f2bfad6ca113b79b"
+      },
+      {
+        "file": "JEZ_hirise_soc_006_DTM_MOLAtopography_DeltaGeoid_1m_Eqc_latTs0_lon0_blend40_pds3.lbl",
+        "sha256": "99b972f7ea13f9e05e9d3f265435a0566b53dbde4088781673edeb0b6d24cade"
+      }
+    ],
+    "verticalReferenceLimit": "MOLA/DeltaGeoid provenance is named by the source product; the GeoTIFF/VRT has no explicit vertical CRS/model-version definition. PLACES documents MOLA-areoid-relative elevation, but this alone does not establish identical versions or independent accuracy."
+  },
+  "coordinates": {
+    "controls": 289,
+    "pixelMismatches": {
+      "elevation": 0,
+      "imagery": 0
+    },
+    "maxApplicationVsPROJDegrees": 1.4210854715202004e-14,
+    "demCRS": "ESRI:103885",
+    "demWKT": "PROJCS[\"Equirectangular_Mars_2000\",GEOGCS[\"Mars 2000 Sphere\",DATUM[\"Mars_2000_(Sphere)\",SPHEROID[\"Mars_2000_Sphere\",3396190,0],AUTHORITY[\"ESRI\",\"106971\"]],PRIMEM[\"Reference_Meridian\",0],UNIT[\"degree\",0.0174532925199433]],PROJECTION[\"Equirectangular\"],PARAMETER[\"standard_parallel_1\",0],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "imageryWKT": "PROJCS[\"Orthographic_Mars_2000\",GEOGCS[\"Mars 2000 Sphere\",DATUM[\"Mars_2000_(Sphere)\",SPHEROID[\"Mars_2000_Sphere\",3396190,0],AUTHORITY[\"ESRI\",\"106971\"]],PRIMEM[\"Reference_Meridian\",0],UNIT[\"degree\",0.0174532925199433]],PROJECTION[\"Orthographic\"],PARAMETER[\"latitude_of_origin\",18.4663],PARAMETER[\"central_meridian\",77.4298],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "demGridSpacing": [
+      1.0,
+      1.0
+    ],
+    "rasterBandUnit": null,
+    "note": "Band unit is absent in local VRT; metre units require the published product metadata."
+  },
+  "losslessSource": {
+    "tiles": 20,
+    "samples": 105450544,
+    "mismatches": 0
+  },
+  "displayNodes": {
+    "nodes": 1002001,
+    "heightMismatches": 0,
+    "missingMaskMismatches": 0
+  },
+  "externalConsistency": {
+    "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_rover_places/data_localizations/best_tactical.csv",
+    "sourceSha256": "9da19e4f70287fe0d33ba716ff2169c10447c30c7a048583f730e4155226cde9",
+    "allRows": 666,
+    "roverRowsOutsideZone": 267,
+    "invalidInsideZone": 0,
+    "comparedRoverRows": 311,
+    "meanNativeMinusReferenceMetres": -0.0007517081993598142,
+    "medianNativeMinusReferenceMetres": -0.0010546875000727596,
+    "rmseMetres": 0.047482370614852325,
+    "p95AbsoluteDifferenceMetres": 0.0940507812499618,
+    "maxAbsoluteDifferenceMetres": 0.4215664062498945,
+    "interpretation": "External archive consistency only. Rover localizations reference orbital DEMs and their origins are virtual ground points; these are not independent surveyed terrain heights. No fit/shift or accuracy pass threshold was applied.",
+    "worstRows": [
+      {
+        "site": 26,
+        "drive": 850,
+        "sol": 474,
+        "latitude": 18.458855898,
+        "longitude": 77.40609996,
+        "reportedElevation": -2521.591,
+        "nativeElevation": -2521.16943359375,
+        "nativeMinusReferenceMetres": 0.4215664062498945
+      },
+      {
+        "site": 39,
+        "drive": 1112,
+        "sol": 795,
+        "latitude": 18.482641359,
+        "longitude": 77.368644923,
+        "reportedElevation": -2421.205,
+        "nativeElevation": -2421.38818359375,
+        "nativeMinusReferenceMetres": -0.18318359375007276
+      },
+      {
+        "site": 26,
+        "drive": 2018,
+        "sol": 536,
+        "latitude": 18.45821603,
+        "longitude": 77.40857631,
+        "reportedElevation": -2526.466,
+        "nativeElevation": -2526.300048828125,
+        "nativeMinusReferenceMetres": 0.1659511718748945
+      },
+      {
+        "site": 9,
+        "drive": 2948,
+        "sol": 343,
+        "latitude": 18.429517343,
+        "longitude": 77.447102219,
+        "reportedElevation": -2580.729,
+        "nativeElevation": -2580.88916015625,
+        "nativeMinusReferenceMetres": -0.16016015625018554
+      },
+      {
+        "site": 7,
+        "drive": 1836,
+        "sol": 204,
+        "latitude": 18.433398242,
+        "longitude": 77.442410102,
+        "reportedElevation": -2573.582,
+        "nativeElevation": -2573.4248046875,
+        "nativeMinusReferenceMetres": 0.15719531249987995
+      }
+    ]
+  },
+  "displayVsNative": {
+    "method": "Every native source pixel centre in selected zone versus the current 10 m bilinear display sampler; display minus source.",
+    "nativePixelCentresExamined": 105420000,
+    "validComparisons": 105202420,
+    "sourceMissing": 211903,
+    "sourceValidButDisplayUnavailable": 5677,
+    "meanSignedDifferenceMetres": -0.002828176934600826,
+    "rmseMetres": 0.19874381950385916,
+    "absoluteDifferenceQuantiles": {
+      "median": {
+        "lowerMetres": 0.068,
+        "upperMetres": 0.069
+      },
+      "p95": {
+        "lowerMetres": 0.375,
+        "upperMetres": 0.376
+      },
+      "p99": {
+        "lowerMetres": 0.781,
+        "upperMetres": 0.782
+      }
+    },
+    "maxAbsoluteDifferenceMetres": 6.757970430847308,
+    "worstPoint": {
+      "latitude": 18.441266605708172,
+      "longitude": 77.40887244841514,
+      "localX": -625.6434128808233,
+      "localZ": 1110.416280232821,
+      "nativeHeight": -2494.114013671875,
+      "displayHeight": -2500.8719841027223
+    }
+  },
+  "meshVsNative": {
+    "method": "Ideal triangular surface of the 10 m display grid at every native pixel centre; metre units, excluding GPU Float32 rounding.",
+    "validComparisons": 105202743,
+    "sourceValidButMeshUnavailable": 5354,
+    "meanSignedDifferenceMetres": -0.0028180770092199265,
+    "rmseMetres": 0.2024684638292303,
+    "absoluteDifferenceQuantiles": {
+      "median": {
+        "lowerMetres": 0.069,
+        "upperMetres": 0.07
+      },
+      "p95": {
+        "lowerMetres": 0.382,
+        "upperMetres": 0.383
+      },
+      "p99": {
+        "lowerMetres": 0.795,
+        "upperMetres": 0.796
+      }
+    },
+    "maxAbsoluteDifferenceMetres": 6.70283746497671
+  },
+  "scope": "Step 2: elevation processing, coordinates and display precision. No step-3 slope/routing-limit certification."
+}
