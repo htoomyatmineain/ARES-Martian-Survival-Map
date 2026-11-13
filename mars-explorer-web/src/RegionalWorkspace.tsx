@@ -1,6 +1,6 @@
 import HistoricalEnvironmentPanel from './HistoricalEnvironmentPanel';
 import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from 'react';
-import { ArrowLeft, Layers, Map, Mountain, Route as RouteIcon, Crosshair } from 'lucide-react';
+import { Layers, Map, Mountain, Route as RouteIcon, Crosshair } from 'lucide-react';
 import { elevation, slope, toGeo, type Terrain, type Point } from './terrain';
 import { DEMO_RULES, type RoutingRules } from './nativeRouting';
 import { useNativeRoute } from './useNativeRoute';
@@ -99,7 +99,7 @@ export default function RegionalWorkspace() {
       </section>
   </>);
   return <main className="regional-map">
-    <header className="rm-header"><a href="/?workspace=jz01" aria-label="Back to JZ-01"><ArrowLeft size={18}/></a><div className="rm-wordmark">ARES<span>· Martian Survival Map</span></div><span className="rm-header-divider"/><span className="rm-header-title">REGIONAL SCIENCE WORKSPACE</span><span className="rm-status"><i/>{error ? 'DATA UNAVAILABLE' : !shared ? 'CONNECTING DATA' : shared.preview ? 'LOCAL REVIEW' : 'SHARED NASA DATA'}</span></header>
+    <header className="rm-header"><div className="rm-wordmark">ARES<span>· Martian Survival Map</span></div><span className="rm-header-divider"/><span className="rm-header-title">REGIONAL SCIENCE WORKSPACE</span><span className="rm-status"><i/>{error ? 'DATA UNAVAILABLE' : !shared ? 'CONNECTING DATA' : shared.preview ? 'LOCAL REVIEW' : 'SHARED NASA DATA'}</span></header>
     <div className="rm-body"><aside className="rm-sidebar" aria-label="Mission workspace controls"><div className="rm-sidebar-head">
       
       <SidebarTabs value={sidebarPanel} onChange={setSidebarPanel}/></div><div className={`rm-sidebar-body rm-sidebar-body-${sidebarPanel}`}>
