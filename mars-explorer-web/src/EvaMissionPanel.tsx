@@ -1,4 +1,4 @@
-import {useState,type Dispatch,type ReactNode} from 'react';
+import {useEffect,useRef,useState,type Dispatch,type ReactNode} from 'react';
 import {makeSnapshot,missionReport,returnMinutes,reviewMission,type MissionAction,type MissionState,type MissionSettings} from './evaMission';
 import type {NativeRoute} from './nativeRouting';
 import {formatTravelMinutes,type TravelMode} from './travelTime';
@@ -8,6 +8,8 @@ const PHASE_NAMES={planning:'Prepare & review',outbound:'Outbound traverse',arri
 export default function EvaMissionPanel(p:Props){
  const [science,setScience]=useState('20'),[budget,setBudget]=useState('8'),[reserve,setReserve]=useState('25'),[notes,setNotes]=useState('');
  const [planningView,setPlanningView]=useState<'plan'|'review'>('plan');
+ const contentRef=useRef<HTMLDivElement>(null);
+ useEffect(()=>{contentRef.current?.scrollTo({top:0});},[planningView,p.state.phase]);
  const approach=p.route?.approach;
  const missionTarget=approach?'Approach to '+p.target:p.target;
  const settings:MissionSettings={mode:p.mode,speedKmh:p.speedKmh,scienceMinutes:approach?0:science.trim()===''?NaN:Number(science),budgetMinutes:budget.trim()===''?NaN:Number(budget)*60,reservePercent:reserve.trim()===''?NaN:Number(reserve),target:missionTarget,exclusion:p.exclusion};
@@ -16,8 +18,9 @@ export default function EvaMissionPanel(p:Props){
  const primaryAction=!locked?(planningView==='plan'?<button className="rm-pick-button rm-primary-action" onClick={()=>setPlanningView('review')}>Review mission</button>:<button className="rm-pick-button rm-primary-action" disabled={!review.ready} onClick={()=>{if(p.route&&review.ready){setNotes('');p.dispatch({type:'start',snapshot:makeSnapshot(p.route,settings)});}}}>Start EVA simulation</button>):moving?<button className="rm-pick-button rm-primary-action" onClick={()=>p.dispatch({type:s.paused?'resume':'pause'})}>{s.paused?'Resume simulation':'Pause simulation'}</button>:s.phase==='arrived'?<button className="rm-pick-button rm-primary-action" onClick={()=>p.dispatch({type:'science'})}>Begin science task</button>:s.phase==='ready-return'?<button className="rm-pick-button rm-primary-action" onClick={()=>p.dispatch({type:'return'})}>Return to habitat</button>:s.phase==='complete'?<button className="rm-pick-button rm-primary-action" onClick={exportReport}>Download simulation report</button>:null;
  return <section className="rm-section rm-mission" aria-label="Astronaut EVA mission"><h2>ASTRONAUT EVA <span>SIMULATION</span></h2>
   <p className="rm-mission-phase" role="status">{PHASE_NAMES[s.phase]}{s.paused?' · clock paused':''}</p>
+
   {locked?<ol className="rm-mission-stages" aria-label="Mission workflow">{['Prepare','Travel out',snapshot?.route.approach?'No science':'Science','Return','Debrief'].map((label,i)=>{const current=s.phase==='planning'?0:s.phase==='outbound'?1:['arrived','science'].includes(s.phase)?2:['ready-return','returning'].includes(s.phase)?3:4;return <li key={label} aria-current={i===current?'step':undefined}>{label}</li>;})}</ol>:<div className="rm-plan-steps" role="group" aria-label="Mission preparation"><button aria-pressed={planningView==='plan'} onClick={()=>setPlanningView('plan')}>1 · Plan</button><button aria-pressed={planningView==='review'} onClick={()=>setPlanningView('review')}>2 · Review</button></div>}
-  <div className="rm-mission-content">{!locked?<><div hidden={planningView!=='plan'}><label className="rm-mission-field">Mission destination<select aria-label="Mission destination" value={p.targetId} onChange={e=>p.onTarget(e.target.value)}><option value="custom">Custom map point</option>{p.targets.map(t=><option key={t.id} value={t.id}>{t.name}</option>)}</select></label>
+  <div className="rm-mission-content" ref={contentRef}><div className="rm-mission-hero"><span>{locked?'SIMULATED ELAPSED TIME':'PLANNED ROUND TRIP + SCIENCE'}</span><strong>{locked?formatTravelMinutes(s.elapsed):p.route?.profileStatus==='verified'&&Number.isFinite(review.required)?formatTravelMinutes(review.required):'—'}</strong><small>{locked?'Simulation clock · not live crew telemetry':'Travel and task estimate · demo assumptions'}</small></div>{!locked?<><div hidden={planningView!=='plan'}><label className="rm-mission-field">Mission destination<select aria-label="Mission destination" value={p.targetId} onChange={e=>p.onTarget(e.target.value)}><option value="custom">Custom map point</option>{p.targets.map(t=><option key={t.id} value={t.id}>{t.name}</option>)}</select></label>
    {p.destinationControl}{p.travelControls}{p.routeControls}
    </div>
    <div hidden={planningView!=='review'}>{approach&&<p className="rm-approach-notice">Approach-only simulation · {Math.ceil(approach.gapMetres)} m straight-line gap remains. No final-leg travel time or science task is included.</p>}<p className="rm-fineprint">{p.target} · {p.mode==='rover'?'Crewed rover':'Suited walking'} · {p.speedKmh} km/h assumed average.</p>

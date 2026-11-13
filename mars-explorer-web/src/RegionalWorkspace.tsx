@@ -1,7 +1,7 @@
 import HistoricalEnvironmentPanel from './HistoricalEnvironmentPanel';
 import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 import { Layers, Map, Mountain, Route as RouteIcon, Crosshair } from 'lucide-react';
-import { elevation, slope, toGeo, type Terrain, type Point } from './terrain';
+import { elevation, toGeo, type Terrain, type Point } from './terrain';
 import { DEMO_RULES, type RoutingRules } from './nativeRouting';
 import { useNativeRoute } from './useNativeRoute';
 import { loadSharedRegional, type SharedRegionalMap } from './sharedRegionalData';
@@ -37,8 +37,7 @@ export default function RegionalWorkspace() {
   const [geologyOpen,setGeologyOpen]=useState(false),[geologyPoint,setGeologyPoint]=useState<Point|null>(null),[geologyUnit,setGeologyUnit]=useState<string|null>(null);
   useEffect(()=>{if(!geologyEnabled)return;const c=new AbortController();setGeology(null);setGeologyError('');loadGeology(c.signal).then(data=>{if(!c.signal.aborted)setGeology(data);}).catch(e=>{if(!c.signal.aborted)setGeologyError(e.message);});return()=>c.abort();},[geologyEnabled,geologyRetry]);
   const [grid, setGrid] = useState(true);
-  const [inspection,setInspection]=useState<Point|null>(null);
-  const [telemetryOpen, setTelemetryOpen] = useState(true);
+  const [telemetryOpen, setTelemetryOpen] = useState(false);
   const [workspace,setWorkspace]=useState<'map'|'mission'>('map');
   const [sidebarPanel,setSidebarPanel]=useState<SidebarPanel>('mission');
   const [scienceVisible, setScienceVisible] = useState(true), [selectedScienceId, setSelectedScienceId] = useState<string | null>(null);
@@ -72,24 +71,24 @@ export default function RegionalWorkspace() {
     loadSharedRegional(c.signal).then(data => { loaded = data; if (c.signal.aborted) URL.revokeObjectURL(data.imageryUrl); else { setShared(data); setTerrain(data.terrain); } }).catch(e => { if (e.name !== 'AbortError') setError(e.message); });
     return () => { c.abort(); if (loaded) URL.revokeObjectURL(loaded.imageryUrl); };
   }, [retry]);
-  useEffect(() => { const key = (e: KeyboardEvent) => { if (e.key === 'Escape') { setPicking(false); setGeologyOpen(false); setInspection(null); setSelectedScienceId(null); setObservationOpen(false); setOrbitalOpen(false); } }; window.addEventListener('keydown', key); return () => window.removeEventListener('keydown', key); }, []);
+  useEffect(() => { const key = (e: KeyboardEvent) => { if (e.key === 'Escape') { setPicking(false); setGeologyOpen(false);  setSelectedScienceId(null); setObservationOpen(false); setOrbitalOpen(false); } }; window.addEventListener('keydown', key); return () => window.removeEventListener('keydown', key); }, []);
   const route = mission.state.snapshot?.route??routing.route;
   const routeEnd=route?.approach?.endpoint??destination;
   const geo = toGeo(destination);
   const pick = useCallback((at: Point) => {if(!missionLocked){setTargetId('custom');setDestination(at);}}, [missionLocked]);
   const chooseTarget=(id:string)=>{if(missionLocked)return;const site=SCIENCE_SITES.find(s=>s.id===id);setTargetId(site?id:'custom');if(site){setDestination(sciencePoint(site,terrain?.meta.center));setPicking(false);}};
-  const selectScience = useCallback((id: string) => { if (SCIENCE_SITES.some(s => s.id === id)) { setGeologyOpen(false); setInspection(null); setSelectedScienceId(id); setPicking(false); setObservationOpen(false); setOrbitalOpen(false); } }, []);
-  const zoomScience = (site: ScienceSite) => { setGeologyOpen(false); setInspection(null); setScienceVisible(true); setSelectedScienceId(site.id); setObservationOpen(false); setOrbitalOpen(false); setPicking(false); setView('2D'); setScienceFocus(v => ({ id: site.id, tick: (v?.tick ?? 0) + 1 })); };
+  const selectScience = useCallback((id: string) => { if (SCIENCE_SITES.some(s => s.id === id)) { setGeologyOpen(false);  setSelectedScienceId(id); setPicking(false); setObservationOpen(false); setOrbitalOpen(false); } }, []);
+  const zoomScience = (site: ScienceSite) => { setGeologyOpen(false);  setScienceVisible(true); setSelectedScienceId(site.id); setObservationOpen(false); setOrbitalOpen(false); setPicking(false); setView('2D'); setScienceFocus(v => ({ id: site.id, tick: (v?.tick ?? 0) + 1 })); };
   const selectedScience = SCIENCE_SITES.find(s => s.id === selectedScienceId);
   const reading = THERMAL.observations.find(item => item.id === thermalId) ?? THERMAL.observations[0];
   const observations = useMemo(() => observationMarkers(observationLayer, reading, terrain?.meta.center), [observationLayer, reading, terrain?.meta.center]);
-  const enableObservation = (layer: ObservationLayer) => { setGeologyOpen(false); setInspection(null); setObservationLayer(layer); setObservationOpen(layer !== 'none'); setSelectedScienceId(null); setPicking(false); setOrbitalOpen(false); };
-  const openObservation = () => { setGeologyOpen(false); setInspection(null); setObservationOpen(true); setSelectedScienceId(null); setPicking(false); setOrbitalOpen(false); };
-  const inspectTerrain=(point:Point)=>{if(geologyEnabled&&geology){setGeologyPoint(point);setGeologyUnit(null);setGeologyOpen(true);setInspection(null);}else setInspection(point);setSelectedScienceId(null);setObservationOpen(false);setOrbitalOpen(false);};
-  const inspectOrbital = (point: Point) => { setGeologyOpen(false); setInspection(null); setOrbitalPoint(point); setOrbitalOpen(true); setObservationOpen(false); setSelectedScienceId(null); };
-  const chooseOrbital = (id: string) => { setGeologyOpen(false); setGeologyEnabled(false); setInspection(null); setOrbitalId(id); setOrbitalPoint(null); setAnalysis('none'); setOrbitalOpen(id !== 'none'); setObservationOpen(false); setSelectedScienceId(null); };
+  const enableObservation = (layer: ObservationLayer) => { setGeologyOpen(false);  setObservationLayer(layer); setObservationOpen(layer !== 'none'); setSelectedScienceId(null); setPicking(false); setOrbitalOpen(false); };
+  const openObservation = () => { setGeologyOpen(false);  setObservationOpen(true); setSelectedScienceId(null); setPicking(false); setOrbitalOpen(false); };
+  const inspectTerrain=(point:Point)=>{if(geologyEnabled&&geology){setGeologyPoint(point);setGeologyUnit(null);setGeologyOpen(true);}else return;setSelectedScienceId(null);setObservationOpen(false);setOrbitalOpen(false);};
+  const inspectOrbital = (point: Point) => { setGeologyOpen(false);  setOrbitalPoint(point); setOrbitalOpen(true); setObservationOpen(false); setSelectedScienceId(null); };
+  const chooseOrbital = (id: string) => { setGeologyOpen(false); setGeologyEnabled(false);  setOrbitalId(id); setOrbitalPoint(null); setAnalysis('none'); setOrbitalOpen(id !== 'none'); setObservationOpen(false); setSelectedScienceId(null); };
   const locateObservation = () => { const point = observations[0]?.point; if (point) { setView('2D'); setPicking(false); setObservationFocus(value => ({ point, tick: (value?.tick ?? 0) + 1 })); } };
-  const showGeology=(id:string|null=null)=>{setGeologyOpen(true);setGeologyUnit(id);setGeologyPoint(null);setSelectedScienceId(null);setObservationOpen(false);setOrbitalOpen(false);setInspection(null);setPicking(false);};
+  const showGeology=(id:string|null=null)=>{setGeologyOpen(true);setGeologyUnit(id);setGeologyPoint(null);setSelectedScienceId(null);setObservationOpen(false);setOrbitalOpen(false);setPicking(false);};
   const travelSettings=<TravelEstimate presentation="settings" route={route} mode={travelMode} speeds={speeds} onMode={setTravelMode} onSpeed={(mode,value)=>setSpeeds(s=>({...s,[mode]:value}))} locked={missionLocked}/>;
   const destinationControls=<><button className="rm-pick-button rm-map-destination" disabled={missionLocked} aria-pressed={picking} onClick={()=>setPicking(v=>!v)}><Crosshair size={15}/>{picking?'Finish selection':'Set destination'}</button><div className="rm-coordinates" data-testid="destination-coordinates">{geo.lat.toFixed(5)}° N · {geo.lon.toFixed(5)}° E</div></>;
   const routeControls=(<>
@@ -101,8 +100,17 @@ export default function RegionalWorkspace() {
         <p className="rm-fineprint" role="status">{routing.status}</p>{route?.approach&&<div className="rm-approach-notice" role="status"><strong>APPROACH ONLY · {Math.ceil(route.approach.gapMetres)} m short of site</strong><p>{route.approach.reason}</p><p>Route stops at a reachable grid point within a 250 m demo search radius. The remaining straight-line gap is unplanned; it is not a verified walking leg. This simulation visits the approach point only, with no science task.</p></div>}{routing.error&&<p role="alert">{routing.error}</p>}{routing.error&&<button className="rm-pick-button" onClick={()=>setRouteRetry(v=>v+1)}>Retry native routing</button>}
       </section>
   </>);
+  const routeData=terrain?(<section className="rm-telemetry" aria-label="Route data" data-testid="route-data-card">
+          <button className="rm-telemetry-toggle" aria-expanded={telemetryOpen} aria-controls="rm-route-data" aria-label={telemetryOpen ? 'Collapse route data' : 'Expand route data'} onClick={() => setTelemetryOpen(v => !v)}><span>{route?.approach?'APPROACH ROUTE':'ROUTE DATA'}</span><span aria-hidden="true">{telemetryOpen ? '−' : '+'}</span></button>
+          <div id="rm-route-data" hidden={!telemetryOpen} aria-live="polite"><TravelEstimate route={route} mode={travelMode} speeds={speeds} onMode={setTravelMode} onSpeed={(mode,value)=>setSpeeds(s=>({...s,[mode]:value}))} locked={missionLocked}/><div className="rm-telemetry-grid">
+            <div><small>DEMO ROUTE</small><strong>{route?.profileStatus==='verified' ? <>{(route.distance / 1000).toFixed(2)}<span className="rm-unit"> km</span></> : <span className="rm-no-route">{route?'Checking…':'—'}</span>}</strong></div>
+            <div><small>UPHILL CLIMB</small><strong>{route?.profileStatus==='verified' ? <>{Math.round(route.ascent)}<span className="rm-unit"> m</span></> : '—'}</strong></div>
+            <div><small>MAX ALONG / SIDEWAYS BOUNDS</small><strong>{route ? <>{route.maxAlongSlope.toFixed(1)} / {route.maxCrossSlope.toFixed(1)}<span className="rm-unit">°</span></> : '—'}</strong></div>
+            <div><small>{route?.approach?'APPROACH HEIGHT':'DESTINATION HEIGHT'}</small><strong>{Number.isFinite(elevation(terrain,routeEnd.x,routeEnd.z)) ? <>{Math.round(elevation(terrain,destination.x,destination.z))}<span className="rm-unit"> m</span></> : 'No data'}</strong></div>
+          </div><p className="rm-telemetry-foot">{routing.status}{route&&` · Max ground slope bound ${route.maxSlope.toFixed(1)}° · ${route.warnings.length} flagged segments · ${route.profileSamples} profile samples`} · DEMO LIMITS / NOT EVA CERTIFIED</p></div>
+        </section>):null;
   return <main className={`regional-map rm-workspace-${workspace}`}>
-    <header className="rm-header"><div className="rm-wordmark">ARES<span>· Martian Survival Map</span></div><nav className="rm-primary-nav" aria-label="Primary navigation"><button aria-current={workspace==='map'?'page':undefined} onClick={()=>setWorkspace('map')}>Map</button><button aria-current={workspace==='mission'?'page':undefined} onClick={()=>{setWorkspace('mission');setPicking(false);}}>Mission</button></nav><span className="rm-header-divider"/><span className="rm-header-title">REGIONAL SCIENCE WORKSPACE</span><span className="rm-status"><i/>{error ? 'DATA UNAVAILABLE' : !shared ? 'CONNECTING DATA' : shared.preview ? 'LOCAL REVIEW' : 'SHARED NASA DATA'}</span></header>
+    <header className="rm-header"><div className="rm-wordmark">ARES<span>· Martian Survival Map</span></div><nav className="rm-primary-nav" aria-label="Primary navigation"><button aria-current={workspace==='map'?'page':undefined} onClick={()=>setWorkspace('map')}>Map</button><button aria-current={workspace==='mission'?'page':undefined} onClick={()=>{setWorkspace('mission');setPicking(false);}}>Mission</button></nav><span className="rm-header-divider"/><span className="rm-header-title">REGIONAL SCIENCE WORKSPACE</span></header>
     <div className="rm-body"><aside className="rm-sidebar" aria-label="Mission workspace controls"><div className="rm-sidebar-head" hidden={workspace==='mission'}>
       
       <SidebarTabs value={sidebarPanel} onChange={setSidebarPanel}/></div><div className={`rm-sidebar-body rm-sidebar-body-${workspace==='mission'?'mission':sidebarPanel}`}>
@@ -145,7 +153,7 @@ export default function RegionalWorkspace() {
         <details><summary>Presentation references</summary><a href="https://science.nasa.gov/resource/curiositys-proposed-path-up-mount-sharp/" target="_blank" rel="noreferrer">Curiosity route and science regions ↗</a><p>Named science objectives inform our mission itinerary display. Curiosity's route is elsewhere on Mars and is not used in Jezero calculations.</p><a href="https://worldview.earthdata.nasa.gov/" target="_blank" rel="noreferrer">NASA Worldview ↗</a><p>Earth-only interface reference for layer, legend and time controls. Our historical Mars readings come from MEDA, not Worldview.</p></details>
       </section>
       </section></div>
-      </div></aside>
+      </div>{routeData}</aside>
     <section className="rm-stage" aria-label={workspace==='mission'?'Mission navigation map':'Map workspace'}><div className="rm-zone-heading"><h1>Western Jezero</h1><p>Zone area · 10 × 10 km</p></div>
       <div className="rm-stage-toolbar"><div className="rm-view-switch" role="group" aria-label="Map view"><button aria-pressed={view === '2D'} onClick={() => setView('2D')}><Map size={15}/>2D MAP</button><button aria-pressed={view === '3D'} onClick={() => {setSceneOpened(true);setView('3D');}}><Mountain size={15}/>3D TACTICAL</button></div><span>HiRISE · 10 m display grid · {view === '3D' ? 'True-scale height · 1×' : 'North up'}</span></div>
       {error ? <div className="rm-empty" role="alert"><h2>Terrain could not load</h2><p>{error}</p><button onClick={() => setRetry(v => v + 1)}>Retry</button></div> : !terrain ? <div className="rm-empty" role="status">Loading regional terrain…</div> : <>
@@ -155,16 +163,7 @@ export default function RegionalWorkspace() {
         {geologyEnabled&&geology&&<div className="rm-geology-map-note">GEOLOGY · 1:75,000 · approximate boundaries · source offsets ~100–200 m</div>}
         {analysis !== 'none' && <div className="rm-legend" aria-label="Map legend"><strong>{analysis === 'slope' ? 'Slope bound · degrees' : 'Elevation · metres'}</strong>{analysis === 'slope' ? <><div className="rm-slope-scale"><i/><i/><i/></div><div className="rm-legend-labels"><span>0–10°</span><span>10–18°</span><span>&gt;18°</span></div><small>{routing.grid?'Native 1 m terrain · 10 m conservative cells':'Native slopes not ready · display-grid preview'}<br/>Display bands · not safety limits</small></> : <><div className="rm-height-scale"/><div className="rm-legend-labels"><span>{Math.round(terrain.meta.min)} m</span><span>{Math.round(terrain.meta.max)} m</span></div></>}</div>}
         {orbitalMeta && orbital && <div className="rm-legend rm-orbital-legend" aria-label="Orbital indicator legend"><strong>{orbitalMeta.parameter} · index</strong><div className="rm-height-scale" style={{background:`linear-gradient(90deg,#191f28,${orbitalMeta.color})`}}/><div className="rm-legend-labels"><span>{orbitalMeta.displayMin.toFixed(4)}</span><span>{orbitalMeta.displayMax.toFixed(4)}</span></div><small>Colour stretch, not confidence<br/>Uncoloured = no data · {orbitalMeta.observedStart.slice(0,10)}</small></div>}
-        <section className="rm-telemetry" aria-label="Route data" data-testid="route-data-card">
-          <button className="rm-telemetry-toggle" aria-expanded={telemetryOpen} aria-controls="rm-route-data" aria-label={telemetryOpen ? 'Collapse route data' : 'Expand route data'} onClick={() => setTelemetryOpen(v => !v)}><span>{route?.approach?'APPROACH ROUTE':'ROUTE DATA'}</span><span aria-hidden="true">{telemetryOpen ? '−' : '+'}</span></button>
-          <div id="rm-route-data" hidden={!telemetryOpen} aria-live="polite"><TravelEstimate route={route} mode={travelMode} speeds={speeds} onMode={setTravelMode} onSpeed={(mode,value)=>setSpeeds(s=>({...s,[mode]:value}))} locked={missionLocked}/><div className="rm-telemetry-grid">
-            <div><small>DEMO ROUTE</small><strong>{route?.profileStatus==='verified' ? <>{(route.distance / 1000).toFixed(2)}<span className="rm-unit"> km</span></> : <span className="rm-no-route">{route?'Checking…':'—'}</span>}</strong></div>
-            <div><small>UPHILL CLIMB</small><strong>{route?.profileStatus==='verified' ? <>{Math.round(route.ascent)}<span className="rm-unit"> m</span></> : '—'}</strong></div>
-            <div><small>MAX ALONG / SIDEWAYS BOUNDS</small><strong>{route ? <>{route.maxAlongSlope.toFixed(1)} / {route.maxCrossSlope.toFixed(1)}<span className="rm-unit">°</span></> : '—'}</strong></div>
-            <div><small>{route?.approach?'APPROACH HEIGHT':'DESTINATION HEIGHT'}</small><strong>{Number.isFinite(elevation(terrain,routeEnd.x,routeEnd.z)) ? <>{Math.round(elevation(terrain,destination.x,destination.z))}<span className="rm-unit"> m</span></> : 'No data'}</strong></div>
-          </div><p className="rm-telemetry-foot">{routing.status}{route&&` · Max ground slope bound ${route.maxSlope.toFixed(1)}° · ${route.warnings.length} flagged segments · ${route.profileSamples} profile samples`} · DEMO LIMITS / NOT EVA CERTIFIED</p></div>
-        </section>
-        {inspection && <section className="rm-science-popup rm-terrain-inspector" aria-label="Terrain inspection"><header>TERRAIN INSPECTION<button aria-label="Close terrain inspection" onClick={()=>setInspection(null)}>×</button></header><div className="rm-science-content"><h2>Selected ground point</h2><dl><dt>MARS COORDINATES</dt><dd>{toGeo(inspection).lat.toFixed(5)}° N · {toGeo(inspection).lon.toFixed(5)}° E</dd><dt>ELEVATION</dt><dd>{Number.isFinite(elevation(terrain,inspection.x,inspection.z))?elevation(terrain,inspection.x,inspection.z).toFixed(1)+' m':'No data'}</dd><dt>{terrain.nativeSlope?'NATIVE TERRAIN SLOPE BOUND':'DISPLAY-GRID SLOPE'}</dt><dd>{Number.isFinite(slope(terrain,inspection.x,inspection.z))?slope(terrain,inspection.x,inspection.z).toFixed(1)+'°':'No data'}</dd></dl><p>Elevation uses the 10 m display grid. Slope uses native terrain bounds when loaded; otherwise it is a display estimate.</p></div></section>}
+
 {geologyEnabled&&geology&&geologyOpen&&<GeologyPanel data={geology} point={geologyPoint} unitId={geologyUnit} onClose={()=>setGeologyOpen(false)}/>}
 {scienceVisible && selectedScience && <ScienceSitePopup store={shared?.store} site={selectedScience} terrain={terrain} onClose={() => setSelectedScienceId(null)} onSelect={selectScience} onZoom={zoomScience}/>}
         {observationLayer === 'environment' && observationOpen && <HistoricalEnvironmentPanel reading={reading} onReading={setThermalId} onClose={() => setObservationOpen(false)} onLocate={locateObservation}/>}
