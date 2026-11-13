@@ -1,0 +1,76 @@
+- group "...":   
+- button "":
+  - generic: 
+- text: 
+- button "":
+  - generic: 
+- button "":
+  - generic: 
+- button "":
+  - generic: 
+- button "":
+  - generic: 
+- text:                                                                      
+- button "":
+  - generic: 
+- button "":
+  - generic: 
+- generic "Map Scale":
+  - generic: 2 km
+- generic "Current Mouse Position Coordinates"
+- link:
+  - /url: https://trek.nasa.gov
+- generic: marsTrek
+- generic: 
+- iframe [id="stlDownloadFrame"]
+- iframe [id="layerDownloadFrame"]
+- iframe [id="layerMetadataDownloadFrame"]
+- text:  
+- button "":
+  - generic: 
+- button "Search":
+  - generic: Search
+- button "Layers (1)":
+  - generic: Layers
+  - generic: (1)
+- button "Downloads":
+  - generic: Downloads
+- text:                  This filter is currently not applicable.   This filter is currently not applicable.           
+- button "":
+  - generic: 
+- heading "MRO HiRISE, Jezero Mosaic, Controlled" [level=2]
+- table:
+  - rowgroup
+- link:
+  - /url: https://trek.nasa.gov/mars/TrekWS/rest/cat/legend/stream?label=JEZ_hirise_soc_006_orthoMosaic_25cm_Eqc_latTs0_lon0_first_dd
+- img "..."
+- paragraph: The Mars 2020 rover will explore Jezero crater, Mars to investigate an ancient delta for evidence of past microbial life and to better understand the geologic history of the region. The landing system onboard Mars 2020 will use technology developed at the Jet Propulsion Laboratory (JPL) called Terrain Relative Navigation (TRN), which will enable the spacecraft to autonomously avoid hazards (e.g., rock fields, crater rims) that exceed the safety requirements of the landing system. This capability allows small-scale hazards to be present in the landing ellipse, providing greater flexibility in selecting a landing location. In support of TRN, the USGS Astrogeology Science Center has generated and delivered a High-Resolution Imaging Science Experiment (HiRISE) digital terrain model (DTM) mosaic and orthomosaic that is the basemap onto which surface hazards were mapped. The hazard map will be onboard the spacecraft and used by TRN to help identify the final, hazard-free landing location.
+- paragraph:
+  - button "Remove"
+  - button "View Metadata"
+  - button "Download Metadata"
+- paragraph:
+  - button "Download"
+  - button "Add to Downloads"
+  - button "Fly To"
+  - button "Manage Layer(s)"
+- text: 
+- table "Attributes":
+  - caption: Attributes
+  - rowgroup:
+    - row "Label Value":
+      - columnheader "Label"
+      - columnheader "Value"
+    - row "bbox 77.2229331,18.3067994,77.583964,18.669315":
+      - cell "bbox"
+      - cell "77.2229331,18.3067994,77.583964,18.669315"
+    - row "instrument HiRISE":
+      - cell "instrument"
+      - cell "HiRISE"
+    - row "mission Mars Reconnaissance Orbiter":
+      - cell "mission"
+      - cell "Mars Reconnaissance Orbiter"
+    - row "product Type Imagery / Mosaic":
+      - cell "product Type"
+      - cell "Imagery / Mosaic"
+- text:                                            

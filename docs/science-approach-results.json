@@ -1,0 +1,90 @@
+{
+  "rules": {
+    "alongLimit": 18,
+    "crossLimit": 12,
+    "totalLimit": 28,
+    "slopeWeight": 4,
+    "warningFraction": 0.8
+  },
+  "searchRadiusMetres": 250,
+  "selection": "Lowest graph objective to a reachable search node inside the radius; not the geographically nearest point.",
+  "reports": [
+    {
+      "site": "Skinner Ridge",
+      "diagnosis": {
+        "code": "destination-blocked",
+        "message": "Destination cell ground-slope bound 31.7° exceeds the 28° demo limit."
+      },
+      "requested": {
+        "x": -777.5439486655869,
+        "z": 63.364651652479374
+      },
+      "approach": {
+        "requested": {
+          "x": -777.5439486655869,
+          "z": 63.364651652479374
+        },
+        "endpoint": {
+          "x": -590,
+          "z": 210
+        },
+        "gapMetres": 238.06439898917898,
+        "searchRadiusMetres": 250,
+        "reason": "Destination cell ground-slope bound 31.7° exceeds the 28° demo limit."
+      },
+      "approachCoordinates": {
+        "lat": 18.456457172979796,
+        "lon": 77.40950639405784
+      },
+      "distance": 3629.751090182671,
+      "ascent": 66.84632270777047,
+      "profileSamples": 3653,
+      "alongBound": 11.617023409313294,
+      "crossBound": 10.834092045805066,
+      "groundBound": 12.226672103303208,
+      "edges": 168,
+      "allEdgesPass": true,
+      "scienceSiteReached": false,
+      "finalLegPlanned": false
+    },
+    {
+      "site": "Wildcat Ridge",
+      "diagnosis": {
+        "code": "disconnected",
+        "message": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable."
+      },
+      "requested": {
+        "x": -793.4144988766204,
+        "z": 80.78726349538618
+      },
+      "approach": {
+        "requested": {
+          "x": -793.4144988766204,
+          "z": 80.78726349538618
+        },
+        "endpoint": {
+          "x": -610,
+          "z": 250
+        },
+        "gapMetres": 249.54724721691815,
+        "searchRadiusMetres": 250,
+        "reason": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable."
+      },
+      "approachCoordinates": {
+        "lat": 18.455782348785473,
+        "lon": 77.40915067860219
+      },
+      "distance": 3621.4516421481026,
+      "ascent": 66.17414489988096,
+      "profileSamples": 3644,
+      "alongBound": 11.617023409313294,
+      "crossBound": 10.834092045805066,
+      "groundBound": 12.226672103303208,
+      "edges": 168,
+      "allEdgesPass": true,
+      "scienceSiteReached": false,
+      "finalLegPlanned": false
+    }
+  ],
+  "limits": "Native 1 m profile checked to the approach endpoint only. Gap is straight-line horizontal separation, not walking distance. No final-leg or astronaut-safety claim."
+}

@@ -112,6 +112,15 @@
 }
 .regional-map .rm-scene[hidden]{display:none}
 .rm-zone-heading{text-shadow:0 1px 2px #000,0 2px 7px #000,0 0 14px #000,0 0 24px #000}
+.rm-resource-links{margin-top:22px;padding-top:18px;border-top:1px solid var(--map-border)}
+.rm-resource-links a{display:block;color:var(--map-accent);font-size:11px;line-height:1.6;margin:10px 0 5px;text-underline-offset:3px}
+.rm-resource-links p,.rm-resource-links details{font-size:10px;line-height:1.7;color:var(--map-muted)}
+.rm-resource-links summary{cursor:pointer;color:var(--map-text);padding:10px 0}
+.rm-itinerary{list-style:none;counter-reset:mission-stop;padding:0;margin:16px 0;border-block:1px solid var(--map-border)}
+.rm-itinerary li{counter-increment:mission-stop;position:relative;padding:12px 0 12px 30px;border-bottom:1px solid #ffffff12}
+.rm-itinerary li:last-child{border:0}.rm-itinerary li:before{content:counter(mission-stop,decimal-leading-zero);position:absolute;left:0;top:12px;font-size:10px;color:var(--map-accent)}
+.rm-itinerary strong{font-size:11px;font-weight:400;line-height:1.6}.rm-itinerary small{font-size:9px;margin-top:4px;line-height:1.7}
 /* Product name stays readable without colliding with the mobile view switch. */
 .rm-wordmark{white-space:nowrap}.rm-wordmark span{font-size:12px;letter-spacing:.2px}
 @media(max-width:700px){.regional-map .rm-header{top:10px;height:40px;max-width:calc(100% - 190px)}.rm-wordmark{font-size:16px;line-height:1.2}.rm-wordmark span{display:block;margin:3px 0 0;font-size:8px;letter-spacing:0}.rm-header a{flex-shrink:0}}
+.rm-approach-notice{padding:10px;margin:12px 0;border:1px solid #f39b5860;border-left:3px solid var(--map-accent);border-radius:3px;color:var(--map-text);font-size:10px;line-height:1.7;background:#f39b580a}.rm-approach-notice strong{font-size:10px;color:var(--map-accent);font-weight:400}.rm-approach-notice p{margin:7px 0 0}

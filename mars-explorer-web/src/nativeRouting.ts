@@ -5,7 +5,7 @@ export type RoutingRules = { alongLimit: number; crossLimit: number; totalLimit:
 // Engineering demonstration choices, NOT NASA astronaut or suit operating limits.
 export const DEMO_RULES: RoutingRules = { alongLimit:18, crossLimit:12, totalLimit:28, slopeWeight:4, warningFraction:.8 };
 export type SegmentCheck = { allowed:boolean; along:number; cross:number; total:number; warning:boolean; reason?:string };
-export type NativeRoute = Route & { maxAlongSlope:number; maxCrossSlope:number; warnings:Point[][]; profileStatus:'pending'|'verified'; profileSamples:number; rules:RoutingRules; expanded:number };
+export type NativeRoute = Route & { maxAlongSlope:number; maxCrossSlope:number; warnings:Point[][]; profileStatus:'pending'|'verified'; profileSamples:number; rules:RoutingRules; expanded:number; approach?: {requested:Point; endpoint:Point; gapMetres:number; searchRadiusMetres:number; reason:string} };
 const DEG=180/Math.PI;
 
 export function directionalBounds(bounds: ArrayLike<number>, ux:number, uz:number) {
@@ -42,10 +42,11 @@ export function checkSegment(grid:HazardGrid,a:Point,b:Point,rules:RoutingRules,
 }
 
 export function validateRules(r:RoutingRules){if(![r.alongLimit,r.crossLimit,r.totalLimit].every(v=>Number.isFinite(v)&&v>0&&v<90)||!Number.isFinite(r.slopeWeight)||r.slopeWeight<0||!(r.warningFraction>0&&r.warningFraction<=1))throw Error('Invalid routing rules');}
-export function planNativeRoute(grid:HazardGrid,start:Point,end:Point,rules:RoutingRules=DEMO_RULES,blocked=false):NativeRoute|null {
+export function planNativeRoute(grid:HazardGrid,start:Point,end:Point,rules:RoutingRules=DEMO_RULES,blocked=false,approachRadius=0):NativeRoute|null {
   validateRules(rules);
+  if(!Number.isFinite(approachRadius)||approachRadius<0||approachRadius>500)throw Error('Invalid approach search radius');
   const pointRules={...rules,alongLimit:89.999,crossLimit:89.999};
-  if(!checkSegment(grid,start,start,pointRules,blocked).allowed||!checkSegment(grid,end,end,pointRules,blocked).allowed)return null;
+  if(!checkSegment(grid,start,start,pointRules,blocked).allowed||(approachRadius===0&&!checkSegment(grid,end,end,pointRules,blocked).allowed))return null;
   // Cell centres every 20 m. Start/end remain exact virtual nodes, with checked connectors.
   const n=Math.floor(grid.width/2),step=grid.spacing*2,count=n*n,source=count,goal=count+1;
   const point=(i:number):Point=>i===source?start:i===goal?end:{x:-grid.size/2+(i%n*2+1)*grid.spacing,z:-grid.size/2+(Math.floor(i/n)*2+1)*grid.spacing};
@@ -54,19 +55,20 @@ export function planNativeRoute(grid:HazardGrid,start:Point,end:Point,rules:Rout
   const heap:{i:number;f:number}[]=[];
   const push=(item:{i:number;f:number})=>{heap.push(item);let k=heap.length-1;while(k){const p=(k-1)>>1;if(heap[p].f<=item.f)break;heap[k]=heap[p];k=p;}heap[k]=item;};
   const pop=()=>{const first=heap[0],last=heap.pop()!;if(heap.length){let k=0;while(k*2+1<heap.length){let c=k*2+1;if(c+1<heap.length&&heap[c+1].f<heap[c].f)c++;if(last.f<=heap[c].f)break;heap[k]=heap[c];k=c;}heap[k]=last;}return first.i;};
-  cost[source]=0;push({i:source,f:Math.hypot(end.x-start.x,end.z-start.z)});let expanded=0;
-  while(heap.length){const current=pop();if(closed[current])continue;closed[current]=1;expanded++;if(current===goal)break;
+  const heuristic=(p:Point)=>Math.max(0,Math.hypot(end.x-p.x,end.z-p.z)-approachRadius);
+  cost[source]=0;push({i:source,f:heuristic(start)});let expanded=0,reached=-1;
+  while(heap.length){const current=pop();if(closed[current])continue;closed[current]=1;expanded++;if(current===goal||(approachRadius>0&&current!==source&&Math.hypot(point(current).x-end.x,point(current).z-end.z)<=approachRadius)){reached=current;break;}
     const a=point(current);const neighbors:number[]=[];
-    if(current===source){neighbors.push(...near(start));if(Math.hypot(end.x-start.x,end.z-start.z)<=step*2)neighbors.push(goal);}
-    else {const c=current%n,r=Math.floor(current/n);for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++)if((dx||dy)&&c+dx>=0&&c+dx<n&&r+dy>=0&&r+dy<n)neighbors.push((r+dy)*n+c+dx);if(goals.has(current))neighbors.push(goal);}
+    if(current===source){neighbors.push(...near(start));if(approachRadius===0&&Math.hypot(end.x-start.x,end.z-start.z)<=step*2)neighbors.push(goal);}
+    else {const c=current%n,r=Math.floor(current/n);for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++)if((dx||dy)&&c+dx>=0&&c+dx<n&&r+dy>=0&&r+dy<n)neighbors.push((r+dy)*n+c+dx);if(approachRadius===0&&goals.has(current))neighbors.push(goal);}
     for(const next of neighbors){if(closed[next])continue;const b=point(next),check=checkSegment(grid,a,b,rules,blocked);if(!check.allowed)continue;
       const distance=Math.hypot(b.x-a.x,b.z-a.z);const penalty=rules.slopeWeight*((check.along/rules.alongLimit)**2+(check.cross/rules.crossLimit)**2);
       const candidate=cost[current]+distance*(1+penalty);
-      if(candidate<cost[next]){cost[next]=candidate;prev[next]=current;push({i:next,f:candidate+Math.hypot(b.x-end.x,b.z-end.z)});}
+      if(candidate<cost[next]){cost[next]=candidate;prev[next]=current;push({i:next,f:candidate+heuristic(b)});}
     }
   }
-  if(!Number.isFinite(cost[goal]))return null;
-  const points:Point[]=[];for(let i=goal;i!==-1;i=prev[i])points.push(point(i));points.reverse();
+  if(reached===-1)return null;
+  const points:Point[]=[];for(let i=reached;i!==-1;i=prev[i])points.push(point(i));points.reverse();
   // No smoothing: every displayed segment has passed the same complete coverage check.
   let maxAlongSlope=0,maxCrossSlope=0,maxSlope=0,distance=0,ascent=0;const warnings:Point[][]=[];
   const height=(p:Point)=>grid.values[(Math.floor((p.z+grid.size/2)/grid.spacing)*grid.width+Math.floor((p.x+grid.size/2)/grid.spacing))*5+4];

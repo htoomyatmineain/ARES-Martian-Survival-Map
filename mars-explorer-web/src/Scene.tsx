@@ -159,6 +159,7 @@ function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | 
     })}
     {props.missionPosition&&<Html position={[props.missionPosition.x/SCALE,(meshHeight(terrain,props.missionPosition)-terrain.meta.min)/SCALE*exaggeration+.0005,props.missionPosition.z/SCALE]} center zIndexRange={[10,0]}><span className="rm-crew-pin" data-testid="eva-crew-marker-3d">● CREW · SIM</span></Html>}
     {props.destination && Number.isFinite(elevation(terrain,props.destination.x,props.destination.z)) && <mesh position={ground(terrain, props.destination, exaggeration)}><sphereGeometry args={[.055, 16, 16]}/><meshBasicMaterial color={props.accentColor ?? '#8ee3d3'}/></mesh>}
+    {(props.route as NativeRoute|null)?.approach&&<Html position={ground(terrain,(props.route as NativeRoute).approach!.endpoint,exaggeration)} center zIndexRange={[8,0]}><span className="rm-crew-pin" data-testid="approach-endpoint-3d">◆ APPROACH · STOPS SHORT</span></Html>}
     {exclusion.length > 0 && <Line points={exclusion} color="#f0b276" lineWidth={2}/>}
     {props.mode!=='Explore'&&<><Skirt terrain={terrain} exaggeration={exaggeration} />
     <gridHelper args={[30, 60, '#4b4b40', '#36382f']} position={[0, -.56, 0]} />

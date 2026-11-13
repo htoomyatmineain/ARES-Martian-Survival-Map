@@ -11,6 +11,7 @@ export type MissionAction={type:'start';snapshot:MissionSnapshot}|{type:'tick';m
 export function initialMission():MissionState{return {phase:'planning',paused:false,rate:600,snapshot:null,elapsed:0,phaseElapsed:0,outboundFraction:0,returnOriginFraction:0,aborted:false,scienceCompleted:false,events:[]};}
 export function reviewMission(route:NativeRoute|null,s:MissionSettings){
  const errors:string[]=[];
+ if(route?.approach&&s.scienceMinutes!==0)errors.push('Approach-only routes cannot include a science task at the unreached site.');
  if(!route||route.profileStatus!=='verified'||!Number.isFinite(route.distance)||route.distance<=0)errors.push('A verified route with a destination away from base is required.');
  if(!['rover','walk'].includes(s.mode)||!Number.isFinite(s.speedKmh)||s.speedKmh<=0)errors.push('Choose a positive average travel speed.');
  if(!Number.isFinite(s.scienceMinutes)||s.scienceMinutes<0||!Number.isFinite(s.budgetMinutes)||s.budgetMinutes<=0||!Number.isFinite(s.reservePercent)||s.reservePercent<0||s.reservePercent>=100)errors.push('Enter a valid science duration, time budget and reserve.');
@@ -37,7 +38,7 @@ export function missionReducer(s:MissionState,a:MissionAction):MissionState{
  if(a.type==='pause'&&['outbound','science','returning'].includes(s.phase))return add({...s,paused:true},'Simulation paused; mission clock is frozen.');
  if(a.type==='resume'&&s.paused&&['outbound','science','returning'].includes(s.phase))return add({...s,paused:false},'Simulation resumed.');
  if(a.type==='return')return beginReturn(s,!!a.abort);
- if(a.type==='science'&&s.phase==='arrived')return s.snapshot.scienceMinutes===0?add({...s,phase:'ready-return',scienceCompleted:true},'No science stop planned; ready to return.'):add({...s,phase:'science',phaseElapsed:0,paused:false},'Simulated science task started.');
+ if(a.type==='science'&&s.phase==='arrived'&&!s.snapshot.route.approach)return s.snapshot.scienceMinutes===0?add({...s,phase:'ready-return',scienceCompleted:true},'No science stop planned; ready to return.'):add({...s,phase:'science',phaseElapsed:0,paused:false},'Simulated science task started.');
  if(a.type==='delay'){if(['planning','complete'].includes(s.phase)||!Number.isFinite(a.minutes)||a.minutes<=0)return s;return reserveCheck(add({...s,elapsed:s.elapsed+a.minutes},`${a.minutes} min operational delay injected; position unchanged.`));}
  if(a.type!=='tick'||s.paused||!['outbound','science','returning'].includes(s.phase)||!Number.isFinite(a.minutes)||a.minutes<=0)return s;
  const duration=s.phase==='outbound'?s.snapshot.oneWayMinutes:s.phase==='science'?s.snapshot.scienceMinutes:s.snapshot.oneWayMinutes*s.returnOriginFraction;
@@ -47,7 +48,7 @@ export function missionReducer(s:MissionState,a:MissionAction):MissionState{
  if(s.phase==='outbound')next.outboundFraction=Math.min(1,next.phaseElapsed/duration);
  if(s.phase==='returning')next.outboundFraction=Math.max(0,s.returnOriginFraction*(1-next.phaseElapsed/duration));
  if(next.phaseElapsed>=duration-1e-9){
-  if(s.phase==='outbound')next=add({...next,phase:'arrived',paused:true,phaseElapsed:0,outboundFraction:1},'Target reached. Simulation clock paused for task review.');
+  if(s.phase==='outbound')next=s.snapshot.route.approach?add({...next,phase:'ready-return',paused:true,phaseElapsed:0,outboundFraction:1},'Approach point reached. Science site not reached; final leg unplanned. Clock paused for return review.'):add({...next,phase:'arrived',paused:true,phaseElapsed:0,outboundFraction:1},'Target reached. Simulation clock paused for task review.');
   else if(s.phase==='science')next=add({...next,phase:'ready-return',paused:true,phaseElapsed:0,scienceCompleted:true},'Planned science time completed in simulation. Clock paused for return review.');
   else next=add({...next,phase:'complete',phaseElapsed:0,outboundFraction:0,paused:false},s.aborted?'Aborted EVA simulation returned to habitat.':'EVA simulation returned to habitat.');
  }
