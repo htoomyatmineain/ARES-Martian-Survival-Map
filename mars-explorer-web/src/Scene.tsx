@@ -10,14 +10,15 @@ import { SCIENCE_SITES, sciencePoint } from './scienceSites';
 import type { ObservationMarker } from './environmentObservations';
 import type { OrbitalRaster } from './orbitalLayers';
 import { drapePoints, meshHeight, type NativeRoute } from './nativeRouting';
+import {geologyCanvas,type GeologyData} from './geology';
 import {POVTouchControls,type POVInput} from './jz01/POVCamera';
 import './science-walking.css';
 
-export type SceneProps = { imageryUrl?: string; terrain: Terrain; layer: string; contours: boolean; exaggeration: number; mode: string; cameraAction: { kind: string; tick: number }; route: Route | null; selected: string; onSelect: (id: string) => void; onPick: (p: Point) => void; planning: boolean; progress: number; storm: boolean; markers: boolean; running: boolean; destination?: Point; blocked?: boolean; accentColor?: string; scienceSitesVisible?: boolean; selectedScienceId?: string | null; onScienceSelect?: (id: string) => void; observations?: ObservationMarker[]; onObservationSelect?: () => void; orbital?: OrbitalRaster | null; missionPosition?: Point | null; orbitalOpacity?: number; onInspect?: (point: Point) => void; onOrbitalInspect?: (point: Point) => void };
+export type SceneProps = { geology?:GeologyData|null; imageryUrl?: string; terrain: Terrain; layer: string; contours: boolean; exaggeration: number; mode: string; cameraAction: { kind: string; tick: number }; route: Route | null; selected: string; onSelect: (id: string) => void; onPick: (p: Point) => void; planning: boolean; progress: number; storm: boolean; markers: boolean; running: boolean; destination?: Point; blocked?: boolean; accentColor?: string; scienceSitesVisible?: boolean; selectedScienceId?: string | null; onScienceSelect?: (id: string) => void; observations?: ObservationMarker[]; onObservationSelect?: () => void; orbital?: OrbitalRaster | null; missionPosition?: Point | null; orbitalOpacity?: number; onInspect?: (point: Point) => void; onOrbitalInspect?: (point: Point) => void };
 const SCALE = 1000;
 const SCIENCE_CAMERA={position:[10,9,11] as [number,number,number],fov:39,near:.05,far:100};
 function ground(t: Terrain, p: Point, ex: number): [number, number, number] { return [p.x / SCALE, (elevation(t, p.x, p.z) - t.meta.min) / SCALE * ex, p.z / SCALE]; }
-function TerrainMesh({ terrain, layer, contours, exaggeration, onPick, planning, imageryUrl, orbital, orbitalOpacity = .65, onOrbitalInspect, onInspect }: SceneProps) {
+function TerrainMesh({ terrain, layer, contours, exaggeration, onPick, planning, imageryUrl, orbital, orbitalOpacity = .65, onOrbitalInspect, onInspect, geology }: SceneProps) {
   const sourceTexture = useTexture(imageryUrl ?? '/data/ortho.jpg');
   const texture = useMemo(() => { const t = sourceTexture.clone(); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; t.needsUpdate = true; return t; }, [sourceTexture]);
   useEffect(() => () => texture.dispose(), [texture]);
@@ -71,8 +72,11 @@ function TerrainMesh({ terrain, layer, contours, exaggeration, onPick, planning,
     return result;
   },[orbital]);
   useEffect(() => () => orbitalTexture?.dispose(),[orbitalTexture]);
+  const geologyTexture=useMemo(()=>{if(!geology)return null;const t=new THREE.CanvasTexture(geologyCanvas(geology));t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;return t;},[geology]);
+  useEffect(()=>()=>geologyTexture?.dispose(),[geologyTexture]);
   const pick = (e: ThreeEvent<MouseEvent>) => { if (!planning && !orbital && !onInspect) return; e.stopPropagation(); const point = {x:e.point.x*SCALE,z:e.point.z*SCALE}; if (planning) onPick(point); else if(orbital) onOrbitalInspect?.(point); else onInspect?.(point); };
   return <><mesh geometry={geometry} material={material} onClick={pick} onAfterRender={() => { document.documentElement.dataset.terrainReady = 'true'; }} receiveShadow />
+    {geologyTexture&&<mesh geometry={geometry} renderOrder={2} raycast={()=>{}}><meshBasicMaterial map={geologyTexture} transparent opacity={orbitalOpacity} depthWrite={false} polygonOffset polygonOffsetFactor={-1} polygonOffsetUnits={-2}/></mesh>}
     {orbitalTexture && <mesh geometry={geometry} renderOrder={2} raycast={() => {}}><meshBasicMaterial map={orbitalTexture} transparent opacity={orbitalOpacity} depthWrite={false} polygonOffset polygonOffsetFactor={-1} polygonOffsetUnits={-2}/></mesh>}
   </>;
 }
@@ -147,6 +151,7 @@ function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | 
     <directionalLight position={[-8, 9, -5]} intensity={3.5} color="#ffe1b8" />
     <hemisphereLight args={['#c9cbd0', '#332118', .7]} />
     <TerrainMesh {...props} />
+    {props.geology?.units.map(u=>{const at=ground(terrain,{x:u.label[0],z:u.label[1]},exaggeration);return Number.isFinite(at[1])?<Html key={u.id} position={at} center zIndexRange={[3,0]}><span className="rm-geology-label">{u.name}</span></Html>:null;})}
     {props.observations?.map(marker => {
       const at = ground(terrain, marker.point, exaggeration);
       if (!Number.isFinite(at[1])) return null;

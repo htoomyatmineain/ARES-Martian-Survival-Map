@@ -3,6 +3,7 @@ import type { RegionalTileStore } from './regionalTileStore';
 import { SCIENCE_SITES, sciencePoint, siteSeparationMetres, type ScienceSite } from './scienceSites';
 import { elevation, type Terrain } from './terrain';
 import coverage from './data/science-site-coverage.json';
+import ScienceSitePhoto from './ScienceSitePhoto';
 
 export default function ScienceSitePopup({ site, terrain, store, onClose, onSelect, onZoom }: { site: ScienceSite; terrain: Terrain; store?: RegionalTileStore; onClose: () => void; onSelect: (id: string) => void; onZoom: (site: ScienceSite) => void }) {
   const [native, setNative] = useState<{id:string;value:number|null;error?:string}|null>(null);
@@ -24,6 +25,7 @@ export default function ScienceSitePopup({ site, terrain, store, onClose, onSele
       <small className="rm-science-status">HISTORICAL SAMPLING SITE · NASA MAP CROSS-CHECKED</small>
       <h2 id="rm-science-title">{site.name}</h2><p className="rm-science-sample">{site.sample} / {site.designation}</p>
       <p>{site.geology}</p><p>{site.interest}</p>
+      <ScienceSitePhoto key={site.id} siteId={site.id}/>
       <dl><dt>REPORTED LATITUDE</dt><dd>{site.latitude}° N</dd><dt>REPORTED LONGITUDE</dt><dd>{site.longitude}° E</dd><dt>PDS REPORTED ELEVATION</dt><dd>{site.pdsElevationMetres} m</dd><dt>HiRISE DISPLAY GRID / 10 M</dt><dd>{elevation(terrain, point.x, point.z).toFixed(2)} m</dd><dt>LOCAL HiRISE PIXEL</dt><dd>{checked?.samples.elevation.value.toFixed(4) ?? 'Unchecked'} m</dd></dl>
       <p className="rm-science-coverage">HiRISE point coverage: {checked?.samples.elevation.valid && checked.samples.imagery.valid ? 'valid elevation + imagery pixels, under the stated coordinate assumption.' : 'not confirmed.'} The map overview is sampled from HiRISE.</p>
       {store && <p data-testid="native-elevation">NATIVE 1 M TILE: {native?.id!==site.id?'Loading…':native.error?`Source tile could not load: ${native.error}`:native.value===null?'No valid elevation pixel.':`${native.value.toFixed(4)} m · file hash verified`}</p>}

@@ -6,9 +6,10 @@ import { analysisPixels, nativeSlopePixels, contourPath, coordinateGrid, mapFram
 import { SCIENCE_SITES, sciencePoint, type ScienceFocus } from './scienceSites';
 import type { ObservationMarker } from './environmentObservations';
 import type { OrbitalRaster } from './orbitalLayers';
+import {geologyPath,type GeologyData} from './geology';
 import type { NativeRoute } from './nativeRouting';
 
-type Props = { shared: SharedRegionalMap | null; terrain: Terrain; analysis: AnalysisLayer; opacity: number; imagery: boolean; contours: boolean; route: Route | null; routeVisible: boolean; destination: Point; destinationLabel?:string; picking: boolean; onPick: (p: Point) => void; missionPosition?: Point | null; hidden: boolean; blocked: boolean; grid: boolean; scienceVisible: boolean; selectedScienceId: string | null; scienceFocus: ScienceFocus | null; onScienceSelect: (id: string) => void; observations: ObservationMarker[]; observationFocus: { point: Point; tick: number } | null; onObservationSelect: () => void; orbital: OrbitalRaster | null; onInspect?: (point: Point) => void; onOrbitalInspect: (point: Point) => void };
+type Props = { geology?:GeologyData|null; shared: SharedRegionalMap | null; terrain: Terrain; analysis: AnalysisLayer; opacity: number; imagery: boolean; contours: boolean; route: Route | null; routeVisible: boolean; destination: Point; destinationLabel?:string; picking: boolean; onPick: (p: Point) => void; missionPosition?: Point | null; hidden: boolean; blocked: boolean; grid: boolean; scienceVisible: boolean; selectedScienceId: string | null; scienceFocus: ScienceFocus | null; onScienceSelect: (id: string) => void; observations: ObservationMarker[]; observationFocus: { point: Point; tick: number } | null; onObservationSelect: () => void; orbital: OrbitalRaster | null; onInspect?: (point: Point) => void; onOrbitalInspect: (point: Point) => void };
 export default memo(function RegionalMap2D(p: Props) {
   const svg = useRef<SVGSVGElement>(null);
   const drag = useRef<{ x: number; y: number; cx: number; cy: number; moved: boolean } | null>(null);
@@ -24,6 +25,8 @@ export default memo(function RegionalMap2D(p: Props) {
   const graticule = useMemo(() => coordinateGrid(p.terrain.meta, gridStep), [p.terrain.meta, gridStep]);
   const gridPath = graticule.longitude.map(at => `M${at.x},${-half}V${half}`).join('') + graticule.latitude.map(at => `M${-half},${at.z}H${half}`).join('');
   const leftEdge = Math.max(-half, cx - visibleWidth / 2), topEdge = Math.max(-half, cz - visibleHeight / 2);
+  const geologyShapes=useMemo(()=>p.geology?.features.map(f=>({...f,path:geologyPath(f.geometry.coordinates)}))??[],[p.geology]);
+  const geologyContacts=useMemo(()=>p.geology?.contacts.map(c=>({...c,path:c.coordinates.map((at,i)=>(i?'L':'M')+at[0]+','+at[1]).join('')}))??[],[p.geology]);
   const rasters = useMemo(() => {
     const canvas = document.createElement('canvas'); canvas.width = p.terrain.meta.width; canvas.height = p.terrain.meta.height;
     const ctx = canvas.getContext('2d'); if (!ctx) return { elevation: '', slope: '', missing: '' };
@@ -64,7 +67,7 @@ export default memo(function RegionalMap2D(p: Props) {
     <svg ref={svg} className={p.picking ? 'rm-svg rm-picking' : 'rm-svg'} data-testid="regional-map" viewBox={`${cx - visibleWidth / 2} ${cz - visibleHeight / 2} ${visibleWidth} ${visibleHeight}`} role="group" aria-label="Regional terrain map" aria-describedby="rm-map-help" tabIndex={0}
       onPointerDown={e => { if (e.button !== 0) return; e.currentTarget.setPointerCapture(e.pointerId); drag.current = { x: e.clientX, y: e.clientY, cx, cy: cz, moved: false }; }}
       onPointerMove={e => { const a = drag.current; if (!a) return; if (Math.hypot(e.clientX - a.x, e.clientY - a.y) > 5) a.moved = true; if (a.moved) setCenter({ x: a.cx - (e.clientX - a.x) * unitsPerPixel, z: a.cy - (e.clientY - a.y) * unitsPerPixel }); }}
-      onPointerUp={e => { if (drag.current && !drag.current.moved && (p.picking || p.orbital)) pick(e.clientX, e.clientY); drag.current = null; }}
+      onPointerUp={e => { if (drag.current && !drag.current.moved && (p.picking || p.orbital || p.onInspect)) pick(e.clientX, e.clientY); drag.current = null; }}
       onPointerCancel={() => { drag.current = null; }} onLostPointerCapture={() => { drag.current = null; }}
       onKeyDown={e => { if (!p.picking) { if (e.key === 'Enter') { e.preventDefault(); if(p.orbital)p.onOrbitalInspect({x:cx,z:cz});else p.onInspect?.({x:cx,z:cz}); } return; } const delta: Record<string, [number, number]> = { ArrowLeft: [-100, 0], ArrowRight: [100, 0], ArrowUp: [0, -100], ArrowDown: [0, 100] }; const v = delta[e.key]; if (v) { e.preventDefault(); p.onPick({ x: Math.max(-half, Math.min(half, p.destination.x + v[0])), z: Math.max(-half, Math.min(half, p.destination.z + v[1])) }); } }}>
       <title>Western Jezero regional map</title>
@@ -74,6 +77,7 @@ export default memo(function RegionalMap2D(p: Props) {
       {p.imagery && p.shared && zoom >= 8 && <SharedImageryTiles shared={p.shared} bounds={[cx-visibleWidth/2,cz-visibleHeight/2,cx+visibleWidth/2,cz+visibleHeight/2]}/>}
       {p.analysis !== 'none' && <image data-testid="analysis-layer" href={rasters[p.analysis]} opacity={p.opacity} x={-half} y={-half} width={half * 2} height={half * 2} preserveAspectRatio="none" style={p.analysis==='slope'?{imageRendering:'pixelated'}:undefined}/>}
       {orbitalImage && <image data-testid="orbital-area-layer" href={orbitalImage} opacity={p.opacity} x={-half} y={-half} width={half*2} height={half*2} preserveAspectRatio="none" style={{imageRendering:'pixelated'}}><title>{p.orbital?.meta.title} · transparent means no data</title></image>}
+      {p.geology&&<g data-testid="geology-layer" clipPath="url(#rm-footprint)" pointerEvents="none"><g opacity={p.opacity}>{geologyShapes.map(f=><path key={f.id} d={f.path} fill={p.geology!.units.find(u=>u.id===f.unitId)?.color??'#777'} fillRule="evenodd"/>)}{geologyContacts.map(c=><path key={c.id} d={c.path} fill="none" stroke="#17202b" strokeWidth="1" strokeDasharray={c.type==='certain'?undefined:'5 4'} vectorEffect="non-scaling-stroke"/>)}</g>{p.geology.units.map(u=><text key={u.id} x={u.label[0]} y={u.label[1]} fontSize={10*unitsPerPixel} textAnchor="middle" fill="#fff" stroke="#0b0d10" strokeWidth={3*unitsPerPixel} paintOrder="stroke">{u.name}</text>)}</g>}
       <image data-testid="missing-elevation-mask" href={rasters.missing} x={-half} y={-half} width={half*2} height={half*2} preserveAspectRatio="none"><title>Amber area: elevation unavailable; excluded from routing</title></image>
       <rect x={-half} y={-half} width={half * 2} height={half * 2} fill="none" stroke="#f39b58" strokeWidth="1.5" vectorEffect="non-scaling-stroke"/>
       {p.contours && <path data-testid="contour-layer" d={contours} stroke="#f4f3ef" opacity=".6" fill="none" strokeWidth=".7" vectorEffect="non-scaling-stroke" pointerEvents="none"/>}

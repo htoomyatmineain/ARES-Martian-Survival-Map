@@ -124,3 +124,16 @@
 .rm-wordmark{white-space:nowrap}.rm-wordmark span{font-size:12px;letter-spacing:.2px}
 @media(max-width:700px){.regional-map .rm-header{top:10px;height:40px;max-width:calc(100% - 190px)}.rm-wordmark{font-size:16px;line-height:1.2}.rm-wordmark span{display:block;margin:3px 0 0;font-size:8px;letter-spacing:0}.rm-header a{flex-shrink:0}}
 .rm-approach-notice{padding:10px;margin:12px 0;border:1px solid #f39b5860;border-left:3px solid var(--map-accent);border-radius:3px;color:var(--map-text);font-size:10px;line-height:1.7;background:#f39b580a}.rm-approach-notice strong{font-size:10px;color:var(--map-accent);font-weight:400}.rm-approach-notice p{margin:7px 0 0}
+.rm-site-photo{margin:18px 0;padding-top:14px;border-top:1px solid var(--map-border)}
+.rm-photo-label{display:block;font-size:8px;letter-spacing:.8px;color:var(--map-accent);margin-bottom:8px}
+.rm-site-photo>a{display:block}.rm-site-photo img{display:block;width:100%;height:auto;border:1px solid #ffffff20;border-radius:3px}
+.rm-site-photo figcaption{display:grid;gap:3px;margin-top:9px;font-size:9px;line-height:1.6;color:var(--map-muted)}
+.rm-site-photo figcaption strong{font-size:11px;font-weight:400;color:var(--map-text)}
+.rm-site-photo .rm-photo-association{font-size:9px;color:var(--map-muted);margin:8px 0}
+.rm-site-photo details{font-size:9px;line-height:1.7;color:var(--map-muted);overflow-wrap:anywhere}.rm-site-photo summary{cursor:pointer;color:var(--map-accent);padding:5px 0}
+.rm-site-photo details p{font-size:9px}.rm-site-photo details ul{padding-left:16px}.rm-site-photo details a{display:block;margin:8px 0;color:var(--map-accent)}
+.rm-geology-units{display:grid;gap:4px;margin:10px 0}.rm-geology-units button{display:flex;align-items:center;gap:8px;text-align:left;background:transparent;border:1px solid #ffffff18;border-radius:3px;padding:8px;font-size:10px;line-height:1.5}
+.rm-unit-swatch{display:inline-block;width:12px;height:12px;flex-shrink:0;border:1px solid #ffffff70;margin-right:6px;vertical-align:middle}
+.rm-geology-map-note{position:absolute;z-index:5;left:344px;top:80px;max-width:calc(100% - 390px);padding:7px 10px;background:#15191eee;border:1px solid var(--map-border);border-radius:3px;font-size:9px;line-height:1.6;color:var(--map-accent);pointer-events:none}
+.rm-geology-label{font:11px/1.4 var(--map-font);color:white;white-space:nowrap;text-shadow:0 1px 3px #000,0 0 7px #000;pointer-events:none}
+@media(max-width:700px){.rm-geology-map-note{left:12px;top:112px;max-width:210px;font-size:8px;padding:5px 7px}}
