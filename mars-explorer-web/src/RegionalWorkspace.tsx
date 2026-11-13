@@ -23,6 +23,8 @@ import {pointOnMission} from './evaMission';
 import {TRAVEL_DEFAULTS,type TravelMode} from './travelTime';
 import './regional-map.css';
 import './regional-sidebar.css';
+import './workspace-navigation.css';
+import './readability.css';
 
 const Scene = lazy(() => import('./Scene'));
 const DEFAULT_DESTINATION = { x: -1850, z: -1100 };
@@ -37,6 +39,7 @@ export default function RegionalWorkspace() {
   const [grid, setGrid] = useState(true);
   const [inspection,setInspection]=useState<Point|null>(null);
   const [telemetryOpen, setTelemetryOpen] = useState(true);
+  const [workspace,setWorkspace]=useState<'map'|'mission'>('map');
   const [sidebarPanel,setSidebarPanel]=useState<SidebarPanel>('mission');
   const [scienceVisible, setScienceVisible] = useState(true), [selectedScienceId, setSelectedScienceId] = useState<string | null>(null);
   const [scienceFocus, setScienceFocus] = useState<ScienceFocus | null>(null);
@@ -98,15 +101,15 @@ export default function RegionalWorkspace() {
         <p className="rm-fineprint" role="status">{routing.status}</p>{route?.approach&&<div className="rm-approach-notice" role="status"><strong>APPROACH ONLY · {Math.ceil(route.approach.gapMetres)} m short of site</strong><p>{route.approach.reason}</p><p>Route stops at a reachable grid point within a 250 m demo search radius. The remaining straight-line gap is unplanned; it is not a verified walking leg. This simulation visits the approach point only, with no science task.</p></div>}{routing.error&&<p role="alert">{routing.error}</p>}{routing.error&&<button className="rm-pick-button" onClick={()=>setRouteRetry(v=>v+1)}>Retry native routing</button>}
       </section>
   </>);
-  return <main className="regional-map">
-    <header className="rm-header"><div className="rm-wordmark">ARES<span>· Martian Survival Map</span></div><span className="rm-header-divider"/><span className="rm-header-title">REGIONAL SCIENCE WORKSPACE</span><span className="rm-status"><i/>{error ? 'DATA UNAVAILABLE' : !shared ? 'CONNECTING DATA' : shared.preview ? 'LOCAL REVIEW' : 'SHARED NASA DATA'}</span></header>
-    <div className="rm-body"><aside className="rm-sidebar" aria-label="Mission workspace controls"><div className="rm-sidebar-head">
+  return <main className={`regional-map rm-workspace-${workspace}`}>
+    <header className="rm-header"><div className="rm-wordmark">ARES<span>· Martian Survival Map</span></div><nav className="rm-primary-nav" aria-label="Primary navigation"><button aria-current={workspace==='map'?'page':undefined} onClick={()=>setWorkspace('map')}>Map</button><button aria-current={workspace==='mission'?'page':undefined} onClick={()=>{setWorkspace('mission');setPicking(false);}}>Mission</button></nav><span className="rm-header-divider"/><span className="rm-header-title">REGIONAL SCIENCE WORKSPACE</span><span className="rm-status"><i/>{error ? 'DATA UNAVAILABLE' : !shared ? 'CONNECTING DATA' : shared.preview ? 'LOCAL REVIEW' : 'SHARED NASA DATA'}</span></header>
+    <div className="rm-body"><aside className="rm-sidebar" aria-label="Mission workspace controls"><div className="rm-sidebar-head" hidden={workspace==='mission'}>
       
-      <SidebarTabs value={sidebarPanel} onChange={setSidebarPanel}/></div><div className={`rm-sidebar-body rm-sidebar-body-${sidebarPanel}`}>
-      <div id="rm-panel-mission" role="tabpanel" aria-labelledby="rm-tab-mission" hidden={sidebarPanel!=='mission'}>
+      <SidebarTabs value={sidebarPanel} onChange={setSidebarPanel}/></div><div className={`rm-sidebar-body rm-sidebar-body-${workspace==='mission'?'mission':sidebarPanel}`}>
+      <div id="rm-panel-mission" role="tabpanel" aria-labelledby="rm-tab-mission" hidden={workspace!=='mission'&&sidebarPanel!=='mission'}>
       <EvaMissionPanel travelControls={travelSettings} routeControls={routeControls} destinationControl={destinationControls} route={routing.route} mode={travelMode} speedKmh={Number(speeds[travelMode])} target={SCIENCE_SITES.find(s=>s.id===targetId)?.name??'Custom map destination'} targetId={targetId} targets={SCIENCE_SITES} onTarget={chooseTarget} exclusion={blocked} state={mission.state} dispatch={action=>{if(action.type==='start')setPicking(false);mission.dispatch(action);}}/>
       </div>
-      <div id="rm-panel-layers" role="tabpanel" aria-labelledby="rm-tab-layers" hidden={sidebarPanel!=='layers'}>
+      <div id="rm-panel-layers" role="tabpanel" aria-labelledby="rm-tab-layers" hidden={workspace==='mission'||sidebarPanel!=='layers'}>
       <section className="rm-section" aria-labelledby="rm-layers-title"><h2 id="rm-layers-title"><Layers size={15}/> MAP LAYERS</h2>
         <label className="rm-check"><span>Orbital imagery<small>HiRISE grayscale · shared NASA data</small></span><input type="checkbox" checked={imagery} disabled={view === '3D'} onChange={e => setImagery(e.target.checked)}/></label>
         <fieldset className="rm-layer-options"><legend>Terrain overlay</legend>{([{ id: 'none', name: 'No terrain analysis', detail: 'Imagery with optional orbital layer' }, { id: 'elevation', name: 'Elevation', detail: 'Ground height in metres' }, { id: 'slope', name: 'Slope', detail: 'Inclination from the elevation grid' }] as const).map(l => <label key={l.id} className={analysis === l.id ? 'rm-layer-selected' : ''}><input type="radio" name="regional-analysis" value={l.id} checked={analysis === l.id} onChange={() => { setAnalysis(l.id); if (l.id !== 'none') {setGeologyEnabled(false);setGeologyOpen(false);} if (l.id !== 'none') { setOrbitalId('none'); setOrbitalOpen(false); } }}/><span>{l.name}<small>{l.detail}</small></span></label>)}</fieldset>
@@ -126,13 +129,13 @@ export default function RegionalWorkspace() {
         <label className="rm-check"><span>Demo route</span><input type="checkbox" checked={routeVisible} onChange={e => setRouteVisible(e.target.checked)}/></label>
       </section>
       </div>
-      <div id="rm-panel-sites" role="tabpanel" aria-labelledby="rm-tab-sites" hidden={sidebarPanel!=='sites'}>
+      <div id="rm-panel-sites" role="tabpanel" aria-labelledby="rm-tab-sites" hidden={workspace==='mission'||sidebarPanel!=='sites'}>
       <section className="rm-section" aria-labelledby="rm-science-heading"><h2 id="rm-science-heading">SCIENCE SITES <span>PROVISIONAL</span></h2>
         {scienceVisible ? SCIENCE_SITES.map(site => <div className="rm-site-row" key={site.id}><button aria-label={`View ${site.name}`} aria-pressed={site.id === selectedScienceId} onClick={() => selectScience(site.id)}><span>{site.code} / {site.name}</span><small>{site.sample} · {site.designation}</small></button><button className="rm-site-locate" aria-label={`Zoom to ${site.name}`} title={`Zoom to ${site.name}`} onClick={() => zoomScience(site)}><Crosshair size={15}/></button></div>) : <p className="rm-fineprint">Turn on Science Sites to show the historical sampling markers.</p>}
         <p className="rm-fineprint">Reported positions, separate from human EVA destinations. S1 and S2 labels have leader lines to the map coordinates.</p>
       </section>
       </div>
-      <div id="rm-panel-sources" role="tabpanel" aria-labelledby="rm-tab-sources" hidden={sidebarPanel!=='sources'}><section className="rm-section"><h2>DATA &amp; ASSUMPTIONS</h2><p className="rm-fineprint">ARES / TERRAIN NAVIGATION<br/>DELTA / CRATER FLOOR</p>
+      <div id="rm-panel-sources" role="tabpanel" aria-labelledby="rm-tab-sources" hidden={workspace==='mission'||sidebarPanel!=='sources'}><section className="rm-section"><h2>DATA &amp; ASSUMPTIONS</h2><p className="rm-fineprint">ARES / TERRAIN NAVIGATION<br/>DELTA / CRATER FLOOR</p>
         <p className="rm-fineprint">Simulated base and destination. 20 m search grid; each segment checks conservative 10 m envelopes built from every overlapping native 1 m DEM cell. These are not validated EVA routes.</p>
       <div className="rm-validation-note"><strong>HiRISE point coverage checked</strong><p>Both reported site positions have valid local 1 m elevation and 25 cm imagery pixels at the reported coordinates; both markers agree with NASA report-map targets.</p><p>NASA 1 m elevation and 25 cm imagery are retained in shared tiles. Both views use a 10 m display mesh and 2.44 m imagery overview. Relative NASA map alignment is checked. Absolute position accuracy and vertical datum compatibility remain unverified.</p></div>
       <section className="rm-resource-links" aria-label="Official resources"><h2>OFFICIAL RESOURCES</h2>
@@ -143,7 +146,7 @@ export default function RegionalWorkspace() {
       </section>
       </section></div>
       </div></aside>
-    <section className="rm-stage" aria-label="Map workspace"><div className="rm-zone-heading"><h1>Western Jezero</h1><p>Zone area · 10 × 10 km</p></div>
+    <section className="rm-stage" aria-label={workspace==='mission'?'Mission navigation map':'Map workspace'}><div className="rm-zone-heading"><h1>Western Jezero</h1><p>Zone area · 10 × 10 km</p></div>
       <div className="rm-stage-toolbar"><div className="rm-view-switch" role="group" aria-label="Map view"><button aria-pressed={view === '2D'} onClick={() => setView('2D')}><Map size={15}/>2D MAP</button><button aria-pressed={view === '3D'} onClick={() => {setSceneOpened(true);setView('3D');}}><Mountain size={15}/>3D TACTICAL</button></div><span>HiRISE · 10 m display grid · {view === '3D' ? 'True-scale height · 1×' : 'North up'}</span></div>
       {error ? <div className="rm-empty" role="alert"><h2>Terrain could not load</h2><p>{error}</p><button onClick={() => setRetry(v => v + 1)}>Retry</button></div> : !terrain ? <div className="rm-empty" role="status">Loading regional terrain…</div> : <>
         <RegionalMap2D shared={shared} terrain={terrain} analysis={analysis} opacity={opacity} imagery={imagery} contours={contours} destination={destination} destinationLabel={targetId==='custom'?'DEMO DESTINATION':SCIENCE_SITES.find(s=>s.id===targetId)?.name} route={route} missionPosition={missionPosition} routeVisible={routeVisible} picking={picking} onPick={pick} hidden={view !== '2D'} blocked={blocked} grid={grid} scienceVisible={scienceVisible} selectedScienceId={selectedScienceId} scienceFocus={scienceFocus} onScienceSelect={selectScience} observations={observations} observationFocus={observationFocus} onObservationSelect={openObservation} orbital={orbital?.meta.id === orbitalId ? orbital : null} onOrbitalInspect={inspectOrbital} onInspect={inspectTerrain} geology={geologyEnabled?geology:null}/>
