@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "status": "blocked-before-local-transformation",
+  "selectedCandidate": "USGS SIM 3464 (Sun & Stack 2020)",
+  "localOutput": null,
+  "sourceChecks": {
+    "boundary": {
+      "sourceFeatures": 1,
+      "invalidGeometry": [],
+      "coverageFractionInReleasedGisFrame": 1.0,
+      "uncoveredSquareMetresInSourceProjection": 0.0,
+      "unitCodes": null
+    },
+    "units": {
+      "sourceFeatures": 40,
+      "invalidGeometry": [],
+      "coverageFractionInReleasedGisFrame": 1.0,
+      "uncoveredSquareMetresInSourceProjection": 0.0,
+      "unitCodes": [
+        "0",
+        "10",
+        "11",
+        "2",
+        "3",
+        "7",
+        "8"
+      ]
+    },
+    "limitations": [
+      "Assessment in declared service CRS only; no app clip or absolute registration accepted. Footprint edges approximated by four projected corners; coverage is conditional, not geographic accuracy.",
+      "Pamphlet 77.3 E versus released GIS 77.5 E unresolved.",
+      "Metadata warns 100-200 m random control offsets."
+    ],
+    "contacts": {
+      "sourceFeatures": 56,
+      "contactTypes": [
+        "approximate",
+        "certain"
+      ]
+    }
+  },
+  "sourceScale": 75000,
+  "globalAlternativeScale": 20000000,
+  "sourceCrsCentralMeridian": 77.5,
+  "pamphletCentralMeridian": 77.3,
+  "sourceCoordinateSpace": "Mars 2000 sphere; planetocentric/east-positive; transverse Mercator metres",
+  "targetCoordinateSpace": "custom local Mars x-east/z-south metres",
+  "targetCentre": [
+    18.46,
+    77.42
+  ],
+  "sphereRadiusMetres": 3396190,
+  "intendedClipBounds": [
+    -5000,
+    -5000,
+    5000,
+    5000
+  ],
+  "repairs": [],
+  "simplification": null,
+  "transformedFeatureCount": null,
+  "localGeometryFailures": null,
+  "referenceComparisons": [],
+  "outputBytes": 0,
+  "outputSha256": null,
+  "toolVersions": {
+    "python": "3.14.6",
+    "pyproj": "3.8.0",
+    "PROJ": "9.8.1",
+    "shapely": "2.2.0",
+    "GEOS": "3.14.1"
+  },
+  "blockers": [
+    "Pamphlet 77.3 E versus released GIS/service 77.5 E must be reconciled before accepted transformation.",
+    "Producer warns about 100-200 m source-control offsets; three source-map/current-terrain comparisons not yet established."
+  ],
+  "interpretation": "No local layer emitted; source-frame coverage checks are not registration or accuracy evidence."
+}

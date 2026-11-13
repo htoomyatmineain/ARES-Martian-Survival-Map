@@ -1,0 +1,7 @@
+{
+  "url": "https://pubs.usgs.gov/sim/3464/sim3464_pamphlet.pdf",
+  "pdfPage": 8,
+  "printedPage": 4,
+  "methodologyText": "We performed all mapping and co-registration of datasets \nin a geographic information system (GIS). We projected data-\nsets and shapefiles in the Transverse Mercator projection with \na central meridian of 77.3\u00b0 E., with a planetocentric latitude \nand longitude increasing to the east. Points, lines, and polygons \nwere digitized in the projected shapefiles. We digitized linework \nat a digital map scale of 1:20,000, which allowed for detailed \nplacement of unit boundaries and contacts that would be visible \nat the publication map scale of 1:75,000. We streamed vertices \nTable 1.  Identification numbers of the supplemental HiRISE dataset \nused to map megabreccia locations and identify additional character-\nistics of map units, Jezero crater and Nili Planum region, Mars.\nHiRISE supplemental data Center latitude \n(degrees)\nCenter longitude \n(degrees)\nPSP_002387_1985 18.488 77.404\nPSP_002743_1985 18.54 77.49\nESP_015942_1980 17.818 77.112\nESP_016364_1980 17.892 77.288\nESP_016509_1980 17.822 77.21\nESP_016720_1980 17.785 76.924\nESP_016931_1980 17.809 77.03\nESP_017287_1980 18.204 77.056\nESP_022680_1985 18.23 77.435\nESP_022957_1985 18.348 77.619\nESP_023379_1985 18.345 77.525\nESP_024513_1980 18.018 76.895\nESP_034495_1990 18.688 77.662\nESP_0366",
+  "visualCheck": "Rendered page 8 at 1400 px; central meridian 77.3 E, planetocentric latitude and east-increasing longitude visually confirmed."
+}

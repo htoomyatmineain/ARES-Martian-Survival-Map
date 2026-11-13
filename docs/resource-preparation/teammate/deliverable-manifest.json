@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "validatedUtc": "2026-11-13T06:39:19.291606+00:00",
+  "checks": {
+    "jsonParses": true,
+    "thumbnailPathsBytesHashes": true,
+    "siteIds": true,
+    "uniquePhotos": true,
+    "unknownUtcPreserved": true,
+    "originalSourcesValidatedOnce": true,
+    "scopedTrackedChanges": true,
+    "noUnverifiedGeologyClip": true
+  },
+  "files": [
+    {
+      "path": "docs/resource-preparation/teammate/.gitattributes",
+      "bytes": 9,
+      "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/.gitignore",
+      "bytes": 20,
+      "sha256": "e74bb0dd02388f58ff49229b14b09c4379a2d57ee1348f0533ccc01a22519cea"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/assess_coverage.py",
+      "bytes": 3244,
+      "sha256": "f65b9efca7036e942beff9d05a2cc88543aa19661369b4ecabf5ac4455d5ff96"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/completion.md",
+      "bytes": 5223,
+      "sha256": "91e0c01e97244ad32ef487552eda24e1ee999be2d5e001ddae4b11b85f19879f"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/geology-item.json",
+      "bytes": 10021,
+      "sha256": "9b03d94f03870483d6afdca7afc55cafddbeb5c7cd58b1a34cef723dfe3b6890"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/geology-layer-5.json",
+      "bytes": 17307,
+      "sha256": "c51a3bd8f86ee7cc2273ad093777c732df43675a0442116291f52f517c17f179"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/geology-layer-8.json",
+      "bytes": 26877,
+      "sha256": "41bb684af3fe36d0c87f8738a67f2a18c863394f51229bea5232cab9778744b7"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/geology-service.json",
+      "bytes": 7992,
+      "sha256": "9e9fa1e7ea95bdc617d5fec91323e3f7a3736b36165897f35f5858fb79ffca55"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/nasa-usage-excerpt.json",
+      "bytes": 5058,
+      "sha256": "bffad52b0fca17203cc4f8430fb0e2266ad43fcf0cbffced4b3ba7f5478827f9"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/pamphlet-crs-excerpt.json",
+      "bytes": 1564,
+      "sha256": "671b15e660b62d4cfcd76292d36cc8cbc4cc16fe78f703269f449d7b7c96cb5e"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/raw-gallery-excerpt.json",
+      "bytes": 546,
+      "sha256": "681734e7e1c0fa2df617bd6c755cdacc4c0ca79fe6936fed572e5ffe7c90825d"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/report-entries.json",
+      "bytes": 7325,
+      "sha256": "9a334baf92a916d457158f285111873abe912466391076b0b667115eab669902"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/retrieval-manifest.json",
+      "bytes": 16198,
+      "sha256": "64a63115a22a03b3328aa3e745c0b34c3555666bcfec6715a157ccac9c0bbafb"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/rock-samples-excerpt.json",
+      "bytes": 1374,
+      "sha256": "2eebee62c50d533ef8c8bf009b2673f98483c7a260617f1734af0ba8dc9d7b99"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/sim3292-excerpt.json",
+      "bytes": 1646,
+      "sha256": "7a220db2ea387bafe9128612814737e5fbd49ca8c77b1a035deddf42622c2761"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/sim3464_metadata.xml",
+      "bytes": 20924,
+      "sha256": "e4ede0b7465190319c81babfb9359d4e84710cb82deebe331219ef26130927fd"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/sim3464_readme.txt",
+      "bytes": 3914,
+      "sha256": "226c04cc89b86441fff8d51e70e3f906551b405c7a23a8a9cfb8ca9df9a7762d"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/source-validation.json",
+      "bytes": 6954,
+      "sha256": "425809dd9b4d3544ed633f2b506b0be6ac54fb5a6445b94366f325855b5d86a0"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/evidence/two-locations-excerpt.json",
+      "bytes": 1994,
+      "sha256": "3646637a3737681d456a2c990d4e95ac3bbc89e314f2d44e058daea170d7e729"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/geology/assessment.md",
+      "bytes": 7564,
+      "sha256": "a2a56862f3d921e8a2d71c59e05da6e4a0c445f81b5659b2c110f64e2bba6b83"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/geology/coverage-assessment.json",
+      "bytes": 960,
+      "sha256": "cb673e0680413d294f18973ec8292fb17dc17b23242a213952943579d5adf831"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/geology/reproduce.md",
+      "bytes": 3190,
+      "sha256": "c355b004ff4cad1d261212ae027312bf8be11a3b29cb05d9274174a00048e110"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/geology/source-manifest.json",
+      "bytes": 12385,
+      "sha256": "f422f2135f4085d5fe0c84b91b9fe29454a5760316f6f3efcbc6be37f3f302f1"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/geology/units.json",
+      "bytes": 31902,
+      "sha256": "6c4c7ad321ab72ed467d9b179fbfaa15df8b77c39d89d507564a3e534eb01222"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/geology/validation.json",
+      "bytes": 2407,
+      "sha256": "c113a1c297d9c74f0c51eefbc25e87a91edb2cb91b9b959d070193d5ee44e507"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/photos/photo-catalog.json",
+      "bytes": 4917,
+      "sha256": "d6dd23e3fd2589098f5b353b1e0c082a531a973a8b0b459d37ba3dc8cd6e22f2"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/photos/photo-evidence.md",
+      "bytes": 5481,
+      "sha256": "6139563d38b31754771e3a853368b42a6b81efb49066218288800ceec2097c45"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/photos/reproduce.md",
+      "bytes": 3517,
+      "sha256": "9c3068365e75e078e6d4c01273a3737a6a82e9858536e7b53f0ef7dece4b66ba"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/photos/thumbnails/mars-sample-11-nlf-0495-0710900102-755ecm-n0261004ncam00709-01-095j.webp",
+      "bytes": 149742,
+      "sha256": "b35213f8774ed3a3a8413dc6ff5b29946b86d7d988825766b676ab19673e093c"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/photos/thumbnails/mars-sample-12-nlf-0509-0712140650-691ecm-n0261222ncam00709-01-095j.webp",
+      "bytes": 184948,
+      "sha256": "5eda9001bd6e70674d707eb5896fa6f636fd1ae6a57f44784fedffb9f3e7298b"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/photos/validation.json",
+      "bytes": 719,
+      "sha256": "70736a083eec735f6915524e353ddc07b29550e07503a2bcfad54019532d3d5a"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/prepare_catalogues.py",
+      "bytes": 6284,
+      "sha256": "2a059a7803615ce1f938ac85c65b4a0d05a23238317154550eb8501f3e9eb837"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/read_report.py",
+      "bytes": 3432,
+      "sha256": "79c524abfae1d43b7f1446225f3e1249a50e8b2996de6fe1203e420562da39e9"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/retrieve.py",
+      "bytes": 1853,
+      "sha256": "5eb7e9f8c015634081512d243def6f9c69f19b36bb64e16d5e9fe1fcc9586cc2"
+    },
+    {
+      "path": "docs/resource-preparation/teammate/verify.py",
+      "bytes": 2888,
+      "sha256": "8db5d0b5bbf804588722e20b9a0d52c0876c20c660b0a353948c3c1d63ffd4e7"
+    }
+  ],
+  "totalDeliverableBytesExcludingThisManifest": 560379,
+  "totalThumbnailBytes": 334690
+}
