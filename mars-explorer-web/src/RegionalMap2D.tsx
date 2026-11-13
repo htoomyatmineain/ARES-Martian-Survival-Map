@@ -3,7 +3,7 @@ import SharedImageryTiles from './SharedImageryTiles';
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { MARS_RADIUS, sites, type Terrain, type Point, type Route } from './terrain';
 import { analysisPixels, nativeSlopePixels, contourPath, coordinateGrid, mapFrame, type AnalysisLayer } from './regionalLayers';
-import { SCIENCE_SITES, sciencePoint, type ScienceFocus } from './scienceSites';
+import { MAP_SCIENCE_SITES as SCIENCE_SITES, sciencePoint, type ScienceFocus } from './scienceSites';
 import type { ObservationMarker } from './environmentObservations';
 import type { OrbitalRaster } from './orbitalLayers';
 import {geologyPath,type GeologyData} from './geology';
@@ -95,7 +95,7 @@ export default memo(function RegionalMap2D(p: Props) {
       {p.routeVisible && (p.route as NativeRoute|null)?.warnings?.map((segment,i)=><polyline key={i} points={segment.map(at=>`${at.x},${at.z}`).join(' ')} fill="none" stroke="#ff6556" strokeWidth="4" vectorEffect="non-scaling-stroke"/>)}
       {[{ ...sites[0], label: 'SIMULATED BASE', color: '#f4f3ef' }, { ...p.destination, label: p.destinationLabel??'DEMO DESTINATION', color: '#f39b58' }].map(at => <g key={at.label} transform={`translate(${at.x} ${at.z})`} pointerEvents="none"><circle r={5 * unitsPerPixel} fill={at.color} stroke="#0b0d10" strokeWidth="2" vectorEffect="non-scaling-stroke"/><text y={-12 * unitsPerPixel} fontSize={9 * unitsPerPixel} textAnchor="middle" fill="#fff" stroke="#0b0d10" strokeWidth={2.5 * unitsPerPixel} paintOrder="stroke" fontFamily="IBM Plex Mono, monospace">{at.label}</text></g>)}
       {p.scienceVisible && SCIENCE_SITES.map((site, index) => {
-        const at = sciencePoint(site, p.terrain.meta.center), dx = (index === 0 ? 24 : -24) * unitsPerPixel, dy = (index === 0 ? -32 : 32) * unitsPerPixel, active = p.selectedScienceId === site.id;
+        const at = sciencePoint(site, p.terrain.meta.center), dx = (index % 2 === 0 ? 24 : -24) * unitsPerPixel, dy = (index % 2 === 0 ? -32 : 32) * unitsPerPixel, active = p.selectedScienceId === site.id;
         return <g key={site.id} data-science-id={site.id} role="button" aria-label={`Open ${site.name} / ${site.sample}`} aria-pressed={active} tabIndex={0} transform={`translate(${at.x} ${at.z})`} className="rm-science-marker" onPointerDown={e => e.stopPropagation()} onPointerUp={e => e.stopPropagation()} onClick={e => { e.stopPropagation(); p.onScienceSelect(site.id); }} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); p.onScienceSelect(site.id); } }}>
           <title>{site.name} / {site.sample} · provisional position</title>
           <line x2={dx} y2={dy} stroke="#f4f3ef" strokeWidth="1.2" vectorEffect="non-scaling-stroke"/>

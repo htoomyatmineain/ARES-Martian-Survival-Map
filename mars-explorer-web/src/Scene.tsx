@@ -6,7 +6,7 @@ import type { OrbitControls as OrbitImpl } from 'three-stdlib';
 import { elevation, sites, type Terrain, type Point, type Route } from './terrain';
 import ScienceWalking from './ScienceWalking';
 import { analysisPixels } from './regionalLayers';
-import { SCIENCE_SITES, sciencePoint } from './scienceSites';
+import { MAP_SCIENCE_SITES as SCIENCE_SITES, sciencePoint } from './scienceSites';
 import type { ObservationMarker } from './environmentObservations';
 import type { OrbitalRaster } from './orbitalLayers';
 import { drapePoints, meshHeight, type NativeRoute } from './nativeRouting';
@@ -160,7 +160,7 @@ function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | 
     })}
     {props.scienceSitesVisible && SCIENCE_SITES.map((site, index) => {
       const at = ground(terrain, sciencePoint(site, terrain.meta.center), exaggeration); at[1] += .01;
-      return <Html key={site.id} position={at} center zIndexRange={[8, 0]}><div className="rm-science-pin" style={{ transform: `translate(${index === 0 ? 24 : -24}px, ${index === 0 ? -32 : 32}px)` }}><svg aria-hidden="true" viewBox="-50 -50 100 100" style={{ position: 'absolute', left: -50, top: -50, width: 100, height: 100, pointerEvents: 'none' }}><line x1={index === 0 ? -24 : 24} y1={index === 0 ? 32 : -32} x2={0} y2={0} stroke="#f39b58" /><circle cx={index === 0 ? -24 : 24} cy={index === 0 ? 32 : -32} r={2} fill="white" /></svg><button aria-label={`Open ${site.name} / ${site.sample}`} aria-pressed={props.selectedScienceId === site.id} onPointerDown={e => e.stopPropagation()} onClick={e => { e.stopPropagation(); props.onScienceSelect?.(site.id); }}>{site.code}</button></div></Html>;
+      return <Html key={site.id} position={at} center zIndexRange={[8, 0]}><div className="rm-science-pin" style={{ transform: `translate(${index % 2 === 0 ? 24 : -24}px, ${index % 2 === 0 ? -32 : 32}px)` }}><svg aria-hidden="true" viewBox="-50 -50 100 100" style={{ position: 'absolute', left: -50, top: -50, width: 100, height: 100, pointerEvents: 'none' }}><line x1={index % 2 === 0 ? -24 : 24} y1={index % 2 === 0 ? 32 : -32} x2={0} y2={0} stroke="#f39b58" /><circle cx={index % 2 === 0 ? -24 : 24} cy={index % 2 === 0 ? 32 : -32} r={2} fill="white" /></svg><button aria-label={`Open ${site.name} / ${site.sample}`} aria-pressed={props.selectedScienceId === site.id} onPointerDown={e => e.stopPropagation()} onClick={e => { e.stopPropagation(); props.onScienceSelect?.(site.id); }}>{site.code}</button></div></Html>;
     })}
     {props.missionPosition&&<Html position={[props.missionPosition.x/SCALE,(meshHeight(terrain,props.missionPosition)-terrain.meta.min)/SCALE*exaggeration+.0005,props.missionPosition.z/SCALE]} center zIndexRange={[10,0]}><span className="rm-crew-pin" data-testid="eva-crew-marker-3d">● CREW · SIM</span></Html>}
     {props.destination && Number.isFinite(elevation(terrain,props.destination.x,props.destination.z)) && <mesh position={ground(terrain, props.destination, exaggeration)}><sphereGeometry args={[.055, 16, 16]}/><meshBasicMaterial color={props.accentColor ?? '#8ee3d3'}/></mesh>}

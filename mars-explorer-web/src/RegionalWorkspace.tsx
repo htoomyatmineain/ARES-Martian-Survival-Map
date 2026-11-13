@@ -7,7 +7,7 @@ import { useNativeRoute } from './useNativeRoute';
 import { loadSharedRegional, type SharedRegionalMap } from './sharedRegionalData';
 import RegionalMap2D from './RegionalMap2D';
 import type { AnalysisLayer } from './regionalLayers';
-import { SCIENCE_SITES, sciencePoint, type ScienceFocus, type ScienceSite } from './scienceSites';
+import { MAP_SCIENCE_SITES as SCIENCE_SITES, sciencePoint, type ScienceFocus, type ScienceSite } from './scienceSites';
 import ScienceSitePopup from './ScienceSitePopup';
 import ObservationPanel from './RegionalObservationPanel';
 import { MINERALS, THERMAL, observationMarkers, type ObservationLayer } from './environmentObservations';
@@ -132,12 +132,12 @@ export default function RegionalWorkspace() {
       <div id="rm-panel-sites" role="tabpanel" aria-labelledby="rm-tab-sites" hidden={workspace==='mission'||sidebarPanel!=='sites'}>
       <section className="rm-section" aria-labelledby="rm-science-heading"><h2 id="rm-science-heading">SCIENCE SITES <span>PROVISIONAL</span></h2>
         {scienceVisible ? SCIENCE_SITES.map(site => <div className="rm-site-row" key={site.id}><button aria-label={`View ${site.name}`} aria-pressed={site.id === selectedScienceId} onClick={() => selectScience(site.id)}><span>{site.code} / {site.name}</span><small>{site.sample} · {site.designation}</small></button><button className="rm-site-locate" aria-label={`Zoom to ${site.name}`} title={`Zoom to ${site.name}`} onClick={() => zoomScience(site)}><Crosshair size={15}/></button></div>) : <p className="rm-fineprint">Turn on Science Sites to show the historical sampling markers.</p>}
-        <p className="rm-fineprint">Reported positions, separate from human EVA destinations. S1 and S2 labels have leader lines to the map coordinates.</p>
+        <p className="rm-fineprint">Reported historical sample positions. Additional samples are provisional. Choose a sample in Mission destination to plan a route; marker inspection alone does not change the destination.</p>
       </section>
       </div>
       <div id="rm-panel-sources" role="tabpanel" aria-labelledby="rm-tab-sources" hidden={workspace==='mission'||sidebarPanel!=='sources'}><section className="rm-section"><h2>DATA &amp; ASSUMPTIONS</h2><p className="rm-fineprint">ARES / TERRAIN NAVIGATION<br/>DELTA / CRATER FLOOR</p>
         <p className="rm-fineprint">Simulated base and destination. 20 m search grid; each segment checks conservative 10 m envelopes built from every overlapping native 1 m DEM cell. These are not validated EVA routes.</p>
-      <div className="rm-validation-note"><strong>HiRISE point coverage checked</strong><p>Both reported site positions have valid local 1 m elevation and 25 cm imagery pixels at the reported coordinates; both markers agree with NASA report-map targets.</p><p>NASA 1 m elevation and 25 cm imagery are retained in shared tiles. Both views use a 10 m display mesh and 2.44 m imagery overview. Relative NASA map alignment is checked. Absolute position accuracy and vertical datum compatibility remain unverified.</p></div>
+      <div className="rm-validation-note"><strong>HiRISE point coverage checked</strong><p>Original Skyland and Hazeltop positions have relative report-map checks. Additional Volume 1, 3 and 4 samples are provisional; coordinate linkage and absolute placement remain unverified. Select a mission destination to calculate access and any remaining gap.</p><p>NASA 1 m elevation and 25 cm imagery are retained in shared tiles. Both views use a 10 m display mesh and 2.44 m imagery overview. Relative NASA map alignment is checked. Absolute position accuracy and vertical datum compatibility remain unverified.</p></div>
       <section className="rm-resource-links" aria-label="Official resources"><h2>OFFICIAL RESOURCES</h2>
         <a href="https://trek.nasa.gov/mars/" target="_blank" rel="noreferrer">NASA Mars Trek ↗</a><p>Reference viewer. Its controlled Jezero DEM is the same source product used here; this is source consistency, not independent accuracy certification.</p>
         <a href="https://trek.nasa.gov/tiles/apidoc/trekAPI.html?body=mars" target="_blank" rel="noreferrer">Mars Trek layer catalogue ↗</a><p>The listed footprint contains our zone. Trek imagery is soc_006; ARES uses soc_007 with a different projection. No pixel-identical imagery claim.</p>
