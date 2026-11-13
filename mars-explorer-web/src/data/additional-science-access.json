@@ -8,7 +8,7 @@
       "x": 1779.5493277466294,
       "z": 1914.9639430065545
     },
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "verified-current-run",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   },
@@ -21,7 +21,7 @@
       "x": 1369.9162975288966,
       "z": 1734.299406931307
     },
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "verified-current-run",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   },
@@ -34,7 +34,7 @@
       "x": 1369.9162975288966,
       "z": 1734.299406931307
     },
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "verified-current-run",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   },
@@ -47,7 +47,7 @@
       "x": 1293.7306846508984,
       "z": 1542.9203765317923
     },
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "verified-current-run",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   },
@@ -60,7 +60,7 @@
       "x": 1293.7306846508984,
       "z": 1542.9203765317923
     },
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "verified-current-run",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   },
@@ -73,7 +73,7 @@
       "x": 1199.273163997999,
       "z": 1621.7557242377534
     },
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "verified-current-run",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   },
@@ -86,7 +86,7 @@
       "x": 1199.273163997999,
       "z": 1621.7557242377534
     },
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "verified-current-run",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   },
@@ -99,7 +99,7 @@
       "x": 1822.9042052315076,
       "z": 956.4529627543141
     },
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "verified-current-run",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   },
@@ -112,7 +112,7 @@
       "x": 1822.9042052315076,
       "z": 956.4529627543141
     },
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "verified-current-run",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   },
@@ -125,7 +125,7 @@
       "x": -2027.2017662245394,
       "z": -605.6309234866463
     },
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "verified-current-run",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   },
@@ -138,7 +138,7 @@
       "x": -2915.055793844673,
       "z": -1362.12069414596
     },
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "verified-current-run",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   },
@@ -151,7 +151,7 @@
       "x": -3347.1022443209,
       "z": -1410.8261203540164
     },
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "verified-current-run",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   },
@@ -161,7 +161,7 @@
     "reason": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.",
     "remainingHorizontalGapMetres": null,
     "endpointLocalMetres": null,
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "not-applicable",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   },
@@ -171,7 +171,7 @@
     "reason": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.",
     "remainingHorizontalGapMetres": null,
     "endpointLocalMetres": null,
-    "profileStatus": "not-rerun-native-tiles-unavailable",
+    "profileStatus": "not-applicable",
     "operationalClearance": false,
     "siteTaskCompletionAuthorized": false
   }

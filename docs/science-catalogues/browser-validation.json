@@ -1,0 +1,11 @@
+{
+  "map2DMarkers": 16,
+  "destinationOptions": 17,
+  "selectedSample": "M2020-190-3",
+  "nativeProfileVerified": true,
+  "unreachableReasonShown": true,
+  "provisionalPopup": true,
+  "canvasCount": 1,
+  "pageErrors": [],
+  "transport": "Playwright intercept serves exact cloud bytes downloaded via curl; app SHA-256 checks remain active. This bypasses browser network failure only, not data validation."
+}

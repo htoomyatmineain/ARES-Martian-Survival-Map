@@ -64,3 +64,18 @@ test('Drive candidates preserve original sample coordinates and never grant scie
     if(row.access.status==='exactly-reachable')assert.equal(row.access.remainingHorizontalGapMetres,0);
   }
 });
+
+test('source page and native profile evidence covers all added samples without granting operational clearance',()=>{
+ const pages=read('source-page-validation.json').records;
+ const profiles=read('native-profile-validation.json').records;
+ const added=read('drive-candidates.json').records.filter((r:any)=>r.scope==='optional');
+ assert.equal(pages.length,14);assert.equal(profiles.length,14);
+ for(const row of added){
+  const p=pages.find((p:any)=>p.siteId===row.candidateId);
+  assert.ok(p.coordinateValuesMatch&&p.nameInPage&&p.sampleIdInPage);
+  const route=profiles.find((p:any)=>p.siteId===row.candidateId);
+  assert.equal(route.operationalClearance,false);
+  if(route.status==='unreachable')assert.equal(route.profileStatus,'not-applicable');
+  else {assert.equal(route.profileStatus,'verified-current-run');assert.ok(route.profile.samples>0&&route.profile.distance>0);}
+ }
+});
