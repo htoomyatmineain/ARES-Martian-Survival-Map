@@ -13,11 +13,11 @@ import { drapePoints, meshHeight, type NativeRoute } from './nativeRouting';
 import {POVTouchControls,type POVInput} from './jz01/POVCamera';
 import './science-walking.css';
 
-export type SceneProps = { imageryUrl?: string; terrain: Terrain; layer: string; contours: boolean; exaggeration: number; mode: string; cameraAction: { kind: string; tick: number }; route: Route | null; selected: string; onSelect: (id: string) => void; onPick: (p: Point) => void; planning: boolean; progress: number; storm: boolean; markers: boolean; running: boolean; destination?: Point; blocked?: boolean; accentColor?: string; scienceSitesVisible?: boolean; selectedScienceId?: string | null; onScienceSelect?: (id: string) => void; observations?: ObservationMarker[]; onObservationSelect?: () => void; orbital?: OrbitalRaster | null; orbitalOpacity?: number; onOrbitalInspect?: (point: Point) => void };
+export type SceneProps = { imageryUrl?: string; terrain: Terrain; layer: string; contours: boolean; exaggeration: number; mode: string; cameraAction: { kind: string; tick: number }; route: Route | null; selected: string; onSelect: (id: string) => void; onPick: (p: Point) => void; planning: boolean; progress: number; storm: boolean; markers: boolean; running: boolean; destination?: Point; blocked?: boolean; accentColor?: string; scienceSitesVisible?: boolean; selectedScienceId?: string | null; onScienceSelect?: (id: string) => void; observations?: ObservationMarker[]; onObservationSelect?: () => void; orbital?: OrbitalRaster | null; missionPosition?: Point | null; orbitalOpacity?: number; onInspect?: (point: Point) => void; onOrbitalInspect?: (point: Point) => void };
 const SCALE = 1000;
 const SCIENCE_CAMERA={position:[10,9,11] as [number,number,number],fov:39,near:.05,far:100};
 function ground(t: Terrain, p: Point, ex: number): [number, number, number] { return [p.x / SCALE, (elevation(t, p.x, p.z) - t.meta.min) / SCALE * ex, p.z / SCALE]; }
-function TerrainMesh({ terrain, layer, contours, exaggeration, onPick, planning, imageryUrl, orbital, orbitalOpacity = .65, onOrbitalInspect }: SceneProps) {
+function TerrainMesh({ terrain, layer, contours, exaggeration, onPick, planning, imageryUrl, orbital, orbitalOpacity = .65, onOrbitalInspect, onInspect }: SceneProps) {
   const sourceTexture = useTexture(imageryUrl ?? '/data/ortho.jpg');
   const texture = useMemo(() => { const t = sourceTexture.clone(); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; t.needsUpdate = true; return t; }, [sourceTexture]);
   useEffect(() => () => texture.dispose(), [texture]);
@@ -71,7 +71,7 @@ function TerrainMesh({ terrain, layer, contours, exaggeration, onPick, planning,
     return result;
   },[orbital]);
   useEffect(() => () => orbitalTexture?.dispose(),[orbitalTexture]);
-  const pick = (e: ThreeEvent<MouseEvent>) => { if (!planning && !orbital) return; e.stopPropagation(); const point = {x:e.point.x*SCALE,z:e.point.z*SCALE}; if (planning) onPick(point); else onOrbitalInspect?.(point); };
+  const pick = (e: ThreeEvent<MouseEvent>) => { if (!planning && !orbital && !onInspect) return; e.stopPropagation(); const point = {x:e.point.x*SCALE,z:e.point.z*SCALE}; if (planning) onPick(point); else if(orbital) onOrbitalInspect?.(point); else onInspect?.(point); };
   return <><mesh geometry={geometry} material={material} onClick={pick} onAfterRender={() => { document.documentElement.dataset.terrainReady = 'true'; }} receiveShadow />
     {orbitalTexture && <mesh geometry={geometry} renderOrder={2} raycast={() => {}}><meshBasicMaterial map={orbitalTexture} transparent opacity={orbitalOpacity} depthWrite={false} polygonOffset polygonOffsetFactor={-1} polygonOffsetUnits={-2}/></mesh>}
   </>;
@@ -157,6 +157,7 @@ function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | 
       const at = ground(terrain, sciencePoint(site, terrain.meta.center), exaggeration); at[1] += .01;
       return <Html key={site.id} position={at} center zIndexRange={[8, 0]}><div className="rm-science-pin" style={{ transform: `translate(${index === 0 ? 24 : -24}px, ${index === 0 ? -32 : 32}px)` }}><svg aria-hidden="true" viewBox="-50 -50 100 100" style={{ position: 'absolute', left: -50, top: -50, width: 100, height: 100, pointerEvents: 'none' }}><line x1={index === 0 ? -24 : 24} y1={index === 0 ? 32 : -32} x2={0} y2={0} stroke="#f39b58" /><circle cx={index === 0 ? -24 : 24} cy={index === 0 ? 32 : -32} r={2} fill="white" /></svg><button aria-label={`Open ${site.name} / ${site.sample}`} aria-pressed={props.selectedScienceId === site.id} onPointerDown={e => e.stopPropagation()} onClick={e => { e.stopPropagation(); props.onScienceSelect?.(site.id); }}>{site.code}</button></div></Html>;
     })}
+    {props.missionPosition&&<Html position={[props.missionPosition.x/SCALE,(meshHeight(terrain,props.missionPosition)-terrain.meta.min)/SCALE*exaggeration+.0005,props.missionPosition.z/SCALE]} center zIndexRange={[10,0]}><span className="rm-crew-pin" data-testid="eva-crew-marker-3d">● CREW · SIM</span></Html>}
     {props.destination && Number.isFinite(elevation(terrain,props.destination.x,props.destination.z)) && <mesh position={ground(terrain, props.destination, exaggeration)}><sphereGeometry args={[.055, 16, 16]}/><meshBasicMaterial color={props.accentColor ?? '#8ee3d3'}/></mesh>}
     {exclusion.length > 0 && <Line points={exclusion} color="#f0b276" lineWidth={2}/>}
     {props.mode!=='Explore'&&<><Skirt terrain={terrain} exaggeration={exaggeration} />

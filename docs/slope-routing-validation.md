@@ -61,7 +61,7 @@ surface distance ≈ sum sqrt(dx² + dz² + dh²)
 uphill climb ≈ sum max(0, dh)
 ```
 
-These are sampled DEM-profile metrics, not exact physical walking distance or energy consumption. They include DEM-scale variability and cannot describe subpixel rocks or loose ground. No oxygen, travel-time or EVA feasibility numbers are derived from this new route model.
+These are sampled DEM-profile metrics, not exact physical walking distance or energy consumption. They include DEM-scale variability and cannot describe subpixel rocks or loose ground. The search does not derive oxygen or EVA feasibility. A separate estimate added on 13 November divides verified route distance by an editable assumed rover/walking average speed; see travel-time-estimates.md. It does not change this route model or its slope rules.
 
 The visible 3D route uses the actual display triangles. It is split at every crossed mesh grid line and diagonal, then lifted 0.20 m solely for visibility; flagged lines use 0.30 m. Physical calculations do not use those display offsets. This replaces the previous 18 m route lift. Tactical route annotations use a dark outline and draw over the terrain so a screen-width line does not disappear into it; this is not a line-of-sight or occlusion simulation.
 

@@ -8,7 +8,7 @@ import type { ObservationMarker } from './environmentObservations';
 import type { OrbitalRaster } from './orbitalLayers';
 import type { NativeRoute } from './nativeRouting';
 
-type Props = { shared: SharedRegionalMap | null; terrain: Terrain; analysis: AnalysisLayer; opacity: number; imagery: boolean; contours: boolean; route: Route | null; routeVisible: boolean; destination: Point; picking: boolean; onPick: (p: Point) => void; hidden: boolean; blocked: boolean; grid: boolean; scienceVisible: boolean; selectedScienceId: string | null; scienceFocus: ScienceFocus | null; onScienceSelect: (id: string) => void; observations: ObservationMarker[]; observationFocus: { point: Point; tick: number } | null; onObservationSelect: () => void; orbital: OrbitalRaster | null; onOrbitalInspect: (point: Point) => void };
+type Props = { shared: SharedRegionalMap | null; terrain: Terrain; analysis: AnalysisLayer; opacity: number; imagery: boolean; contours: boolean; route: Route | null; routeVisible: boolean; destination: Point; picking: boolean; onPick: (p: Point) => void; missionPosition?: Point | null; hidden: boolean; blocked: boolean; grid: boolean; scienceVisible: boolean; selectedScienceId: string | null; scienceFocus: ScienceFocus | null; onScienceSelect: (id: string) => void; observations: ObservationMarker[]; observationFocus: { point: Point; tick: number } | null; onObservationSelect: () => void; orbital: OrbitalRaster | null; onInspect?: (point: Point) => void; onOrbitalInspect: (point: Point) => void };
 export default memo(function RegionalMap2D(p: Props) {
   const svg = useRef<SVGSVGElement>(null);
   const drag = useRef<{ x: number; y: number; cx: number; cy: number; moved: boolean } | null>(null);
@@ -58,7 +58,7 @@ export default memo(function RegionalMap2D(p: Props) {
   const pick = (clientX: number, clientY: number) => {
     const el = svg.current, matrix = el?.getScreenCTM(); if (!el || !matrix) return;
     const at = new DOMPoint(clientX, clientY).matrixTransform(matrix.inverse());
-    if (Math.abs(at.x) <= half && Math.abs(at.y) <= half) { const point = {x:at.x,z:at.y}; if (p.picking) p.onPick(point); else if (p.orbital) p.onOrbitalInspect(point); }
+    if (Math.abs(at.x) <= half && Math.abs(at.y) <= half) { const point = {x:at.x,z:at.y}; if (p.picking) p.onPick(point); else if (p.orbital) p.onOrbitalInspect(point); else p.onInspect?.(point); }
   };
   return <div className="rm-map2d" hidden={p.hidden}>
     <svg ref={svg} className={p.picking ? 'rm-svg rm-picking' : 'rm-svg'} data-testid="regional-map" viewBox={`${cx - visibleWidth / 2} ${cz - visibleHeight / 2} ${visibleWidth} ${visibleHeight}`} role="group" aria-label="Regional terrain map" aria-describedby="rm-map-help" tabIndex={0}
@@ -66,7 +66,7 @@ export default memo(function RegionalMap2D(p: Props) {
       onPointerMove={e => { const a = drag.current; if (!a) return; if (Math.hypot(e.clientX - a.x, e.clientY - a.y) > 5) a.moved = true; if (a.moved) setCenter({ x: a.cx - (e.clientX - a.x) * unitsPerPixel, z: a.cy - (e.clientY - a.y) * unitsPerPixel }); }}
       onPointerUp={e => { if (drag.current && !drag.current.moved && (p.picking || p.orbital)) pick(e.clientX, e.clientY); drag.current = null; }}
       onPointerCancel={() => { drag.current = null; }} onLostPointerCapture={() => { drag.current = null; }}
-      onKeyDown={e => { if (!p.picking) { if (p.orbital && e.key === 'Enter') { e.preventDefault(); p.onOrbitalInspect({x:cx,z:cz}); } return; } const delta: Record<string, [number, number]> = { ArrowLeft: [-100, 0], ArrowRight: [100, 0], ArrowUp: [0, -100], ArrowDown: [0, 100] }; const v = delta[e.key]; if (v) { e.preventDefault(); p.onPick({ x: Math.max(-half, Math.min(half, p.destination.x + v[0])), z: Math.max(-half, Math.min(half, p.destination.z + v[1])) }); } }}>
+      onKeyDown={e => { if (!p.picking) { if (e.key === 'Enter') { e.preventDefault(); if(p.orbital)p.onOrbitalInspect({x:cx,z:cz});else p.onInspect?.({x:cx,z:cz}); } return; } const delta: Record<string, [number, number]> = { ArrowLeft: [-100, 0], ArrowRight: [100, 0], ArrowUp: [0, -100], ArrowDown: [0, 100] }; const v = delta[e.key]; if (v) { e.preventDefault(); p.onPick({ x: Math.max(-half, Math.min(half, p.destination.x + v[0])), z: Math.max(-half, Math.min(half, p.destination.z + v[1])) }); } }}>
       <title>Western Jezero regional map</title>
       <defs><clipPath id="rm-footprint"><rect x={-half} y={-half} width={half * 2} height={half * 2}/></clipPath><pattern id="rm-hatch" width="150" height="150" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="150" height="150" fill="#c67e4530"/><path d="M0 0V150" stroke="#f0b276" strokeWidth="2" vectorEffect="non-scaling-stroke"/></pattern></defs>
       <rect x={-half} y={-half} width={half * 2} height={half * 2} fill="#252a30"/>
@@ -99,6 +99,7 @@ export default memo(function RegionalMap2D(p: Props) {
           <text x={dx} y={dy + 3.5 * unitsPerPixel} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize={11 * unitsPerPixel} fill={active ? '#0b0d10' : '#fff'}>{site.code}</text>
         </g>;
       })}
+      {p.missionPosition && <g transform={`translate(${p.missionPosition.x} ${p.missionPosition.z})`} pointerEvents="none" data-testid="eva-crew-marker"><circle r={7*unitsPerPixel} fill="#f4f3ef" stroke="#0b0d10" strokeWidth="2" vectorEffect="non-scaling-stroke"/><text y={-14*unitsPerPixel} textAnchor="middle" fontSize={9*unitsPerPixel} fill="#fff" stroke="#0b0d10" strokeWidth={2*unitsPerPixel} paintOrder="stroke">CREW · SIM</text></g>}
       {p.observations.map(marker => {
         const dx = (marker.kind === 'thermal' ? 58 : -58) * unitsPerPixel, dy = -65 * unitsPerPixel;
         return <g key={marker.id} data-testid={`${marker.kind}-marker`} role="button" tabIndex={0} aria-label={`Open ${marker.description}`} transform={`translate(${marker.point.x} ${marker.point.z})`} className="rm-science-marker" onPointerDown={e => e.stopPropagation()} onPointerUp={e => e.stopPropagation()} onClick={e => { e.stopPropagation(); p.onObservationSelect(); }} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); p.onObservationSelect(); } }}>
