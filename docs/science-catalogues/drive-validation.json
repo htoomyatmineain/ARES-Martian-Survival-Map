@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "result": "PASS-with-provisional-location-and-profile-limitations",
+  "baseCommit": "e62f499",
+  "counts": {
+    "groups": 15,
+    "samples": 23,
+    "optionalSamples": 14,
+    "exactly-reachable": 15,
+    "approach-only": 6,
+    "unreachable": 2
+  },
+  "checks": [
+    "23 original sample IDs and coordinates preserved",
+    "15 original groups retained without invented synonyms",
+    "All sample coordinates inside existing local zone",
+    "Compressed hazard input SHA-256 matches catalogue",
+    "Existing router called with unchanged rules",
+    "Every returned route edge checked",
+    "No science-task or operational authorization granted"
+  ],
+  "inputs": [
+    {
+      "path": "drive-provisional-source.json",
+      "sha256": "fb162e70a184522784e13dc6bd84942f9b4e4d00bb529d4c6f151c956bc7d781"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "drive-candidates.json",
+      "sha256": "b9f3c611145ca7a72d7e3c8b09fc57cd7073ad8ae63ce5537ea7b73bb5e12609"
+    }
+  ],
+  "limitations": [
+    "Project-supplied provisional inventory, not NASA-issued JSON. Original dossier page references retained; optional PDFs not independently audited in this update.",
+    "No candidate promoted to verified absolute placement. Existing site IDs/coordinates are not replaced. Group names are not established synonyms.",
+    "Exactly-reachable describes graph access only, not fresh native profile approval, safe ground or authorization to begin science.",
+    "Native profile unavailable; use existing live routing/profile workflow before departure. Unknown hazards do not mean safe."
+  ]
+}

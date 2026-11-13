@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "source": "https://qcgpyoegjwqfhvzvuhdl.supabase.co/storage/v1/object/public/jezero-map/western-jezero-v1",
+  "rules": {
+    "alongLimit": 18,
+    "crossLimit": 12,
+    "totalLimit": 28,
+    "slopeWeight": 4,
+    "warningFraction": 0.8
+  },
+  "start": {
+    "x": 1900,
+    "z": 1500
+  },
+  "strategy": "slope-priority",
+  "exclusion": false,
+  "records": [
+    {
+      "siteId": "M2020-164-2",
+      "status": "exactly-reachable",
+      "reason": "Exact graph route found.",
+      "remainingHorizontalGapMetres": 0,
+      "profileStatus": "verified-current-run",
+      "profile": {
+        "distance": 744.4851367199951,
+        "ascent": 9.362950590355013,
+        "samples": 754
+      },
+      "error": null,
+      "operationalClearance": false
+    },
+    {
+      "siteId": "M2020-190-3",
+      "status": "exactly-reachable",
+      "reason": "Exact graph route found.",
+      "remainingHorizontalGapMetres": 0,
+      "profileStatus": "verified-current-run",
+      "profile": {
+        "distance": 726.8404407613353,
+        "ascent": 27.02647852032578,
+        "samples": 733
+      },
+      "error": null,
+      "operationalClearance": false
+    },
+    {
+      "siteId": "M2020-196-4",
+      "status": "exactly-reachable",
+      "reason": "Exact graph route found.",
+      "remainingHorizontalGapMetres": 0,
+      "profileStatus": "verified-current-run",
+      "profile": {
+        "distance": 726.8404407613353,
+        "ascent": 27.02647852032578,
+        "samples": 733
+      },
+      "error": null,
+      "operationalClearance": false
+    },
+    {
+      "siteId": "M2020-262-5",
+      "status": "exactly-reachable",
+      "reason": "Exact graph route found.",
+      "remainingHorizontalGapMetres": 0,
+      "profileStatus": "verified-current-run",
+      "profile": {
+        "distance": 752.5196877859295,
+        "ascent": 27.309750416410225,
+        "samples": 758
+      },
+      "error": null,
+      "operationalClearance": false
+    },
+    {
+      "siteId": "M2020-271-6",
+      "status": "exactly-reachable",
+      "reason": "Exact graph route found.",
+      "remainingHorizontalGapMetres": 0,
+      "profileStatus": "verified-current-run",
+      "profile": {
+        "distance": 752.5196877859295,
+        "ascent": 27.309750416410225,
+        "samples": 758
+      },
+      "error": null,
+      "operationalClearance": false
+    },
+    {
+      "siteId": "M2020-295-7",
+      "status": "exactly-reachable",
+      "reason": "Exact graph route found.",
+      "remainingHorizontalGapMetres": 0,
+      "profileStatus": "verified-current-run",
+      "profile": {
+        "distance": 869.7806927594672,
+        "ascent": 26.510719128902565,
+        "samples": 875
+      },
+      "error": null,
+      "operationalClearance": false
+    },
+    {
+      "siteId": "M2020-337-8",
+      "status": "exactly-reachable",
+      "reason": "Exact graph route found.",
+      "remainingHorizontalGapMetres": 0,
+      "profileStatus": "verified-current-run",
+      "profile": {
+        "distance": 869.7806927594672,
+        "ascent": 26.510719128902565,
+        "samples": 875
+      },
+      "error": null,
+      "operationalClearance": false
+    },
+    {
+      "siteId": "M2020-371-9",
+      "status": "exactly-reachable",
+      "reason": "Exact graph route found.",
+      "remainingHorizontalGapMetres": 0,
+      "profileStatus": "verified-current-run",
+      "profile": {
+        "distance": 796.510948204174,
+        "ascent": 20.41797240374035,
+        "samples": 805
+      },
+      "error": null,
+      "operationalClearance": false
+    },
+    {
+      "siteId": "M2020-374-10",
+      "status": "exactly-reachable",
+      "reason": "Exact graph route found.",
+      "remainingHorizontalGapMetres": 0,
+      "profileStatus": "verified-current-run",
+      "profile": {
+        "distance": 796.510948204174,
+        "ascent": 20.41797240374035,
+        "samples": 805
+      },
+      "error": null,
+      "operationalClearance": false
+    },
+    {
+      "siteId": "M2020-749-22",
+      "status": "exactly-reachable",
+      "reason": "Exact graph route found.",
+      "remainingHorizontalGapMetres": 0,
+      "profileStatus": "verified-current-run",
+      "profile": {
+        "distance": 10681.21096885288,
+        "ascent": 246.5517661432168,
+        "samples": 10738
+      },
+      "error": null,
+      "operationalClearance": false
+    },
+    {
+      "siteId": "M2020-822-23",
+      "status": "exactly-reachable",
+      "reason": "Exact graph route found.",
+      "remainingHorizontalGapMetres": 0,
+      "profileStatus": "verified-current-run",
+      "profile": {
+        "distance": 9206.439314757254,
+        "ascent": 277.8796797805494,
+        "samples": 9237
+      },
+      "error": null,
+      "operationalClearance": false
+    },
+    {
+      "siteId": "M2020-882-24",
+      "status": "exactly-reachable",
+      "reason": "Exact graph route found.",
+      "remainingHorizontalGapMetres": 0,
+      "profileStatus": "verified-current-run",
+      "profile": {
+        "distance": 8925.15422129693,
+        "ascent": 264.0149044572645,
+        "samples": 8954
+      },
+      "error": null,
+      "operationalClearance": false
+    },
+    {
+      "siteId": "M2020-923-25",
+      "status": "unreachable",
+      "reason": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.",
+      "remainingHorizontalGapMetres": null,
+      "profileStatus": "not-applicable",
+      "profile": null,
+      "error": null,
+      "operationalClearance": false
+    },
+    {
+      "siteId": "M2020-949-26",
+      "status": "unreachable",
+      "reason": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.",
+      "remainingHorizontalGapMetres": null,
+      "profileStatus": "not-applicable",
+      "profile": null,
+      "error": null,
+      "operationalClearance": false
+    }
+  ],
+  "limitations": [
+    "Computed route consistency under demo rules, not astronaut safety certification.",
+    "Source coordinates retain unresolved linkage and absolute placement.",
+    "Missing or corrupt tiles fail native profile verification."
+  ]
+}

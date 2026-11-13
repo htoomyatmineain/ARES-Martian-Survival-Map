@@ -1,0 +1,1539 @@
+{
+  "schemaVersion": "1.0",
+  "createdDate": "2026-11-13",
+  "status": "provisional",
+  "region": {
+    "name": "Western Jezero Delta + Adjacent Crater Floor",
+    "sizeMetres": 10000,
+    "boundsWestSouthEastNorth": [
+      77.33107113608344,
+      18.375646975709426,
+      77.50892886391657,
+      18.544353024290576
+    ],
+    "reference": "supplied terrain(2).json"
+  },
+  "scope": {
+    "main": "Volume 2 Delta Front, 5 site groups and 9 sample records",
+    "optional": "Volumes 1, 3, 4 within numeric bounds, 10 additional site groups and 14 records",
+    "exhaustive": false
+  },
+  "limitations": [
+    "Inventory-derived project dataset; not a NASA-issued JSON dataset.",
+    "Coordinate linkage, vertical-datum compatibility and registration acceptance remain pending.",
+    "Valid point support does not establish regional gap-free coverage, absolute accuracy or route safety.",
+    "Reported elevations have unresolved datum; do not use as renderer heights or merge CTX and HiRISE heights.",
+    "Runtime coordinate conversion, marker anchoring and UI tests remain integration work.",
+    "Group names combine naming levels; slash labels are not independently verified synonyms."
+  ],
+  "provenance": {
+    "inventoryFile": "Jezero_Step2_Science_Inventory(2).md",
+    "inventorySha256": "4dd209626d5eb721340835231a27673174d4ee61de45dd5a0d77846163039a24",
+    "measurementFile": "Jezero_HiRISE_Sample_Checks.json"
+  },
+  "sites": [
+    {
+      "id": "JZ-SCI-01",
+      "inventoryGroup": 1,
+      "label": "Roubion",
+      "campaign": "Crater Floor",
+      "scope": "optional",
+      "sampleIds": [
+        "M2020-164-2"
+      ],
+      "scienceSummary": "Atmospheric sample; no rock core recovered. The target is a mafic rock with evidence of alteration by water. This is useful as sampling-history context, not a recovered rock core.",
+      "representativeSampleId": "M2020-164-2",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-02",
+      "inventoryGroup": 2,
+      "label": "Rochette",
+      "campaign": "Crater Floor",
+      "scope": "optional",
+      "sampleIds": [
+        "M2020-190-3",
+        "M2020-196-4"
+      ],
+      "scienceSummary": "Fine-grained mafic rock, probably igneous; the report retains basaltic sandstone as an alternative. Plagioclase and pyroxene occur with secondary sulfates and other alteration minerals.",
+      "representativeSampleId": "M2020-190-3",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-03",
+      "inventoryGroup": 3,
+      "label": "Brac",
+      "campaign": "Crater Floor",
+      "scope": "optional",
+      "sampleIds": [
+        "M2020-262-5",
+        "M2020-271-6"
+      ],
+      "scienceSummary": "Olivine-rich cumulate rock with pyroxene. Sulfates, carbonates and hydrated phases record aqueous alteration; reported organic material does not establish life.",
+      "representativeSampleId": "M2020-262-5",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-04",
+      "inventoryGroup": 4,
+      "label": "Issole",
+      "campaign": "Crater Floor",
+      "scope": "optional",
+      "sampleIds": [
+        "M2020-295-7",
+        "M2020-337-8"
+      ],
+      "scienceSummary": "Olivine-pyroxene cumulate rock with relatively limited aqueous alteration. Carbonate and hydrated sulfate provide a comparison with other crater-floor targets.",
+      "representativeSampleId": "M2020-295-7",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-05",
+      "inventoryGroup": 5,
+      "label": "Sid",
+      "campaign": "Crater Floor",
+      "scope": "optional",
+      "sampleIds": [
+        "M2020-371-9",
+        "M2020-374-10"
+      ],
+      "scienceSummary": "Interpreted in the initial report as likely basaltic andesite, with feldspar and pyroxene. Secondary minerals and hydration indicate limited alteration; interpretation is preliminary.",
+      "representativeSampleId": "M2020-371-9",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-06",
+      "inventoryGroup": 6,
+      "label": "Skinner Ridge",
+      "campaign": "Delta Front",
+      "scope": "main",
+      "sampleIds": [
+        "M2020-490-11",
+        "M2020-495-12"
+      ],
+      "scienceSummary": "Sandstone interpreted as deposited in a prodelta environment. Diverse transported grains and probable iron-magnesium carbonate cement support study of sediment transport and alteration.",
+      "representativeSampleId": "M2020-490-11",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-07",
+      "inventoryGroup": 7,
+      "label": "Wildcat Ridge",
+      "campaign": "Delta Front",
+      "scope": "main",
+      "sampleIds": [
+        "M2020-509-14",
+        "M2020-516-15"
+      ],
+      "scienceSummary": "Fine sedimentary mudstone interpreted as lake-deposited, with magnesium-iron sulfates and calcium-sulfate veins. Fluorescence may reflect aromatic organics; that inference is not evidence of life.",
+      "representativeSampleId": "M2020-509-14",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-08",
+      "inventoryGroup": 8,
+      "label": "Amalik",
+      "campaign": "Delta Front",
+      "scope": "main",
+      "sampleIds": [
+        "M2020-575-16",
+        "M2020-579-17"
+      ],
+      "scienceSummary": "Olivine-bearing mudstone interpreted as lake-deposited. Altered olivine and relatively little sulfate distinguish it from Wildcat Ridge; possible organic-related signals remain tentative.",
+      "representativeSampleId": "M2020-575-16",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-09",
+      "inventoryGroup": 9,
+      "label": "Hidden Harbor",
+      "campaign": "Delta Front",
+      "scope": "main",
+      "sampleIds": [
+        "M2020-623-19"
+      ],
+      "scienceSummary": "Fine sandstone interpreted as lake-deposited, rich in magnesium-iron sulfate with calcium-sulfate patches. Mineral and fluorescence measurements provide another comparison of sediment alteration.",
+      "representativeSampleId": "M2020-623-19",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-10",
+      "inventoryGroup": 10,
+      "label": "Observation Mountain",
+      "campaign": "Delta Front",
+      "scope": "main",
+      "sampleIds": [
+        "M2020-634-20",
+        "M2020-639-21"
+      ],
+      "scienceSummary": "Loose regolith containing coarse grains, sand and silt, with likely dust. Mixed primary and secondary minerals allow comparison of unconsolidated material with bedrock cores.",
+      "representativeSampleId": "M2020-634-20",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-11",
+      "inventoryGroup": 11,
+      "label": "Berea / Tenby",
+      "campaign": "Upper Fan",
+      "scope": "optional",
+      "sampleIds": [
+        "M2020-749-22"
+      ],
+      "scienceSummary": "Sandstone interpreted as river-deposited, with basaltic grains and carbonate/sulfate alteration. Useful for comparing Upper Fan sediments with Delta Front materials.",
+      "representativeSampleId": "M2020-749-22",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-12",
+      "inventoryGroup": 12,
+      "label": "Emerald Lake",
+      "campaign": "Upper Fan",
+      "scope": "optional",
+      "sampleIds": [
+        "M2020-822-23"
+      ],
+      "scienceSummary": "Mixed-clast conglomeratic sediment interpreted as river-deposited. Diverse grains, altered olivine and carbonate-bearing material record transported source-rock diversity.",
+      "representativeSampleId": "M2020-822-23",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-13",
+      "inventoryGroup": 13,
+      "label": "Dream Lake / Hague Creek",
+      "campaign": "Upper Fan",
+      "scope": "optional",
+      "sampleIds": [
+        "M2020-882-24"
+      ],
+      "scienceSummary": "Poorly sorted sandstone interpreted as river-deposited. Olivine, pyroxene and feldspar occur with carbonate matrix and silica-rich cross-cutting material.",
+      "representativeSampleId": "M2020-882-24",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-14",
+      "inventoryGroup": 14,
+      "label": "Hans Amundsen Memorial Workspace / Mandu Wall",
+      "campaign": "Margin",
+      "scope": "optional",
+      "sampleIds": [
+        "M2020-923-25"
+      ],
+      "scienceSummary": "Possibly sandstone with altered basaltic composition, carbonates and silica. Depositional environment and even sedimentary versus altered igneous origin remain uncertain in the initial report.",
+      "representativeSampleId": "M2020-923-25",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    },
+    {
+      "id": "JZ-SCI-15",
+      "inventoryGroup": 15,
+      "label": "Turquoise Bay / Lake Newell",
+      "campaign": "Margin",
+      "scope": "optional",
+      "sampleIds": [
+        "M2020-949-26"
+      ],
+      "scienceSummary": "Possibly sandstone with altered basaltic composition, magnesium-iron carbonates and sulfates. Formation setting is unresolved; silica may act as cement.",
+      "representativeSampleId": "M2020-949-26",
+      "markerPolicy": "Use representative sample coordinates only as a provisional group anchor; preserve individual sample coordinates; never spread overlapping samples geographically."
+    }
+  ],
+  "samples": [
+    {
+      "id": "M2020-164-2",
+      "siteId": "JZ-SCI-01",
+      "name": "Roubion",
+      "sampleType": "atmospheric_no_core",
+      "coordinates": {
+        "latitude": 18.4276934,
+        "longitude": 77.45165066,
+        "latitudeSourceText": "18.42769340",
+        "longitudeSourceText": "77.45165066",
+        "reportedElevationSourceText": "-2584.96 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=16",
+        "volume": 1,
+        "pdfViewerPage": 16
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2584.960205078125,
+            -2584.94921875,
+            -2584.923828125,
+            -2584.916015625
+          ],
+          "files": [
+            "elevation-6409-14063.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            86,
+            87,
+            92,
+            93
+          ],
+          "files": [
+            "imagery-48809-54207.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-190-3",
+      "siteId": "JZ-SCI-02",
+      "name": "Montdenier",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.43074132,
+        "longitude": 77.44436502,
+        "latitudeSourceText": "18.43074132",
+        "longitudeSourceText": "77.44436502",
+        "reportedElevationSourceText": "-2574.553 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=36",
+        "volume": 1,
+        "pdfViewerPage": 36
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2574.563720703125,
+            -2574.54833984375,
+            -2574.541748046875,
+            -2574.5244140625
+          ],
+          "files": [
+            "elevation-6409-14063.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            70,
+            71,
+            70,
+            71
+          ],
+          "files": [
+            "imagery-48809-54207.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-196-4",
+      "siteId": "JZ-SCI-02",
+      "name": "Montagnac",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.43074132,
+        "longitude": 77.44436502,
+        "latitudeSourceText": "18.43074132",
+        "longitudeSourceText": "77.44436502",
+        "reportedElevationSourceText": "-2574.553 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=59",
+        "volume": 1,
+        "pdfViewerPage": 59
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2574.563720703125,
+            -2574.54833984375,
+            -2574.541748046875,
+            -2574.5244140625
+          ],
+          "files": [
+            "elevation-6409-14063.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            70,
+            71,
+            70,
+            71
+          ],
+          "files": [
+            "imagery-48809-54207.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-262-5",
+      "siteId": "JZ-SCI-03",
+      "name": "Salette",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.43397,
+        "longitude": 77.44301,
+        "latitudeSourceText": "18.43397",
+        "longitudeSourceText": "77.44301",
+        "reportedElevationSourceText": "\u20132569.2 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=62",
+        "volume": 1,
+        "pdfViewerPage": 62
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2569.177978515625,
+            -2569.01953125,
+            -2569.152099609375,
+            -2569.0087890625
+          ],
+          "files": [
+            "elevation-6409-13551.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            142,
+            144,
+            148,
+            150
+          ],
+          "files": [
+            "imagery-48809-54207.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-271-6",
+      "siteId": "JZ-SCI-03",
+      "name": "Coulettes",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.43397,
+        "longitude": 77.44301,
+        "latitudeSourceText": "18.43397",
+        "longitudeSourceText": "77.44301",
+        "reportedElevationSourceText": "\u20132569.2 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=90",
+        "volume": 1,
+        "pdfViewerPage": 90
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2569.177978515625,
+            -2569.01953125,
+            -2569.152099609375,
+            -2569.0087890625
+          ],
+          "files": [
+            "elevation-6409-13551.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            142,
+            144,
+            148,
+            150
+          ],
+          "files": [
+            "imagery-48809-54207.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-295-7",
+      "siteId": "JZ-SCI-04",
+      "name": "Robine",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.43264,
+        "longitude": 77.44133,
+        "latitudeSourceText": "18.43264",
+        "longitudeSourceText": "77.44133",
+        "reportedElevationSourceText": "\u20132574.3 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=93",
+        "volume": 1,
+        "pdfViewerPage": 93
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2574.26318359375,
+            -2574.282958984375,
+            -2574.26025390625,
+            -2574.269287109375
+          ],
+          "files": [
+            "elevation-6409-13551.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            144,
+            139,
+            144,
+            147
+          ],
+          "files": [
+            "imagery-48809-54207.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-337-8",
+      "siteId": "JZ-SCI-04",
+      "name": "Malay",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.43264,
+        "longitude": 77.44133,
+        "latitudeSourceText": "18.43264",
+        "longitudeSourceText": "77.44133",
+        "reportedElevationSourceText": "\u20132574.3 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=125",
+        "volume": 1,
+        "pdfViewerPage": 125
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2574.26318359375,
+            -2574.282958984375,
+            -2574.26025390625,
+            -2574.269287109375
+          ],
+          "files": [
+            "elevation-6409-13551.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            144,
+            139,
+            144,
+            147
+          ],
+          "files": [
+            "imagery-48809-54207.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-371-9",
+      "siteId": "JZ-SCI-05",
+      "name": "Hahonih",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.44386406,
+        "longitude": 77.45242176,
+        "latitudeSourceText": "18.44386406",
+        "longitudeSourceText": "77.45242176",
+        "reportedElevationSourceText": "-2568.357 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=128",
+        "volume": 1,
+        "pdfViewerPage": 128
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2568.629150390625,
+            -2568.5654296875,
+            -2568.603759765625,
+            -2568.53466796875
+          ],
+          "files": [
+            "elevation-6409-13039.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            121,
+            105,
+            137,
+            117
+          ],
+          "files": [
+            "imagery-48809-50111.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-374-10",
+      "siteId": "JZ-SCI-05",
+      "name": "Atsah",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.44386406,
+        "longitude": 77.45242176,
+        "latitudeSourceText": "18.44386406",
+        "longitudeSourceText": "77.45242176",
+        "reportedElevationSourceText": "-2568.357m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=159",
+        "volume": 1,
+        "pdfViewerPage": 159
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2568.629150390625,
+            -2568.5654296875,
+            -2568.603759765625,
+            -2568.53466796875
+          ],
+          "files": [
+            "elevation-6409-13039.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            121,
+            105,
+            137,
+            117
+          ],
+          "files": [
+            "imagery-48809-50111.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-490-11",
+      "siteId": "JZ-SCI-06",
+      "name": "Swift Run",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.458931,
+        "longitude": 77.40617078,
+        "latitudeSourceText": "18.458931",
+        "longitudeSourceText": "77.40617078",
+        "reportedElevationSourceText": "\u20132520.185m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=14",
+        "volume": 2,
+        "pdfViewerPage": 14
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2520.0263671875,
+            -2520.19970703125,
+            -2520.30517578125,
+            -2520.46826171875
+          ],
+          "files": [
+            "elevation-6409-12015.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            116,
+            104,
+            87,
+            86
+          ],
+          "files": [
+            "imagery-40617-46015.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-495-12",
+      "siteId": "JZ-SCI-06",
+      "name": "Skyland",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.458931,
+        "longitude": 77.40617078,
+        "latitudeSourceText": "18.458931",
+        "longitudeSourceText": "77.40617078",
+        "reportedElevationSourceText": "\u20132520.185m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=52",
+        "volume": 2,
+        "pdfViewerPage": 52
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2520.0263671875,
+            -2520.19970703125,
+            -2520.30517578125,
+            -2520.46826171875
+          ],
+          "files": [
+            "elevation-6409-12015.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            116,
+            104,
+            87,
+            86
+          ],
+          "files": [
+            "imagery-40617-46015.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-509-14",
+      "siteId": "JZ-SCI-07",
+      "name": "Hazeltop",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.45863707,
+        "longitude": 77.40588851,
+        "latitudeSourceText": "18.45863707",
+        "longitudeSourceText": "77.40588851",
+        "reportedElevationSourceText": "-2523.0974 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=58",
+        "volume": 2,
+        "pdfViewerPage": 58
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2523.12451171875,
+            -2523.161376953125,
+            -2523.29052734375,
+            -2523.307861328125
+          ],
+          "files": [
+            "elevation-6409-12015.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            165,
+            161,
+            141,
+            136
+          ],
+          "files": [
+            "imagery-40617-46015.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-516-15",
+      "siteId": "JZ-SCI-07",
+      "name": "Bearwallow",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.45863832,
+        "longitude": 77.40588685,
+        "latitudeSourceText": "18.45863832",
+        "longitudeSourceText": "77.40588685",
+        "reportedElevationSourceText": "-2523.077677 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=97",
+        "volume": 2,
+        "pdfViewerPage": 97
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2523.12451171875,
+            -2523.161376953125,
+            -2523.29052734375,
+            -2523.307861328125
+          ],
+          "files": [
+            "elevation-6409-12015.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            184,
+            182,
+            165,
+            161
+          ],
+          "files": [
+            "imagery-40617-46015.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-575-16",
+      "siteId": "JZ-SCI-08",
+      "name": "Shuyak",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.45068954,
+        "longitude": 77.40143171,
+        "latitudeSourceText": "18.45068954",
+        "longitudeSourceText": "77.40143171",
+        "reportedElevationSourceText": "-2526.322706 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=100",
+        "volume": 2,
+        "pdfViewerPage": 100
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2526.44775390625,
+            -2526.49267578125,
+            -2526.41357421875,
+            -2526.46533203125
+          ],
+          "files": [
+            "elevation-6409-12527.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            147,
+            143,
+            153,
+            147
+          ],
+          "files": [
+            "imagery-36521-50111.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-579-17",
+      "siteId": "JZ-SCI-08",
+      "name": "Mageik",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.45068664,
+        "longitude": 77.40143554,
+        "latitudeSourceText": "18.45068664",
+        "longitudeSourceText": "77.40143554",
+        "reportedElevationSourceText": "-2526.292311 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=145",
+        "volume": 2,
+        "pdfViewerPage": 145
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2526.49267578125,
+            -2526.5458984375,
+            -2526.46533203125,
+            -2526.529296875
+          ],
+          "files": [
+            "elevation-6409-12527.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            143,
+            138,
+            147,
+            138
+          ],
+          "files": [
+            "imagery-36521-50111.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-623-19",
+      "siteId": "JZ-SCI-09",
+      "name": "Kukaklek",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.45363597,
+        "longitude": 77.39911421,
+        "latitudeSourceText": "18.45363597",
+        "longitudeSourceText": "77.39911421",
+        "reportedElevationSourceText": "-2517.093594 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=151",
+        "volume": 2,
+        "pdfViewerPage": 151
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2516.987548828125,
+            -2517.076904296875,
+            -2517.022705078125,
+            -2517.118896484375
+          ],
+          "files": [
+            "elevation-6409-12527.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            211,
+            219,
+            201,
+            205
+          ],
+          "files": [
+            "imagery-36521-50111.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-634-20",
+      "siteId": "JZ-SCI-10",
+      "name": "Atmo Mountain",
+      "sampleType": "regolith",
+      "coordinates": {
+        "latitude": 18.45131442,
+        "longitude": 77.40121811,
+        "latitudeSourceText": "18.45131442",
+        "longitudeSourceText": "77.40121811",
+        "reportedElevationSourceText": "-2525.061741 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=191",
+        "volume": 2,
+        "pdfViewerPage": 191
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2524.979248046875,
+            -2525.131591796875,
+            -2525.109619140625,
+            -2525.226318359375
+          ],
+          "files": [
+            "elevation-6409-12527.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            79,
+            72,
+            79,
+            71
+          ],
+          "files": [
+            "imagery-36521-50111.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-639-21",
+      "siteId": "JZ-SCI-10",
+      "name": "Crosswind Lake",
+      "sampleType": "regolith",
+      "coordinates": {
+        "latitude": 18.45132238,
+        "longitude": 77.40121614,
+        "latitudeSourceText": "18.45132238",
+        "longitudeSourceText": "77.40121614",
+        "reportedElevationSourceText": "-2524.977556 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=231",
+        "volume": 2,
+        "pdfViewerPage": 231
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2524.862060546875,
+            -2525.011474609375,
+            -2524.979248046875,
+            -2525.131591796875
+          ],
+          "files": [
+            "elevation-6409-12527.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            89,
+            81,
+            88,
+            80
+          ],
+          "files": [
+            "imagery-36521-50111.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-749-22",
+      "siteId": "JZ-SCI-11",
+      "name": "Melyn",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.47021736,
+        "longitude": 77.38394465,
+        "latitudeSourceText": "18.47021736",
+        "longitudeSourceText": "77.38394465",
+        "reportedElevationSourceText": "-2448.912591 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume3.pdf#page=14",
+        "volume": 3,
+        "pdfViewerPage": 14
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2449.014892578125,
+            -2449.04296875,
+            -2448.9677734375,
+            -2449.0009765625
+          ],
+          "files": [
+            "elevation-6409-11503.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            154,
+            138,
+            172,
+            160
+          ],
+          "files": [
+            "imagery-32425-46015.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-822-23",
+      "siteId": "JZ-SCI-12",
+      "name": "Otis Peak",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.4829798,
+        "longitude": 77.36815348,
+        "latitudeSourceText": "18.4829798",
+        "longitudeSourceText": "77.36815348",
+        "reportedElevationSourceText": "-2421.026026 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume3.pdf#page=48",
+        "volume": 3,
+        "pdfViewerPage": 48
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2420.704345703125,
+            -2420.73095703125,
+            -2420.59912109375,
+            -2420.6240234375
+          ],
+          "files": [
+            "elevation-6409-10991.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            94,
+            93,
+            101,
+            100
+          ],
+          "files": [
+            "imagery-32425-41919.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-882-24",
+      "siteId": "JZ-SCI-13",
+      "name": "Pilot Mountain",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.48380149,
+        "longitude": 77.3604692,
+        "latitudeSourceText": "18.48380149",
+        "longitudeSourceText": "77.3604692",
+        "reportedElevationSourceText": "-2417.740379 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume3.pdf#page=86",
+        "volume": 3,
+        "pdfViewerPage": 86
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2417.414794921875,
+            -2417.525634765625,
+            -2417.4189453125,
+            -2417.54248046875
+          ],
+          "files": [
+            "elevation-6409-10991.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            147,
+            155,
+            148,
+            153
+          ],
+          "files": [
+            "imagery-28329-41919.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-923-25",
+      "siteId": "JZ-SCI-14",
+      "name": "Pelican Point",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.48344692,
+        "longitude": 77.35065098,
+        "latitudeSourceText": "18.48344692",
+        "longitudeSourceText": "77.35065098",
+        "reportedElevationSourceText": "-2423.102833 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume4.pdf#page=14",
+        "volume": 4,
+        "pdfViewerPage": 14
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2423.216064453125,
+            -2423.245361328125,
+            -2423.230224609375,
+            -2423.246337890625
+          ],
+          "files": [
+            "elevation-6409-10991.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            197,
+            193,
+            191,
+            189
+          ],
+          "files": [
+            "imagery-28329-41919.tif"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M2020-949-26",
+      "siteId": "JZ-SCI-15",
+      "name": "Lefroy Bay",
+      "sampleType": "rock_core",
+      "coordinates": {
+        "latitude": 18.48867278,
+        "longitude": 77.34704595,
+        "latitudeSourceText": "18.48867278",
+        "longitudeSourceText": "77.34704595",
+        "reportedElevationSourceText": "- 2407.641882m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume4.pdf#page=49",
+        "volume": 4,
+        "pdfViewerPage": 49
+      },
+      "verification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "hiriseEvidence": {
+        "elevation": {
+          "pass": true,
+          "values": [
+            -2407.71826171875,
+            -2407.7763671875,
+            -2407.75390625,
+            -2407.79443359375
+          ],
+          "files": [
+            "elevation-6409-10479.tif"
+          ]
+        },
+        "imagery": {
+          "pass": true,
+          "values": [
+            187,
+            182,
+            190,
+            184
+          ],
+          "files": [
+            "imagery-24233-41919.tif"
+          ]
+        }
+      }
+    }
+  ],
+  "excludedSamples": [
+    {
+      "name": "Comet Geyser",
+      "reason": "west_of_boundary"
+    },
+    {
+      "name": "Sapphire Canyon",
+      "reason": "west_of_boundary"
+    }
+  ]
+}

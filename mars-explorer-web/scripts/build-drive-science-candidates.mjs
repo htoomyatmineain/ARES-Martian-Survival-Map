@@ -1,0 +1,33 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+import {decodeHazards} from '../src/loadNativeHazards.ts';
+import {DEMO_RULES,checkSegment} from '../src/nativeRouting.ts';
+import {planScienceRoute} from '../src/scienceRouting.ts';
+import {fromGeo} from '../src/terrain.ts';
+const dir='../docs/science-catalogues';
+const sourceBytes=await readFile(dir+'/drive-provisional-source.json');
+const source=JSON.parse(sourceBytes);
+const existing=JSON.parse(await readFile('src/data/science-sites.json','utf8'));
+const bytes=await readFile('public/data/routing/native-hazards.bin');
+const meta=JSON.parse(await readFile('src/data/routing-catalog.json','utf8'));
+assert.equal(createHash('sha256').update(bytes).digest('hex'),meta.compressedSha256);
+const grid=await decodeHazards(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength));
+const records=[];
+assert.equal(new Set(source.samples.map(s=>s.id)).size,source.samples.length);
+for(const sample of source.samples){
+ const group=source.sites.find(s=>s.id===sample.siteId);assert.ok(group);
+ const local=fromGeo(sample.coordinates.latitude,sample.coordinates.longitude);
+ assert.ok(Math.abs(local.x)<5000&&Math.abs(local.z)<5000);
+ const result=planScienceRoute(grid,{x:1900,z:1500},local,DEMO_RULES,false,true);
+ const route=result.route;
+ if(route)for(let i=1;i<route.points.length;i++)assert.ok(checkSegment(grid,route.points[i-1],route.points[i],DEMO_RULES,false).allowed);
+ const alias=existing.find(s=>s.designation===sample.id);
+ records.push({candidateId:sample.id,groupId:group.id,groupName:group.label,sampleName:sample.name,siteType:sample.sampleType,scope:group.scope,coordinates:sample.coordinates,localMetres:local,existingSiteId:alias?.id??null,verificationStatus:alias?'existing-site-with-relative-registration-evidence':'provisional-coordinate-linkage-pending',source:sample.source,sourceVerification:sample.verification,absoluteLocationUncertaintyMetres:null,proposedMission:{status:'proposed-human-activity',question:'What visible material features and context would support a comparative field description?',tasks:['Record context photographs without claiming mineral identification.','Describe visible material and uncertainties in field notes.','Propose follow-up analysis; do not claim collection or results.'],equipment:['Illustrative camera','Illustrative notebook'],durationMinutes:null,completionRequiresExactArrivalAndSciencePhase:true},access:{status:!route?'unreachable':route.approach?'approach-only':'exactly-reachable',reason:result.diagnosis?.message??'Graph route reaches requested coordinates under demo rules.',remainingHorizontalGapMetres:route?route.approach?.gapMetres??0:null,endpointLocalMetres:route?.points.at(-1)??null,profileStatus:'not-rerun-native-tiles-unavailable',operationalClearance:false,siteTaskCompletionAuthorized:false},groundHazards:{directVerifiedObservations:[],soilStrength:null,traction:null,individualObstacles:null,notes:'Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements.'}});
+}
+const counts={groups:source.sites.length,samples:records.length,optionalSamples:records.filter(r=>r.scope==='optional').length};
+for(const status of ['exactly-reachable','approach-only','unreachable'])counts[status]=records.filter(r=>r.access.status===status).length;
+const output={schemaVersion:1,sourceDriveUrl:'https://drive.google.com/file/d/1w3zaFnmLnmMVCegwbn2Qbj9ywDOdJopI/view',sourceSha256:createHash('sha256').update(sourceBytes).digest('hex'),rules:DEMO_RULES,startLocalMetres:{x:1900,z:1500},strategy:'slope-priority',simulatedExclusion:false,counts,limitations:['Project-supplied provisional inventory, not NASA-issued JSON. Original dossier page references retained; optional PDFs not independently audited in this update.','No candidate promoted to verified absolute placement. Existing site IDs/coordinates are not replaced. Group names are not established synonyms.','Exactly-reachable describes graph access only, not fresh native profile approval, safe ground or authorization to begin science.','Native profile unavailable; use existing live routing/profile workflow before departure. Unknown hazards do not mean safe.'],records};
+await writeFile(dir+'/drive-candidates.json',JSON.stringify(output,null,2)+'\n');
+await writeFile(dir+'/drive-validation.json',JSON.stringify({schemaVersion:1,result:'PASS-with-provisional-location-and-profile-limitations',baseCommit:'e62f499',counts,checks:['23 original sample IDs and coordinates preserved','15 original groups retained without invented synonyms','All sample coordinates inside existing local zone','Compressed hazard input SHA-256 matches catalogue','Existing router called with unchanged rules','Every returned route edge checked','No science-task or operational authorization granted'],inputs:await Promise.all(['drive-provisional-source.json'].map(async path=>({path,sha256:createHash('sha256').update(await readFile(dir+'/'+path)).digest('hex')}))),outputs:[{path:'drive-candidates.json',sha256:createHash('sha256').update(await readFile(dir+'/drive-candidates.json')).digest('hex')}],limitations:output.limitations},null,2)+'\n');
+console.log(JSON.stringify(counts));

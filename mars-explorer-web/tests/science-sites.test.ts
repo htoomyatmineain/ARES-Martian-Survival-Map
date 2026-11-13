@@ -1,8 +1,10 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import coverage from '../src/data/science-site-coverage.json' with { type: 'json' };
-import { SCIENCE_SITES, sciencePoint, siteSeparationMetres } from '../src/scienceSites.ts';
+import { SCIENCE_SITES, MAP_SCIENCE_SITES, isProvisionalSite, sciencePoint, siteSeparationMetres } from '../src/scienceSites.ts';
 import { toGeo } from '../src/terrain.ts';
+import candidates from '../../docs/science-catalogues/drive-candidates.json' with { type: 'json' };
+import access from '../src/data/additional-science-access.json' with { type: 'json' };
 test('science positions preserve reported coordinates and fit the regional zone', () => {
   assert.equal(SCIENCE_SITES.length, 2);
   for (const site of SCIENCE_SITES) {
@@ -29,4 +31,24 @@ test('coverage evidence matches both catalog positions and both native raster la
     assert.equal(row.samples.elevation.pixelSpacingMetres, 1);
     assert.equal(row.samples.imagery.pixelSpacingMetres, .25);
   }
+});
+
+test('additional Volume 1, 3 and 4 samples are selectable without replacing original sites', () => {
+  assert.equal(MAP_SCIENCE_SITES.length, 16);
+  assert.deepEqual(MAP_SCIENCE_SITES.slice(0,2), SCIENCE_SITES);
+  assert.equal(new Set(MAP_SCIENCE_SITES.map(s=>s.id)).size,16);
+  for(const site of MAP_SCIENCE_SITES.slice(2)){
+    const candidate=candidates.records.find(row=>row.candidateId===site.id)!;
+    assert.equal(site.latitude,candidate.coordinates.latitude);
+    assert.equal(site.longitude,candidate.coordinates.longitude);
+    assert.equal(access.find(row=>row.siteId===site.id)?.reason,candidate.access.reason);
+    assert.equal(isProvisionalSite(site.id),true);
+    assert.match(site.name,/provisional/);
+    assert.match(site.reportUrl,/volume[134]\.pdf$/);
+    const point=sciencePoint(site);
+    assert.ok(Math.abs(point.x)<5000&&Math.abs(point.z)<5000);
+    assert.ok(Number.isFinite(site.pdsElevationMetres));
+    assert.match(site.coordinateStatus,/unverified/);
+  }
+  assert.equal(isProvisionalSite(SCIENCE_SITES[0].id),false);
 });

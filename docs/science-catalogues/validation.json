@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "result": "PASS",
+  "baseCommit": "e62f499",
+  "checks": [
+    "Exact existing IDs and coordinates retained",
+    "All sites inside 10 km local frame",
+    "Registration evidence linked; absolute uncertainty remains unknown",
+    "Hazard binary SHA-256 matches existing catalogue",
+    "Existing routing called without changed rules",
+    "Every accepted edge passes existing checks",
+    "Dense profile evidence status explicitly recorded; missing local tiles use matching prior report, not a fresh verification",
+    "Approach gap stays within existing radius",
+    "No approach route permits site-task completion"
+  ],
+  "counts": {
+    "sites": 2,
+    "exactlyReachable": 0,
+    "approachOnly": 2,
+    "unreachable": 0,
+    "directHazardObservations": 0
+  },
+  "inputs": [
+    {
+      "path": "src/data/science-sites.json",
+      "sha256": "ab43f460b9625a768d8a9934ff6619e9b4589a56c71deabba8a32f15ef846a4b"
+    },
+    {
+      "path": "src/data/routing-catalog.json",
+      "sha256": "9588fb854cf5b91cb936f025bd63605f71840e16c657991aee4958dd36b65cb0"
+    },
+    {
+      "path": "public/data/routing/native-hazards.bin",
+      "sha256": "3eebd2426b658339ba21aac0ffce3d7e55b90872d7ba6cf246a3ad9fd4e1079d"
+    },
+    {
+      "path": "../docs/science-registration-results.json",
+      "sha256": "f7d1cfa56a4f94e2481bccd0d5a2ec0d361a610b46f75d4fc20a966d840ebe04"
+    },
+    {
+      "path": "../docs/science-approach-results.json",
+      "sha256": "9de6dc26d7b67a67bf1e77d8d98c1383f7aa4630b08e931e3c5a1939fb1bff36"
+    },
+    {
+      "path": "src/scienceRouting.ts",
+      "sha256": "527c805f5454ef8da6459b8184ab4f3c848c35f773e3eda94edb86a94af3dfbe"
+    },
+    {
+      "path": "src/nativeRouting.ts",
+      "sha256": "6e573a14efe6c74f610effd06d451d30b85fa40454e4b2cc3d91621a3189d623"
+    },
+    {
+      "path": "src/terrain.ts",
+      "sha256": "9fcddc79e10a31f1a49601d396bfdf03356cbfbbd329739da0e74cc94a62b337"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "sites.json",
+      "sha256": "71c979b14172c348475e79512d15fe88d9ded30a0cd47738efcca3c5387582f9"
+    },
+    {
+      "path": "science-objectives.json",
+      "sha256": "98a8c66a04bcb5d0bd6ef00e1d90af3b206e97241c1753aad16eebfda3b42155"
+    },
+    {
+      "path": "access-results.json",
+      "sha256": "fc1423bd57577799778955c278acbb092ffb77bce521c9ae7d22fe1bf2b8aede"
+    },
+    {
+      "path": "ground-hazards.json",
+      "sha256": "083391182646ba6e04c2dc5b65d7ea4d0d16ddad1a8f19f22f3c8c81bd821185"
+    }
+  ],
+  "limitations": [
+    "No independent absolute geolocation validation or vertical datum resolution",
+    "No direct site-specific soil/rock hazard observations verified",
+    "Results apply only to recorded start, strategy, exclusion and rules; recalculate after plan changes",
+    "Native elevation tiles absent locally: profile metrics retained from matching prior evidence when marked, not revalidated",
+    "No UI, supplies or emergency simulation integration performed"
+  ]
+}

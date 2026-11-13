@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "method": "pypdf text extraction from cited coordinate pages of existing local PDF backups; not independent geolocation validation",
+  "records": [
+    {
+      "siteId": "M2020-164-2",
+      "volume": 1,
+      "pdfPage": 16,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    },
+    {
+      "siteId": "M2020-190-3",
+      "volume": 1,
+      "pdfPage": 36,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    },
+    {
+      "siteId": "M2020-196-4",
+      "volume": 1,
+      "pdfPage": 59,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    },
+    {
+      "siteId": "M2020-262-5",
+      "volume": 1,
+      "pdfPage": 62,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    },
+    {
+      "siteId": "M2020-271-6",
+      "volume": 1,
+      "pdfPage": 90,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    },
+    {
+      "siteId": "M2020-295-7",
+      "volume": 1,
+      "pdfPage": 93,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    },
+    {
+      "siteId": "M2020-337-8",
+      "volume": 1,
+      "pdfPage": 125,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    },
+    {
+      "siteId": "M2020-371-9",
+      "volume": 1,
+      "pdfPage": 128,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    },
+    {
+      "siteId": "M2020-374-10",
+      "volume": 1,
+      "pdfPage": 159,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    },
+    {
+      "siteId": "M2020-749-22",
+      "volume": 3,
+      "pdfPage": 14,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume3.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    },
+    {
+      "siteId": "M2020-822-23",
+      "volume": 3,
+      "pdfPage": 48,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume3.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    },
+    {
+      "siteId": "M2020-882-24",
+      "volume": 3,
+      "pdfPage": 86,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume3.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    },
+    {
+      "siteId": "M2020-923-25",
+      "volume": 4,
+      "pdfPage": 14,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume4.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    },
+    {
+      "siteId": "M2020-949-26",
+      "volume": 4,
+      "pdfPage": 49,
+      "coordinateValuesMatch": true,
+      "nameInPage": true,
+      "sampleIdInPage": true,
+      "sourceUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume4.pdf",
+      "extractionNormalization": "Spaces between digits removed; Unicode dash normalized; numeric coordinates unchanged."
+    }
+  ],
+  "pdfFiles": [
+    {
+      "volume": 1,
+      "file": "initial_reports_volume1.pdf",
+      "sha256": "63ccbdb901803cf3270fb8d8360f6f18a928d6f6316ccdeb6bd88acc6132cc04"
+    },
+    {
+      "volume": 3,
+      "file": "initial_reports_volume3.pdf",
+      "sha256": "ce1704c975b03680bf55afbf98060158868ab14d768b2715032c2fdbc9869aa0"
+    },
+    {
+      "volume": 4,
+      "file": "initial_reports_volume4.pdf",
+      "sha256": "92ac3e4c6dae006ab031742238f405bbc6508b5ba1eb62dccf7137b73b381e02"
+    }
+  ],
+  "limitations": [
+    "Coordinate-field agreement verified; source convention, datum and independent absolute placement remain unresolved.",
+    "Local backup copies used; no Drive/publisher byte-hash comparison performed."
+  ]
+}

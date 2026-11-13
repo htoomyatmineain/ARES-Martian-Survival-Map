@@ -1,0 +1,178 @@
+[
+  {
+    "siteId": "M2020-164-2",
+    "status": "exactly-reachable",
+    "reason": "Graph route reaches requested coordinates under demo rules.",
+    "remainingHorizontalGapMetres": 0,
+    "endpointLocalMetres": {
+      "x": 1779.5493277466294,
+      "z": 1914.9639430065545
+    },
+    "profileStatus": "verified-current-run",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  },
+  {
+    "siteId": "M2020-190-3",
+    "status": "exactly-reachable",
+    "reason": "Graph route reaches requested coordinates under demo rules.",
+    "remainingHorizontalGapMetres": 0,
+    "endpointLocalMetres": {
+      "x": 1369.9162975288966,
+      "z": 1734.299406931307
+    },
+    "profileStatus": "verified-current-run",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  },
+  {
+    "siteId": "M2020-196-4",
+    "status": "exactly-reachable",
+    "reason": "Graph route reaches requested coordinates under demo rules.",
+    "remainingHorizontalGapMetres": 0,
+    "endpointLocalMetres": {
+      "x": 1369.9162975288966,
+      "z": 1734.299406931307
+    },
+    "profileStatus": "verified-current-run",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  },
+  {
+    "siteId": "M2020-262-5",
+    "status": "exactly-reachable",
+    "reason": "Graph route reaches requested coordinates under demo rules.",
+    "remainingHorizontalGapMetres": 0,
+    "endpointLocalMetres": {
+      "x": 1293.7306846508984,
+      "z": 1542.9203765317923
+    },
+    "profileStatus": "verified-current-run",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  },
+  {
+    "siteId": "M2020-271-6",
+    "status": "exactly-reachable",
+    "reason": "Graph route reaches requested coordinates under demo rules.",
+    "remainingHorizontalGapMetres": 0,
+    "endpointLocalMetres": {
+      "x": 1293.7306846508984,
+      "z": 1542.9203765317923
+    },
+    "profileStatus": "verified-current-run",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  },
+  {
+    "siteId": "M2020-295-7",
+    "status": "exactly-reachable",
+    "reason": "Graph route reaches requested coordinates under demo rules.",
+    "remainingHorizontalGapMetres": 0,
+    "endpointLocalMetres": {
+      "x": 1199.273163997999,
+      "z": 1621.7557242377534
+    },
+    "profileStatus": "verified-current-run",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  },
+  {
+    "siteId": "M2020-337-8",
+    "status": "exactly-reachable",
+    "reason": "Graph route reaches requested coordinates under demo rules.",
+    "remainingHorizontalGapMetres": 0,
+    "endpointLocalMetres": {
+      "x": 1199.273163997999,
+      "z": 1621.7557242377534
+    },
+    "profileStatus": "verified-current-run",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  },
+  {
+    "siteId": "M2020-371-9",
+    "status": "exactly-reachable",
+    "reason": "Graph route reaches requested coordinates under demo rules.",
+    "remainingHorizontalGapMetres": 0,
+    "endpointLocalMetres": {
+      "x": 1822.9042052315076,
+      "z": 956.4529627543141
+    },
+    "profileStatus": "verified-current-run",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  },
+  {
+    "siteId": "M2020-374-10",
+    "status": "exactly-reachable",
+    "reason": "Graph route reaches requested coordinates under demo rules.",
+    "remainingHorizontalGapMetres": 0,
+    "endpointLocalMetres": {
+      "x": 1822.9042052315076,
+      "z": 956.4529627543141
+    },
+    "profileStatus": "verified-current-run",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  },
+  {
+    "siteId": "M2020-749-22",
+    "status": "exactly-reachable",
+    "reason": "Graph route reaches requested coordinates under demo rules.",
+    "remainingHorizontalGapMetres": 0,
+    "endpointLocalMetres": {
+      "x": -2027.2017662245394,
+      "z": -605.6309234866463
+    },
+    "profileStatus": "verified-current-run",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  },
+  {
+    "siteId": "M2020-822-23",
+    "status": "exactly-reachable",
+    "reason": "Graph route reaches requested coordinates under demo rules.",
+    "remainingHorizontalGapMetres": 0,
+    "endpointLocalMetres": {
+      "x": -2915.055793844673,
+      "z": -1362.12069414596
+    },
+    "profileStatus": "verified-current-run",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  },
+  {
+    "siteId": "M2020-882-24",
+    "status": "exactly-reachable",
+    "reason": "Graph route reaches requested coordinates under demo rules.",
+    "remainingHorizontalGapMetres": 0,
+    "endpointLocalMetres": {
+      "x": -3347.1022443209,
+      "z": -1410.8261203540164
+    },
+    "profileStatus": "verified-current-run",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  },
+  {
+    "siteId": "M2020-923-25",
+    "status": "unreachable",
+    "reason": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.",
+    "remainingHorizontalGapMetres": null,
+    "endpointLocalMetres": null,
+    "profileStatus": "not-applicable",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  },
+  {
+    "siteId": "M2020-949-26",
+    "status": "unreachable",
+    "reason": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.",
+    "remainingHorizontalGapMetres": null,
+    "endpointLocalMetres": null,
+    "profileStatus": "not-applicable",
+    "operationalClearance": false,
+    "siteTaskCompletionAuthorized": false
+  }
+]
