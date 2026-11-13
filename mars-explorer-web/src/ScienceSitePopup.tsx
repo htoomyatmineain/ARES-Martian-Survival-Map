@@ -23,7 +23,11 @@ export default function ScienceSitePopup({ site, terrain, store, onClose, onSele
   return <section className="rm-science-popup" aria-labelledby="rm-science-title" data-testid="science-site-popup">
     <header><span>NASA PERSEVERANCE / {site.code}</span><button ref={close} aria-label="Close science site" onClick={onClose}>×</button></header>
     <div className="rm-science-content">
-      <div className="rm-site-tabs" role="group" aria-label="Choose science site">{SCIENCE_SITES.map(s => <button key={s.id} aria-pressed={s.id === site.id} onClick={() => onSelect(s.id)}>{s.name}</button>)}</div>
+      <label className="rm-mission-field" style={{ display: 'block', minWidth: 0, marginBottom: '1rem' }}>Choose science site
+        <select aria-label="Choose science site" value={site.id} onChange={event => onSelect(event.target.value)} style={{ display: 'block', width: '100%', minWidth: 0, maxWidth: '100%' }}>
+          {SCIENCE_SITES.map(item => <option key={item.id} value={item.id}>{item.code} / {item.name}</option>)}
+        </select>
+      </label>
       <small className="rm-science-status">{isProvisionalSite(site.id) ? 'HISTORICAL SAMPLE · PROVISIONAL POSITION' : 'HISTORICAL SAMPLING SITE · NASA MAP CROSS-CHECKED'}</small>
       <h2 id="rm-science-title">{site.name}</h2><p className="rm-science-sample">{site.sample} / {site.designation}</p>
       <p>{site.geology}</p><p>{site.interest}</p>
