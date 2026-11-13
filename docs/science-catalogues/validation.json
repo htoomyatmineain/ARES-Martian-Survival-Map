@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "result": "PASS",
-  "baseCommit": "9be10df",
+  "baseCommit": "e62f499",
   "checks": [
     "Exact existing IDs and coordinates retained",
     "All sites inside 10 km local frame",

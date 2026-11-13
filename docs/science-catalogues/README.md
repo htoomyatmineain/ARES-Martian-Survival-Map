@@ -51,3 +51,27 @@ Build: PASS, including TypeScript, Vite and offline generation; existing Three.j
 5. For exactly-reachable routes, allow site tasks only after exact arrival and during the appropriate science phase. For approach-only or unreachable results, do not complete sampling/site tasks, draw or time the unresolved final leg, or relocate the target.
 6. Display unknown hazards as unknown; do not use null/empty arrays to mean safe. DEM slope evidence is a derived bound, separate from direct observed ground hazards.
 7. Main teammate performs integration, source-cache/profile revalidation and end-to-end UI/supplies/emergency testing. No app components or separate checklist UI are included here.
+
+## Drive update — latest main e62f499
+
+Pulled latest main into original checkout and merged origin/main into this isolated catalogue branch. Upstream UI changes are inherited only; this assignment does not modify them.
+
+Reviewed root Drive inventory and Step 3 verification record, plus the Optional Mars-Science-Sites folder listing. Optional folder holds initial_reports_volume1.pdf, volume3.pdf and volume4.pdf (approximately 113, 88 and 191 MB). These large PDFs were not downloaded or independently page-audited. The supplied project inventory links original NASA PDS pages; it is not a NASA-issued catalogue.
+
+New files:
+- drive-provisional-source.json: semantic copy of supplied Jezero_Science_Sites_Provisional.json, preserving all 15 groups, 23 sample records, source strings and provisional status. JSON formatting normalized; hash refers to this local copy, not original Drive bytes.
+- drive-verification-source.md: supplied Step 3 report, retained as evidence of outstanding coordinate/datum dependencies.
+- drive-candidates.json: all 23 sample records with unchanged coordinates, group links, optional/main flags, proposed generic field tasks/tools and access classification using existing routing. Exactly-reachable: 15; approach-only: 6; unreachable under recorded rules: 2. Includes 14 optional sample records. These are sample-level entries, not 23 distinct outcrops. Existing Skyland/Hazeltop aliases retain established app site IDs.
+- drive-validation.json: candidate checks, counts, hashes and limits.
+- scripts/build-drive-science-candidates.mjs: reproduces candidate routing and validation; run from mars-explorer-web with node --experimental-strip-types scripts/build-drive-science-candidates.mjs.
+
+Do not merge candidate rows into the verified site list without resolving source coordinate linkage and independent placement requirements. No existing coordinates were moved. Group representatives are not substitutes for individual sample locations. No new geological factual claims or direct hazard observations were promoted from the provisional inventory. Unknown ground hazards remain unknown.
+
+Exactly-reachable in drive-candidates means the existing search graph reaches the supplied coordinate; dense native profile was NOT rerun because tiles are missing locally. siteTaskCompletionAuthorized and operationalClearance remain false for every candidate. Main teammate must run the existing live profile validation before departure and retain approach-only restrictions. Supplies, emergency model, UI and task state remain entirely owned by main teammate.
+
+Source links:
+- Inventory: https://drive.google.com/file/d/1w3zaFnmLnmMVCegwbn2Qbj9ywDOdJopI/view
+- Verification: https://drive.google.com/file/d/1LOvjiZsCKXAWGCJQxMHrM7Hd5MI1CgzS/view
+- Optional folder: https://drive.google.com/drive/folders/19bYkoKZ3l9jAENWzGFSGYK5oD4KeEfcF
+
+Validation after update: existing catalogue generator PASS; candidate generator PASS with explicit provisional/profile limits; npm test PASS (58 tests); npm run build PASS (existing large-chunk warning). No browser integration or NASA dossier page audit claimed. No push, deployment or separate UI.

@@ -44,3 +44,23 @@ test('catalogue artifact hashes match validation manifest',()=>{
     assert.equal(createHash('sha256').update(bytes).digest('hex'),file.sha256);
   }
 });
+
+test('Drive candidates preserve original sample coordinates and never grant science clearance',()=>{
+  const source=read('drive-provisional-source.json');
+  const candidates=read('drive-candidates.json');
+  assert.equal(candidates.records.length,source.samples.length);
+  assert.equal(candidates.counts.groups,15);
+  assert.equal(candidates.records.length,23);
+  for(const row of candidates.records){
+    const sample=source.samples.find((s:any)=>s.id===row.candidateId);
+    assert.deepEqual(row.coordinates,sample.coordinates);
+    assert.ok(Math.abs(row.localMetres.x)<5000&&Math.abs(row.localMetres.z)<5000);
+    assert.equal(row.access.siteTaskCompletionAuthorized,false);
+    assert.equal(row.access.operationalClearance,false);
+    assert.equal(row.proposedMission.status,'proposed-human-activity');
+    assert.deepEqual(row.groundHazards.directVerifiedObservations,[]);
+    if(row.access.status==='approach-only')assert.ok(row.access.remainingHorizontalGapMetres>0&&row.access.remainingHorizontalGapMetres<=250);
+    if(row.access.status==='unreachable')assert.equal(row.access.remainingHorizontalGapMetres,null);
+    if(row.access.status==='exactly-reachable')assert.equal(row.access.remainingHorizontalGapMetres,0);
+  }
+});

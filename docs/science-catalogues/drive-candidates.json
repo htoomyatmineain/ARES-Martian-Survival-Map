@@ -1,0 +1,1707 @@
+{
+  "schemaVersion": 1,
+  "sourceDriveUrl": "https://drive.google.com/file/d/1w3zaFnmLnmMVCegwbn2Qbj9ywDOdJopI/view",
+  "sourceSha256": "1a5844744590bc0bb2de329204913870e49738a8804b7be68f2717f56545454e",
+  "rules": {
+    "alongLimit": 18,
+    "crossLimit": 12,
+    "totalLimit": 28,
+    "slopeWeight": 4,
+    "warningFraction": 0.8
+  },
+  "startLocalMetres": {
+    "x": 1900,
+    "z": 1500
+  },
+  "strategy": "slope-priority",
+  "simulatedExclusion": false,
+  "counts": {
+    "groups": 15,
+    "samples": 23,
+    "optionalSamples": 14,
+    "exactly-reachable": 15,
+    "approach-only": 6,
+    "unreachable": 2
+  },
+  "limitations": [
+    "Project-supplied provisional inventory, not NASA-issued JSON. Original dossier page references retained; optional PDFs not independently audited in this update.",
+    "No candidate promoted to verified absolute placement. Existing site IDs/coordinates are not replaced. Group names are not established synonyms.",
+    "Exactly-reachable describes graph access only, not fresh native profile approval, safe ground or authorization to begin science.",
+    "Native profile unavailable; use existing live routing/profile workflow before departure. Unknown hazards do not mean safe."
+  ],
+  "records": [
+    {
+      "candidateId": "M2020-164-2",
+      "groupId": "JZ-SCI-01",
+      "groupName": "Roubion",
+      "sampleName": "Roubion",
+      "siteType": "atmospheric_no_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.4276934,
+        "longitude": 77.45165066,
+        "latitudeSourceText": "18.42769340",
+        "longitudeSourceText": "77.45165066",
+        "reportedElevationSourceText": "-2584.96 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": 1779.5493277466294,
+        "z": 1914.9639430065545
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=16",
+        "volume": 1,
+        "pdfViewerPage": 16
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": 1779.5493277466294,
+          "z": 1914.9639430065545
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-190-3",
+      "groupId": "JZ-SCI-02",
+      "groupName": "Rochette",
+      "sampleName": "Montdenier",
+      "siteType": "rock_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.43074132,
+        "longitude": 77.44436502,
+        "latitudeSourceText": "18.43074132",
+        "longitudeSourceText": "77.44436502",
+        "reportedElevationSourceText": "-2574.553 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": 1369.9162975288966,
+        "z": 1734.299406931307
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=36",
+        "volume": 1,
+        "pdfViewerPage": 36
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": 1369.9162975288966,
+          "z": 1734.299406931307
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-196-4",
+      "groupId": "JZ-SCI-02",
+      "groupName": "Rochette",
+      "sampleName": "Montagnac",
+      "siteType": "rock_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.43074132,
+        "longitude": 77.44436502,
+        "latitudeSourceText": "18.43074132",
+        "longitudeSourceText": "77.44436502",
+        "reportedElevationSourceText": "-2574.553 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": 1369.9162975288966,
+        "z": 1734.299406931307
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=59",
+        "volume": 1,
+        "pdfViewerPage": 59
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": 1369.9162975288966,
+          "z": 1734.299406931307
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-262-5",
+      "groupId": "JZ-SCI-03",
+      "groupName": "Brac",
+      "sampleName": "Salette",
+      "siteType": "rock_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.43397,
+        "longitude": 77.44301,
+        "latitudeSourceText": "18.43397",
+        "longitudeSourceText": "77.44301",
+        "reportedElevationSourceText": "â2569.2 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": 1293.7306846508984,
+        "z": 1542.9203765317923
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=62",
+        "volume": 1,
+        "pdfViewerPage": 62
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": 1293.7306846508984,
+          "z": 1542.9203765317923
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-271-6",
+      "groupId": "JZ-SCI-03",
+      "groupName": "Brac",
+      "sampleName": "Coulettes",
+      "siteType": "rock_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.43397,
+        "longitude": 77.44301,
+        "latitudeSourceText": "18.43397",
+        "longitudeSourceText": "77.44301",
+        "reportedElevationSourceText": "â2569.2 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": 1293.7306846508984,
+        "z": 1542.9203765317923
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=90",
+        "volume": 1,
+        "pdfViewerPage": 90
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": 1293.7306846508984,
+          "z": 1542.9203765317923
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-295-7",
+      "groupId": "JZ-SCI-04",
+      "groupName": "Issole",
+      "sampleName": "Robine",
+      "siteType": "rock_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.43264,
+        "longitude": 77.44133,
+        "latitudeSourceText": "18.43264",
+        "longitudeSourceText": "77.44133",
+        "reportedElevationSourceText": "â2574.3 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": 1199.273163997999,
+        "z": 1621.7557242377534
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=93",
+        "volume": 1,
+        "pdfViewerPage": 93
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": 1199.273163997999,
+          "z": 1621.7557242377534
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-337-8",
+      "groupId": "JZ-SCI-04",
+      "groupName": "Issole",
+      "sampleName": "Malay",
+      "siteType": "rock_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.43264,
+        "longitude": 77.44133,
+        "latitudeSourceText": "18.43264",
+        "longitudeSourceText": "77.44133",
+        "reportedElevationSourceText": "â2574.3 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": 1199.273163997999,
+        "z": 1621.7557242377534
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=125",
+        "volume": 1,
+        "pdfViewerPage": 125
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": 1199.273163997999,
+          "z": 1621.7557242377534
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-371-9",
+      "groupId": "JZ-SCI-05",
+      "groupName": "Sid",
+      "sampleName": "Hahonih",
+      "siteType": "rock_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.44386406,
+        "longitude": 77.45242176,
+        "latitudeSourceText": "18.44386406",
+        "longitudeSourceText": "77.45242176",
+        "reportedElevationSourceText": "-2568.357 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": 1822.9042052315076,
+        "z": 956.4529627543141
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=128",
+        "volume": 1,
+        "pdfViewerPage": 128
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": 1822.9042052315076,
+          "z": 956.4529627543141
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-374-10",
+      "groupId": "JZ-SCI-05",
+      "groupName": "Sid",
+      "sampleName": "Atsah",
+      "siteType": "rock_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.44386406,
+        "longitude": 77.45242176,
+        "latitudeSourceText": "18.44386406",
+        "longitudeSourceText": "77.45242176",
+        "reportedElevationSourceText": "-2568.357m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": 1822.9042052315076,
+        "z": 956.4529627543141
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume1.pdf#page=159",
+        "volume": 1,
+        "pdfViewerPage": 159
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": 1822.9042052315076,
+          "z": 956.4529627543141
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-490-11",
+      "groupId": "JZ-SCI-06",
+      "groupName": "Skinner Ridge",
+      "sampleName": "Swift Run",
+      "siteType": "rock_core",
+      "scope": "main",
+      "coordinates": {
+        "latitude": 18.458931,
+        "longitude": 77.40617078,
+        "latitudeSourceText": "18.458931",
+        "longitudeSourceText": "77.40617078",
+        "reportedElevationSourceText": "â2520.185m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -777.5439486655869,
+        "z": 63.364651652479374
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=14",
+        "volume": 2,
+        "pdfViewerPage": 14
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "approach-only",
+        "reason": "Destination cell ground-slope bound 31.7° exceeds the 28° demo limit.",
+        "remainingHorizontalGapMetres": 238.06439898917898,
+        "endpointLocalMetres": {
+          "x": -590,
+          "z": 210
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-495-12",
+      "groupId": "JZ-SCI-06",
+      "groupName": "Skinner Ridge",
+      "sampleName": "Skyland",
+      "siteType": "rock_core",
+      "scope": "main",
+      "coordinates": {
+        "latitude": 18.458931,
+        "longitude": 77.40617078,
+        "latitudeSourceText": "18.458931",
+        "longitudeSourceText": "77.40617078",
+        "reportedElevationSourceText": "â2520.185m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -777.5439486655869,
+        "z": 63.364651652479374
+      },
+      "existingSiteId": "skinner-ridge-skyland",
+      "verificationStatus": "existing-site-with-relative-registration-evidence",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=52",
+        "volume": 2,
+        "pdfViewerPage": 52
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "approach-only",
+        "reason": "Destination cell ground-slope bound 31.7° exceeds the 28° demo limit.",
+        "remainingHorizontalGapMetres": 238.06439898917898,
+        "endpointLocalMetres": {
+          "x": -590,
+          "z": 210
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-509-14",
+      "groupId": "JZ-SCI-07",
+      "groupName": "Wildcat Ridge",
+      "sampleName": "Hazeltop",
+      "siteType": "rock_core",
+      "scope": "main",
+      "coordinates": {
+        "latitude": 18.45863707,
+        "longitude": 77.40588851,
+        "latitudeSourceText": "18.45863707",
+        "longitudeSourceText": "77.40588851",
+        "reportedElevationSourceText": "-2523.0974 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -793.4144988766204,
+        "z": 80.78726349538618
+      },
+      "existingSiteId": "wildcat-ridge-hazeltop",
+      "verificationStatus": "existing-site-with-relative-registration-evidence",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=58",
+        "volume": 2,
+        "pdfViewerPage": 58
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "approach-only",
+        "reason": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.",
+        "remainingHorizontalGapMetres": 249.54724721691815,
+        "endpointLocalMetres": {
+          "x": -610,
+          "z": 250
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-516-15",
+      "groupId": "JZ-SCI-07",
+      "groupName": "Wildcat Ridge",
+      "sampleName": "Bearwallow",
+      "siteType": "rock_core",
+      "scope": "main",
+      "coordinates": {
+        "latitude": 18.45863832,
+        "longitude": 77.40588685,
+        "latitudeSourceText": "18.45863832",
+        "longitudeSourceText": "77.40588685",
+        "reportedElevationSourceText": "-2523.077677 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -793.5078319027119,
+        "z": 80.71317012366912
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=97",
+        "volume": 2,
+        "pdfViewerPage": 97
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "approach-only",
+        "reason": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.",
+        "remainingHorizontalGapMetres": 249.6660872830184,
+        "endpointLocalMetres": {
+          "x": -610,
+          "z": 250
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-575-16",
+      "groupId": "JZ-SCI-08",
+      "groupName": "Amalik",
+      "sampleName": "Shuyak",
+      "siteType": "rock_core",
+      "scope": "main",
+      "coordinates": {
+        "latitude": 18.45068954,
+        "longitude": 77.40143171,
+        "latitudeSourceText": "18.45068954",
+        "longitudeSourceText": "77.40143171",
+        "reportedElevationSourceText": "-2526.322706 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -1043.996807236119,
+        "z": 551.8747003029481
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=100",
+        "volume": 2,
+        "pdfViewerPage": 100
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": -1043.996807236119,
+          "z": 551.8747003029481
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-579-17",
+      "groupId": "JZ-SCI-08",
+      "groupName": "Amalik",
+      "sampleName": "Mageik",
+      "siteType": "rock_core",
+      "scope": "main",
+      "coordinates": {
+        "latitude": 18.45068664,
+        "longitude": 77.40143554,
+        "latitudeSourceText": "18.45068664",
+        "longitudeSourceText": "77.40143554",
+        "reportedElevationSourceText": "-2526.292311 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -1043.7814665790775,
+        "z": 552.0465969256687
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=145",
+        "volume": 2,
+        "pdfViewerPage": 145
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": -1043.7814665790775,
+          "z": 552.0465969256687
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-623-19",
+      "groupId": "JZ-SCI-09",
+      "groupName": "Hidden Harbor",
+      "sampleName": "Kukaklek",
+      "siteType": "rock_core",
+      "scope": "main",
+      "coordinates": {
+        "latitude": 18.45363597,
+        "longitude": 77.39911421,
+        "latitudeSourceText": "18.45363597",
+        "longitudeSourceText": "77.39911421",
+        "reportedElevationSourceText": "-2517.093594 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -1174.297583493546,
+        "z": 377.22595327926416
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=151",
+        "volume": 2,
+        "pdfViewerPage": 151
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": -1174.297583493546,
+          "z": 377.22595327926416
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-634-20",
+      "groupId": "JZ-SCI-10",
+      "groupName": "Observation Mountain",
+      "sampleName": "Atmo Mountain",
+      "siteType": "regolith",
+      "scope": "main",
+      "coordinates": {
+        "latitude": 18.45131442,
+        "longitude": 77.40121811,
+        "latitudeSourceText": "18.45131442",
+        "longitudeSourceText": "77.40121811",
+        "reportedElevationSourceText": "-2525.061741 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -1056.006406290227,
+        "z": 514.835127314575
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=191",
+        "volume": 2,
+        "pdfViewerPage": 191
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "approach-only",
+        "reason": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.",
+        "remainingHorizontalGapMetres": 248.50698220938258,
+        "endpointLocalMetres": {
+          "x": -810,
+          "z": 550
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-639-21",
+      "groupId": "JZ-SCI-10",
+      "groupName": "Observation Mountain",
+      "sampleName": "Crosswind Lake",
+      "siteType": "regolith",
+      "scope": "main",
+      "coordinates": {
+        "latitude": 18.45132238,
+        "longitude": 77.40121614,
+        "latitudeSourceText": "18.45132238",
+        "longitudeSourceText": "77.40121614",
+        "reportedElevationSourceText": "-2524.977556 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -1056.117168978111,
+        "z": 514.3633007222088
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=231",
+        "volume": 2,
+        "pdfViewerPage": 231
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "approach-only",
+        "reason": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.",
+        "remainingHorizontalGapMetres": 248.6838056673892,
+        "endpointLocalMetres": {
+          "x": -810,
+          "z": 550
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-749-22",
+      "groupId": "JZ-SCI-11",
+      "groupName": "Berea / Tenby",
+      "sampleName": "Melyn",
+      "siteType": "rock_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.47021736,
+        "longitude": 77.38394465,
+        "latitudeSourceText": "18.47021736",
+        "longitudeSourceText": "77.38394465",
+        "reportedElevationSourceText": "-2448.912591 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -2027.2017662245394,
+        "z": -605.6309234866463
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume3.pdf#page=14",
+        "volume": 3,
+        "pdfViewerPage": 14
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": -2027.2017662245394,
+          "z": -605.6309234866463
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-822-23",
+      "groupId": "JZ-SCI-12",
+      "groupName": "Emerald Lake",
+      "sampleName": "Otis Peak",
+      "siteType": "rock_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.4829798,
+        "longitude": 77.36815348,
+        "latitudeSourceText": "18.4829798",
+        "longitudeSourceText": "77.36815348",
+        "reportedElevationSourceText": "-2421.026026 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -2915.055793844673,
+        "z": -1362.12069414596
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume3.pdf#page=48",
+        "volume": 3,
+        "pdfViewerPage": 48
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": -2915.055793844673,
+          "z": -1362.12069414596
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-882-24",
+      "groupId": "JZ-SCI-13",
+      "groupName": "Dream Lake / Hague Creek",
+      "sampleName": "Pilot Mountain",
+      "siteType": "rock_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.48380149,
+        "longitude": 77.3604692,
+        "latitudeSourceText": "18.48380149",
+        "longitudeSourceText": "77.3604692",
+        "reportedElevationSourceText": "-2417.740379 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -3347.1022443209,
+        "z": -1410.8261203540164
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume3.pdf#page=86",
+        "volume": 3,
+        "pdfViewerPage": 86
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "exactly-reachable",
+        "reason": "Graph route reaches requested coordinates under demo rules.",
+        "remainingHorizontalGapMetres": 0,
+        "endpointLocalMetres": {
+          "x": -3347.1022443209,
+          "z": -1410.8261203540164
+        },
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-923-25",
+      "groupId": "JZ-SCI-14",
+      "groupName": "Hans Amundsen Memorial Workspace / Mandu Wall",
+      "sampleName": "Pelican Point",
+      "siteType": "rock_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.48344692,
+        "longitude": 77.35065098,
+        "latitudeSourceText": "18.48344692",
+        "longitudeSourceText": "77.35065098",
+        "reportedElevationSourceText": "-2423.102833 m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -3899.1288624283784,
+        "z": -1389.8090908530296
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume4.pdf#page=14",
+        "volume": 4,
+        "pdfViewerPage": 14
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "unreachable",
+        "reason": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.",
+        "remainingHorizontalGapMetres": null,
+        "endpointLocalMetres": null,
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    },
+    {
+      "candidateId": "M2020-949-26",
+      "groupId": "JZ-SCI-15",
+      "groupName": "Turquoise Bay / Lake Newell",
+      "sampleName": "Lefroy Bay",
+      "siteType": "rock_core",
+      "scope": "optional",
+      "coordinates": {
+        "latitude": 18.48867278,
+        "longitude": 77.34704595,
+        "latitudeSourceText": "18.48867278",
+        "longitudeSourceText": "77.34704595",
+        "reportedElevationSourceText": "- 2407.641882m",
+        "sourceCoordinateReference": "unresolved",
+        "interpretedLatitudeType": "planetocentric_assumption",
+        "interpretedLongitudeDirection": "positive_east_assumption",
+        "positionalAccuracyMetres": null
+      },
+      "localMetres": {
+        "x": -4101.820645570088,
+        "z": -1699.570361652354
+      },
+      "existingSiteId": null,
+      "verificationStatus": "provisional-coordinate-linkage-pending",
+      "source": {
+        "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume4.pdf#page=49",
+        "volume": 4,
+        "pdfViewerPage": 49
+      },
+      "sourceVerification": {
+        "numericBoundary": "pass",
+        "ctxDem2x2Support": "conditional_pass",
+        "hiriseElevation2x2Support": "conditional_pass",
+        "hiriseImagery2x2Support": "conditional_pass",
+        "coordinateLinkage": "pending",
+        "absolutePlacement": "unverified"
+      },
+      "absoluteLocationUncertaintyMetres": null,
+      "proposedMission": {
+        "status": "proposed-human-activity",
+        "question": "What visible material features and context would support a comparative field description?",
+        "tasks": [
+          "Record context photographs without claiming mineral identification.",
+          "Describe visible material and uncertainties in field notes.",
+          "Propose follow-up analysis; do not claim collection or results."
+        ],
+        "equipment": [
+          "Illustrative camera",
+          "Illustrative notebook"
+        ],
+        "durationMinutes": null,
+        "completionRequiresExactArrivalAndSciencePhase": true
+      },
+      "access": {
+        "status": "unreachable",
+        "reason": "The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.",
+        "remainingHorizontalGapMetres": null,
+        "endpointLocalMetres": null,
+        "profileStatus": "not-rerun-native-tiles-unavailable",
+        "operationalClearance": false,
+        "siteTaskCompletionAuthorized": false
+      },
+      "groundHazards": {
+        "directVerifiedObservations": [],
+        "soilStrength": null,
+        "traction": null,
+        "individualObstacles": null,
+        "notes": "Source inventory material descriptions are not independently verified hazard observations or soil-strength measurements."
+      }
+    }
+  ]
+}
