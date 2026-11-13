@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "zone": {
+    "centerLatitude": 18.46,
+    "centerLongitude": 77.42,
+    "widthMetres": 10000,
+    "heightMetres": 10000,
+    "localX": "east",
+    "localZ": "south",
+    "marsRadiusMetres": 3396190
+  },
+  "scope": "Existing two verified catalogue sites only; not an exhaustive zone inventory.",
+  "records": [
+    {
+      "siteId": "skinner-ridge-skyland",
+      "name": "Skinner Ridge",
+      "siteType": "historical-rover-sampling-outcrop",
+      "sampleName": "Skyland",
+      "sampleDesignation": "M2020-495-12",
+      "coordinates": {
+        "latitude": 18.458931,
+        "longitude": 77.40617078,
+        "pdsElevationMetres": -2520.185
+      },
+      "localMetres": {
+        "x": -777.5439486655869,
+        "z": 63.364651652479374
+      },
+      "insideZone": true,
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/resource/two-perseverance-sampling-locations-in-jezeros-delta/",
+          "role": "NASA historical outcrop context"
+        },
+        {
+          "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf",
+          "role": "NASA PDS coordinates and context",
+          "coordinatePdfPage": 52,
+          "contextPdfPage": 20
+        }
+      ],
+      "locationUncertainty": {
+        "absoluteHorizontalMetres": null,
+        "relativeReportTargetAgreementMetres": 0.27396297873308384,
+        "interpretation": "Relative agreement in shared imagery; not independent absolute survey accuracy.",
+        "latitudeConvention": "Existing application interpretation; source convention not independently verified.",
+        "verticalDatum": "PDS elevation datum and compatibility with the terrain datum remain unverified."
+      }
+    },
+    {
+      "siteId": "wildcat-ridge-hazeltop",
+      "name": "Wildcat Ridge",
+      "siteType": "historical-rover-sampling-outcrop",
+      "sampleName": "Hazeltop",
+      "sampleDesignation": "M2020-509-14",
+      "coordinates": {
+        "latitude": 18.45863707,
+        "longitude": 77.40588851,
+        "pdsElevationMetres": -2523.0974
+      },
+      "localMetres": {
+        "x": -793.4144988766204,
+        "z": 80.78726349538618
+      },
+      "insideZone": true,
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/resource/two-perseverance-sampling-locations-in-jezeros-delta/",
+          "role": "NASA historical outcrop context"
+        },
+        {
+          "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf",
+          "role": "NASA PDS coordinates and context",
+          "coordinatePdfPage": 58,
+          "contextPdfPage": 63
+        }
+      ],
+      "locationUncertainty": {
+        "absoluteHorizontalMetres": null,
+        "relativeReportTargetAgreementMetres": 0.10690872817130918,
+        "interpretation": "Relative agreement in shared imagery; not independent absolute survey accuracy.",
+        "latitudeConvention": "Existing application interpretation; source convention not independently verified.",
+        "verticalDatum": "PDS elevation datum and compatibility with the terrain datum remain unverified."
+      }
+    }
+  ]
+}

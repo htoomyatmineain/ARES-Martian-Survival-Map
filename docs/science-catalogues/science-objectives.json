@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "templates": [
+    {
+      "id": "outcrop-comparison-v1",
+      "status": "proposed-human-activity",
+      "tools": [
+        "Camera",
+        "Field notebook"
+      ],
+      "tasks": [
+        {
+          "id": "context-photos",
+          "action": "Document outcrop context and visible layers in proposed photographs."
+        },
+        {
+          "id": "field-description",
+          "action": "Describe visible texture and layering; record uncertainty and compare with the other outcrop."
+        },
+        {
+          "id": "sample-proposal",
+          "action": "Record a proposed sample location and scientific rationale; do not claim sample collection or confirmed composition."
+        }
+      ],
+      "conditions": {
+        "requiresExactTarget": true,
+        "requiresSciencePhase": true,
+        "approachOnlyCompletionAllowed": false
+      },
+      "durationMinutes": null,
+      "equipmentMassKg": null,
+      "limitations": "Illustrative tools and activities, not NASA-approved SOP. Parent mission owns durations, supplies and task state. No measurements or successful outcomes are supplied."
+    }
+  ],
+  "records": [
+    {
+      "missionId": "skinner-ridge-skyland-proposed-survey",
+      "siteId": "skinner-ridge-skyland",
+      "status": "proposed-human-activity",
+      "title": "Skinner Ridge outcrop comparison",
+      "question": "What visible layering and texture differences between these neighbouring delta outcrops merit further investigation?",
+      "purpose": "Document visible sedimentary features and formulate follow-up observations about deposition. No mineral or life detection is inferred from appearance.",
+      "taskTemplateId": "outcrop-comparison-v1",
+      "observedHistory": "NASA describes these as Perseverance sampling outcrops in an ancient river delta.",
+      "sourceUrls": [
+        "https://science.nasa.gov/resource/two-perseverance-sampling-locations-in-jezeros-delta/"
+      ],
+      "siteScienceCurrentlyAvailable": false
+    },
+    {
+      "missionId": "wildcat-ridge-hazeltop-proposed-survey",
+      "siteId": "wildcat-ridge-hazeltop",
+      "status": "proposed-human-activity",
+      "title": "Wildcat Ridge outcrop comparison",
+      "question": "What visible layering and texture differences between these neighbouring delta outcrops merit further investigation?",
+      "purpose": "Document visible sedimentary features and formulate follow-up observations about deposition. No mineral or life detection is inferred from appearance.",
+      "taskTemplateId": "outcrop-comparison-v1",
+      "observedHistory": "NASA describes these as Perseverance sampling outcrops in an ancient river delta.",
+      "sourceUrls": [
+        "https://science.nasa.gov/resource/two-perseverance-sampling-locations-in-jezeros-delta/"
+      ],
+      "siteScienceCurrentlyAvailable": false
+    }
+  ]
+}
