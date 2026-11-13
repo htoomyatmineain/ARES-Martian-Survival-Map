@@ -1,7 +1,7 @@
 import { celsius, MINERALS, MINERAL_NOTE, THERMAL, THERMAL_NOTE, type ObservationLayer, type ThermalObservation } from './environmentObservations';
 import { SCIENCE_SITES } from './scienceSites';
 
-type Props = { layer: Exclude<ObservationLayer, 'none'>; reading: ThermalObservation; onReading: (id: string) => void; onClose: () => void; onLocate: () => void };
+type Props = { layer: Exclude<ObservationLayer, 'none' | 'environment'>; reading: ThermalObservation; onReading: (id: string) => void; onClose: () => void; onLocate: () => void };
 const FLAG_NAMES: Record<string, string> = {
   RSM_HEAD_OUTSIDE_TIRS_UPWARD_LOOKING_FOV: 'Mast outside sky view',
   WHEEL_OUTSIDE_TIRS_DOWNWARD_LOOKING_FOV: 'Wheel outside ground view',

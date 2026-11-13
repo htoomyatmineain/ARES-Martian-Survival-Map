@@ -155,7 +155,7 @@ function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | 
     {props.observations?.map(marker => {
       const at = ground(terrain, marker.point, exaggeration);
       if (!Number.isFinite(at[1])) return null;
-      const dx = marker.kind === 'thermal' ? 58 : -58, dy = -65;
+      const dx = marker.kind !== 'minerals' ? 58 : -58, dy = -65;
       return <Html key={marker.id} position={at} center zIndexRange={[9, 0]}><div className="rm-observation-pin" style={{ transform: `translate(${dx}px,${dy}px)`, color: marker.color }}><svg aria-hidden="true" width="160" height="160" viewBox="-80 -80 160 160"><line x1={-dx} y1={-dy} x2="0" y2="0" stroke="currentColor"/><circle cx={-dx} cy={-dy} r="3" fill="currentColor"/></svg><button data-testid={`3d-${marker.kind}-marker`} aria-label={`Open ${marker.description}`} onPointerDown={e => e.stopPropagation()} onClick={e => { e.stopPropagation(); props.onObservationSelect?.(); }}>{marker.label}</button></div></Html>;
     })}
     {props.scienceSitesVisible && SCIENCE_SITES.map((site, index) => {

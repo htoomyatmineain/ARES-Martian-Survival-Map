@@ -1,0 +1,4058 @@
+{
+  "version": 1,
+  "title": "Historical Jezero environmental observations",
+  "timeMatchToleranceSeconds": 30,
+  "selection": "Actual air/pressure samples nearest the existing hourly-selected ground-temperature observations, within 30 spacecraft-clock seconds. Individual source times are retained; samples are not necessarily simultaneous. No interpolation, averaging, model or zone-wide extrapolation.",
+  "spatialCoverage": "Approximate recorded rover positions only. Marker uses the selected ground-observation reference position; individual air/pressure positions are supplied where ancillary timing permits. Not conditions at the simulated astronaut, habitat or entire route.",
+  "airInterpretation": "Calibrated local detector temperatures, not a model-corrected ambient air estimate. Rover heating, illumination and sensor placement can affect representativeness. No detector average or best-detector rule is invented.",
+  "pressureUncertaintyNote": "Selected DER_PS labels declare kelvin for PRESSURE UNCERTAINTY. Preserve this inconsistency; do not convert it into a made-up Pa uncertainty.",
+  "qualityNote": "Products supply no per-row quality flags for these selected variables. Review required is retained, not a passed-quality or EVA-safety claim. Numerical ingestion bounds are not astronaut limits.",
+  "sources": [
+    {
+      "file": "WE__0477___________CAL_ATS_________________P01.CSV",
+      "url": "https://pds-atmospheres.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0420_0539/sol_0477/WE__0477___________CAL_ATS_________________P01.CSV",
+      "labelUrl": "https://pds-atmospheres.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0420_0539/sol_0477/WE__0477___________CAL_ATS_________________P01.xml",
+      "bytes": 2445620,
+      "records": 30956,
+      "sha256": "797b997ed886d059192d9e2137db41260e7ed7730f44040e866dbcc0e6790aa3",
+      "md5": "ead1e354c68b63f606add959d4711f43",
+      "labelSha256": "a9ac250edc6d3d9e71adfd4a569103e84618925467e121fbb8b7ded9c7213351",
+      "utcStart": "2022-06-23T07:07:30.610Z",
+      "utcEnd": "2022-06-24T07:06:32.291Z",
+      "fields": {
+        "SCLK": {
+          "unit": "second",
+          "description": "\n            Spacecraft Clock, as approximated by MEDA internal clock,\n            at the time of the observation, without partition and\n            including decimal thousandths of a second\n          "
+        },
+        "LMST": {
+          "unit": null,
+          "description": "Local Mean Solar Time"
+        },
+        "LTST": {
+          "unit": null,
+          "description": "Local True Solar Time"
+        },
+        "ATS_LOCAL_TEMP1": {
+          "unit": "kelvin",
+          "description": "Local air temperature near the unit mounted on the RSM at 50\u00ba"
+        },
+        "ATS_LOCAL_TEMP2": {
+          "unit": "kelvin",
+          "description": "Local air temperature near the unit mounted on the RSM at 155\u00ba"
+        },
+        "ATS_LOCAL_TEMP3": {
+          "unit": "kelvin",
+          "description": "Local air temperature near the unit mounted on the RSM at 290\u00ba"
+        },
+        "ATS_LOCAL_TEMP4": {
+          "unit": "kelvin",
+          "description": "Local air temperature near the unit mounted on the RFB at Port side/Pilot"
+        },
+        "ATS_LOCAL_TEMP5": {
+          "unit": "kelvin",
+          "description": "Local air temperature near the unit mounted on the RFB at Starboard/Co-pilot"
+        }
+      }
+    },
+    {
+      "file": "WE__0477___________DER_PS__________________P01.CSV",
+      "url": "https://pds-atmospheres.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0420_0539/sol_0477/WE__0477___________DER_PS__________________P01.CSV",
+      "labelUrl": "https://pds-atmospheres.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0420_0539/sol_0477/WE__0477___________DER_PS__________________P01.xml",
+      "bytes": 1637769,
+      "records": 30328,
+      "sha256": "e278c92301316b74b87ea86876514d1c0fb369a4fba2b3782822cff6d9a73533",
+      "md5": "9f31d0383275dae6ea4e9a5e69b8acdd",
+      "labelSha256": "fca6c78bc58ee714a03b3c39f09bb2bd3bd34ab13419ef35f979b6f726a8c567",
+      "utcStart": "2022-06-23T07:07:33.610Z",
+      "utcEnd": "2022-06-24T07:06:08.291Z",
+      "fields": {
+        "SCLK": {
+          "unit": "second",
+          "description": "\n            Spacecraft Clock, as approximated by MEDA internal clock,\n            at the time of the observation, without partition and\n            including decimal thousandths of a second\n          "
+        },
+        "LMST": {
+          "unit": null,
+          "description": "Local Mean Solar Time"
+        },
+        "LTST": {
+          "unit": null,
+          "description": "Local True Solar Time"
+        },
+        "PRESSURE": {
+          "unit": "pascal",
+          "description": "Pressure"
+        },
+        "PRESSURE UNCERTAINTY": {
+          "unit": "kelvin",
+          "description": "Pressure uncertainty"
+        },
+        "TRANSDUCER": {
+          "unit": null,
+          "description": "Transducer used: 1 / 2"
+        }
+      }
+    },
+    {
+      "file": "WE__0502___________CAL_ATS_________________P01.CSV",
+      "url": "https://pds-atmospheres.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0420_0539/sol_0502/WE__0502___________CAL_ATS_________________P01.CSV",
+      "labelUrl": "https://pds-atmospheres.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0420_0539/sol_0502/WE__0502___________CAL_ATS_________________P01.xml",
+      "bytes": 3115224,
+      "records": 39432,
+      "sha256": "5f3761ee6f53a7a82ae77d77e2424f7dace4714b7732c6435f3c8fb1a6f12bcb",
+      "md5": "1534c5846acadff6eb7351cb2a532267",
+      "labelSha256": "0730d02fac0ca0d3bc017cce15ed55c37956fb2330479e207dde54ecbfb7bb05",
+      "utcStart": "2022-07-18T23:37:12.105Z",
+      "utcEnd": "2022-07-19T23:20:47.779Z",
+      "fields": {
+        "SCLK": {
+          "unit": "second",
+          "description": "\n            Spacecraft Clock, as approximated by MEDA internal clock,\n            at the time of the observation, without partition and\n            including decimal thousandths of a second\n          "
+        },
+        "LMST": {
+          "unit": null,
+          "description": "Local Mean Solar Time"
+        },
+        "LTST": {
+          "unit": null,
+          "description": "Local True Solar Time"
+        },
+        "ATS_LOCAL_TEMP1": {
+          "unit": "kelvin",
+          "description": "Local air temperature near the unit mounted on the RSM at 50\u00ba"
+        },
+        "ATS_LOCAL_TEMP2": {
+          "unit": "kelvin",
+          "description": "Local air temperature near the unit mounted on the RSM at 155\u00ba"
+        },
+        "ATS_LOCAL_TEMP3": {
+          "unit": "kelvin",
+          "description": "Local air temperature near the unit mounted on the RSM at 290\u00ba"
+        },
+        "ATS_LOCAL_TEMP4": {
+          "unit": "kelvin",
+          "description": "Local air temperature near the unit mounted on the RFB at Port side/Pilot"
+        },
+        "ATS_LOCAL_TEMP5": {
+          "unit": "kelvin",
+          "description": "Local air temperature near the unit mounted on the RFB at Starboard/Co-pilot"
+        }
+      }
+    },
+    {
+      "file": "WE__0502___________DER_PS__________________P01.CSV",
+      "url": "https://pds-atmospheres.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0420_0539/sol_0502/WE__0502___________DER_PS__________________P01.CSV",
+      "labelUrl": "https://pds-atmospheres.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0420_0539/sol_0502/WE__0502___________DER_PS__________________P01.xml",
+      "bytes": 2103141,
+      "records": 38946,
+      "sha256": "6da73644f075fdba25284f1283a6223d47d5469331f2ce498665ce248fb58475",
+      "md5": "830fb3341d4c01f61cfe65f38f867c9a",
+      "labelSha256": "ec95d64244494afdf23dd7dbab830b24c4545e9d646fc665721c15d4a9addf55",
+      "utcStart": "2022-07-18T23:37:15.106Z",
+      "utcEnd": "2022-07-19T23:20:23.779Z",
+      "fields": {
+        "SCLK": {
+          "unit": "second",
+          "description": "\n            Spacecraft Clock, as approximated by MEDA internal clock,\n            at the time of the observation, without partition and\n            including decimal thousandths of a second\n          "
+        },
+        "LMST": {
+          "unit": null,
+          "description": "Local Mean Solar Time"
+        },
+        "LTST": {
+          "unit": null,
+          "description": "Local True Solar Time"
+        },
+        "PRESSURE": {
+          "unit": "pascal",
+          "description": "Pressure"
+        },
+        "PRESSURE UNCERTAINTY": {
+          "unit": "kelvin",
+          "description": "Pressure uncertainty"
+        },
+        "TRANSDUCER": {
+          "unit": null,
+          "description": "Transducer used: 1 / 2"
+        }
+      }
+    }
+  ],
+  "windAvailability": [
+    {
+      "sol": 477,
+      "windProducts": [],
+      "status": "No wind product listed in the checked calibrated/derived sol directories."
+    },
+    {
+      "sol": 502,
+      "windProducts": [],
+      "status": "No wind product listed in the checked calibrated/derived sol directories."
+    }
+  ],
+  "summary": {
+    "477": {
+      "records": 22,
+      "airAvailable": 22,
+      "pressureAvailable": 21,
+      "windAvailable": 0
+    },
+    "502": {
+      "records": 21,
+      "airAvailable": 21,
+      "pressureAvailable": 21,
+      "windAvailable": 0
+    }
+  },
+  "observations": [
+    {
+      "thermalId": "thermal-477-709240892",
+      "sol": 477,
+      "referenceSclk": 709240892.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 1267,
+          "sclk": 709240892.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M00:20:34.487",
+          "ltst": "0477 00:26:47",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709240892.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 202.86,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 203.61,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 203.39,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 206.33,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 206.91,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 1240,
+          "sclk": 709240868.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M00:20:11.129",
+          "ltst": "0477 00:26:23",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709240868.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 802.49,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709244591",
+      "sol": 477,
+      "referenceSclk": 709244591.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 2533,
+          "sclk": 709244591.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M01:20:34.546",
+          "ltst": "0477 01:26:45",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709244591.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 202.51,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 201.96,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 201.62,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 204.54,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 205.15,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 2479,
+          "sclk": 709244567.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M01:20:11.188",
+          "ltst": "0477 01:26:22",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709244567.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 797.31,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709248290",
+      "sol": 477,
+      "referenceSclk": 709248290.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 3799,
+          "sclk": 709248290.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M02:20:34.606",
+          "ltst": "0477 02:26:43",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709248290.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 200.05,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 199.25,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 199.01,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 201.89,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 202.7,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 3718,
+          "sclk": 709248266.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M02:20:11.247",
+          "ltst": "0477 02:26:20",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709248266.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 794.56,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709251989",
+      "sol": 477,
+      "referenceSclk": 709251989.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 5065,
+          "sclk": 709251989.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M03:20:34.665",
+          "ltst": "0477 03:26:42",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709251989.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 195.61,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 196.36,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 197.57,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 200.34,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 200.55,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 4957,
+          "sclk": 709251965.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M03:20:11.306",
+          "ltst": "0477 03:26:18",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709251965.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 791.4,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709255688",
+      "sol": 477,
+      "referenceSclk": 709255688.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 6331,
+          "sclk": 709255688.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M04:20:34.724",
+          "ltst": "0477 04:26:40",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709255688.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 194.45,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 197.57,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 197.07,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 198.86,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 199.0,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 6196,
+          "sclk": 709255664.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M04:20:11.366",
+          "ltst": "0477 04:26:17",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709255664.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 789.66,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709259387",
+      "sol": 477,
+      "referenceSclk": 709259387.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 7597,
+          "sclk": 709259387.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M05:20:34.783",
+          "ltst": "0477 05:26:38",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709259387.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 193.43,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 196.05,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 194.97,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 197.53,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 198.26,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 7435,
+          "sclk": 709259363.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M05:20:11.425",
+          "ltst": "0477 05:26:15",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709259363.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 792.82,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709263086",
+      "sol": 477,
+      "referenceSclk": 709263086.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 8863,
+          "sclk": 709263086.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M06:20:34.842",
+          "ltst": "0477 06:26:37",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709263086.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 193.41,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 197.11,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 195.58,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 197.5,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 197.83,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 8674,
+          "sclk": 709263062.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M06:20:11.484",
+          "ltst": "0477 06:26:14",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709263062.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 803.67,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709266785",
+      "sol": 477,
+      "referenceSclk": 709266785.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 10129,
+          "sclk": 709266785.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M07:20:34.901",
+          "ltst": "0477 07:26:35",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709266785.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 200.32,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 201.76,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 200.37,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 201.2,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 203.25,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 9913,
+          "sclk": 709266761.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M07:20:11.543",
+          "ltst": "0477 07:26:12",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709266761.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 808.24,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709270484",
+      "sol": 477,
+      "referenceSclk": 709270484.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 11395,
+          "sclk": 709270484.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M08:20:34.960",
+          "ltst": "0477 08:26:34",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709270484.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 220.56,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 210.17,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 210.02,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 206.94,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 222.98,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 11152,
+          "sclk": 709270460.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M08:20:11.602",
+          "ltst": "0477 08:26:10",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709270460.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 803.86,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709274180",
+      "sol": 477,
+      "referenceSclk": 709274180.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 12658,
+          "sclk": 709274180.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M09:20:32.099",
+          "ltst": "0477 09:26:29",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709274180.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 212.73,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 212.07,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 224.99,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 216.12,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 222.56,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 12388,
+          "sclk": 709274156.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M09:20:08.741",
+          "ltst": "0477 09:26:06",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709274156.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 800.41,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709277881",
+      "sol": 477,
+      "referenceSclk": 709277881.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 13924,
+          "sclk": 709277881.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M10:20:34.105",
+          "ltst": "0477 10:26:29",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709277881.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 220.27,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 221.32,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 234.09,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 225.88,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 235.46,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 13627,
+          "sclk": 709277857.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M10:20:10.746",
+          "ltst": "0477 10:26:06",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709277857.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 797.62,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709281580",
+      "sol": 477,
+      "referenceSclk": 709281580.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 15190,
+          "sclk": 709281580.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M11:20:34.164",
+          "ltst": "0477 11:26:28",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709281580.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 236.79,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 241.69,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 241.14,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 234.79,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 245.26,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 14866,
+          "sclk": 709281556.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M11:20:10.806",
+          "ltst": "0477 11:26:04",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709281556.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 794.3,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709285860",
+      "sol": 477,
+      "referenceSclk": 709285860.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 17037,
+          "sclk": 709285860.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M12:29:59.682",
+          "ltst": "0477 12:35:51",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709285860.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 229.77,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 233.92,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 256.01,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 244.38,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 244.91,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 16710,
+          "sclk": 709285860.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M12:29:59.682",
+          "ltst": "0477 12:35:51",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709285860.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 789.91,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709288060",
+      "sol": 477,
+      "referenceSclk": 709288060.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 19237,
+          "sclk": 709288060.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M13:05:40.836",
+          "ltst": "0477 13:11:31",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458855847784633,
+            "longitude": 77.4061001004984,
+            "ancillarySclk": 709288060.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 235.41,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 236.45,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 255.74,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 248.28,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 239.23,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": false,
+        "reason": "No source sample within 30 spacecraft-clock seconds.",
+        "sample": null
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709291699",
+      "sol": 477,
+      "referenceSclk": 709291699.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 19525,
+          "sclk": 709291699.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M14:04:42.500",
+          "ltst": "0477 14:10:31",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.45881552703902,
+            "longitude": 77.40615239033386,
+            "ancillarySclk": 709291699.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 236.13,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 237.51,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 247.42,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 251.01,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 238.2,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 19164,
+          "sclk": 709291699.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M14:04:42.500",
+          "ltst": "0477 14:10:31",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.45881552703902,
+            "longitude": 77.40615239033386,
+            "ancillarySclk": 709291699.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 779.97,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709303774",
+      "sol": 477,
+      "referenceSclk": 709303774.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 24298,
+          "sclk": 709303774.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M17:20:34.518",
+          "ltst": "0477 17:26:18",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709303774.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 223.33,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 224.17,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 225.5,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 238.02,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 225.39,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 23832,
+          "sclk": 709303750.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M17:20:11.160",
+          "ltst": "0477 17:25:55",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709303750.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 769.56,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709306540",
+      "sol": 477,
+      "referenceSclk": 709306540.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 24631,
+          "sclk": 709306540.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M18:05:26.533",
+          "ltst": "0477 18:11:09",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709306540.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 217.06,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 220.22,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 221.43,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 231.79,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 223.07,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 24138,
+          "sclk": 709306516.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M18:05:03.175",
+          "ltst": "0477 18:10:45",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709306516.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 781.4,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709311172",
+      "sol": 477,
+      "referenceSclk": 709311172.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 25897,
+          "sclk": 709311172.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M19:20:34.636",
+          "ltst": "0477 19:26:15",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709311172.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 211.86,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 214.93,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 216.2,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 224.97,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 217.77,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 25377,
+          "sclk": 709311148.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M19:20:11.278",
+          "ltst": "0477 19:25:51",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709311148.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 793.47,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709314871",
+      "sol": 477,
+      "referenceSclk": 709314871.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 27163,
+          "sclk": 709314871.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M20:20:34.695",
+          "ltst": "0477 20:26:13",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709314871.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 211.26,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 213.02,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 212.1,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 216.48,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 216.46,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 26616,
+          "sclk": 709314847.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M20:20:11.337",
+          "ltst": "0477 20:25:50",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709314847.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 799.46,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709318570",
+      "sol": 477,
+      "referenceSclk": 709318570.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 28429,
+          "sclk": 709318570.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M21:20:34.754",
+          "ltst": "0477 21:26:11",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709318570.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 210.23,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 210.87,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 210.29,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 212.69,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 213.5,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 27855,
+          "sclk": 709318546.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M21:20:11.396",
+          "ltst": "0477 21:25:48",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709318546.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 801.87,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709322265",
+      "sol": 477,
+      "referenceSclk": 709322265.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 29691,
+          "sclk": 709322265.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M22:20:30.920",
+          "ltst": "0477 22:26:06",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709322265.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 207.22,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 209.4,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 208.81,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 210.82,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 210.89,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 29090,
+          "sclk": 709322241.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M22:20:07.562",
+          "ltst": "0477 22:25:43",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709322241.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 803.73,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-477-709325968",
+      "sol": 477,
+      "referenceSclk": 709325968.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 30957,
+          "sclk": 709325968.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00477M23:20:34.872",
+          "ltst": "0477 23:26:08",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709325968.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 204.57,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 205.53,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 205.19,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 207.86,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 207.91,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0477___________DER_PS__________________P01.CSV",
+          "sourceLine": 30329,
+          "sclk": 709325944.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00477M23:20:11.514",
+          "ltst": "0477 23:25:45",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458895325,
+            "longitude": 77.406167686,
+            "ancillarySclk": 709325944.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 802.11,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711460256",
+      "sol": 502,
+      "referenceSclk": 711460256.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 1267,
+          "sclk": 711460256.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M00:20:34.871",
+          "ltst": "0502 00:09:16",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711460256.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 201.32,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 201.44,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 201.97,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 205.86,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 202.65,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 1240,
+          "sclk": 711460232.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M00:20:11.513",
+          "ltst": "0502 00:08:53",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711460232.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 796.88,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711463955",
+      "sol": 502,
+      "referenceSclk": 711463955.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 2533,
+          "sclk": 711463955.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M01:20:34.930",
+          "ltst": "0502 01:09:15",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711463955.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 199.61,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 199.72,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 200.03,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 203.43,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 200.52,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 2479,
+          "sclk": 711463931.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M01:20:11.572",
+          "ltst": "0502 01:08:51",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711463931.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 792.78,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711467654",
+      "sol": 502,
+      "referenceSclk": 711467654.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 3799,
+          "sclk": 711467654.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M02:20:34.989",
+          "ltst": "0502 02:09:13",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711467654.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 197.55,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 197.72,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 197.54,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 201.58,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 198.9,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 3718,
+          "sclk": 711467630.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M02:20:11.631",
+          "ltst": "0502 02:08:49",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711467630.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 788.15,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711471353",
+      "sol": 502,
+      "referenceSclk": 711471353.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 5065,
+          "sclk": 711471353.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M03:20:35.049",
+          "ltst": "0502 03:09:11",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711471353.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 192.71,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 193.83,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 193.5,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 197.75,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 196.02,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 4957,
+          "sclk": 711471329.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M03:20:11.690",
+          "ltst": "0502 03:08:48",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711471329.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 785.58,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711475051",
+      "sol": 502,
+      "referenceSclk": 711475051.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 6331,
+          "sclk": 711475051.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M04:20:34.134",
+          "ltst": "0502 04:09:08",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711475051.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 190.36,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 194.0,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 193.62,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 197.35,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 194.85,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 6196,
+          "sclk": 711475027.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M04:20:10.776",
+          "ltst": "0502 04:08:45",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711475027.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 785.15,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711478750",
+      "sol": 502,
+      "referenceSclk": 711478750.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 7597,
+          "sclk": 711478750.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M05:20:34.193",
+          "ltst": "0502 05:09:07",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711478750.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 190.88,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 192.22,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 192.35,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 196.45,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 194.37,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 7435,
+          "sclk": 711478726.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M05:20:10.835",
+          "ltst": "0502 05:08:43",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711478726.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 788.85,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711482449",
+      "sol": 502,
+      "referenceSclk": 711482449.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 8863,
+          "sclk": 711482449.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M06:20:34.252",
+          "ltst": "0502 06:09:05",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711482449.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 190.73,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 191.04,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 192.03,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 197.06,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 194.59,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 8674,
+          "sclk": 711482425.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M06:20:10.894",
+          "ltst": "0502 06:08:42",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711482425.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 799.29,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711486148",
+      "sol": 502,
+      "referenceSclk": 711486148.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 10129,
+          "sclk": 711486148.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M07:20:34.311",
+          "ltst": "0502 07:09:03",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711486148.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 191.84,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 192.94,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 197.21,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 201.24,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 196.0,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 9913,
+          "sclk": 711486124.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M07:20:10.953",
+          "ltst": "0502 07:08:40",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711486124.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 808.8,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711497245",
+      "sol": 502,
+      "referenceSclk": 711497245.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 13927,
+          "sclk": 711497245.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M10:20:34.489",
+          "ltst": "0502 10:08:58",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711497245.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 213.05,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 228.47,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 216.5,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 227.3,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 221.79,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 13630,
+          "sclk": 711497221.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M10:20:11.130",
+          "ltst": "0502 10:08:35",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711497221.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 795.4,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711500944",
+      "sol": 502,
+      "referenceSclk": 711500944.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 15193,
+          "sclk": 711500944.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M11:20:34.548",
+          "ltst": "0502 11:08:56",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711500944.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 240.65,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 219.62,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 222.89,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 239.52,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 237.15,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 14869,
+          "sclk": 711500920.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M11:20:11.189",
+          "ltst": "0502 11:08:33",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.4586948511057,
+            "longitude": 77.40595162444892,
+            "ancillarySclk": 711500920.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 790.64,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711504376",
+      "sol": 502,
+      "referenceSclk": 711504376.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 16192,
+          "sclk": 711504376.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M12:16:14.748",
+          "ltst": "0502 12:04:35",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458655036478234,
+            "longitude": 77.40594682232812,
+            "ancillarySclk": 711504376.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 252.47,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 234.21,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 241.36,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 252.52,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 255.97,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 15865,
+          "sclk": 711504376.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M12:16:14.748",
+          "ltst": "0502 12:04:35",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458655036478234,
+            "longitude": 77.40594682232812,
+            "ancillarySclk": 711504376.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 788.5,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711512622",
+      "sol": 502,
+      "referenceSclk": 711512622.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 21080,
+          "sclk": 711512622.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M14:30:00.184",
+          "ltst": "0502 14:18:17",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711512622.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 251.03,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 244.13,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 255.17,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 270.75,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 255.76,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 20726,
+          "sclk": 711512622.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M14:30:00.184",
+          "ltst": "0502 14:18:17",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711512622.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 779.71,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711514815",
+      "sol": 502,
+      "referenceSclk": 711514815.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 23273,
+          "sclk": 711514815.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M15:05:34.526",
+          "ltst": "0502 14:53:50",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711514815.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 256.2,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 234.03,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 235.78,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 261.61,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 254.4,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 22895,
+          "sclk": 711514791.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M15:05:11.168",
+          "ltst": "0502 14:53:26",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711514791.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 776.82,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711520020",
+      "sol": 502,
+      "referenceSclk": 711520020.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 25120,
+          "sclk": 711520020.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M16:30:00.302",
+          "ltst": "0502 16:18:13",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711520020.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 244.48,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 229.85,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 230.65,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 250.41,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 249.36,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 24739,
+          "sclk": 711520020.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M16:30:00.302",
+          "ltst": "0502 16:18:13",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711520020.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 770.65,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711522213",
+      "sol": 502,
+      "referenceSclk": 711522213.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 27313,
+          "sclk": 711522213.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M17:05:34.644",
+          "ltst": "0502 16:53:46",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711522213.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 234.8,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 231.8,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 231.08,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 242.86,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 240.84,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 26908,
+          "sclk": 711522189.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M17:05:11.286",
+          "ltst": "0502 16:53:23",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711522189.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 770.43,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711527418",
+      "sol": 502,
+      "referenceSclk": 711527418.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 29160,
+          "sclk": 711527418.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M18:30:00.420",
+          "ltst": "0502 18:18:10",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711527418.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 217.21,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 215.63,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 215.76,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 227.24,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 224.23,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 28752,
+          "sclk": 711527418.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M18:30:00.420",
+          "ltst": "0502 18:18:10",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711527418.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 785.68,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711529611",
+      "sol": 502,
+      "referenceSclk": 711529611.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 31353,
+          "sclk": 711529611.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M19:05:34.762",
+          "ltst": "0502 18:53:43",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711529611.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 218.56,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 221.41,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 221.31,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 226.0,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 222.65,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 30921,
+          "sclk": 711529587.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M19:05:11.404",
+          "ltst": "0502 18:53:20",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711529587.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 792.37,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711534815",
+      "sol": 502,
+      "referenceSclk": 711534815.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 33200,
+          "sclk": 711534815.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M20:29:59.565",
+          "ltst": "0502 20:18:05",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711534815.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 205.58,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 206.21,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 208.06,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 219.04,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 208.56,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 32765,
+          "sclk": 711534815.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M20:29:59.565",
+          "ltst": "0502 20:18:05",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711534815.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 801.79,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711537008",
+      "sol": 502,
+      "referenceSclk": 711537008.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 35393,
+          "sclk": 711537008.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M21:05:33.907",
+          "ltst": "0502 20:53:39",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711537008.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 209.32,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 209.37,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 210.16,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 217.15,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 210.31,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 34934,
+          "sclk": 711536984.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M21:05:10.549",
+          "ltst": "0502 20:53:15",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711536984.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 805.03,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711542213",
+      "sol": 502,
+      "referenceSclk": 711542213.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 37240,
+          "sclk": 711542213.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M22:29:59.683",
+          "ltst": "0502 22:18:02",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711542213.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 201.92,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 203.08,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 203.47,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 211.52,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 204.76,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 36778,
+          "sclk": 711542213.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M22:29:59.683",
+          "ltst": "0502 22:18:02",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711542213.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 805.78,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    },
+    {
+      "thermalId": "thermal-502-711544406",
+      "sol": 502,
+      "referenceSclk": 711544406.0,
+      "air": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________CAL_ATS_________________P01.CSV",
+          "sourceLine": 39433,
+          "sclk": 711544406.0,
+          "offsetSeconds": 0.0,
+          "lmst": "00502M23:05:34.025",
+          "ltst": "0502 22:53:35",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711544406.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "detectors": [
+            {
+              "sensor": 1,
+              "kelvin": 198.2,
+              "sourceField": "ATS_LOCAL_TEMP1",
+              "reason": null
+            },
+            {
+              "sensor": 2,
+              "kelvin": 198.92,
+              "sourceField": "ATS_LOCAL_TEMP2",
+              "reason": null
+            },
+            {
+              "sensor": 3,
+              "kelvin": 199.88,
+              "sourceField": "ATS_LOCAL_TEMP3",
+              "reason": null
+            },
+            {
+              "sensor": 4,
+              "kelvin": 209.67,
+              "sourceField": "ATS_LOCAL_TEMP4",
+              "reason": null
+            },
+            {
+              "sensor": 5,
+              "kelvin": 200.97,
+              "sourceField": "ATS_LOCAL_TEMP5",
+              "reason": null
+            }
+          ],
+          "uncertaintyKelvin": null
+        }
+      },
+      "pressure": {
+        "available": true,
+        "reason": null,
+        "sample": {
+          "sourceFile": "WE__0502___________DER_PS__________________P01.CSV",
+          "sourceLine": 38947,
+          "sclk": 711544382.0,
+          "offsetSeconds": -24.0,
+          "lmst": "00502M23:05:10.667",
+          "ltst": "0502 22:53:12",
+          "qualityFlags": null,
+          "qualityStatus": "Review required: no per-row quality flags supplied in this selected product.",
+          "position": {
+            "latitude": 18.458647276,
+            "longitude": 77.405924946,
+            "ancillarySclk": 711544382.0,
+            "positionOffsetSeconds": 0.0,
+            "status": "Approximate same-sol PLACES anchor plus MEDA M2020_TOPO displacement. Not independent geolocation or sensor footprint."
+          },
+          "pascal": 805.57,
+          "transducer": 1.0,
+          "sourceUncertaintyValue": null,
+          "uncertaintyStatus": "Uncertainty not displayed: selected label declares kelvin for pressure uncertainty, a dimensional inconsistency. Raw source value is retained if supplied."
+        }
+      },
+      "wind": {
+        "available": false,
+        "metresPerSecond": null,
+        "directionDegrees": null,
+        "reason": "No wind product listed in the checked calibrated/derived sol directories."
+      }
+    }
+  ]
+}

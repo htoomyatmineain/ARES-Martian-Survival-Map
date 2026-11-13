@@ -1,0 +1,9 @@
+# Reproduce the historical environmental panel
+
+1. Keep the existing validated TIRS subset, MEDA ancillary products for sols 477/502 and NASA PLACES `docs/elevation-validation-sources/best_tactical.csv`. Do not rerun or alter terrain/routing datasets.
+2. From `mars-explorer-web`, run a Python installation with standard-library support: `python scripts/prepare-historical-weather.py --download`. This discovers ATS/PS filenames in NASA PDS directory listings, downloads CSV/XML with normal TLS verification and checks label MD5, bytes and record counts. Without `--download`, it uses cached products.
+3. The script generates `src/data/historical-weather.json` and `docs/historical-weather/source-manifest.json`. Keep cached original CSVs ignored. Follow the selection, units, position and unknown-data rules in `docs/historical-weather/README.md`.
+4. Run `python scripts/check-historical-weather.py`. Require PASS: 43 air records, 42 pressure records, no invented wind. Do not relax the 30-second window to fill a gap.
+5. Integrate `HistoricalEnvironmentPanel.tsx` with the existing selected thermal record ID. Add environment to the observation-layer and marker unions; use E and the same reference coordinate transform in both maps. Keep one contextual popup open at a time.
+6. Run `npm test` and `npm run build`. On constrained Windows machines set `RAYON_NUM_THREADS=1` for the build. Verify both days, all detector choices, source details and the missing-pressure record `thermal-477-709288060` in the browser.
+7. Show historical/not-live and review-required labels. Do not feed these historical local measurements into EVA safety limits or claim zone-wide current weather. Deploy the generated application bundle with its JSON when deployment is requested; no large raw-source upload is needed.
