@@ -1,3 +1,4 @@
+import ConditionsCard from './ConditionsCard';
 import MissionScienceGoal from './MissionScienceGoal';
 import MissionSupplyPanel from './MissionSupplyPanel';
 import {SUPPLY_DEFAULTS} from './missionSupplies';
@@ -16,7 +17,7 @@ export default function EvaMissionPanel(p:Props){
  useEffect(()=>{contentRef.current?.scrollTo({top:0});},[planningView,p.state.phase]);
  const approach=p.route?.approach;
  const missionTarget=approach?'Approach to '+p.target:p.target;
- const settings:MissionSettings={mode:p.mode,speedKmh:p.speedKmh,scienceMinutes:approach?0:science.trim()===''?NaN:Number(science),budgetMinutes:budget.trim()===''?NaN:Number(budget)*60,reservePercent:reserve.trim()===''?NaN:Number(reserve),target:missionTarget,exclusion:p.exclusion,supplies};
+ const settings:MissionSettings={mode:p.mode,speedKmh:p.speedKmh,scienceMinutes:approach?0:science.trim()===''?NaN:Number(science),budgetMinutes:budget.trim()===''?NaN:Number(budget)*60,reservePercent:reserve.trim()===''?NaN:Number(reserve),target:missionTarget,targetId:p.targetId,exclusion:p.exclusion,supplies};
  const review=reviewMission(p.route,settings),s=p.state,locked=!!s.snapshot,moving=['outbound','science','returning'].includes(s.phase),snapshot=s.snapshot;
  const exportReport=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(missionReport(s,notes),null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='jezero-eva-simulation.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
  const primaryAction=!locked?(planningView==='plan'?<button className="rm-pick-button rm-primary-action" onClick={()=>setPlanningView('review')}>Review mission</button>:<button className="rm-pick-button rm-primary-action" disabled={!review.ready} onClick={()=>{if(p.route&&review.ready){setNotes('');p.dispatch({type:'start',snapshot:makeSnapshot(p.route,settings)});}}}>Start EVA simulation</button>):moving?<button disabled={suppliesDepleted(s)} className="rm-pick-button rm-primary-action" onClick={()=>p.dispatch({type:s.paused?'resume':'pause'})}>{s.paused?'Resume simulation':'Pause simulation'}</button>:s.phase==='arrived'?<button className="rm-pick-button rm-primary-action" onClick={()=>p.dispatch({type:'science'})}>Begin science task</button>:s.phase==='ready-return'?<button className="rm-pick-button rm-primary-action" onClick={()=>p.dispatch({type:'return'})}>Return to habitat</button>:s.phase==='complete'?<button className="rm-pick-button rm-primary-action" onClick={exportReport}>Download simulation report</button>:null;
@@ -28,7 +29,7 @@ export default function EvaMissionPanel(p:Props){
    {p.destinationControl}{p.travelControls}{p.routeControls}
    </div>
    <div hidden={planningView!=='review'}><MissionScienceGoal targetId={p.targetId} approach={!!approach}/>{approach&&<p className="rm-approach-notice">Approach-only simulation · {Math.ceil(approach.gapMetres)} m straight-line gap remains. No final-leg travel time or science task is included.</p>}<p className="rm-fineprint">{p.target} · {p.mode==='rover'?'Crewed rover':'Suited walking'} · {p.speedKmh} km/h assumed average.</p>
-   <ol className="rm-itinerary" aria-label="Planned mission itinerary">
+   <ConditionsCard targetId={p.targetId} minutes={review.required} budget={settings.budgetMinutes} approach={!!approach}/><ol className="rm-itinerary" aria-label="Planned mission itinerary">
     <li><strong>Leave simulated habitat</strong><small>Outbound travel · {p.route?.profileStatus==='verified'?formatTravelMinutes(review.oneWay):'No verified route'}</small></li>
     <li><strong>{missionTarget}</strong><small>{approach?'Stop short of the science site. Final access is not planned or assessed.':p.targets.find(t=>t.id===p.targetId)?.interest??'User-selected destination; science objective not specified.'}</small><small>{approach?'No science task at approach point':'Planned task · '+formatTravelMinutes(settings.scienceMinutes)}</small></li>
     <li><strong>Return to habitat</strong><small>Retrace outbound corridor · {p.route?.profileStatus==='verified'?formatTravelMinutes(review.oneWay):'No verified route'}</small></li>
