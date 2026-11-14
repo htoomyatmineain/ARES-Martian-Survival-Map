@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "siteId": "M2020-164-2",
+      "sample": "Roubion",
+      "location": "Roubion / Roubion (provisional)",
+      "file": "Roubion.png",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-01-flf-0164-0681506341-857eby-n0060000fhaz00209-01-0llj.png",
+      "alt": "Image taken was taken by the Mars Perseverance rover after collecting the rock sample 1 at Roubion.",
+      "captionAsPublished": "NASA's Mars Perseverance rover acquired this image of the area in front of it using its onboard Front Left Hazard Avoidance Camera A.\n\nThis image was acquired on Aug. 6, 2021 (Sol 164) at the local mean solar time of 14:22:08.  NASA/JPL-Caltech",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        1296,
+        976
+      ],
+      "sha256": "e0ca3309d3de1c850b4d629ca2fa3180fba42d6e79c41a7f8146e9067044024e"
+    },
+    {
+      "siteId": "M2020-190-3",
+      "sample": "Montdenier",
+      "location": "Rochette / Montdenier (provisional)",
+      "file": "Rochette - Montdenier.jpg",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-02-pia24805-navcam-of-borehole-sol190-navcam-borehole.jpg",
+      "alt": "This composite of two images shows the hole drilled by NASA's Perseverance rover during its second sample-collection attempt. at Montdenier.",
+      "captionAsPublished": "This composite of two images shows the hole drilled by NASA's Perseverance rover during its second sample-collection attempt. at Montdenier.  NASA/JPL-Caltech",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        2572,
+        972
+      ],
+      "sha256": "6018b284b6013b068142deb4fec9703da1c481b98aab95bc950e9e50bd33b09c"
+    },
+    {
+      "siteId": "M2020-196-4",
+      "sample": "Montagnac",
+      "location": "Rochette / Montagnac (provisional)",
+      "file": "Rochette - Montagnac.png",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-03-nrf-0196-0684353674-409eby-n0070000ncam00705-03-0llj.png",
+      "alt": "Image taken was taken by the Mars Perseverance rover after collecting the rock sample 3 at Montagnac.",
+      "captionAsPublished": "NASA's Mars Perseverance rover acquired this image using its onboard Right Navigation Camera (Navcam). The camera is located high on the rover's mast and aids in driving.\n\nThis image was acquired on Sept. 8, 2021 (Sol 196) at the local mean solar time of 16:08:20.  NASA/JPL-Caltech",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        1296,
+        976
+      ],
+      "sha256": "5a847ecdfc789df29f7e6fb8e0b071eb1e467c60c7d4db14bf37291d2f6c24ef"
+    },
+    {
+      "siteId": "M2020-262-5",
+      "sample": "Salette",
+      "location": "Brac / Salette (provisional)",
+      "file": "Brac - Salette.png",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-04-nrf-0262-0690212241-488eby-n0080000ncam00705-03-0llj.png",
+      "alt": "Image taken was taken by the Mars Perseverance rover after collecting the rock sample 4 at Salette.",
+      "captionAsPublished": "NASA's Mars Perseverance rover acquired this image using its onboard Right Navigation Camera (Navcam). The camera is located high on the rover's mast and aids in driving.\n\nThis image was acquired on Nov. 15, 2021 (Sol 262) at the local mean solar time of 15:59:22.  NASA/JPL-Caltech",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        1296,
+        976
+      ],
+      "sha256": "bbe495008fa612d0091e244a88439cf52928a2942346347a449fa1db835fcd7a"
+    },
+    {
+      "siteId": "M2020-271-6",
+      "sample": "Coulettes",
+      "location": "Brac / Coulettes (provisional)",
+      "file": "Brac - Coulettes.png",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-05-nrf-0271-0691011600-601eby-n0080000ncam00705-03-0llj.png",
+      "alt": "Image taken was taken by the Mars Perseverance rover after collecting the rock sample 5 at Coulettes.",
+      "captionAsPublished": "NASA's Mars Perseverance rover acquired this image using its onboard Right Navigation Camera (Navcam). The camera is located high on the rover's mast and aids in driving.\n\nThis image was acquired on Nov. 24, 2021 (Sol 271) at the local mean solar time of 16:05:40.  NASA/JPL-Caltech",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        1296,
+        976
+      ],
+      "sha256": "f62b8cbae76c8d117b55435b0564912d2dc4fe5d9dbba444ba36083f41b9c941"
+    },
+    {
+      "siteId": "M2020-295-7",
+      "sample": "Robine",
+      "location": "Issole / Robine (provisional)",
+      "file": "Issole - Robine.png",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-06-zr0-0298-0693396851-894eby-n0090000zcam08323-0340lmj.png",
+      "alt": "Image taken was taken by the Mars Perseverance rover after collecting the rock sample 6 at Robine. The image shows a rock with a drillhole and abrasion.",
+      "captionAsPublished": "NASA's Mars Perseverance rover acquired this image using its Right Mastcam-Z camera. Mastcam-Z is a pair of cameras located high on the rover's mast.\n\nThis image was acquired on Dec. 21, 2021 (Sol 298) at the local mean solar time of 12:56:51.  NASA/JPL-Caltech/ASU",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        1648,
+        1200
+      ],
+      "sha256": "2e77946ad2391972147377f146c372e0323648ac158da3c33dc6fcd743c8f392"
+    },
+    {
+      "siteId": "M2020-337-8",
+      "sample": "Malay",
+      "location": "Issole / Malay (provisional)",
+      "file": "Issole - Malay.png",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-07-zr0-0337-0696856090-303eby-n0090276zcam03306-1100lmj.png",
+      "alt": "Image taken was taken by the Mars Perseverance rover after collecting the rock sample 7 at Malay.",
+      "captionAsPublished": "NASA's Mars Perseverance rover acquired this image using its Right Mastcam-Z camera. Mastcam-Z is a pair of cameras located high on the rover's mast.\n\nThis image was acquired on Jan. 30, 2022 (Sol 337) at the local mean solar time of 12:08:50.  NASA/JPL-Caltech/ASU",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        1648,
+        1200
+      ],
+      "sha256": "ab1ff1c324ad2ad010ade6b500c71d4181fccb9b29dfa098a8c5b7efea4eef0a"
+    },
+    {
+      "siteId": "M2020-371-9",
+      "sample": "Hahonih",
+      "location": "Sid / Hahonih (provisional)",
+      "file": "Sid - Hahonih.png",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-08-nlf-0371-0699886394-034eby-n0110108ncam00709-01-0llj.png",
+      "alt": "Image taken was taken by the Mars Perseverance rover after collecting the rock sample 8 at Ha'ah\u00f3ni (aka \"Hahonih\"). This image shows the rock protruding out of the ground with an abrasion patch and a drill hole.",
+      "captionAsPublished": "NASA's Mars Perseverance rover acquired this image using its onboard Left Navigation Camera (Navcam). The camera is located high on the rover's mast and aids in driving.\n\nThis image was acquired on March 7, 2022 (Sol 371) at the local mean solar time of 15:22:30.  NASA/JPL-Caltech",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        1296,
+        976
+      ],
+      "sha256": "93a98ef039e90c5f5f6b5234488aa86140ded183d1a7c5e99e2f54e73fa254d6"
+    },
+    {
+      "siteId": "M2020-374-10",
+      "sample": "Atsah",
+      "location": "Sid / Atsah (provisional)",
+      "file": "Sid - Atsah.png",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-09-zl0-0379-0700576749-723eby-n0110108zcam08408-1100lmj.png",
+      "alt": "Image taken was taken by the Mars Perseverance rover displaying the abrasion patch prior to collecting the rock sample 9 at Ats\u00e1 (aka \"Atsah\").",
+      "captionAsPublished": "NASA's Mars Perseverance rover acquired this image using its Left Mastcam-Z camera. Mastcam-Z is a pair of cameras located high on the rover's mast.\n\nThis image was acquired on March 15, 2022 (Sol 379) at the local mean solar time of 10:00:45.  NASA/JPL-Caltech/ASU",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        1648,
+        1200
+      ],
+      "sha256": "372ba808136c638131dcd28d44a6045a23798c825a082b081d9d9897c12727ed"
+    },
+    {
+      "siteId": "M2020-749-22",
+      "sample": "Melyn",
+      "location": "Berea / Tenby / Melyn (provisional)",
+      "file": "Berea - Tenby - Melyn.png",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-19-frf-0750-0733519147-132ecm-n0370000fhaz02008-03-095j.png",
+      "alt": "Image taken was taken by the Mars Perseverance rover after collecting the rock sample 19 at Melyn.",
+      "captionAsPublished": "NASA's Mars Perseverance rover acquired this image of the area in front of it using its onboard Front Right Hazard Avoidance Camera A.\n\nThis image was acquired on March 31, 2023 (Sol 750) at the local mean solar time of 11:54:54.  NASA/JPL-Caltech",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        1296,
+        976
+      ],
+      "sha256": "6d67c4d54865fb707e94e68f3bc7962c09bb9d38c43edf8ad205fabfe6ed5012"
+    },
+    {
+      "siteId": "M2020-822-23",
+      "sample": "Otis Peak",
+      "location": "Emerald Lake / Otis Peak (provisional)",
+      "file": "Emerald Lake - Otis Peak.png",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-20-nlf-0822-0739926764-926ecm-n0400132ncam00709-01-095j.png",
+      "alt": "Image taken was taken by the Mars Perseverance rover after collecting the rock sample 20 at Otis Peak. There is a smooth crevice to the right side of the drill hole.",
+      "captionAsPublished": "NASA's Mars Perseverance rover acquired this image using its onboard Left Navigation Camera (Navcam). The camera is located high on the rover's mast and aids in driving.\n\nThis image was acquired on June 13, 2023 (Sol 822) at the local mean solar time of 16:12:00.  NASA/JPL-Caltech",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        1296,
+        976
+      ],
+      "sha256": "f819b81562faafb5508a5bcb3d217d5b518ce5ab690ce2c8c5a2b1dcf31e740e"
+    },
+    {
+      "siteId": "M2020-882-24",
+      "sample": "Pilot Mountain",
+      "location": "Dream Lake / Hague Creek / Pilot Mountain (provisional)",
+      "file": "Dream Lake - Hague Creek - Pilot Mountain.png",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-21-nrf-0882-0745249659-226ecm-n0430000ncam00709-01-095j.png",
+      "alt": "Image taken was taken by the Mars Perseverance rover after collecting the rock sample 21 at Pilot Mountain. There is a drill hole of where the sample was collected along with a few rocks surrounding the area.",
+      "captionAsPublished": "NASA's Mars Perseverance rover acquired this image using its onboard Right Navigation Camera (Navcam). The camera is located high on the rover's mast and aids in driving.\n\nThis image was acquired on Aug. 14, 2023 (Sol 882) at the local mean solar time of 15:13:58.  NASA/JPL-Caltech",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        1296,
+        976
+      ],
+      "sha256": "0a0d29d0be2a7def1062f44b73dc92e8fcbb18f5d71e462869338a3551ba080c"
+    },
+    {
+      "siteId": "M2020-923-25",
+      "sample": "Pelican Point",
+      "location": "Hans Amundsen Memorial Workspace / Mandu Wall / Pelican Point (provisional)",
+      "file": "Hans Amundsen Memorial Workspace - Mandu Wall - Pelican Point.png",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-22-nrf-0923-0748891047-145ecm-n0450000ncam00709-01-095j.png",
+      "alt": "Image taken was taken by the Mars Perseverance rover after collecting the rock sample 22 at Pelican Point. There is a drill hole at the center of the image where the sample was collected.",
+      "captionAsPublished": "NASA's Mars Perseverance rover acquired this image using its onboard Right Navigation Camera (Navcam). The camera is located high on the rover's mast and aids in driving.\n\nThis image was acquired on Sept. 25, 2023 (Sol 923) at the local mean solar time of 15:40:26.",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        1296,
+        976
+      ],
+      "sha256": "86583aa53700aa745cc2cb96a3a4d1a14f185a3796c67a3c79ead9e05d5c9952"
+    },
+    {
+      "siteId": "M2020-949-26",
+      "sample": "Lefroy Bay",
+      "location": "Turquoise Bay / Lake Newell / Lefroy Bay (provisional)",
+      "file": "Turquoise Bay - Lake Newell - Lefroy Bay.png",
+      "sourcePageUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+      "imageUrl": "https://science.nasa.gov/wp-content/uploads/2024/03/mars-sample-23-nrf-0942-0750579097-550ecm-n0460000ncam00709-01-095j.png",
+      "alt": "Image taken was taken by the Mars Perseverance rover after collecting the rock sample 23 at Lefroy Bay. There is a drill hole in the center of the martian soil with an abrasion patch at the bottom left.",
+      "captionAsPublished": "NASA's Mars Perseverance rover acquired this image of the area in front of it using its onboard Front Left Hazard Avoidance Camera A.\n\nThis image was acquired on Aug. 6, 2021 (Sol 164) at the local mean solar time of 14:22:08.  NASA/JPL-Caltech",
+      "association": "NASA sample catalogue section; historical rover image, not exact georeferenced camera footprint.",
+      "metadataStatus": "Source-caption dates/camera require independent checking; known inconsistencies on NASA catalogue retained without correction.",
+      "dimensions": [
+        1296,
+        976
+      ],
+      "sha256": "c746531f68d6b3e6cf3c7da5b10fd512572f1f05292163eca2a34e48b39dac1c"
+    }
+  ],
+  "limitations": [
+    "NASA catalogue association is not independent absolute location verification.",
+    "Images may show shared outcrops, wider scene, abrasion patches or drill holes rather than distinct site panoramas.",
+    "Date/camera inconsistencies are not silently resolved.",
+    "Files are original downloaded image bytes; no generated imagery."
+  ]
+}
