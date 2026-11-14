@@ -273,7 +273,7 @@
 /* Subtle background hierarchy; text stays fully opaque. */
 .regional-map.rm-workspace-map .rm-map-planner .rm-plan-intro>p,
 .regional-map.rm-workspace-map .rm-map-planner .rm-coordinates{color:#aeb6c0}
-.regional-map.rm-workspace-map .rm-map-planner .rm-plan-step{background:rgba(255,255,255,.025);border:1px solid rgba(243,155,88,.18);border-radius:6px;padding:16px;margin-bottom:18px}
+.regional-map.rm-workspace-map .rm-map-planner .rm-plan-step{background:transparent;border:0;border-radius:0;padding:0 0 20px;margin-bottom:20px}
 .regional-map.rm-workspace-map .rm-map-planner .rm-plan-step h3{color:#f4f3ef}
 .regional-map.rm-workspace-map .rm-map-planner .rm-plan-step h3 b{background:rgba(243,155,88,.14);border-color:rgba(243,155,88,.38)}
 .regional-map.rm-workspace-map .rm-map-planner select,
