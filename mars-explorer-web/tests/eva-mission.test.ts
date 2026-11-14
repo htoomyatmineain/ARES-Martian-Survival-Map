@@ -36,3 +36,21 @@ test('early return does not claim completed science; reset and invalid state act
  s=start();s=missionReducer(s,{type:'tick',minutes:72});s=missionReducer(s,{type:'science'});s=missionReducer(s,{type:'tick',minutes:5});s=missionReducer(s,{type:'return'});assert.equal(s.scienceCompleted,false);s=missionReducer(s,{type:'tick',minutes:100});assert.equal(s.phase,'complete');assert.equal(s.elapsed,149);
  const report=missionReport(s,'simulation only');assert.equal(report.notes,'simulation only');assert.ok(report.limitations.length);assert.ok(report.events.length>=4);assert.deepEqual(missionReducer(s,{type:'reset'}),initialMission());
 });
+
+ test('departure confirmations gate launch and survive in the report',()=>{
+ const departureChecks=['equipment','comms','return','conditions','access'];
+ assert.equal(reviewMission(route(),{...settings,departureChecks:[]}).ready,false);
+ assert.throws(()=>makeSnapshot(route(),{...settings,departureChecks:['equipment']}),/confirmations/);
+ const state=start({...settings,departureChecks,targetId:'custom'});
+ assert.deepEqual(missionReport(state,'').departureChecks,departureChecks);
+ assert.equal(missionReport(state,'').procedure?.tasks.length,3);
+ });
+ test('elapsed science time does not invent task evidence; confirmations can be recorded before return',()=>{
+ let s=start({...settings,targetId:'custom'});s=missionReducer(s,{type:'tick',minutes:72});s=missionReducer(s,{type:'science'});s=missionReducer(s,{type:'tick',minutes:20});
+ assert.equal(s.phase,'ready-return');assert.equal(s.scienceCompleted,true);
+ assert.ok(missionReport(s,'').taskEvidence.every(t=>!t.crewConfirmed&&t.evidenceNote===null));
+ s=missionReducer(s,{type:'confirm-task',id:'document',confirmed:true});
+ const report=missionReport(s,'Demo photo reference A; facing north.');
+ assert.equal(report.taskEvidence[0].crewConfirmed,true);assert.equal(report.taskEvidence[1].crewConfirmed,false);
+ assert.match(report.taskEvidence[0].evidenceNote!,/photo reference/);
+ });
