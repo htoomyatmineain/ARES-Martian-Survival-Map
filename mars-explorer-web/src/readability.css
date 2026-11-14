@@ -246,3 +246,5 @@
 .regional-map .rm-route-peek span,.regional-map .rm-route-peek p{color:#352319}
 .regional-map .rm-sidebar .rm-telemetry #rm-route-data{background:var(--map-panel);color:var(--map-text);border-top:1px solid #21170f30}
 .regional-map .rm-sidebar .rm-telemetry-toggle:focus-visible{outline:2px solid #21170f;outline-offset:-4px}
+
+.regional-map .rm-reset-layers{width:100%;margin:0 0 24px;min-height:44px}
