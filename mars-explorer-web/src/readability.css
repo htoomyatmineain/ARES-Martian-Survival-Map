@@ -368,3 +368,7 @@
 .rm-plan-steps button>span:last-child{min-width:0}.rm-plan-steps strong{display:block;font-size:15px;font-weight:500;line-height:1.4}.regional-map.rm-workspace-mission .rm-plan-steps small{display:block;font-size:10px;margin-top:4px;color:var(--map-muted);line-height:1.4}
 @media(max-width:480px){.regional-map.rm-workspace-mission .rm-plan-steps button{padding:12px 8px;gap:8px}.rm-plan-steps strong{font-size:13px}.rm-plan-steps .rm-step-number{font-size:16px}}
 .rm-science-goal>a{display:block;margin-top:8px}
+/* Compact Emergency view controls; no full-width empty overlay. */
+.regional-map .rm-emergency-map-title{left:12px;right:auto;top:12px;width:max-content;max-width:min(360px,calc(100% - 80px));padding:0;background:transparent;border:0;box-shadow:none;text-shadow:0 1px 3px #000,0 0 4px #000;font-size:10px;line-height:1.5}
+.regional-map .rm-emergency-map-title .rm-view-switch{display:inline-flex;width:max-content;max-width:100%;margin:0 0 6px;padding:3px;background:var(--map-panel);border:1px solid var(--map-border);border-radius:5px;box-shadow:0 2px 8px #0004}
+.regional-map .rm-emergency-map-title .rm-view-switch button{flex:0 0 auto;min-height:34px;padding:7px 12px;font-size:11px}
