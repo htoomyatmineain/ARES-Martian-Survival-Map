@@ -96,6 +96,11 @@ function Skirt({ terrain, exaggeration }: { terrain: Terrain; exaggeration: numb
   useEffect(() => () => geom.dispose(), [geom]);
   return <mesh geometry={geom}><meshStandardMaterial color="#45362b" roughness={1} side={THREE.DoubleSide} /></mesh>;
 }
+function HeadingStrip(){
+  const root=useRef<HTMLDivElement>(null),direction=useMemo(()=>new THREE.Vector3(),[]);
+  useFrame(({camera})=>{if(!root.current)return;camera.getWorldDirection(direction);const heading=(Math.atan2(direction.x,-direction.z)*180/Math.PI+360)%360;const value=root.current.querySelector('b');if(value)value.textContent=`${Math.round(heading)%360}°`;root.current.querySelectorAll<HTMLElement>('[data-bearing]').forEach(el=>{const delta=(Number(el.dataset.bearing)-heading+540)%360-180;el.style.transform=`translateX(${delta*2.4}px)`;el.style.visibility=Math.abs(delta)<65?'visible':'hidden';});});
+  return <Html fullscreen style={{pointerEvents:'none'}}><div ref={root} className="rm-heading-strip" aria-label="Camera heading clockwise from north"><div>{['N','NE','E','SE','S','SW','W','NW'].map((label,i)=><span key={label} data-bearing={i*45}>{label}</span>)}</div><b>0°</b><small>VIEW HEADING</small></div></Html>;
+}
 function Controls({ mode, cameraAction, terrain, exaggeration }: SceneProps) {
   const ref = useRef<OrbitImpl>(null);
   const { camera, invalidate } = useThree();
@@ -175,7 +180,7 @@ function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | 
     {props.mode!=='Explore'&&markers && sites.map((s, i) => { const p = ground(terrain, s, exaggeration); return <group key={s.id} position={p}>
       <mesh position={[0, .025, 0]} rotation={[-Math.PI / 2, 0, 0]}><ringGeometry args={[.07, .095, 32]} /><meshBasicMaterial color={i === 0 ? '#c9dfca' : '#efb875'} side={THREE.DoubleSide} /></mesh>
     </group>; })}
-    {props.mode!=='Explore'&&<Controls {...props} />}
+    {props.mode!=='Explore'&&<><Controls {...props} /><HeadingStrip/></>}
     <ScienceWalking terrain={terrain} active={props.mode==='Explore'} input={props.input} action={props.cameraAction}/>
     {props.mode!=='Explore'&&<MarkerProjection terrain={terrain} exaggeration={exaggeration} markerRefs={props.markerRefs}/>}
   </>;
