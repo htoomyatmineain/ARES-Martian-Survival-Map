@@ -1,3 +1,0 @@
-route,length_m,max_sampled_slope_deg,exposure_5deg_m,exposure_10deg_m,exposure_15deg_m,exposure_20deg_m
-Dijkstra,400.0,17.29,260.5,78.5,10.0,0.0
-Slope-Aware Astar,434.31,14.37,271.9,47.08,0.0,0.0

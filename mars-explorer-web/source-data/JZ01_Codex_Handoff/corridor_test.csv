@@ -1,3 +1,0 @@
-route,corridor_radius_m,corridor_cells,slope10_cells,slope10_pct,slope15_cells,slope15_pct,potential_jump_cells
-Dijkstra,2,2013,411,20.42,61,3.03,0
-Slope-Aware Astar,2,2061,263,12.76,2,0.1,0

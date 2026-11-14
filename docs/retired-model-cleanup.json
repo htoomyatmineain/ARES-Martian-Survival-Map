@@ -1,0 +1,516 @@
+{
+  "date": "2026-11-14",
+  "method": "Entry-point relative-import reachability plus explicit retired asset/pipeline inventory. Shared camera/navigation and current science datasets preserved. Git history retains deleted tracked files.",
+  "deletedFiles": [
+    {
+      "file": "Mars Zone.blend",
+      "bytes": 7146099
+    },
+    {
+      "file": "mars-explorer/Jezero Blender Preview.png",
+      "bytes": 709445
+    },
+    {
+      "file": "mars-explorer/Jezero Terrain.blend",
+      "bytes": 18985601
+    },
+    {
+      "file": "mars-explorer/Jezero Terrain.glb",
+      "bytes": 29767384
+    },
+    {
+      "file": "mars-explorer-web/blender/mars-explorer-final.blend",
+      "bytes": 29051297
+    },
+    {
+      "file": "mars-explorer-web/blender/mars-explorer-real-jezero.blend",
+      "bytes": 11266983
+    },
+    {
+      "file": "mars-explorer-web/blender/mars-explorer.blend",
+      "bytes": 10123651
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/blender_build_report.md",
+      "bytes": 9933
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/runtime-results.json",
+      "bytes": 10925
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/astronaut_preview.png",
+      "bytes": 565536
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/step4_tactical_cinematic.png",
+      "bytes": 291725
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/step4_tactical_mobile.png",
+      "bytes": 101639
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/step4_tactical_scientific.png",
+      "bytes": 207665
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/step5_complete_tactical_cinematic.png",
+      "bytes": 376576
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/step5_complete_tactical_mobile.png",
+      "bytes": 173222
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/step5_complete_tactical_scientific.png",
+      "bytes": 261807
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/step5_pov_desktop.png",
+      "bytes": 221670
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/step5_pov_mobile.png",
+      "bytes": 95820
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/step5_tactical_cinematic.png",
+      "bytes": 301014
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/step5_tactical_mobile.png",
+      "bytes": 143365
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/step5_tactical_scientific.png",
+      "bytes": 218551
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/tactical_preview.png",
+      "bytes": 663820
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/threejs_tactical_mobile.png",
+      "bytes": 116650
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/screenshots/threejs_tactical_preview.png",
+      "bytes": 256218
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/step4-runtime-results.json",
+      "bytes": 14188
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/step4_visual_design_report.md",
+      "bytes": 11993
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/step5-runtime-results.json",
+      "bytes": 19159
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/step5_astronaut_pov_report.md",
+      "bytes": 12945
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/step5_complete-runtime-results.json",
+      "bytes": 20826
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/step5_implementation_report.md",
+      "bytes": 13040
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/three-mode-smoke.json",
+      "bytes": 1424
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/threejs_runtime_validation.md",
+      "bytes": 8913
+    },
+    {
+      "file": "mars-explorer-web/docs/jz01/validation.json",
+      "bytes": 6962
+    },
+    {
+      "file": "mars-explorer-web/generated/jz01/JZ01_terrain_scene.blend",
+      "bytes": 4685023
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/basalt-library.glb",
+      "bytes": 1408908
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/basalt-preview.png",
+      "bytes": 100512
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/field-site.json",
+      "bytes": 1972
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/ground.bin",
+      "bytes": 160004
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/ground.json",
+      "bytes": 418
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/hirise-heights.bin",
+      "bytes": 1052676
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/hirise-ortho.jpg",
+      "bytes": 2835375
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/jezero-landscape.glb",
+      "bytes": 19326416
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/jz01/navigation-heights.bin",
+      "bytes": 1000000
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/jz01/navigation-source.json",
+      "bytes": 473
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/jz01/orthomosaic.png",
+      "bytes": 1771688
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/jz01/route_dijkstra.csv",
+      "bytes": 6167
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/jz01/route_slope_aware_astar.csv",
+      "bytes": 6186
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/jz01/terrain.glb",
+      "bytes": 15252860
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/mission-preview.png",
+      "bytes": 520884
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/nasa-logo.svg",
+      "bytes": 6644
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/pbr-credits.json",
+      "bytes": 662
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/provenance.json",
+      "bytes": 4225
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/regolith-detail.png",
+      "bytes": 1129532
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/regolith-height.png",
+      "bytes": 1182145
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/regolith-roughness.png",
+      "bytes": 478965
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/rock-photoscan.glb",
+      "bytes": 13001632
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/soil-photo-color.jpg",
+      "bytes": 3428360
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/soil-photo-height.jpg",
+      "bytes": 868001
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/soil-photo-normal.jpg",
+      "bytes": 5336020
+    },
+    {
+      "file": "mars-explorer-web/public/assets/mars/soil-photo-rough.jpg",
+      "bytes": 1890402
+    },
+    {
+      "file": "mars-explorer-web/references/jz01/astronaut_pov.jpg",
+      "bytes": 249981
+    },
+    {
+      "file": "mars-explorer-web/references/jz01/tactical_3d_map.jpg",
+      "bytes": 308501
+    },
+    {
+      "file": "mars-explorer-web/scripts/build-jezero-real.py",
+      "bytes": 9378
+    },
+    {
+      "file": "mars-explorer-web/scripts/build-mars-assets.py",
+      "bytes": 9639
+    },
+    {
+      "file": "mars-explorer-web/scripts/build-regolith-textures.mjs",
+      "bytes": 1350
+    },
+    {
+      "file": "mars-explorer-web/scripts/inspect-cinematic.mjs",
+      "bytes": 1252
+    },
+    {
+      "file": "mars-explorer-web/scripts/jz01/build_scene.py",
+      "bytes": 18294
+    },
+    {
+      "file": "mars-explorer-web/scripts/jz01/prepare-navigation.py",
+      "bytes": 1306
+    },
+    {
+      "file": "mars-explorer-web/scripts/jz01/smoke-three-modes.mjs",
+      "bytes": 8142
+    },
+    {
+      "file": "mars-explorer-web/scripts/jz01/test-runtime.mjs",
+      "bytes": 32842
+    },
+    {
+      "file": "mars-explorer-web/scripts/jz01/test-step4.mjs",
+      "bytes": 149
+    },
+    {
+      "file": "mars-explorer-web/scripts/jz01/test-step5-complete.mjs",
+      "bytes": 104
+    },
+    {
+      "file": "mars-explorer-web/scripts/jz01/test-step5.mjs",
+      "bytes": 66
+    },
+    {
+      "file": "mars-explorer-web/scripts/prepare-final-pbr.mjs",
+      "bytes": 2032
+    },
+    {
+      "file": "mars-explorer-web/scripts/prepare-jezero-surface.mjs",
+      "bytes": 8491
+    },
+    {
+      "file": "mars-explorer-web/scripts/refine-blender-final.py",
+      "bytes": 4796
+    },
+    {
+      "file": "mars-explorer-web/scripts/test-explorer-return.mjs",
+      "bytes": 1808
+    },
+    {
+      "file": "mars-explorer-web/scripts/test-explorer.mjs",
+      "bytes": 6653
+    },
+    {
+      "file": "mars-explorer-web/scripts/test-real-jezero.mjs",
+      "bytes": 8163
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/corridor_test.csv",
+      "bytes": 194
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/data_provenance.json",
+      "bytes": 2521
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/dtm_1m.tif",
+      "bytes": 802801
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/manifest.json",
+      "bytes": 2842
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/original_handoff_manifest.json",
+      "bytes": 3464
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/orthomosaic_025m.tif",
+      "bytes": 3073136
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/README.txt",
+      "bytes": 1265
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/robustness.csv",
+      "bytes": 311
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/route_1m_validation.csv",
+      "bytes": 198
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/route_comparison.png",
+      "bytes": 312378
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/route_dijkstra.csv",
+      "bytes": 6167
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/route_metrics.csv",
+      "bytes": 187
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/route_slope_aware_astar.csv",
+      "bytes": 6186
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/slope_preliminary_deg.tif",
+      "bytes": 1132276
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/terrain.obj",
+      "bytes": 7952184
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/texture.png",
+      "bytes": 1771688
+    },
+    {
+      "file": "mars-explorer-web/source-data/JZ01_Codex_Handoff/threshold_test.csv",
+      "bytes": 199
+    },
+    {
+      "file": "mars-explorer-web/src/cinematicGround.ts",
+      "bytes": 2702
+    },
+    {
+      "file": "mars-explorer-web/src/CinematicScene.tsx",
+      "bytes": 12886
+    },
+    {
+      "file": "mars-explorer-web/src/explorationInput.ts",
+      "bytes": 299
+    },
+    {
+      "file": "mars-explorer-web/src/Explorer.tsx",
+      "bytes": 12753
+    },
+    {
+      "file": "mars-explorer-web/src/ExplorerDialogs.tsx",
+      "bytes": 11048
+    },
+    {
+      "file": "mars-explorer-web/src/FreeCameraRig.tsx",
+      "bytes": 9314
+    },
+    {
+      "file": "mars-explorer-web/src/JezeroMap.tsx",
+      "bytes": 11757
+    },
+    {
+      "file": "mars-explorer-web/src/jz01/jz01.css",
+      "bytes": 3760
+    },
+    {
+      "file": "mars-explorer-web/src/jz01/JZ01Preview.tsx",
+      "bytes": 18120
+    },
+    {
+      "file": "mars-explorer-web/src/jz01/Map2D.tsx",
+      "bytes": 4300
+    },
+    {
+      "file": "mars-explorer-web/src/jz01/MarsTerrainViewer.tsx",
+      "bytes": 254
+    },
+    {
+      "file": "mars-explorer-web/src/jz01/SurveyFrame.tsx",
+      "bytes": 2660
+    },
+    {
+      "file": "mars-explorer-web/src/mapCoordinates.ts",
+      "bytes": 2272
+    },
+    {
+      "file": "mars-explorer-web/src/MissionInterface.tsx",
+      "bytes": 22591
+    },
+    {
+      "file": "mars-explorer-web/src/missionSite.ts",
+      "bytes": 331
+    },
+    {
+      "file": "mars-explorer-web/src/ObservationPanel.tsx",
+      "bytes": 1290
+    },
+    {
+      "file": "mars-explorer-web/src/ObservedTerrainMaterial.ts",
+      "bytes": 4234
+    },
+    {
+      "file": "mars-explorer-web/src/Overview.tsx",
+      "bytes": 2586
+    },
+    {
+      "file": "mars-explorer-web/src/RealismDetails.tsx",
+      "bytes": 4214
+    },
+    {
+      "file": "mars-explorer-web/src/ScientificWorkspace.tsx",
+      "bytes": 31499
+    },
+    {
+      "file": "mars-explorer-web/src/SurfaceDressing.tsx",
+      "bytes": 2686
+    },
+    {
+      "file": "mars-explorer-web/src/TouchControls.tsx",
+      "bytes": 4848
+    },
+    {
+      "file": "mars-explorer-web/tests/jz01-navigation.test.ts",
+      "bytes": 2417
+    },
+    {
+      "file": "mars-explorer-web/tests/map-coordinates.test.ts",
+      "bytes": 2617
+    },
+    {
+      "file": "mars-explorer-web/tests/observed-surface.test.ts",
+      "bytes": 1849
+    },
+    {
+      "file": "mars-explorer-web/scripts/browser-tests.mjs",
+      "bytes": 6983
+    },
+    {
+      "file": "mars-explorer-web/scripts/inspect.mjs",
+      "bytes": 1214
+    },
+    {
+      "file": "mars-explorer-web/scripts/visual-review.mjs",
+      "bytes": 2084
+    }
+  ],
+  "bytesRemoved": 202556708,
+  "kept": [
+    "10km HiRISE original and lossless shared map",
+    "native routing package",
+    "current science photos/catalogues, geology, CRISM and MEDA",
+    "shared jz01/POVCamera.tsx and navigation.ts",
+    "historical validation evidence outside retired JZ01 reports"
+  ],
+  "validation": {
+    "productionBuild": "passed",
+    "remainingTests": 55,
+    "failedTests": 0,
+    "retiredModelTests": "removed; generic navigation contract retained"
+  }
+}

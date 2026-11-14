@@ -17,7 +17,7 @@ import {loadGeology,type GeologyData} from './geology';
 import GeologyPanel from './GeologyPanel';
 import TravelEstimate from './TravelEstimate';
 import EvaMissionPanel from './EvaMissionPanel';
-import SidebarTabs, {type SidebarPanel} from './SidebarTabs';
+import SidebarTabs, {SIDEBAR_PANELS,type SidebarPanel} from './SidebarTabs';
 import {useEvaMission} from './useEvaMission';
 import {pointOnMission} from './evaMission';
 import {TRAVEL_DEFAULTS,type TravelMode} from './travelTime';
@@ -39,7 +39,12 @@ export default function RegionalWorkspace() {
   const [grid, setGrid] = useState(true);
   const [telemetryOpen, setTelemetryOpen] = useState(false);
   const [workspace,setWorkspace]=useState<'map'|'mission'>('map');
+  const [toolsOpen,setToolsOpen]=useState(true),[mapOnly,setMapOnly]=useState(false),[destinationConfirmed,setDestinationConfirmed]=useState(false);
+  const closeMapDetails=()=>{setGeologyOpen(false);setSelectedScienceId(null);setObservationOpen(false);setOrbitalOpen(false);};
+  const enterMapOnly=()=>{setMapOnly(true);setPicking(false);setDestinationConfirmed(false);closeMapDetails();};
+  const openTool=(panel:SidebarPanel)=>{setMapOnly(false);setPicking(false);setDestinationConfirmed(false);setToolsOpen(!toolsOpen||sidebarPanel!==panel);setSidebarPanel(panel);};
   const [sidebarPanel,setSidebarPanel]=useState<SidebarPanel>('mission');
+
   const [scienceVisible, setScienceVisible] = useState(true), [selectedScienceId, setSelectedScienceId] = useState<string | null>(null);
   const [scienceFocus, setScienceFocus] = useState<ScienceFocus | null>(null);
   const [observationLayer, setObservationLayer] = useState<ObservationLayer>('none');
@@ -56,6 +61,7 @@ export default function RegionalWorkspace() {
     return () => controller.abort();
   },[orbitalMeta,orbitalRetry]);
   const [destination, setDestination] = useState<Point>(DEFAULT_DESTINATION), [picking, setPicking] = useState(false);
+  useEffect(()=>{const key=(e:KeyboardEvent)=>{if(e.key==='Escape'&&(mapOnly||picking||destinationConfirmed)){setMapOnly(false);setPicking(false);setDestinationConfirmed(false);setToolsOpen(true);}};window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key);},[mapOnly,picking,destinationConfirmed]);
   const [targetId,setTargetId]=useState('custom');
   const [travelMode,setTravelMode]=useState<TravelMode>('rover'),[speeds,setSpeeds]=useState<Record<TravelMode,string>>({rover:String(TRAVEL_DEFAULTS.rover),walk:String(TRAVEL_DEFAULTS.walk)});
   const mission=useEvaMission(),missionLocked=!!mission.state.snapshot;
@@ -75,7 +81,7 @@ export default function RegionalWorkspace() {
   const route = mission.state.snapshot?.route??routing.route;
   const routeEnd=route?.approach?.endpoint??destination;
   const geo = toGeo(destination);
-  const pick = useCallback((at: Point) => {if(!missionLocked){setTargetId('custom');setDestination(at);}}, [missionLocked]);
+  const pick = useCallback((at: Point) => {if(!missionLocked){setTargetId('custom');setDestination(at);setPicking(false);setDestinationConfirmed(true);}}, [missionLocked]);
   const chooseTarget=(id:string)=>{if(missionLocked)return;const site=SCIENCE_SITES.find(s=>s.id===id);setTargetId(site?id:'custom');if(site){setDestination(sciencePoint(site,terrain?.meta.center));setPicking(false);}};
   const selectScience = useCallback((id: string) => { if (SCIENCE_SITES.some(s => s.id === id)) { setGeologyOpen(false);  setSelectedScienceId(id); setPicking(false); setObservationOpen(false); setOrbitalOpen(false); } }, []);
   const zoomScience = (site: ScienceSite) => { setGeologyOpen(false);  setScienceVisible(true); setSelectedScienceId(site.id); setObservationOpen(false); setOrbitalOpen(false); setPicking(false); setView('2D'); setScienceFocus(v => ({ id: site.id, tick: (v?.tick ?? 0) + 1 })); };
@@ -90,7 +96,7 @@ export default function RegionalWorkspace() {
   const locateObservation = () => { const point = observations[0]?.point; if (point) { setView('2D'); setPicking(false); setObservationFocus(value => ({ point, tick: (value?.tick ?? 0) + 1 })); } };
   const showGeology=(id:string|null=null)=>{setGeologyOpen(true);setGeologyUnit(id);setGeologyPoint(null);setSelectedScienceId(null);setObservationOpen(false);setOrbitalOpen(false);setPicking(false);};
   const travelSettings=<TravelEstimate presentation="settings" route={route} mode={travelMode} speeds={speeds} onMode={setTravelMode} onSpeed={(mode,value)=>setSpeeds(s=>({...s,[mode]:value}))} locked={missionLocked}/>;
-  const destinationControls=<><button className="rm-pick-button rm-map-destination" disabled={missionLocked} aria-pressed={picking} onClick={()=>setPicking(v=>!v)}><Crosshair size={15}/>{picking?'Finish selection':'Set destination'}</button><div className="rm-coordinates" data-testid="destination-coordinates">{geo.lat.toFixed(5)}° N · {geo.lon.toFixed(5)}° E</div></>;
+  const destinationControls=<><button className="rm-pick-button rm-map-destination" disabled={missionLocked} aria-pressed={picking} onClick={()=>{setPicking(true);setToolsOpen(false);setMapOnly(false);setDestinationConfirmed(false);closeMapDetails();}}><Crosshair size={15}/>{picking?'Finish selection':'Set destination'}</button><div className="rm-coordinates" data-testid="destination-coordinates">{geo.lat.toFixed(5)}° N · {geo.lon.toFixed(5)}° E</div></>;
   const routeControls=(<>
       <section className="rm-section rm-route-preferences" aria-labelledby="rm-route-title"><h2 id="rm-route-title"><RouteIcon size={15}/> ROUTE WORKBENCH <span>PROTOTYPE</span></h2>
         <fieldset className="rm-mission-plan-controls" disabled={missionLocked}>
@@ -109,14 +115,14 @@ export default function RegionalWorkspace() {
             <div><small>{route?.approach?'APPROACH HEIGHT':'DESTINATION HEIGHT'}</small><strong>{Number.isFinite(elevation(terrain,routeEnd.x,routeEnd.z)) ? <>{Math.round(elevation(terrain,destination.x,destination.z))}<span className="rm-unit"> m</span></> : 'No data'}</strong></div>
           </div><p className="rm-telemetry-foot">{routing.status}{route&&` · Max ground slope bound ${route.maxSlope.toFixed(1)}° · ${route.warnings.length} flagged segments · ${route.profileSamples} profile samples`} · DEMO LIMITS / NOT EVA CERTIFIED</p></div>
         </section>):null;
-  return <main className={`regional-map rm-workspace-${workspace}`}>
-    <header className="rm-header"><div className="rm-wordmark">ARES<span>· Martian Survival Map</span></div><nav className="rm-primary-nav" aria-label="Primary navigation"><button aria-current={workspace==='map'?'page':undefined} onClick={()=>setWorkspace('map')}>Map</button><button aria-current={workspace==='mission'?'page':undefined} onClick={()=>{setWorkspace('mission');setPicking(false);}}>Mission</button></nav><span className="rm-header-divider"/><span className="rm-header-title">REGIONAL SCIENCE WORKSPACE</span></header>
-    <div className="rm-body"><aside className="rm-sidebar" aria-label={workspace==='map'?'Map exploration and route planning':'Mission controls'}><div className="rm-sidebar-head" hidden={workspace==='mission'}>
+  return <main className={`regional-map rm-workspace-${workspace} ${toolsOpen?'rm-tools-open':'rm-tools-closed'} ${mapOnly?'rm-map-only':''}`}>
+    <header className="rm-header"><div className="rm-wordmark">ARES<span>· Martian Survival Map</span></div><nav className="rm-primary-nav" aria-label="Primary navigation"><button aria-current={workspace==='map'?'page':undefined} onClick={()=>setWorkspace('map')}>Map</button><button aria-current={workspace==='mission'?'page':undefined} onClick={()=>{setWorkspace('mission');setPicking(false);}}>Mission</button><button id="rm-tool-sources" aria-controls="rm-tools-panel" aria-expanded={workspace==='map'&&toolsOpen&&!mapOnly&&sidebarPanel==='sources'} onClick={()=>{setWorkspace('map');openTool('sources');}}>Sources</button></nav><span className="rm-header-divider"/><span className="rm-header-title">REGIONAL SCIENCE WORKSPACE</span></header>
+    <div className="rm-body">{workspace==='map'&&<nav className="rm-tool-rail" aria-label="Map tools" hidden={mapOnly}>{SIDEBAR_PANELS.filter(panel=>panel.id!=='sources').map(panel=><button key={panel.id} id={`rm-tool-${panel.id}`} aria-controls="rm-tools-panel" aria-expanded={toolsOpen&&sidebarPanel===panel.id} onClick={()=>openTool(panel.id)}>{panel.id==='mission'?'Route':panel.label}</button>)}<button className="rm-map-only-button" onClick={enterMapOnly}>Map only</button></nav>}{workspace==='map'&&mapOnly&&<button className="rm-restore-tools" onClick={()=>{setMapOnly(false);setToolsOpen(true);}}>Show map tools</button>}<aside id="rm-tools-panel" hidden={workspace==='map'&&(!toolsOpen||mapOnly)} className="rm-sidebar" aria-label={workspace==='map'?'Map exploration and route planning':'Mission controls'}><div className="rm-sidebar-head" hidden={workspace==='mission'}>
       
-      <SidebarTabs value={sidebarPanel} onChange={setSidebarPanel}/></div><div className={`rm-sidebar-body rm-sidebar-body-${workspace==='mission'?'mission':sidebarPanel}`}>
+      <div className="rm-tools-heading"><span>{SIDEBAR_PANELS.find(p=>p.id===sidebarPanel)?.label}</span><button aria-label="Collapse map tools" onClick={()=>{setToolsOpen(false);requestAnimationFrame(()=>document.getElementById(`rm-tool-${sidebarPanel}`)?.focus());}}>×</button></div><SidebarTabs value={sidebarPanel} onChange={setSidebarPanel}/></div><div className={`rm-sidebar-body rm-sidebar-body-${workspace==='mission'?'mission':sidebarPanel}`}>
       <div id="rm-panel-mission" role="tabpanel" aria-labelledby="rm-tab-mission" hidden={workspace!=='mission'&&sidebarPanel!=='mission'}>
       {workspace==='map'&&<section className="rm-section rm-map-planner" aria-label="Route planning"><h2>ROUTE PLANNING</h2><label className="rm-mission-field">Destination<select aria-label="Map destination" value={targetId} disabled={missionLocked} onChange={e=>chooseTarget(e.target.value)}><option value="custom">Custom map point</option>{SCIENCE_SITES.map(site=><option key={site.id} value={site.id}>{site.name}</option>)}</select></label>{destinationControls}{travelSettings}{routeControls}<button className="rm-pick-button rm-primary-action" onClick={()=>{setWorkspace('mission');setPicking(false);}}>Continue to Mission</button>{missionLocked&&<p className="rm-fineprint">Active mission plan is locked until reset in Mission.</p>}</section>}
-      <div hidden={workspace!=='mission'} className="rm-mission-view">      <EvaMissionPanel destinationControl={<button className="rm-pick-button" onClick={()=>{setWorkspace('map');setSidebarPanel('mission');}}>Edit destination &amp; route in Map</button>} route={routing.route} mode={travelMode} speedKmh={Number(speeds[travelMode])} target={SCIENCE_SITES.find(s=>s.id===targetId)?.name??'Custom map destination'} targetId={targetId} targets={SCIENCE_SITES} onTarget={chooseTarget} exclusion={blocked} state={mission.state} dispatch={action=>{if(action.type==='start')setPicking(false);mission.dispatch(action);}}/></div>
+      <div hidden={workspace!=='mission'} className="rm-mission-view">      <EvaMissionPanel destinationControl={<button className="rm-pick-button" onClick={()=>{setWorkspace('map');setSidebarPanel('mission');setToolsOpen(true);setMapOnly(false);}}>Edit destination &amp; route in Map</button>} route={routing.route} mode={travelMode} speedKmh={Number(speeds[travelMode])} target={SCIENCE_SITES.find(s=>s.id===targetId)?.name??'Custom map destination'} targetId={targetId} targets={SCIENCE_SITES} onTarget={chooseTarget} exclusion={blocked} state={mission.state} dispatch={action=>{if(action.type==='start')setPicking(false);mission.dispatch(action);}}/></div>
       </div>
       <div id="rm-panel-layers" role="tabpanel" aria-labelledby="rm-tab-layers" hidden={workspace==='mission'||sidebarPanel!=='layers'}>
       <section className="rm-section" aria-labelledby="rm-layers-title"><h2 id="rm-layers-title"><Layers size={15}/> MAP LAYERS</h2>
@@ -154,7 +160,7 @@ export default function RegionalWorkspace() {
       </section>
       </section></div>
       </div>{workspace==='map'&&routeData}</aside>
-    <section className="rm-stage" aria-label={workspace==='mission'?'Mission navigation map':'Map workspace'}><div className="rm-zone-heading"><h1>Western Jezero</h1><p>Zone area · 10 × 10 km</p></div>
+    <section className="rm-stage" aria-label={workspace==='mission'?'Mission navigation map':'Map workspace'}>{workspace==='map'&&picking&&<div className="rm-placement-bar" role="status"><span>Choose a destination on the map</span><button onClick={()=>{setPicking(false);setToolsOpen(true);}}>Cancel</button></div>}{workspace==='map'&&destinationConfirmed&&<div className="rm-placement-bar" role="status"><span>Destination selected · {geo.lat.toFixed(5)}° N, {geo.lon.toFixed(5)}° E</span><button onClick={()=>{setPicking(true);setDestinationConfirmed(false);}}>Edit</button><button onClick={()=>{setDestinationConfirmed(false);setToolsOpen(true);setSidebarPanel('mission');}}>Done</button></div>}<div className="rm-zone-heading"><h1>Western Jezero</h1><p>Zone area · 10 × 10 km</p></div>
       <div className="rm-stage-toolbar"><div className="rm-view-switch" role="group" aria-label="Map view"><button aria-pressed={view === '2D'} onClick={() => setView('2D')}><Map size={15}/>2D MAP</button><button aria-pressed={view === '3D'} onClick={() => {setSceneOpened(true);setView('3D');}}><Mountain size={15}/>3D TACTICAL</button></div>{view==='3D'&&<button className="rm-3d-reset" onClick={() => setCameraAction(a => ({ kind: 'reset', tick: a.tick + 1 }))}>Reset 3D camera</button>}<span>HiRISE · 10 m display grid · {view === '3D' ? 'True-scale height · 1×' : 'North up'}</span></div>
       {error ? <div className="rm-empty" role="alert"><h2>Terrain could not load</h2><p>{error}</p><button onClick={() => setRetry(v => v + 1)}>Retry</button></div> : !terrain ? <div className="rm-empty" role="status">Loading regional terrain…</div> : <>
         <RegionalMap2D shared={shared} terrain={terrain} analysis={analysis} opacity={opacity} imagery={imagery} contours={contours} destination={destination} destinationLabel={targetId==='custom'?'DEMO DESTINATION':SCIENCE_SITES.find(s=>s.id===targetId)?.name} route={route} missionPosition={missionPosition} routeVisible={routeVisible} picking={picking} onPick={pick} hidden={view !== '2D'} blocked={blocked} grid={grid} scienceVisible={scienceVisible} selectedScienceId={selectedScienceId} scienceFocus={scienceFocus} onScienceSelect={selectScience} observations={observations} observationFocus={observationFocus} onObservationSelect={openObservation} orbital={orbital?.meta.id === orbitalId ? orbital : null} onOrbitalInspect={inspectOrbital} onInspect={inspectTerrain} geology={geologyEnabled?geology:null}/>
@@ -164,11 +170,11 @@ export default function RegionalWorkspace() {
         {analysis !== 'none' && <div className="rm-legend" aria-label="Map legend"><strong>{analysis === 'slope' ? 'Slope bound · degrees' : 'Elevation · metres'}</strong>{analysis === 'slope' ? <><div className="rm-slope-scale"><i/><i/><i/></div><div className="rm-legend-labels"><span>0–10°</span><span>10–18°</span><span>&gt;18°</span></div><small>{routing.grid?'Native 1 m terrain · 10 m conservative cells':'Native slopes not ready · display-grid preview'}<br/>Display bands · not safety limits</small></> : <><div className="rm-height-scale"/><div className="rm-legend-labels"><span>{Math.round(terrain.meta.min)} m</span><span>{Math.round(terrain.meta.max)} m</span></div></>}</div>}
         {orbitalMeta && orbital && <div className="rm-legend rm-orbital-legend" aria-label="Orbital indicator legend"><strong>{orbitalMeta.parameter} · index</strong><div className="rm-height-scale" style={{background:`linear-gradient(90deg,#191f28,${orbitalMeta.color})`}}/><div className="rm-legend-labels"><span>{orbitalMeta.displayMin.toFixed(4)}</span><span>{orbitalMeta.displayMax.toFixed(4)}</span></div><small>Colour stretch, not confidence<br/>Uncoloured = no data · {orbitalMeta.observedStart.slice(0,10)}</small></div>}
 
-{workspace==='map'&&geologyEnabled&&geology&&geologyOpen&&<GeologyPanel data={geology} point={geologyPoint} unitId={geologyUnit} onClose={()=>setGeologyOpen(false)}/>}
-{workspace==='map' && scienceVisible && selectedScience && <ScienceSitePopup store={shared?.store} site={selectedScience} terrain={terrain} onClose={() => setSelectedScienceId(null)} onSelect={selectScience} onZoom={zoomScience}/>}
-        {workspace==='map' && observationLayer === 'environment' && observationOpen && <HistoricalEnvironmentPanel reading={reading} onReading={setThermalId} onClose={() => setObservationOpen(false)} onLocate={locateObservation}/>}
-        {workspace==='map' && (observationLayer === 'thermal' || observationLayer === 'minerals') && observationOpen && <ObservationPanel key={observationLayer} layer={observationLayer} reading={reading} onReading={setThermalId} onClose={() => setObservationOpen(false)} onLocate={locateObservation}/>}
-        {workspace==='map' && orbitalMeta && orbitalOpen && <OrbitalLayerPanel meta={orbitalMeta} raster={orbital?.meta.id === orbitalId ? orbital : null} point={orbitalPoint} error={orbitalError} onClose={() => setOrbitalOpen(false)} onRetry={() => setOrbitalRetry(value => value+1)}/>}
+{workspace==='map'&&!mapOnly&&geologyEnabled&&geology&&geologyOpen&&<GeologyPanel data={geology} point={geologyPoint} unitId={geologyUnit} onClose={()=>setGeologyOpen(false)}/>}
+{workspace==='map' && !mapOnly && scienceVisible && selectedScience && <ScienceSitePopup store={shared?.store} site={selectedScience} terrain={terrain} onClose={() => setSelectedScienceId(null)} onSelect={selectScience} onZoom={zoomScience}/>}
+        {workspace==='map' && !mapOnly && observationLayer === 'environment' && observationOpen && <HistoricalEnvironmentPanel reading={reading} onReading={setThermalId} onClose={() => setObservationOpen(false)} onLocate={locateObservation}/>}
+        {workspace==='map' && !mapOnly && (observationLayer === 'thermal' || observationLayer === 'minerals') && observationOpen && <ObservationPanel key={observationLayer} layer={observationLayer} reading={reading} onReading={setThermalId} onClose={() => setObservationOpen(false)} onLocate={locateObservation}/>}
+        {workspace==='map' && !mapOnly && orbitalMeta && orbitalOpen && <OrbitalLayerPanel meta={orbitalMeta} raster={orbital?.meta.id === orbitalId ? orbital : null} point={orbitalPoint} error={orbitalError} onClose={() => setOrbitalOpen(false)} onRetry={() => setOrbitalRetry(value => value+1)}/>}
       </>}
     </section></div>
   </main>;

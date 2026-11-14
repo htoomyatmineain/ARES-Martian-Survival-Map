@@ -1,6 +1,0 @@
-import { ExternalLink, Thermometer, TriangleAlert, Waves } from 'lucide-react';
-import meda from '../public/data/meda-observation.json';
-export default function ObservationPanel({ layer, onData }: { layer: number; onData: () => void }) {
-  if(layer<2)return null;
-  return <aside className="mx-layer-observation mx-glass"><span className="mx-observation-tag">{layer===2?'Historical observation':'Data unavailable'}</span><h3>{layer===2?<Thermometer size={17}/>:layer===3?<TriangleAlert size={17}/>:<Waves size={17}/>} {layer===2?'Perseverance · MEDA':layer===3?'Ionizing radiation':'Water resources'}</h3>{layer===2?<><div className="mx-meda-range"><span><small>Low</small>{meda.temperatureC.low}°C</span><span><small>High</small>{meda.temperatureC.high}°C</span></div><p>Observed on sols 43–44<br/>3–4 April 2021. Not current weather.</p><a href={meda.source} target="_blank" rel="noreferrer">NASA observation report <ExternalLink size={11}/></a></>:<p>{layer===3?'No ionizing dose measurements are connected for this field site. No dose heatmap is fabricated.':'No verified water-abundance raster is loaded for this field site. Surface imagery alone cannot establish accessible water.'}</p>}<button onClick={onData}>Data sources <ExternalLink size={11}/></button></aside>;
-}

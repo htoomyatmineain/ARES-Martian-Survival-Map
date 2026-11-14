@@ -147,3 +147,37 @@
 }
 .rm-supplies{border-bottom:1px solid var(--map-border);padding-bottom:18px;margin-bottom:20px}.rm-supplies h3{font-size:16px;font-weight:400}.rm-supply-strip{display:grid;grid-template-columns:1fr 1fr;gap:16px}.rm-supply-strip>div{min-width:0}.rm-supply-strip span{font-size:12px;color:var(--map-muted)}.rm-supply-strip strong{display:block;font:400 28px/1.4 var(--map-font)}.rm-supply-strip strong small{display:inline;font-size:14px}.rm-supply-strip progress{width:100%;height:7px;accent-color:var(--map-accent)}.rm-supplies p,.rm-task-confirmations p{font-size:12px;line-height:1.7;color:var(--map-muted)}.rm-supplies details{font-size:12px;line-height:1.7}.rm-supplies summary{padding:10px 0;cursor:pointer}.rm-supplies a{display:block;color:var(--map-accent);margin:10px 0;font-size:12px}.rm-task-confirmations{border:1px solid var(--map-border);padding:12px;margin:16px 0}
 .rm-route-key{display:grid;gap:9px;margin:12px 0 16px;font-size:12px;line-height:1.6}.rm-route-key span{display:flex;align-items:center;gap:10px}.rm-route-key i{display:block;width:28px;height:4px;background:var(--map-accent);border-radius:2px;flex-shrink:0}.rm-route-key span:nth-child(2) i{height:6px;background:#ff42dc;box-shadow:0 0 0 2px #0b0d10}
+/* Map workspace: tools occupy layout columns rather than covering terrain. */
+.regional-map.rm-workspace-map .rm-body{display:grid;grid-template-columns:76px 350px minmax(0,1fr);gap:0;overflow:hidden}
+.regional-map.rm-workspace-map.rm-tools-closed .rm-body{grid-template-columns:76px 0 minmax(0,1fr)}
+.regional-map.rm-workspace-map.rm-map-only .rm-body{grid-template-columns:0 0 minmax(0,1fr)}
+.rm-tool-rail{grid-column:1;grid-row:1;display:flex;flex-direction:column;gap:8px;padding:16px 8px;background:var(--map-panel);border-right:1px solid var(--map-border);z-index:11}
+.rm-tool-rail button{background:transparent;border:1px solid transparent;border-radius:4px;min-height:48px;padding:8px 2px;font-size:11px;overflow-wrap:anywhere}
+.rm-tool-rail button[aria-expanded=true]{background:var(--map-accent-wash);border-color:var(--map-border);color:var(--map-accent)}
+.rm-tool-rail .rm-map-only-button{margin-top:auto;border-color:var(--map-border)}
+.regional-map .rm-tool-rail[hidden],.regional-map .rm-sidebar[hidden]{display:none!important}
+.regional-map.rm-workspace-map .rm-sidebar{position:relative;inset:auto;grid-column:2;grid-row:1;width:auto;min-width:0;height:100%;max-height:none;border-radius:0;border-width:0 1px 0 0;box-shadow:none}
+.regional-map.rm-workspace-map .rm-stage{position:relative;inset:auto;grid-column:3;grid-row:1;min-width:0;min-height:0}
+.rm-tools-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 6px;color:var(--map-text);font-size:14px}
+.rm-tools-heading button{background:transparent;border:1px solid var(--map-border);border-radius:4px;min-width:40px;min-height:40px;font-size:22px}
+.rm-tools-heading+.rm-sidebar-tabs{display:none}
+.rm-restore-tools{position:absolute;left:16px;top:16px;z-index:13;padding:12px 16px;background:var(--map-panel);border:1px solid var(--map-border);border-radius:4px;font-size:13px}
+.rm-placement-bar{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);z-index:12;display:flex;align-items:center;gap:12px;padding:12px;background:var(--map-panel);border:1px solid var(--map-border);border-radius:5px;font-size:12px;max-width:calc(100% - 32px)}
+.rm-placement-bar button{background:var(--map-accent-wash);border:1px solid var(--map-border);padding:10px;min-height:40px;border-radius:4px}
+.regional-map.rm-workspace-map .rm-science-popup{max-width:calc(100% - 32px);bottom:100px}
+.regional-map.rm-workspace-map .rm-zone-heading{bottom:16px;right:24px}
+.regional-map.rm-workspace-map .rm-map-help{display:none}
+.regional-map.rm-workspace-map .rm-scale{left:16px;bottom:16px;width:auto;max-width:45%;font-size:10px;line-height:1.6}
+.regional-map.rm-workspace-map .rm-geology-map-note{left:16px;max-width:calc(100% - 120px);top:82px}
+@media(max-width:1000px) and (min-width:701px){.regional-map.rm-workspace-map .rm-body{grid-template-columns:70px 310px minmax(0,1fr)}.regional-map.rm-workspace-map.rm-tools-closed .rm-body{grid-template-columns:70px 0 minmax(0,1fr)}}
+@media(max-width:700px){
+ .regional-map.rm-workspace-map .rm-body{display:block}
+ .rm-tool-rail{position:absolute;top:0;left:0;right:0;height:56px;display:flex;flex-direction:row;gap:4px;padding:4px 8px;border-bottom:1px solid var(--map-border)}
+ .rm-tool-rail button{flex:1;min-height:44px;font-size:11px;white-space:nowrap}.rm-tool-rail .rm-map-only-button{margin:0}
+ .regional-map.rm-workspace-map .rm-stage{position:absolute;inset:56px 0 0}
+ .regional-map.rm-workspace-map.rm-tools-open:not(.rm-map-only) .rm-stage{bottom:45%}
+ .regional-map.rm-workspace-map .rm-sidebar{position:absolute;inset:auto 0 0;height:45%;width:100%;z-index:11;border-top:1px solid var(--map-border)}
+ .regional-map.rm-workspace-map.rm-map-only .rm-stage{top:0;bottom:0}
+ .rm-placement-bar{bottom:80px;flex-wrap:wrap;justify-content:center;width:max-content;font-size:11px}
+ .regional-map.rm-workspace-map .rm-zone-heading{right:12px;bottom:12px}.regional-map.rm-workspace-map .rm-zone-heading h1{font-size:19px}
+}
