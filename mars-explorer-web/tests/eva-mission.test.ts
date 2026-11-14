@@ -88,3 +88,24 @@ test('planned recovery consumes mission time and suit endurance without completi
  assert.equal(reviewMission(route(),{...input,recoveryMinutes:NaN}).ready,false);
  assert.equal(reviewMission(route(),{...input,recoveryMinutes:300}).ready,false);
 });
+
+test('rover energy uses driving and idle power, rejects insufficient charge and exports charge',()=>{
+ const roverEnergy={capacityWh:4000,initialPercent:100,drivingWatts:1000,idleWatts:100,reservePercent:20};
+ const input={...settings,roverEnergy,recoveryMinutes:10};
+ const review=reviewMission(route(),input);assert.equal(review.roverEnergy?.requiredWh,2450);assert.equal(review.roverEnergy?.ready,true);
+ assert.equal(reviewMission(route(),{...input,roverEnergy:{...roverEnergy,capacityWh:1000}}).ready,false);
+ assert.equal(reviewMission(route(),{...input,roverEnergy:{...roverEnergy,initialPercent:NaN}}).ready,false);
+ let s=start(input);s=missionReducer(s,{type:'tick',minutes:72});assert.equal(missionReport(s,'').roverBattery?.usedWh,1200);
+ s=missionReducer(s,{type:'science'});s=missionReducer(s,{type:'tick',minutes:30});assert.equal(missionReport(s,'').roverBattery?.usedWh,1250);
+ s=missionReducer(s,{type:'return'});s=missionReducer(s,{type:'tick',minutes:72});assert.equal(s.phase,'complete');assert.equal(missionReport(s,'').roverBattery?.remainingWh,1550);
+ const walking=reviewMission(route(),{...input,mode:'walk',speedKmh:2,budgetMinutes:2000});assert.equal(walking.roverEnergy,null);
+});
+test('simulated rover energy reserve triggers return and depletion stops movement',()=>{
+ const roverEnergy={capacityWh:4000,initialPercent:100,drivingWatts:1000,idleWatts:100,reservePercent:20};
+ const input={...settings,roverEnergy,scienceMinutes:0,budgetMinutes:2000,reservePercent:0};
+ let s=start(input);s=missionReducer(s,{type:'tick',minutes:72});s=missionReducer(s,{type:'delay',minutes:480});
+ assert.equal(s.phase,'returning');assert.equal(s.aborted,true);assert.match(s.events.at(-1)!.message,/rover energy reserve/);
+ s=missionReducer(s,{type:'tick',minutes:72});assert.equal(s.phase,'complete');assert.equal(missionReport(s,'').roverBattery?.remainingWh,800);
+ let empty=start(input);empty=missionReducer(empty,{type:'tick',minutes:72});empty=missionReducer(empty,{type:'delay',minutes:2000});
+ assert.equal(empty.paused,true);const position=pointOnMission(empty);empty=missionReducer(empty,{type:'tick',minutes:20});assert.deepEqual(pointOnMission(empty),position);
+});
