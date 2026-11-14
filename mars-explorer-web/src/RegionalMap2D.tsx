@@ -23,7 +23,8 @@ export default memo(function RegionalMap2D(p: Props) {
   const cx = clampCenter(center.x, visibleWidth), cz = clampCenter(center.z, visibleHeight);
   const targetDegrees = unitsPerPixel * 60 / (MARS_RADIUS * Math.cos(p.terrain.meta.center.lat * Math.PI / 180)) * 180 / Math.PI;
   const gridStep = [.0001, .0002, .0005, .001, .002, .005, .01, .02, .05, .1, .2, .5, 1, 2, 5, 10].find(v => v >= targetDegrees) ?? 10;
-  const graticule = useMemo(() => coordinateGrid(p.terrain.meta, gridStep), [p.terrain.meta, gridStep]);
+  const allGrid = useMemo(() => coordinateGrid(p.terrain.meta, gridStep), [p.terrain.meta, gridStep]);
+  const graticule = {longitude:allGrid.longitude.filter(at=>at.x>=cx-visibleWidth/2&&at.x<=cx+visibleWidth/2),latitude:allGrid.latitude.filter(at=>at.z>=cz-visibleHeight/2&&at.z<=cz+visibleHeight/2)};
   const gridPath = graticule.longitude.map(at => `M${at.x},${-half}V${half}`).join('') + graticule.latitude.map(at => `M${-half},${at.z}H${half}`).join('');
   const leftEdge = Math.max(-half, cx - visibleWidth / 2), topEdge = Math.max(-half, cz - visibleHeight / 2);
   const geologyShapes=useMemo(()=>p.geology?.features.map(f=>({...f,path:geologyPath(f.geometry.coordinates)}))??[],[p.geology]);
