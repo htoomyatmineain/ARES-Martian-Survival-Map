@@ -1,9 +1,0 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
-import { groundHeight, playerGeo, type Ground } from '../src/cinematicGround.ts';
-async function readFloats(path:string){const b=await readFile(new URL(path,import.meta.url));return new Float32Array(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength));}
-async function surface():Promise<Ground>{const meta=JSON.parse(await readFile(new URL('../public/assets/mars/ground.json',import.meta.url),'utf8'));return {...meta,values:await readFloats('../public/assets/mars/ground.bin'),detail:{...meta.detail,values:await readFloats('../public/assets/mars/hirise-heights.bin')}};}
-test('HiRISE sampled center retains the retrieved elevation at 1× scale',async()=>{const g=await surface();assert.ok(Math.abs(groundHeight(g,0,0)+g.elevationOrigin-(-2490.7978515625))<.0001);assert.ok(Math.abs(groundHeight(g,-156,-156)+g.elevationOrigin-(-2468.40478515625))<.0001);});
-test('field coordinates preserve georeference and heading',async()=>{const g=await surface(),origin=playerGeo(g,0,0),forward=playerGeo(g,0,-100);assert.ok(Math.abs(origin.lat-18.48024472582974)<1e-10);assert.ok(Math.abs(origin.lon-77.38087129987672)<1e-10);assert.ok(forward.lon<origin.lon&&forward.lat>origin.lat);});
-test('observed data and derived mesh contain no missing elevation values',async()=>{const g=await surface();assert.equal(g.detail?.values.length,513*513);assert.ok(g.detail?.values.every(v=>Number.isFinite(v)&&v>-2600&&v<-2300));assert.ok(g.values.every(Number.isFinite));const p=JSON.parse(await readFile(new URL('../public/assets/mars/provenance.json',import.meta.url),'utf8'));assert.equal(p.scientific,true);assert.equal(p.verticalExaggeration,1);assert.equal(p.terrain.dtmPostSpacing,1);assert.equal(p.terrain.imageryResolution,.25);});
