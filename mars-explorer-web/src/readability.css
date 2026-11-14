@@ -372,3 +372,12 @@
 .regional-map .rm-emergency-map-title{left:12px;right:auto;top:12px;width:max-content;max-width:min(360px,calc(100% - 80px));padding:0;background:transparent;border:0;box-shadow:none;text-shadow:0 1px 3px #000,0 0 4px #000;font-size:10px;line-height:1.5}
 .regional-map .rm-emergency-map-title .rm-view-switch{display:inline-flex;width:max-content;max-width:100%;margin:0 0 6px;padding:3px;background:var(--map-panel);border:1px solid var(--map-border);border-radius:5px;box-shadow:0 2px 8px #0004}
 .regional-map .rm-emergency-map-title .rm-view-switch button{flex:0 0 auto;min-height:34px;padding:7px 12px;font-size:11px}
+
+/* Corner-aligned map chrome, including Emergency. */
+.regional-map .rm-map2d .rm-scale{position:absolute;left:12px;right:auto;top:auto;bottom:12px;transform:none;width:max-content;max-width:calc(100% - 24px);font-size:9px;line-height:1.5;padding:5px 8px;pointer-events:none}
+.regional-map .rm-map2d .rm-scale small{display:block;font-size:9px;color:#e8bb8d}
+.regional-map .rm-emergency-map-title{left:auto;right:12px;top:12px;text-align:right;max-width:min(320px,calc(100% - 24px))}
+.regional-map .rm-emergency-map-title .rm-view-switch{display:flex;margin-left:auto}
+.regional-map .rm-map2d .rm-north.rm-compass{width:64px;height:64px;padding:0;right:16px;top:84px}
+.regional-map.rm-workspace-mission .rm-map2d .rm-north.rm-compass{top:140px}
+@media(max-width:700px){.regional-map .rm-map2d .rm-north.rm-compass{width:54px;height:54px;right:12px;top:96px}}
