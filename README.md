@@ -1,5 +1,13 @@
 # Martian Map
 
+## Current ARES regional application
+
+Open `/explorer` after running `npm ci`, `npm run build` and `npm start` in `mars-explorer-web` (development: `npm run dev`). Map, Mission and the isolated Emergency Simulation are implemented. Emergency supports 2D/3D location selection, verified terrain routes, arrival oxygen assessment and return comparison.
+
+See the [Emergency implementation, 8/8 acceptance checklist and validation results](docs/emergency-simulation.md). Phase 4 passed 34 targeted tests, the production build and focused browser validation against the hosted terrain. Local preview dataset gaps and the existing bundle warning are documented there.
+
+The earlier exploration/diorama descriptions below are historical context, not the current regional-workspace acceptance checklist.
+
 ## Three.js web explorer
 
 Explore Jezero from the rocky ridge in the restored Final Realism view. The browser app includes HiRISE and CTX terrain, a simulated scanner, keyboard and touch controls, and editable Blender assets.
