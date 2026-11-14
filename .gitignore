@@ -1,4 +1,11 @@
-
-
-# Local multi-GB rebuild dataset copy
 /NOV 14/required Dataset/
+node_modules/
+dist/
+.expo/
+*.tsbuildinfo
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
