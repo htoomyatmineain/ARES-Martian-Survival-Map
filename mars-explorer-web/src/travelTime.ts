@@ -1,6 +1,6 @@
-export type TravelMode = 'rover' | 'walk';
+export type TravelMode = 'rover' | 'walk' | 'perseverance';
 // Editable planning assumptions, not measured Mars vehicle/suit performance.
-export const TRAVEL_DEFAULTS: Record<TravelMode, number> = { rover: 5, walk: 2 };
+export const TRAVEL_DEFAULTS: Record<TravelMode, number> = { rover: 5, walk: 2, perseverance: 0.11 };
 export function estimateTravel(distanceMetres:number,speedKmh:number){
   if(!Number.isFinite(distanceMetres)||distanceMetres<0||!Number.isFinite(speedKmh)||speedKmh<=0)return null;
   const metresPerMinute=speedKmh*1000/60,minutes=distanceMetres/metresPerMinute;
@@ -13,3 +13,5 @@ export function formatTravelMinutes(minutes:number){
   const rounded=Math.ceil(minutes),hours=Math.floor(rounded/60),rest=rounded%60;
   return hours?`${hours} h${rest?` ${rest} min`:''}`:`${rounded} min`;
 }
+
+export const TRAVEL_LABELS:Record<TravelMode,string>={rover:'Crewed rover',walk:'Suited walking',perseverance:'Perseverance · robotic'};
