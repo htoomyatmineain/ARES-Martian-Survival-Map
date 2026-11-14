@@ -5,6 +5,7 @@ import { sites, type Point } from './terrain.ts';
 
 /** Route locks at departure; Mission context refreshes at arrival. Oxygen is the selected ARRIVAL value. */
 export interface EmergencyContext {
+  scenario?:import('./emergencyScenario.ts').EmergencyScenario;
   location: Point;
   arrivalOxygen: number;
   outboundRoute: NativeRoute;
@@ -66,19 +67,20 @@ export function traveledRoute(route:NativeRoute,fraction:number):Point[]{
 }
 export function directionArrows(points:Point[]){return points.slice(1).flatMap((p,i)=>{const a=points[i];return Math.hypot(p.x-a.x,p.z-a.z)>0&&i%Math.max(1,Math.floor((points.length-1)/4))===0?[{point:{x:(a.x+p.x)/2,z:(a.z+p.z)/2},degrees:Math.atan2(p.z-a.z,p.x-a.x)*180/Math.PI}]:[];}).slice(0,5);}
 export type EmergencyOverlay={trail?:Point[];preview?:Point[];destination?:Point|null;points:Point[];color:string;alternative:Point[];warnings:Point[][];crew:Point|null;directions:boolean};
-export type SimulatedEmergencyState={mode:'idle'|'science-selected'|'returning'|'returned'|'contingency';fraction:number;shortened:boolean;contacts:number;message:string;returnRoute:NativeRoute|null;returnCost:number;returnMinutes:number};
-export const initialEmergencyActions=():SimulatedEmergencyState=>({mode:'idle',fraction:0,shortened:false,contacts:0,message:'All actions are simulated. No real communication or physical actuation.',returnRoute:null,returnCost:0,returnMinutes:0});
-export type SimulatedEmergencyAction={type:'reset'}|{type:'contact'}|{type:'tick';fraction:number}|{type:'continue'|'shorten'|'return'|'contingency';assessment:ReturnType<typeof assessEmergency>;route:NativeRoute|null};
+export type SimulatedEmergencyState={scienceFraction:number;scienceCost:number;scienceMinutes:number;scienceDone:boolean;mode:'idle'|'science-selected'|'returning'|'returned'|'contingency';fraction:number;shortened:boolean;contacts:number;message:string;returnRoute:NativeRoute|null;returnCost:number;returnMinutes:number};
+export const initialEmergencyActions=():SimulatedEmergencyState=>({scienceFraction:0,scienceCost:0,scienceMinutes:0,scienceDone:false,mode:'idle',fraction:0,shortened:false,contacts:0,message:'All actions are simulated. No real communication or physical actuation.',returnRoute:null,returnCost:0,returnMinutes:0});
+export type SimulatedEmergencyAction={type:'tick-science';fraction:number}|{type:'reset'}|{type:'contact'}|{type:'tick';fraction:number}|{type:'continue'|'shorten'|'return'|'contingency';assessment:ReturnType<typeof assessEmergency>;route:NativeRoute|null};
 export function emergencyActionReducer(s:SimulatedEmergencyState,a:SimulatedEmergencyAction):SimulatedEmergencyState{
   if(a.type==='reset')return initialEmergencyActions();
   if(a.type==='contact')return {...s,contacts:s.contacts+1,message:'SIMULATED communication request recorded locally. No base connection or acknowledgement.'};
   if(a.type==='tick'){if(s.mode!=='returning'||!Number.isFinite(a.fraction))return s;const fraction=Math.max(s.fraction,Math.min(1,a.fraction));return {...s,fraction,mode:fraction===1?'returned':'returning',message:fraction===1?'Simulated return reached habitat. No real movement occurred.':s.message};}
-  if(s.mode==='returning'||s.mode==='returned'||a.assessment.actions[a.type].state!=='allowed')return s;
+  if(a.type==='tick-science'){if(s.mode!=='science-selected'||s.scienceDone||!Number.isFinite(a.fraction))return s;const scienceFraction=Math.max(s.scienceFraction,Math.min(1,a.fraction));return {...s,scienceFraction,scienceDone:scienceFraction===1,message:scienceFraction===1?'Simulated activity time complete. Crew evidence must be confirmed separately.':'Simulated science time and oxygen are advancing.'};}
+  if(s.mode==='returning'||s.mode==='returned'||a.assessment.actions[a.type].state!=='allowed'||((a.type==='continue'||a.type==='shorten')&&s.mode==='science-selected'))return s;
   if(a.type==='return'){
     if(!a.route||a.assessment.route!==a.route||a.assessment.full.returnCost===null||a.assessment.full.returnMinutes===null)return s;
     return {...s,mode:'returning',fraction:0,returnRoute:structuredClone(a.route),returnCost:a.assessment.full.returnCost,returnMinutes:a.assessment.full.returnMinutes,message:'SIMULATED return guidance started along the verified return route.'};
   }
-  return {...s,mode:a.type==='contingency'?'contingency':'science-selected',shortened:s.shortened||a.type==='shorten',message:a.type==='contingency'?'Simulated emergency contingency selected. Assistance and rescue are not evaluated.':`Simulated ${a.type==='shorten'?'predefined partial':'full'} science plan selected; science execution is not simulated.`};
+  return {...s,...(a.type==='continue'||a.type==='shorten'?{scienceMinutes:(a.type==='shorten'?a.assessment.partial:a.assessment.full)?.taskMinutes??0,scienceCost:(a.type==='shorten'?a.assessment.partial:a.assessment.full)?.taskCost??0,scienceFraction:0,scienceDone:false}:{}),mode:a.type==='contingency'?'contingency':'science-selected',shortened:s.shortened||a.type==='shorten',message:a.type==='contingency'?'Simulated emergency contingency selected. Assistance and rescue are not evaluated.':`Simulated ${a.type==='shorten'?'predefined partial':'full'} science plan selected; activity playback started; completion evidence remains crew-confirmed.`};
 }
 export function distinctRoute(a: NativeRoute, b: NativeRoute) {
   return a.points.length !== b.points.length || a.points.some((p, i) => Math.hypot(p.x - b.points[i].x, p.z - b.points[i].z) > .01);

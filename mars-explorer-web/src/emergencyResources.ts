@@ -36,7 +36,7 @@ export function calculateResources(plan:EmergencyResourcePlan,oxygen:number,rout
   const required=taskCost===null||returnCost===null||reserveCost===null?null:taskCost+returnCost+reserveCost;
   const eva=evaMinutes!==null&&Number.isFinite(evaMinutes)&&evaMinutes>=0?evaMinutes:null;
   const requiredMinutes=minutes===null||returnMinutes===null?null:minutes+returnMinutes+a.reserveMinutes;
-  return {errors:[...baseErrors,...taskErrors],reserveMinutes:a.reserveMinutes,taskMinutes:minutes,returnMinutes,available,taskCost,returnCost,reserveCost,required,
+  return {baseErrors,errors:[...baseErrors,...taskErrors],reserveMinutes:a.reserveMinutes,taskMinutes:minutes,returnMinutes,available,taskCost,returnCost,reserveCost,required,
     oxygenMargin:available===null||required===null?null:available-required,evaMinutes:eva,
     evaMargin:eva===null||requiredMinutes===null?null:eva-requiredMinutes,effectiveWalkingKmh:mobility.effectiveWalkingKmh,
     unassessed:['CO₂ removal','Cooling','Suit battery','Physiology','Absolute geolocation']};

@@ -1,3 +1,4 @@
+import {missionProcedure} from './missionProcedure';
 import { useEffect, useMemo, useState } from 'react';
 import { loadGeology, type GeologyData } from './geology';
 import { loadOrbitalRaster, ORBITAL_LAYERS, type OrbitalRaster } from './orbitalLayers';
@@ -6,7 +7,7 @@ import { calculateResources, RESOURCE_DEFAULTS, type EmergencyResourcePlan } fro
 import type { LoadPreset } from './mobility';
 import type { Point } from './terrain';
 
-export function useEmergencyPlanning(point:Point|null){
+export function useEmergencyPlanning(point:Point|null,siteId='custom'){
   const [geology,setGeology]=useState<GeologyData|null>(null),[rasters,setRasters]=useState<OrbitalRaster[]>([]);
   const [evidenceStatus,setEvidenceStatus]=useState('Select a location to load science context.');
   const [taskId,setTaskId]=useState(''),[shortened,setShortened]=useState(false),[equipment,setEquipment]=useState<LoadPreset>('light');
@@ -21,7 +22,7 @@ export function useEmergencyPlanning(point:Point|null){
       setEvidenceStatus(results.some(r=>r.status==='rejected')?'Some science layers unavailable; unsupported matches are omitted.':'Science layers integrity-checked; registration uncertainty still applies.');
     });return()=>c.abort();
   },[enabled]);
-  const tasks=useMemo(()=>eligibleTasks(point,geology,rasters),[point,geology,rasters]);
+  const tasks=useMemo(()=>{const base=eligibleTasks(point,geology,rasters),procedure=missionProcedure(siteId);return siteId!=='custom'&&procedure.sources.length?[{id:'site-documentation',title:procedure.title,description:'Proposed crew follow-up using NASA historical site context.',objective:procedure.objective,tasks:procedure.tasks.map(t=>t.label),equipment:'light' as const,minutes:20,workload:1.05,partial:{title:'Context image and uncertainty note',minutes:7,tasks:[procedure.tasks[0].label,'Record uncertainty']},provenance:'Estimated task / observation context' as const,sources:procedure.sources.map(s=>({label:s.title,url:s.url})),evidence:[procedure.historicalContext,'Reported position does not certify precise outcrop access.']},...base]:base;},[point,geology,rasters,siteId]);
   const task=tasks.find(t=>t.id===taskId)??tasks[0];
   const plan:EmergencyResourcePlan=useMemo(()=>({location:point,task,shortened:shortened&&!!task.partial,equipment,activity:'walk',assumptions}),[point,task,shortened,equipment,assumptions]);
   return {tasks,plan,evidenceStatus,chooseTask:(id:string)=>{setTaskId(id);setShortened(false);},setShortened,setEquipment,setAssumptions,
@@ -59,8 +60,8 @@ export function EmergencyResourceReadings({result,arrived}:{result:ReturnType<ty
       <dt>Arrival oxygen budget</dt><dd>{display(result.available,'%')}</dd><dt>Task consumption</dt><dd>{display(result.taskCost,'percentage points')}</dd>
       <dt>Verified return time</dt><dd>{display(result.returnMinutes,'min')}</dd><dt>Return consumption</dt><dd>{display(result.returnCost,'percentage points')}</dd>
       <dt>Reserve duration</dt><dd>{display(result.reserveMinutes,'min')}</dd><dt>Reserve consumption</dt><dd>{display(result.reserveCost,'percentage points')}</dd><dt>Oxygen margin after task + return + reserve</dt><dd>{display(result.oxygenMargin,'percentage points')}</dd>
-      <dt>{arrived?'Existing Mission EVA remaining at arrival':'Current Mission EVA remaining · preview'}</dt><dd>{display(result.evaMinutes,'min')}</dd><dt>EVA margin after selected task + return + reserve</dt><dd>{display(result.evaMargin,'min')}</dd></dl>
-    <p className="rm-fineprint">Arrival oxygen already accounts for outbound travel. The selected task replaces, rather than adds to, the old Mission science-duration assumption. Existing Mission elapsed time is read without mutation. Pre-arrival values are previews; the authoritative Mission budget is captured at arrival. Terrain changes route geometry and permitted slopes; no calibrated slope/metabolism law is claimed. Return values remain Unknown until an independent return route is verified.</p>
+      <dt>{arrived?'EVA remaining at event / after activity':'Configured EVA remaining at event'}</dt><dd>{display(result.evaMinutes,'min')}</dd><dt>EVA margin after selected task + return + reserve</dt><dd>{display(result.evaMargin,'min')}</dd></dl>
+    <p className="rm-fineprint">Oxygen and EVA time are scenario inputs at the trigger point; pre-event travel and any acknowledged earlier science are not deducted again. Activity playback deducts its own task oxygen and time. The separate Mission workspace is not mutated. Terrain changes route geometry and permitted slopes; no calibrated slope/metabolism law is claimed. Return values remain Unknown until an independent return route is verified.</p>
     <p className="rm-fineprint">Not assessed: {result.unassessed.join(', ')}. Decision Support and Route Comparison use this same selected-task and workload model. Negative margins block the corresponding action; missing margins remain Unknown.</p>
   </section>;
 }

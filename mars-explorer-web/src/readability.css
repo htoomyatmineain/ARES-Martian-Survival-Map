@@ -381,3 +381,8 @@
 .regional-map .rm-map2d .rm-north.rm-compass{width:64px;height:64px;padding:0;right:16px;top:84px}
 .regional-map.rm-workspace-mission .rm-map2d .rm-north.rm-compass{top:140px}
 @media(max-width:700px){.regional-map .rm-map2d .rm-north.rm-compass{width:54px;height:54px;right:12px;top:96px}}
+
+.regional-map .rm-emergency-panel :is(select,input[type=number]){display:block;width:100%;min-height:40px;margin:7px 0 14px;padding:8px 10px;background:var(--map-raised);color:var(--map-text);border:1px solid var(--map-border);border-radius:4px;font:13px var(--map-font)}
+.regional-map .rm-emergency-panel label{display:block;font-size:13px;line-height:1.5;margin:12px 0}.regional-map .rm-emergency-panel input[type=range]{width:100%;display:block;margin:10px 0}
+.regional-map .rm-emergency-panel .rm-check{display:grid;grid-template-columns:minmax(0,1fr) 18px;gap:12px}.regional-map .rm-emergency-panel input[type=checkbox]{width:18px;height:18px;min-height:18px;padding:0;margin:3px 0}
+.rm-emergency-scenario{padding-bottom:16px!important;border-bottom:1px solid var(--map-border)!important}
