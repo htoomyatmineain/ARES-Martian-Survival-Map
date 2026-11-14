@@ -1,0 +1,147 @@
+/* A single readable scale, with contained planning and navigation regions. */
+.regional-map{--map-muted:#bdc3cb;font-size:14px}
+.regional-map button,.regional-map input,.regional-map select,.regional-map textarea{font-family:var(--map-font)}
+.regional-map .rm-sidebar{width:350px}
+.regional-map .rm-sidebar-body{padding:20px}
+.regional-map .rm-sidebar-tabs [role=tab]{font-size:13px;min-height:46px}
+.regional-map .rm-sidebar .rm-section h2,.regional-map h2{font-size:12px;line-height:1.5;letter-spacing:.5px}
+.regional-map .rm-sidebar .rm-mission-phase{font-size:22px;line-height:1.4;margin:10px 0 16px}
+.regional-map .rm-sidebar .rm-check,.regional-map .rm-sidebar .rm-layer-options label{font-size:14px;line-height:1.5;min-height:44px}
+.regional-map small,.regional-map .rm-sidebar small{font-size:12px;line-height:1.6}
+.regional-map .rm-fineprint,.regional-map .rm-sidebar .rm-fineprint,.regional-map .rm-validation-note p,.regional-map .rm-resource-links p,.regional-map .rm-resource-links details{font-size:12px;line-height:1.65;overflow-wrap:anywhere}
+.regional-map .rm-sidebar .rm-pick-button,.regional-map .rm-sidebar .rm-strategies button,.regional-map .rm-plan-steps button{font-size:14px;min-height:44px;padding:10px}
+.regional-map .rm-sidebar .rm-mission-field,.regional-map .rm-mission-fields label,.regional-map .rm-observation-field,.regional-map .rm-slider,.regional-map .rm-travel-controls label{font-size:13px;line-height:1.6}
+.regional-map .rm-sidebar .rm-mission input,.regional-map .rm-sidebar .rm-mission select,.regional-map .rm-sidebar .rm-mission textarea,.regional-map .rm-travel-controls input,.regional-map .rm-travel-controls select,.regional-map .rm-observation-field select{font-size:14px;padding:10px;min-height:44px}
+.regional-map .rm-sidebar .rm-advanced,.regional-map .rm-sidebar .rm-route-rules,.regional-map .rm-sidebar .rm-travel-settings p,.regional-map .rm-sidebar .rm-travel-settings details,.regional-map .rm-travel p,.regional-map .rm-travel details{font-size:12px;line-height:1.65}
+.regional-map .rm-sidebar .rm-mission-stats,.regional-map .rm-sidebar .rm-mission-ready,.regional-map .rm-sidebar .rm-mission-blocked{font-size:14px;line-height:1.6}
+.regional-map .rm-mission-stats{grid-template-columns:minmax(0,1fr) auto;gap:12px}
+.regional-map .rm-mission-stats dd{font-size:18px;font-variant-numeric:tabular-nums;text-align:right;overflow-wrap:anywhere}
+.regional-map .rm-sidebar .rm-mission-footer .rm-fineprint,.regional-map .rm-sidebar .rm-coordinates{font-size:12px;line-height:1.6}
+.regional-map .rm-itinerary strong,.regional-map .rm-resource-links a{font-size:14px}
+.regional-map .rm-itinerary small,.regional-map .rm-approach-notice,.regional-map .rm-approach-notice strong{font-size:12px;line-height:1.65}
+.rm-mission-hero{padding:0 0 16px;margin:0 0 18px;border-bottom:1px solid var(--map-border);font-variant-numeric:tabular-nums}
+.rm-mission-hero>span{display:block;font-size:11px;line-height:1.6;color:var(--map-muted);letter-spacing:.5px}
+.rm-mission-hero>strong{display:block;font:400 30px/1.3 var(--map-font);margin:6px 0;color:var(--map-text);overflow-wrap:anywhere}
+.regional-map .rm-mission-hero>small{font-size:12px}
+.regional-map .rm-view-switch button{font-size:12px;padding:11px 14px}
+.regional-map .rm-primary-nav button{font-size:15px}
+.regional-map .rm-stage-toolbar{left:394px}
+.regional-map .rm-telemetry{left:394px;max-height:none;overflow:visible}
+.regional-map .rm-telemetry-toggle{font-size:12px!important;min-height:38px}
+.regional-map #rm-route-data:not([hidden]){display:block}
+.regional-map .rm-telemetry .rm-travel{padding:12px 16px;margin:0;border:0;border-bottom:1px solid var(--map-border)}
+.regional-map .rm-telemetry .rm-travel-result{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.regional-map .rm-travel-result>span,.regional-map .rm-telemetry-grid small{font-size:11px;line-height:1.5;letter-spacing:0}
+.regional-map .rm-telemetry .rm-travel-result>strong{font:400 28px/1.3 var(--map-font);white-space:normal;font-variant-numeric:tabular-nums}
+.regional-map .rm-telemetry .rm-travel-summary>p{font-size:11px;line-height:1.6;margin:5px 0 0}
+.regional-map .rm-telemetry-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding:14px 16px}
+.regional-map .rm-telemetry-grid>div{min-width:0}
+.regional-map .rm-telemetry-grid strong{font:400 24px/1.4 var(--map-font);margin-top:6px;white-space:normal;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.regional-map .rm-telemetry .rm-unit{font-size:12px}
+.regional-map .rm-telemetry-foot{font-size:10px;line-height:1.6;padding:8px 16px;overflow-wrap:anywhere}
+.regional-map .rm-science-popup{width:380px;max-width:calc(100% - 420px);bottom:250px}
+.regional-map .rm-science-popup>header{font-size:12px;line-height:1.5}
+.regional-map .rm-science-content{padding:18px}
+.regional-map .rm-science-popup h2{font-size:22px;line-height:1.4}
+.regional-map .rm-science-content p,.regional-map .rm-science-content .rm-science-caution,.regional-map .rm-science-content .rm-science-coverage,.regional-map .rm-science-content .rm-science-sample,.regional-map .rm-science-sources a{font-size:13px;line-height:1.7}
+.regional-map .rm-science-popup dt,.regional-map .rm-science-status{font-size:11px!important;line-height:1.7}
+.regional-map .rm-science-popup dd{font-size:15px;line-height:1.6}
+.regional-map .rm-science-zoom,.regional-map .rm-site-tabs button,.regional-map .rm-site-row>button{font-size:13px!important;min-height:44px}
+.regional-map .rm-observation-quality,.regional-map .rm-site-photo details,.regional-map .rm-site-photo figcaption{font-size:12px;line-height:1.7}
+.regional-map .rm-geology-units button{font-size:12px;min-height:44px}
+/* Mission: one scrollable control column; map and summary never overlap. */
+.regional-map.rm-workspace-mission .rm-body{display:grid;grid-template-columns:minmax(360px,420px) minmax(0,1fr);gap:20px;padding:20px;overflow:hidden}
+.regional-map.rm-workspace-mission .rm-sidebar{position:relative;inset:auto;width:auto;height:100%;min-height:0;max-height:none;box-shadow:none}
+.regional-map.rm-workspace-mission .rm-sidebar-body{padding:20px;min-height:0}
+.regional-map.rm-workspace-mission .rm-stage{position:relative;inset:auto;min-height:0;overflow:hidden;border:1px solid var(--map-border);border-radius:7px;display:flex;flex-direction:column}
+.regional-map.rm-workspace-mission .rm-map2d,.regional-map.rm-workspace-mission .rm-scene{bottom:290px}
+.regional-map.rm-workspace-mission .rm-stage-toolbar{left:16px;top:16px}
+.regional-map.rm-workspace-mission .rm-zone-heading{top:78px;right:72px}
+.regional-map.rm-workspace-mission .rm-zone-heading h1{font-size:22px}
+.regional-map.rm-workspace-mission .rm-telemetry{left:0;right:0;bottom:0;border:0;border-top:1px solid var(--map-border);border-radius:0;max-height:none;overflow:visible}
+.regional-map.rm-workspace-mission .rm-telemetry-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.regional-map.rm-workspace-mission .rm-telemetry-grid strong{font-size:24px}
+.regional-map .rm-telemetry-grid>div:nth-child(3) strong{font-size:20px}
+.regional-map.rm-workspace-mission .rm-telemetry .rm-travel-result>strong{font-size:28px}
+.regional-map.rm-workspace-mission .rm-stage .rm-science-popup{max-width:calc(100% - 32px);bottom:260px}
+.regional-map.rm-workspace-mission .rm-telemetry-foot{display:block}
+@media(min-width:701px) and (max-width:1100px){
+ .regional-map .rm-sidebar{width:320px}.regional-map .rm-stage-toolbar,.regional-map .rm-telemetry{left:360px}
+ .regional-map .rm-telemetry-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .regional-map.rm-workspace-mission .rm-body{grid-template-columns:340px minmax(0,1fr);padding:16px;gap:16px}
+ .regional-map.rm-workspace-mission .rm-telemetry-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .regional-map.rm-workspace-mission .rm-map2d,.regional-map.rm-workspace-mission .rm-scene{bottom:300px}
+ .regional-map.rm-workspace-mission .rm-telemetry{max-height:300px}
+}
+@media(max-width:700px){
+ .regional-map .rm-sidebar{width:auto;height:42%;max-height:none}.regional-map .rm-sidebar-body{padding:16px}
+ .regional-map .rm-stage-toolbar{left:auto;right:12px}.regional-map .rm-view-switch button{font-size:11px;padding:10px}
+ .regional-map .rm-telemetry{left:12px;bottom:calc(42% + 24px);max-height:160px;overflow:auto}
+ .regional-map .rm-telemetry-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .regional-map .rm-telemetry-grid strong{font-size:22px}
+ .regional-map .rm-science-popup{max-width:calc(100% - 24px);width:380px;top:100px;bottom:calc(42% + 24px)}
+ .regional-map .rm-mission-fields{grid-template-columns:1fr 1fr}
+ .regional-map.rm-workspace-mission .rm-body{display:flex;padding:12px;gap:12px;overflow:auto}
+ .regional-map.rm-workspace-mission .rm-sidebar{width:100%;height:auto;min-height:0;flex-shrink:0}
+ .regional-map.rm-workspace-mission .rm-sidebar-body,.regional-map.rm-workspace-mission .rm-mission-content{overflow:visible}
+ .regional-map.rm-workspace-mission .rm-stage{min-height:650px;width:100%;flex-shrink:0;display:block}
+ .regional-map.rm-workspace-mission .rm-map2d,.regional-map.rm-workspace-mission .rm-scene{bottom:270px}
+ .regional-map.rm-workspace-mission .rm-telemetry{max-height:270px}
+ .regional-map.rm-workspace-mission .rm-telemetry-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .regional-map .rm-primary-nav button{min-width:70px;padding:0 10px;font-size:14px}
+ .regional-map .rm-header .rm-wordmark span{font-size:14px}
+}
+
+/* Route readings belong to the tools column, never over the terrain viewport. */
+.regional-map .rm-sidebar>.rm-telemetry,
+.regional-map.rm-workspace-mission .rm-sidebar>.rm-telemetry{position:relative;inset:auto;width:100%;max-height:45%;flex-shrink:0;overflow:auto;border:0;border-top:1px solid var(--map-border);border-radius:0;margin:0;background:var(--map-panel)}
+.regional-map .rm-sidebar .rm-telemetry-grid,
+.regional-map.rm-workspace-mission .rm-sidebar .rm-telemetry-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:12px 16px}
+.regional-map .rm-sidebar .rm-telemetry .rm-travel-result{display:block}
+.regional-map .rm-sidebar .rm-telemetry .rm-travel-result>strong{display:block;font-size:24px;margin-top:6px}
+.regional-map .rm-sidebar .rm-telemetry-toggle{width:100%;padding:12px 16px}
+.regional-map.rm-workspace-mission .rm-map2d,
+.regional-map.rm-workspace-mission .rm-scene{bottom:0}
+@media(max-width:1100px){
+ .regional-map.rm-workspace-mission .rm-map2d,.regional-map.rm-workspace-mission .rm-scene{bottom:0}
+}
+@media(max-width:700px){
+ .regional-map .rm-sidebar>.rm-telemetry{max-height:45%;min-height:44px}
+ .regional-map.rm-workspace-mission .rm-sidebar>.rm-telemetry{max-height:none}
+ .regional-map.rm-workspace-mission .rm-stage{min-height:420px}
+ .regional-map.rm-workspace-mission .rm-map2d,.regional-map.rm-workspace-mission .rm-scene{bottom:0}
+}
+/* Zone identity at map edge; compass describes the north-up 2D view. */
+.regional-map .rm-zone-heading,.regional-map.rm-workspace-mission .rm-zone-heading{top:auto;bottom:24px;right:24px}
+.regional-map .rm-north.rm-compass{top:18px;right:24px;width:80px;height:80px;padding:0;background:var(--map-panel);border:1px solid var(--map-border);border-radius:50%;pointer-events:none;box-shadow:0 2px 12px #0005}
+.rm-compass svg{display:block;width:100%;height:100%}
+.rm-compass-ring{fill:none;stroke:var(--map-border);stroke-width:1}
+.rm-compass-ticks{fill:none;stroke:var(--map-muted);stroke-width:1}
+.rm-compass text{fill:var(--map-muted);font:9px var(--map-font)}
+.rm-compass text.rm-compass-n{fill:var(--map-accent);font-size:12px}
+.rm-compass-north{fill:var(--map-accent)}.rm-compass-south{fill:var(--map-muted)}
+.regional-map .rm-map-tools{top:116px}
+@media(max-width:700px){
+ .regional-map .rm-zone-heading{bottom:calc(42% + 24px);right:16px}
+ .regional-map.rm-workspace-mission .rm-zone-heading{bottom:16px;right:16px}
+ .regional-map .rm-north.rm-compass{top:70px;right:12px;width:64px;height:64px}
+ .regional-map .rm-map-tools{top:148px}
+}
+.regional-map .rm-mission-view[hidden]{display:none!important}
+.regional-map.rm-workspace-mission .rm-mission-view{height:100%;min-height:0}
+.regional-map.rm-workspace-map .rm-sidebar-body-mission{overflow:auto;display:block}
+.regional-map.rm-workspace-map #rm-panel-mission{height:auto}
+.regional-map .rm-map-planner select{display:block;width:100%;padding:10px;margin-top:6px;min-height:44px;background:var(--map-raised);color:var(--map-text);border:1px solid var(--map-border);font-size:14px;border-radius:4px}
+.regional-map .rm-map-planner h2{margin-bottom:18px}
+.regional-map .rm-mission-target{font-size:18px;font-weight:400;line-height:1.5;margin:0 0 12px}
+@media(max-width:700px){.regional-map.rm-workspace-mission .rm-mission-view{height:auto}}
+/* View controls share a single map-corner anchor in both workspaces. */
+.regional-map .rm-stage-toolbar,.regional-map.rm-workspace-mission .rm-stage-toolbar{top:18px;right:24px;left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:10px;z-index:9}
+.regional-map .rm-stage-toolbar .rm-3d-reset{position:static;inset:auto;pointer-events:auto;min-height:40px;padding:9px 14px;font-size:12px;background:var(--map-panel);border:1px solid var(--map-border)}
+.regional-map .rm-north.rm-compass{top:84px}
+.regional-map .rm-map-tools{top:178px}
+@media(max-width:700px){
+ .regional-map .rm-stage-toolbar,.regional-map.rm-workspace-mission .rm-stage-toolbar{top:12px;right:12px;left:auto}
+ .regional-map .rm-north.rm-compass{top:76px}
+ .regional-map .rm-map-tools{top:152px}
+}

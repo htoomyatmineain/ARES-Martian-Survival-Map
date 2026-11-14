@@ -1,0 +1,42 @@
+[
+  {
+    "id": "skinner-ridge-skyland",
+    "code": "S1",
+    "name": "Skinner Ridge",
+    "sample": "Skyland",
+    "designation": "M2020-495-12",
+    "latitude": 18.458931,
+    "longitude": 77.40617078,
+    "pdsElevationMetres": -2520.185,
+    "geology": "Fine-to-medium-grained sandstone",
+    "interest": "Sedimentary layers, transported mineral grains and evidence of water-rock alteration.",
+    "reportPage": 20,
+    "reportUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf",
+    "archiveUrl": "https://pds-geosciences.wustl.edu/missions/mars2020/returned_sample_science.htm",
+    "nasaUrl": "https://science.nasa.gov/resource/two-perseverance-sampling-locations-in-jezeros-delta/",
+    "coordinateStatus": "Coordinates match the current NASA PDS report. Registered report-map target agrees within 0.274 m in shared HiRISE imagery; this is relative agreement, not absolute position accuracy.",
+    "verticalDatumStatus": "PDS elevation datum and compatibility with the terrain datum remain unverified.",
+    "handoff": "Science location handoff/Western-Jezero-Science-Location-Handoff/docs/science-layer-handoff.md",
+    "coordinateReportPage": 52
+  },
+  {
+    "id": "wildcat-ridge-hazeltop",
+    "code": "S2",
+    "name": "Wildcat Ridge",
+    "sample": "Hazeltop",
+    "designation": "M2020-509-14",
+    "latitude": 18.45863707,
+    "longitude": 77.40588851,
+    "pdsElevationMetres": -2523.0974,
+    "geology": "Sulfate-bearing coarse mudstone",
+    "interest": "Ancient lake deposition, sulfate and clay minerals, and evidence of interaction with water.",
+    "reportPage": 63,
+    "reportUrl": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf",
+    "archiveUrl": "https://pds-geosciences.wustl.edu/missions/mars2020/returned_sample_science.htm",
+    "nasaUrl": "https://science.nasa.gov/resource/two-perseverance-sampling-locations-in-jezeros-delta/",
+    "coordinateStatus": "Coordinates match the current NASA PDS report. Registered report-map target agrees within 0.107 m in shared HiRISE imagery; this is relative agreement, not absolute position accuracy.",
+    "verticalDatumStatus": "PDS elevation datum and compatibility with the terrain datum remain unverified.",
+    "handoff": "Science location handoff/Western-Jezero-Science-Location-Handoff/docs/science-layer-handoff.md",
+    "coordinateReportPage": 58
+  }
+]

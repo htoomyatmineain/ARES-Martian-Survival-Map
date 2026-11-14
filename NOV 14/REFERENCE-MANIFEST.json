@@ -1,0 +1,1298 @@
+{
+  "preparedDate": "2026-11-14",
+  "referenceCommit": "576c18a920bb4b7f379e74b0a54bef6b72e0deeb",
+  "includesCurrentWorkingFiles": true,
+  "note": "Read-only implementation references, not a complete runnable application or all original data.",
+  "files": [
+    {
+      "file": "REFERENCE/docs/HUD-PLAN.md",
+      "bytes": 3314,
+      "sha256": "35286d4324a0fabb73d9f1a8d70dcf12755729b7b3a7352ef5384fcda4051039"
+    },
+    {
+      "file": "REFERENCE/docs/HUD-TESTING-HANDOFF.md",
+      "bytes": 5307,
+      "sha256": "e6c988981328bf10e192aac6310aa4673d5c89801bfa6f79fbdad802826b0202"
+    },
+    {
+      "file": "REFERENCE/docs/LIVE_MAP.md",
+      "bytes": 2442,
+      "sha256": "b47ab750c223ee0b23fa19e9bd4545e385b220d8f99611b506b64e170c94c481"
+    },
+    {
+      "file": "REFERENCE/docs/MARTIAN_MAP_PRD.md",
+      "bytes": 59325,
+      "sha256": "bc8e9c677f3e773302f0c2659a31eaa9704829d70bfc319572373fa0cb14756c"
+    },
+    {
+      "file": "REFERENCE/docs/astronaut-eva-workflow.md",
+      "bytes": 6033,
+      "sha256": "4f0b03cd88e50c3f7887bb08feb2e1a0a9a4b5ad3f6c588f140273f9035a9bcd"
+    },
+    {
+      "file": "REFERENCE/docs/ctx-alignment-preview.png",
+      "bytes": 1945193,
+      "sha256": "b18f14f0e5592c96617028a897c5e59a07530f3266f2de95cc37a87b36333b86"
+    },
+    {
+      "file": "REFERENCE/docs/elevation-validation-results.json",
+      "bytes": 7714,
+      "sha256": "afae6f8cd88bba8030695ae2d6cb0189fc36e7b3666c360a5192d5e7891afdcb"
+    },
+    {
+      "file": "REFERENCE/docs/elevation-validation-sources/JEZ_hirise_soc_006_DTM_MOLAtopography_DeltaGeoid_1m_Eqc_latTs0_lon0_blend40.lbl",
+      "bytes": 1502,
+      "sha256": "2a5e50ea40f1965359f3fb8d3b316e69243b77cf63f435629be58163bca7efd7"
+    },
+    {
+      "file": "REFERENCE/docs/elevation-validation-sources/JEZ_hirise_soc_006_DTM_MOLAtopography_DeltaGeoid_1m_Eqc_latTs0_lon0_blend40.xml",
+      "bytes": 18939,
+      "sha256": "5455f7a0638aadda8358fc78e2b8c20dac4fa67b59aa0412f2bfad6ca113b79b"
+    },
+    {
+      "file": "REFERENCE/docs/elevation-validation-sources/JEZ_hirise_soc_006_DTM_MOLAtopography_DeltaGeoid_1m_Eqc_latTs0_lon0_blend40_pds3.lbl",
+      "bytes": 2296,
+      "sha256": "99b972f7ea13f9e05e9d3f265435a0566b53dbde4088781673edeb0b6d24cade"
+    },
+    {
+      "file": "REFERENCE/docs/elevation-validation-sources/best_tactical.csv",
+      "bytes": 171404,
+      "sha256": "9da19e4f70287fe0d33ba716ff2169c10447c30c7a048583f730e4155226cde9"
+    },
+    {
+      "file": "REFERENCE/docs/elevation-validation-sources/best_tactical.csv.xml",
+      "bytes": 15898,
+      "sha256": "777074bc03a3f06be8241b85cd4448cbdac5bff4dfecc443de6757152d22ac79"
+    },
+    {
+      "file": "REFERENCE/docs/elevation-validation-sources/orbital_0_metadata.csv",
+      "bytes": 662,
+      "sha256": "31cc3a60ffa306787f0143149a94e618e0056f2dcdaef2e1a77f8260429831da"
+    },
+    {
+      "file": "REFERENCE/docs/elevation-validation-sources/orbital_2_metadata.csv",
+      "bytes": 1462,
+      "sha256": "d680059a0b0abac81a3f7eb82e5de8e5f623d1719350ef25e73d88602b2ffff3"
+    },
+    {
+      "file": "REFERENCE/docs/elevation-validation-sources/view_metadata.csv",
+      "bytes": 284,
+      "sha256": "9698469a50fa596600b0c41871a253e33cb954216f6009746769cc99d0c60c88"
+    },
+    {
+      "file": "REFERENCE/docs/elevation-validation.md",
+      "bytes": 6982,
+      "sha256": "5c3b0d5a4f8486cf75a599a97101bc23bcd4b96c394d9ab0160fe7b0f96c7e8e"
+    },
+    {
+      "file": "REFERENCE/docs/environmental-observation-layers.md",
+      "bytes": 6170,
+      "sha256": "24adb20a46e6fe0e7425966db28aae87640924e7c9848799bdeb1b64a7ae2640"
+    },
+    {
+      "file": "REFERENCE/docs/free-map-storage.md",
+      "bytes": 5250,
+      "sha256": "6911b6dca6695d0ca2d11ae0ca609ee9b9355f89dacbeea68da11ddfdcdc4cd2"
+    },
+    {
+      "file": "REFERENCE/docs/geology-validation/README.md",
+      "bytes": 4296,
+      "sha256": "ff7d9f7e5eea358f967cd49e68fe4a982759d44f2adeb816ad13d0cae3ee88bd"
+    },
+    {
+      "file": "REFERENCE/docs/geology-validation/app-overlay.png",
+      "bytes": 123364,
+      "sha256": "8c182f2c9f038516f1b7bc62976f8eb15b7e395ad7ecc7dd8bca809b2a115d48"
+    },
+    {
+      "file": "REFERENCE/docs/geology-validation/controlled-hirise-local.png",
+      "bytes": 720200,
+      "sha256": "2c7c68406db2b3527e5bf65a9ca12f162b98080999737a0acd3531aa2f2ac007"
+    },
+    {
+      "file": "REFERENCE/docs/geology-validation/independent-check.json",
+      "bytes": 1217,
+      "sha256": "fb94cda0d3fad9d87f36f84137f592226b7a575654260ba12811e31ceb2ba382"
+    },
+    {
+      "file": "REFERENCE/docs/geology-validation/results.json",
+      "bytes": 160427,
+      "sha256": "071af7a30722a6ab24d814cd5c64bac62622cde12e2036cfc4dd0fd03e76c49a"
+    },
+    {
+      "file": "REFERENCE/docs/geology-validation/source-ctx-local.png",
+      "bytes": 505664,
+      "sha256": "4172a95b428cd02c00c2f15dd230744f1cd78c2ba749b73c66862af32a064eea"
+    },
+    {
+      "file": "REFERENCE/docs/historical-weather/README.md",
+      "bytes": 3480,
+      "sha256": "8cef5151acf0390ce6a56d3257f9600cd1ca000d54d2f2994150b6b2b7cec46e"
+    },
+    {
+      "file": "REFERENCE/docs/historical-weather/app-panel.png",
+      "bytes": 188091,
+      "sha256": "556bdba6549581685ec45d51d698b6beb9d08fc2c4b605da0f550bbd630b0ba4"
+    },
+    {
+      "file": "REFERENCE/docs/historical-weather/source-manifest.json",
+      "bytes": 9421,
+      "sha256": "0f12ec3368522b091fb44de86469b950b93e82e15d994d38b420983892373d75"
+    },
+    {
+      "file": "REFERENCE/docs/jezero-live-map-preview.png",
+      "bytes": 96990,
+      "sha256": "b1617534efbd6118a22f24c77d7cee6d1685bcb6f2efab54f5c98b0258f1f378"
+    },
+    {
+      "file": "REFERENCE/docs/jezero-map-preview.png",
+      "bytes": 44782,
+      "sha256": "bf2c6aa3d169195f1cdb740c0b85a9e7ae147607b6b8a11d8ee966133369a6f5"
+    },
+    {
+      "file": "REFERENCE/docs/martian-map-ui-preview.png",
+      "bytes": 92259,
+      "sha256": "f4b590d13a10a059cad0440108e63b966e149257c5b2f2136e25fe897b958f5b"
+    },
+    {
+      "file": "REFERENCE/docs/mineral-registration-results.json",
+      "bytes": 4755,
+      "sha256": "6847f40c3a6caa76aff080f1a55fa4727a758bd0538e478bd46e410c069a8b34"
+    },
+    {
+      "file": "REFERENCE/docs/mission-parallel/MAIN-SAFETY-INTEGRATION.md",
+      "bytes": 3248,
+      "sha256": "f22803ad800a1c489d68561bf3071b290704049dddc7447cab41085a19029321"
+    },
+    {
+      "file": "REFERENCE/docs/mission-parallel/START-HERE.md",
+      "bytes": 3113,
+      "sha256": "dfbe9d418d354dd005bd34c09ecfe51dfbf1ad0df7131cc9d0916cd57cf4986f"
+    },
+    {
+      "file": "REFERENCE/docs/mission-parallel/TEAMMATE-SCIENCE.md",
+      "bytes": 3762,
+      "sha256": "72b905f56ba32180b464ec0f9404cb978793ec22843b26abc6e010fedff1acc8"
+    },
+    {
+      "file": "REFERENCE/docs/native-profile-validation.json",
+      "bytes": 1623,
+      "sha256": "10c25850304a381d80cbcc42e874d19b0379817e8a5ae17f2ac111c773a20c2e"
+    },
+    {
+      "file": "REFERENCE/docs/native-route-results.json",
+      "bytes": 1567,
+      "sha256": "66b7a47939657637a284c9334060806b363650403ecc6cbbba0b9e51e8e5abb8"
+    },
+    {
+      "file": "REFERENCE/docs/orbital-area-layers.md",
+      "bytes": 5307,
+      "sha256": "301f79e22bea8faf786a2611295c0a562eee4feb8ec5bd9aeb7e5348bf5e980d"
+    },
+    {
+      "file": "REFERENCE/docs/orbital-mineral-validation.json",
+      "bytes": 751,
+      "sha256": "b3a534cb769f2ad9d50fb92469ccb7a35bceea58eaaf12ec8f0d8488c9cd0f2e"
+    },
+    {
+      "file": "REFERENCE/docs/reproduction/01-science-site-photos.md",
+      "bytes": 5639,
+      "sha256": "8b3b91d80980eaeed5983ff42053ce4a187711f3b2ef100598d2066f130dce62"
+    },
+    {
+      "file": "REFERENCE/docs/reproduction/02-jezero-geology.md",
+      "bytes": 6242,
+      "sha256": "6a6b76709a9c2806a0dfbfe685e3a4a73e991f1d808fb2c91d4107439f1b8cf3"
+    },
+    {
+      "file": "REFERENCE/docs/reproduction/03-mars-trek-and-presentation.md",
+      "bytes": 4666,
+      "sha256": "22370de2ee7637d384291dd7712a21826e4ecd9e98dc49f9becf0a530798a933"
+    },
+    {
+      "file": "REFERENCE/docs/reproduction/04-science-approach-routing.md",
+      "bytes": 5545,
+      "sha256": "5574fa5ccdf9b215b382360614213eebed1b397ef3c8bd217c99b45b370993bc"
+    },
+    {
+      "file": "REFERENCE/docs/reproduction/05-science-photo-integration.md",
+      "bytes": 4352,
+      "sha256": "55b11d33f21665a2706fb3686de72860a69660f44f6f6a747b7e463ed1e47c13"
+    },
+    {
+      "file": "REFERENCE/docs/reproduction/06-geological-context-layer.md",
+      "bytes": 8852,
+      "sha256": "050d422ab585f67650ebc98fed9786a6e3834ffc1a67f3474ec39cfd5bf22899"
+    },
+    {
+      "file": "REFERENCE/docs/reproduction/07-historical-environment.md",
+      "bytes": 1802,
+      "sha256": "ea9aeb383bf033f022e775cf884188709a6f7270ea4c58c4d03ed1d9b0db77ea"
+    },
+    {
+      "file": "REFERENCE/docs/reproduction/TEAMMATE-START-HERE.md",
+      "bytes": 4685,
+      "sha256": "322a16a657630904dbad7e06c74342a1ebe21512d5d68c3c80cff3e7920a7ff0"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/main-agent/completion.md",
+      "bytes": 4034,
+      "sha256": "24fd6db5eaf0695c4c189d0936ac5cc520a92dd8873b8eda57ece4a5485d4b37"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/main-agent/sources-panel.png",
+      "bytes": 68177,
+      "sha256": "46b7698d1afa6a3d78bd67adf68b8736c0f4482a8ed575b487959621f343a500"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/main-agent/trek-dem-metadata.txt",
+      "bytes": 4324,
+      "sha256": "ad8a445964934dd6eeaf6547bd786f5a0fef6d3a07baef337eee55b4c0acadd0"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/main-agent/trek-imagery-catalog.txt",
+      "bytes": 3492,
+      "sha256": "747ed69672cb735d921db55a851aaec9c3155b44821d724987a09ccf6a8cd647"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/main-agent/trek-reference-results.json",
+      "bytes": 1968,
+      "sha256": "e255124b5ec88b4716caa7dfc9105d0f5b787519847534436a4d6d9d3b95d346"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/main-agent/trek-skinner-context.png",
+      "bytes": 95486,
+      "sha256": "ddc5c7b7f1adba22ffb2446f4238e3568f0a06c3b6034029ea19770ac545b85e"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/.gitattributes",
+      "bytes": 9,
+      "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/.gitignore",
+      "bytes": 20,
+      "sha256": "e74bb0dd02388f58ff49229b14b09c4379a2d57ee1348f0533ccc01a22519cea"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/assess_coverage.py",
+      "bytes": 3244,
+      "sha256": "f65b9efca7036e942beff9d05a2cc88543aa19661369b4ecabf5ac4455d5ff96"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/completion.md",
+      "bytes": 5223,
+      "sha256": "91e0c01e97244ad32ef487552eda24e1ee999be2d5e001ddae4b11b85f19879f"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/deliverable-manifest.json",
+      "bytes": 7584,
+      "sha256": "26d1e825355fec9298d686d341a6fc33c944e1686cea7af8e3177ee41c63b048"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/geology-item.json",
+      "bytes": 10021,
+      "sha256": "9b03d94f03870483d6afdca7afc55cafddbeb5c7cd58b1a34cef723dfe3b6890"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/geology-layer-5.json",
+      "bytes": 17307,
+      "sha256": "c51a3bd8f86ee7cc2273ad093777c732df43675a0442116291f52f517c17f179"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/geology-layer-8.json",
+      "bytes": 26877,
+      "sha256": "41bb684af3fe36d0c87f8738a67f2a18c863394f51229bea5232cab9778744b7"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/geology-service.json",
+      "bytes": 7992,
+      "sha256": "9e9fa1e7ea95bdc617d5fec91323e3f7a3736b36165897f35f5858fb79ffca55"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/nasa-usage-excerpt.json",
+      "bytes": 5058,
+      "sha256": "bffad52b0fca17203cc4f8430fb0e2266ad43fcf0cbffced4b3ba7f5478827f9"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/pamphlet-crs-excerpt.json",
+      "bytes": 1564,
+      "sha256": "671b15e660b62d4cfcd76292d36cc8cbc4cc16fe78f703269f449d7b7c96cb5e"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/raw-gallery-excerpt.json",
+      "bytes": 546,
+      "sha256": "681734e7e1c0fa2df617bd6c755cdacc4c0ca79fe6936fed572e5ffe7c90825d"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/report-entries.json",
+      "bytes": 7325,
+      "sha256": "9a334baf92a916d457158f285111873abe912466391076b0b667115eab669902"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/retrieval-manifest.json",
+      "bytes": 16198,
+      "sha256": "64a63115a22a03b3328aa3e745c0b34c3555666bcfec6715a157ccac9c0bbafb"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/rock-samples-excerpt.json",
+      "bytes": 1374,
+      "sha256": "2eebee62c50d533ef8c8bf009b2673f98483c7a260617f1734af0ba8dc9d7b99"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/sim3292-excerpt.json",
+      "bytes": 1646,
+      "sha256": "7a220db2ea387bafe9128612814737e5fbd49ca8c77b1a035deddf42622c2761"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/sim3464_metadata.xml",
+      "bytes": 20924,
+      "sha256": "e4ede0b7465190319c81babfb9359d4e84710cb82deebe331219ef26130927fd"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/sim3464_readme.txt",
+      "bytes": 3914,
+      "sha256": "226c04cc89b86441fff8d51e70e3f906551b405c7a23a8a9cfb8ca9df9a7762d"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/source-validation.json",
+      "bytes": 6954,
+      "sha256": "425809dd9b4d3544ed633f2b506b0be6ac54fb5a6445b94366f325855b5d86a0"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/evidence/two-locations-excerpt.json",
+      "bytes": 1994,
+      "sha256": "3646637a3737681d456a2c990d4e95ac3bbc89e314f2d44e058daea170d7e729"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/geology/assessment.md",
+      "bytes": 7564,
+      "sha256": "a2a56862f3d921e8a2d71c59e05da6e4a0c445f81b5659b2c110f64e2bba6b83"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/geology/coverage-assessment.json",
+      "bytes": 960,
+      "sha256": "cb673e0680413d294f18973ec8292fb17dc17b23242a213952943579d5adf831"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/geology/reproduce.md",
+      "bytes": 3190,
+      "sha256": "c355b004ff4cad1d261212ae027312bf8be11a3b29cb05d9274174a00048e110"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/geology/source-manifest.json",
+      "bytes": 12385,
+      "sha256": "f422f2135f4085d5fe0c84b91b9fe29454a5760316f6f3efcbc6be37f3f302f1"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/geology/units.json",
+      "bytes": 31902,
+      "sha256": "6c4c7ad321ab72ed467d9b179fbfaa15df8b77c39d89d507564a3e534eb01222"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/geology/validation.json",
+      "bytes": 2407,
+      "sha256": "c113a1c297d9c74f0c51eefbc25e87a91edb2cb91b9b959d070193d5ee44e507"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/photos/photo-catalog.json",
+      "bytes": 4917,
+      "sha256": "d6dd23e3fd2589098f5b353b1e0c082a531a973a8b0b459d37ba3dc8cd6e22f2"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/photos/photo-evidence.md",
+      "bytes": 5481,
+      "sha256": "6139563d38b31754771e3a853368b42a6b81efb49066218288800ceec2097c45"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/photos/reproduce.md",
+      "bytes": 3517,
+      "sha256": "9c3068365e75e078e6d4c01273a3737a6a82e9858536e7b53f0ef7dece4b66ba"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/photos/thumbnails/mars-sample-11-nlf-0495-0710900102-755ecm-n0261004ncam00709-01-095j.webp",
+      "bytes": 149742,
+      "sha256": "b35213f8774ed3a3a8413dc6ff5b29946b86d7d988825766b676ab19673e093c"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/photos/thumbnails/mars-sample-12-nlf-0509-0712140650-691ecm-n0261222ncam00709-01-095j.webp",
+      "bytes": 184948,
+      "sha256": "5eda9001bd6e70674d707eb5896fa6f636fd1ae6a57f44784fedffb9f3e7298b"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/photos/validation.json",
+      "bytes": 719,
+      "sha256": "70736a083eec735f6915524e353ddc07b29550e07503a2bcfad54019532d3d5a"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/prepare_catalogues.py",
+      "bytes": 6284,
+      "sha256": "2a059a7803615ce1f938ac85c65b4a0d05a23238317154550eb8501f3e9eb837"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/read_report.py",
+      "bytes": 3432,
+      "sha256": "79c524abfae1d43b7f1446225f3e1249a50e8b2996de6fe1203e420562da39e9"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/retrieve.py",
+      "bytes": 1853,
+      "sha256": "5eb7e9f8c015634081512d243def6f9c69f19b36bb64e16d5e9fe1fcc9586cc2"
+    },
+    {
+      "file": "REFERENCE/docs/resource-preparation/teammate/verify.py",
+      "bytes": 2888,
+      "sha256": "8db5d0b5bbf804588722e20b9a0d52c0876c20c660b0a353948c3c1d63ffd4e7"
+    },
+    {
+      "file": "REFERENCE/docs/routing-validation-results.json",
+      "bytes": 1663,
+      "sha256": "c5bff705fd60237ac52ce1e920d3750572437a72ef056062a29d72b7bb59f91d"
+    },
+    {
+      "file": "REFERENCE/docs/science-approach-preview.png",
+      "bytes": 187599,
+      "sha256": "4cbe4609261c99f54e9ddd81f61813ae107f36947b2ed718e744311825078d6c"
+    },
+    {
+      "file": "REFERENCE/docs/science-approach-results.json",
+      "bytes": 3072,
+      "sha256": "2512ed5126db0e16093b594493b66646230b0c5ec50282c7776cd5424542dbd3"
+    },
+    {
+      "file": "REFERENCE/docs/science-approach-validation.md",
+      "bytes": 3464,
+      "sha256": "efea9f1deb37f063ef4df7667b8b7b358dc26a004a295ec601de1acf06ad328f"
+    },
+    {
+      "file": "REFERENCE/docs/science-layer-handoff.md",
+      "bytes": 4734,
+      "sha256": "4f71719fc936a3b09f561c43ea5f0ad656f649fb6c54cb8ae752bc6a0a043e72"
+    },
+    {
+      "file": "REFERENCE/docs/science-mineral-audit.md",
+      "bytes": 4694,
+      "sha256": "dcad6fca3fd5b67eef5fd6f8114653ef670ca9c6c242dfaca12b1a4e444f984b"
+    },
+    {
+      "file": "REFERENCE/docs/science-registration-results.json",
+      "bytes": 3082,
+      "sha256": "f7d1cfa56a4f94e2481bccd0d5a2ec0d361a610b46f75d4fc20a966d840ebe04"
+    },
+    {
+      "file": "REFERENCE/docs/science-site-integration.md",
+      "bytes": 1678,
+      "sha256": "ec7ac7a4eaa3367bf4e13b05fc1693364844474bce865623027f2471848a8037"
+    },
+    {
+      "file": "REFERENCE/docs/science-site-map-check.png",
+      "bytes": 998038,
+      "sha256": "fa4d35bc61d44e384d184c065a111cf034c3c42726bd34cd7fe34649997d6846"
+    },
+    {
+      "file": "REFERENCE/docs/science-site-photo-preview.png",
+      "bytes": 116679,
+      "sha256": "3aff2ad48e7a335059fbac2c4d10abfb68029976228f849e5cc8e5afcc238379"
+    },
+    {
+      "file": "REFERENCE/docs/science-sites.md",
+      "bytes": 4781,
+      "sha256": "1d0c6f6e083fe800f53bb98d9a1d36e558b6a08b7895460f563005a75d04b19f"
+    },
+    {
+      "file": "REFERENCE/docs/shared-map-handoff.md",
+      "bytes": 4937,
+      "sha256": "02905ba8b8b8a8d91f59818bd97ac3d654bb0cf1eaa1c86dc974a34d3baf0f1f"
+    },
+    {
+      "file": "REFERENCE/docs/slope-routing-validation.md",
+      "bytes": 10068,
+      "sha256": "03267dc23369682d98590ea4990494c150fb14f22d031963c48daa7e9ce4b356"
+    },
+    {
+      "file": "REFERENCE/docs/travel-time-estimates.md",
+      "bytes": 3270,
+      "sha256": "3ae00ad7d9571a296d0389813b7da6ff45e6144764321ef0b440f77931723066"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/index.html",
+      "bytes": 547,
+      "sha256": "cdadaf62a15e1c1b2772f356e7afc628fdf59cc8d8e9cedd2494772300d9986e"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/package-lock.json",
+      "bytes": 96651,
+      "sha256": "ef261d718cf1336546528473d032eafec26538cdddd4c4275cf67ed64ee283d0"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/package.json",
+      "bytes": 1855,
+      "sha256": "a14754faadf0cda8a73958000630b374f4cf5dde5da815169dd221591f843696"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/audit-mineral-registration.py",
+      "bytes": 4880,
+      "sha256": "6c7029bace96f027e20d4cd279ac155215b12ffb4039ffcb62df2a3bee8ffae5"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/audit-science-registration.py",
+      "bytes": 5672,
+      "sha256": "cd901563b96deed3c034acb06b045d7c3c50e764cc2278c6418f9e107a0a0ef0"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/browser-tests.mjs",
+      "bytes": 6983,
+      "sha256": "fabd9288775bc6945153071c814bfbe27ed1754c5fd2596049eae07c2b5cef6f"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/build-jezero-real.py",
+      "bytes": 9378,
+      "sha256": "3d4c639885ead061f87a3d0387255c3bc99582543b240538332e3f05785cba57"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/build-mars-assets.py",
+      "bytes": 9639,
+      "sha256": "a886f666673a4a262dc911a2996d5ab7ac4b6b56b71d7510478f53de145cf585"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/build-offline.mjs",
+      "bytes": 1608,
+      "sha256": "872f97efe3f9ab9eeaa7862590b091963763be25f1c11602602612df8aeef49d"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/build-regolith-textures.mjs",
+      "bytes": 1350,
+      "sha256": "5a03e69d8a0eccaaba8589a5de9e920df391e171479ad39f4631d346dc4b6d96"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/check-environment-source.py",
+      "bytes": 2183,
+      "sha256": "8bd3349b97eb51f2942fb7c410192af14d1f1289aa420f25abff3bde81699765"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/check-geology.py",
+      "bytes": 2362,
+      "sha256": "4993acccc0463cdfeca8dc040a6a577546f66e1445a557ce252e30a302c6afd4"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/check-historical-weather.py",
+      "bytes": 2870,
+      "sha256": "ecd0cb847abd164753986191069c12f94b7c0bce95bc6089a1226b65cceb10cf"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/check-map-package.mjs",
+      "bytes": 1499,
+      "sha256": "8f50565d98ac76bc85de86f12eaab00a008423d35ad4c2ca953eb629fdc62c58"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/check-native-routes.mjs",
+      "bytes": 3016,
+      "sha256": "7f9a9be98ab9dc8da3205594229024583daff0ab062d99bb1d1e85058e3f6548"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/check-orbital-minerals.py",
+      "bytes": 2724,
+      "sha256": "58795bfece881b307d3ed860d0b8e008bfdc86b9ced52482e64ac1333c4513ed"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/check-regional-geometry.mjs",
+      "bytes": 6860,
+      "sha256": "a4a8c6b2134e41326c77166073281604bcb08d38335f80d3640e841eb1fd2481"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/check-route-profiles.py",
+      "bytes": 2787,
+      "sha256": "d5cc6772a2ad5f055700aae4851b023cea121209d59f9e6b8f5ce54f1d89407b"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/check-routing.py",
+      "bytes": 5427,
+      "sha256": "147eea093ea9eb6202cce9d280b6918b142de5f00bb11734f7c3de1e370984d1"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/check-science-approaches.mjs",
+      "bytes": 2480,
+      "sha256": "5c58bb0a4fa3f0c5a377bd64752ed56ccc74ba86fa96d6358839af826911aee5"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/check-trek-reference.mjs",
+      "bytes": 2997,
+      "sha256": "74f4fc84f03a97813be4c2a14a4967c4d540b0f59e0f203f14fa2be3ee4180ae"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/create-map-upload-session.mjs",
+      "bytes": 2713,
+      "sha256": "ce1319dca0d92b5c3407bec56516084316f6849df2da5466e603653aa088b6e1"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/download-regional-hirise.mjs",
+      "bytes": 15288,
+      "sha256": "8019dc1a39a9f15d9079b1cc7ce0af07c6ee1254992d39d13b6eae44b07ccd16"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/inspect-cinematic.mjs",
+      "bytes": 1252,
+      "sha256": "46eb34b572a604c3ba6190d40a6db7e8a645f22c22e4f234fee312dff4e74976"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/inspect.mjs",
+      "bytes": 1214,
+      "sha256": "4f18d9c803b157e4f46a1cafed19dfa5a35fc4056490f977e9276621f7fccbc5"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/jz01/build_scene.py",
+      "bytes": 18294,
+      "sha256": "f2817ee42d11017243cc6d833ce9af130911a28fa5d056c0885f29e1c7d4bcb6"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/jz01/prepare-navigation.py",
+      "bytes": 1306,
+      "sha256": "af4c44f94b6d2f8d122dc3629c93704784aefced722dc6c80957995027041820"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/jz01/smoke-three-modes.mjs",
+      "bytes": 8142,
+      "sha256": "98214d169558971b89cf45f9ef32caba845f99733c86fcfc1285c0be2cc60038"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/jz01/test-runtime.mjs",
+      "bytes": 32842,
+      "sha256": "aeffaedadd814727ebd6b5c85ab1e4adbe782676053b7474eb1e20d0fe8d18a3"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/jz01/test-step4.mjs",
+      "bytes": 149,
+      "sha256": "1b63d2bba531b6b261b5e0e62b18f0a6b9026592d5a9d15dbb4c9509d2c7d0c6"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/jz01/test-step5-complete.mjs",
+      "bytes": 104,
+      "sha256": "50e31f1efb343844d566ef0963bb222c2a8f6abccb071428bfff0093d0e1484e"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/jz01/test-step5.mjs",
+      "bytes": 66,
+      "sha256": "9c24cabbf70e0177a336ad10e055ee08bb1aec4dcb202caf6312689d420f2a37"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/pack-regional-map.mjs",
+      "bytes": 4972,
+      "sha256": "6b1fca4f3e899c557cfb33403f80e260dedae8ba90cc2f90f2be01ba2c89010c"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/prepare-environment.py",
+      "bytes": 9082,
+      "sha256": "79f3fd9f6264d1ddd305884838aeac11fcadc684db22376364c59539154d166c"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/prepare-final-pbr.mjs",
+      "bytes": 2032,
+      "sha256": "58ea36dc2612429692cf97d6ce38008b458774d55b25784a3cdacbecddc6cd95"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/prepare-geology.py",
+      "bytes": 9299,
+      "sha256": "7accfe40d13b29cbaf72cc8aa03d841667ba50e5266aac0fa4eea651a3d87d54"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/prepare-historical-weather.py",
+      "bytes": 10235,
+      "sha256": "e50cc656f3c90d7d091fe69910b2f8e1c1b604b79f2ff923a9b3c81fda25903c"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/prepare-imagery.mjs",
+      "bytes": 2960,
+      "sha256": "e8ec39f0a5d52d48be2ccb4bd66ad5af1e216ab10c913606113451ad2951194d"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/prepare-jezero-surface.mjs",
+      "bytes": 8491,
+      "sha256": "4a95e4a5ec6e700f2f27d2f4fd11eadbd1941e88e88d844727fccf0736d7314a"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/prepare-orbital-minerals.py",
+      "bytes": 9385,
+      "sha256": "c7ac4bfbd4d5ac55f37a7da433b023649b396a10063e3220390749c7d875ca44"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/prepare-overview.mjs",
+      "bytes": 1700,
+      "sha256": "c559523fe7da72da8cd37c2ae39fbf2504d5870c6236d58e64a3ceefb3d52b05"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/prepare-routing.py",
+      "bytes": 4700,
+      "sha256": "58213e777fa63b673efe22dea3b234afdf3285faac99c407953cb95b78fa0821"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/prepare-shared-overview.mjs",
+      "bytes": 5420,
+      "sha256": "88df45707ce37788b4b4cd153e877b898bea2851f3077cbd21f6bec43b76ee63"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/prepare-terrain.mjs",
+      "bytes": 4056,
+      "sha256": "f11ddad7bb2e1d25b0ddf04ef7579ce0ea751a0b8c392ef31ead80c8c16855e1"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/refine-blender-final.py",
+      "bytes": 4796,
+      "sha256": "7667210eaf566ee0d09daea0fc0a13738a05c3b9ff370d28d5aabff22ebf69f3"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/smoke-science-walking.mjs",
+      "bytes": 4470,
+      "sha256": "a387e5d9fa814ffa932d01569a8716c53dec6b431a2d1bef6d9a806cc6cc9d04"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/test-explorer-return.mjs",
+      "bytes": 1808,
+      "sha256": "7cb8adf15aba41a7f013d9116e866268e8f0e5fc35560e0fe11c47cd9d399cf2"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/test-explorer.mjs",
+      "bytes": 6653,
+      "sha256": "26ad648c8a0648567b9a1d7134b56e00e5bf09583d5e1bba3b0ace4fe8c0d860"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/test-real-jezero.mjs",
+      "bytes": 8163,
+      "sha256": "65e2836ab6577aa018f0b5e0dfdc142a1d817df6de31b212025ec5dd21dd2a1f"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/upload-shared-map.mjs",
+      "bytes": 4266,
+      "sha256": "790f36e8f1613dca9f629fff14c1be184327444e4d37bffadf30e6450a49c237"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/validate-elevation.mjs",
+      "bytes": 1225,
+      "sha256": "71d5ec09780b6d42c352c2feda13875c9599ed35416830a586913f59f0cab902"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/validate_elevation.py",
+      "bytes": 14455,
+      "sha256": "58f4c46d7683f0dc00fde5fb08767c60b88d3ce4b6f09590f2c48a87fca0bd98"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/verify-packaged-sites.mjs",
+      "bytes": 1706,
+      "sha256": "bee58e9f36e3881cd47209227d21f1398623f7f077c031ae968164667743fadb"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/verify-regional-hirise.mjs",
+      "bytes": 5344,
+      "sha256": "f0ec79d701d11e0748872ceceeb0a6d18b43d2fea4f64642c604c8855b4bbcc3"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/verify-science-coverage.mjs",
+      "bytes": 3107,
+      "sha256": "9584886bb5eb6be74f630d7c17790e0639b8fec86823060346d0f2dd50f35aaf"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/scripts/visual-review.mjs",
+      "bytes": 2084,
+      "sha256": "1056d862d4453198b2b7dd16deee766b750a18c77ce63df03145b2770c813633"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/server.mjs",
+      "bytes": 1849,
+      "sha256": "79f4d03120b70a8952fec15ce9d096071fd3423cd618403c25b6e8f5b9745328"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/App.tsx",
+      "bytes": 273,
+      "sha256": "e6067e39418dcdc9b5f65b89e9868488f37aedbee98b4f2c7c5b6b54ec93cf30"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/CinematicScene.tsx",
+      "bytes": 12886,
+      "sha256": "c1997d5be3bba3d855097030bed8a4a8ebbd2bb175ab5882b65dadb44c8dffeb"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/EvaMissionPanel.tsx",
+      "bytes": 11178,
+      "sha256": "5ac36770ce9f3724cf8ebae83db21ed35eb2060b28a4b853edb3592092b6a7b1"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/Explorer.tsx",
+      "bytes": 12753,
+      "sha256": "b1177e304d9293883c0c74dd3b892ec80be1e5991dade3fa0d83065ee7d3a4d4"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/ExplorerDialogs.tsx",
+      "bytes": 11048,
+      "sha256": "9074b274a7141d8b55ec4bd56011401cee9d551fee95fd85167b118ce41e77bb"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/FreeCameraRig.tsx",
+      "bytes": 9314,
+      "sha256": "a562bccab3865d3a182c3e2bad8d3fd726f817473c3fc177318f1ea932c0e4ee"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/GeologyPanel.tsx",
+      "bytes": 2221,
+      "sha256": "7a8f3d555db7098898b6370ea2a03f61691d13dfe00922dfdf4cc008d71dd0fe"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/HistoricalEnvironmentPanel.tsx",
+      "bytes": 5247,
+      "sha256": "c7613d9293e191f8c554457bfe468a89dafe9cee64888734f52b37f7e0c482d4"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/JezeroMap.tsx",
+      "bytes": 11757,
+      "sha256": "408027c7b8829c6f15ce233f555ec4034990297d1c2a2f1b988063e88e4340e8"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/MissionInterface.tsx",
+      "bytes": 22591,
+      "sha256": "c7ae5d92554d2a8f32fb4c6815c962238c966455251358d775b4656fff6d4ea8"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/ObservationPanel.tsx",
+      "bytes": 1290,
+      "sha256": "39cfd41433c6ded4e12990897b9a9e31f7e24407450ebd919d73a9a7b81107b1"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/ObservedTerrainMaterial.ts",
+      "bytes": 4234,
+      "sha256": "fc7f7613781da9f407504188774829b9302625653c5d29e91828ec4ebe475b21"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/OrbitalLayerPanel.tsx",
+      "bytes": 2845,
+      "sha256": "b479ef7a846d029fa7f89284e802721bb92d8a62a7bf8c772c7757b2bce4a01b"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/Overview.tsx",
+      "bytes": 2586,
+      "sha256": "9882d9e6f0127dbfee8a0a6cd5ef6e5d94e8c3a904eb6260a4208f82568d18d5"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/RealismDetails.tsx",
+      "bytes": 4214,
+      "sha256": "caa46566a49baee86339243d53182e195a73252a9eab6bf4270bd5fa297e783b"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/RegionalMap2D.tsx",
+      "bytes": 19101,
+      "sha256": "45e62a0c8454884d756ebfed91aa9cbbb84396b936627ae5a5ad40015dba9aea"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/RegionalObservationPanel.tsx",
+      "bytes": 6156,
+      "sha256": "7fa5ceadc7a3461b35d255660917f6221491d3fafe863800bceb7381cf7e15f3"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/RegionalWorkspace.tsx",
+      "bytes": 31949,
+      "sha256": "441ea169388c231ef3f9a7fc13329ef401e4fd5f1084d2945892e058e8cb0c18"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/Scene.tsx",
+      "bytes": 19847,
+      "sha256": "29d9af487ffb75279c87f5c9bbf2340aaf65b0794abdcbf56a4951f292e57e2c"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/ScienceSitePhoto.tsx",
+      "bytes": 2190,
+      "sha256": "46b6c92a4e9450877d805db9f9a174b7761804d497c04a3a1b09c6b77fb04032"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/ScienceSitePopup.tsx",
+      "bytes": 4333,
+      "sha256": "f990dba71855f0f64599e9e94876fbfb829a66e56e72b0111d030b4fc51c1643"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/ScienceWalking.tsx",
+      "bytes": 2254,
+      "sha256": "c3cdd87c979d40853d907984cb30951c3a646f4e36788ed7624447dcfdb64e29"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/ScientificWorkspace.tsx",
+      "bytes": 31499,
+      "sha256": "8dbb41ae0e2032d99d2b0a02d5d77f1b3315560e890d2286bc046fe9e26db134"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/SharedImageryTiles.tsx",
+      "bytes": 1868,
+      "sha256": "e5165054d7264ef5d068c481858de41633a80b41b3a2618077f1c89ad53d33ff"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/SidebarTabs.tsx",
+      "bytes": 1084,
+      "sha256": "eda7980d658822073add52e74097e18c3a8c20abb7c311384282cfc7884f8d56"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/SurfaceDressing.tsx",
+      "bytes": 2686,
+      "sha256": "156a6436f67de03c0d681f072e04a2700406d780ea0bf5381818aef39284f37b"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/TouchControls.tsx",
+      "bytes": 4848,
+      "sha256": "6fed67d53836d118e87f94f83a0c36e2b06c5550b5f666e8a25b6b25689dfbd2"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/TravelEstimate.tsx",
+      "bytes": 2976,
+      "sha256": "30c9c9d09b2f71fd038a6ab0602e1a0647d7afc932b6e6f23f4e7fd9958f4478"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/cinematicGround.ts",
+      "bytes": 2702,
+      "sha256": "bd1a0e5d8f8b5a53f99a07c81e699e7d23730f8a7087bd04b9a062595f19d53a"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/data/geology-catalog.json",
+      "bytes": 167,
+      "sha256": "7603724c4279d7bf84bb1afe182b6f4f929cf7e831d816a7c5c7401a7e2fd2fa"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/data/historical-weather.json",
+      "bytes": 149798,
+      "sha256": "a5b0e0f46ffad3652df45d9437d7870c9e33ade27a9838d02860663c94a7446f"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/data/mineral-observations.json",
+      "bytes": 1139,
+      "sha256": "f872bcf2a1cfad7fdabe345a7a2dbf7fbe5b2ee98aaff7f108fc975d2134d2f4"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/data/orbital-layer-catalog.json",
+      "bytes": 11781,
+      "sha256": "4c306b9bfc1d3a3c777ef08914f4b71ec779fea422079c01b367662f722ad576"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/data/routing-catalog.json",
+      "bytes": 4109,
+      "sha256": "9588fb854cf5b91cb936f025bd63605f71840e16c657991aee4958dd36b65cb0"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/data/science-site-coverage.json",
+      "bytes": 3221,
+      "sha256": "c359fbd88effa026df18696aa0f81cfd7f96ee83de819dc924908f8d1b52cdd3"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/data/science-sites.json",
+      "bytes": 2527,
+      "sha256": "ab43f460b9625a768d8a9934ff6619e9b4589a56c71deabba8a32f15ef846a4b"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/data/shared-map-release.json",
+      "bytes": 332,
+      "sha256": "c728eed2cc810e3c3fb60637df7d5ca90f8a8c0f5bfdb51431eeb349c74d1e05"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/data/thermal-observations.json",
+      "bytes": 53369,
+      "sha256": "5ccffe0713d78f62e39fa76f4de15629f492e65fa870ad3e9caf75493f105981"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/environmentObservations.ts",
+      "bytes": 2145,
+      "sha256": "64b11a632bada0343426646a94979bd748da22f07f6120f764aae35ab83ba363"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/evaMission.ts",
+      "bytes": 9347,
+      "sha256": "4033e41ac62bb90d54d3e6e6d0d908455efcc20017d199d5cf0add3c140782df"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/exploration.css",
+      "bytes": 6460,
+      "sha256": "151c469535cb7fb3609c73c06d804726b01a2061ffdb73262de1e7d993efde5b"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/explorationInput.ts",
+      "bytes": 299,
+      "sha256": "28ce88a11bddbe28c595f823af634a19c1d814816c799b8fdbfe30fe93fa7b9f"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/explorer.css",
+      "bytes": 32979,
+      "sha256": "d71cc7a94219667c0651a7c87cc5e9e21b1424650386284397145c9d46e7a86b"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/final-polish.css",
+      "bytes": 2955,
+      "sha256": "dfcc723c2970b91261546c5366132a7cada7c2d64803f4bcf6a83d4b272dce3b"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/geology.ts",
+      "bytes": 3020,
+      "sha256": "46513b02bad700069cc7c593437470242b5eb528dbe88a63ddd75134f67b1bf5"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/hub-layout.css",
+      "bytes": 7975,
+      "sha256": "8424f0f089b17b962704ab989ccc5a3e02e9318cd94b53f23a92d3b06d6c3c54"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/imageryProjection.ts",
+      "bytes": 1521,
+      "sha256": "6d90daa1e3a9b73f821a590bafc78b70338c8fc93b92db3e28fb937cd4c3a5f6"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/jz01/JZ01Preview.tsx",
+      "bytes": 18120,
+      "sha256": "f6a2c14a536f6966d66e0b2de00209131246f2d2c7756eba71f15972cede87e4"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/jz01/Map2D.tsx",
+      "bytes": 4300,
+      "sha256": "3bdaa2ce95e13858b39808c3a6b87b46aad89c581cea000c95846d6c3936724f"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/jz01/MarsTerrainViewer.tsx",
+      "bytes": 254,
+      "sha256": "2db130786cd9ccbf4400603f9902d9da807a6ca6f7e04feebdd57bf78098d5b5"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/jz01/POVCamera.tsx",
+      "bytes": 9155,
+      "sha256": "f4b0c0e211ff5924c60afa166b5b2d79f0c30ecf1cfd7364bbd8bd84d5b2b66b"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/jz01/SurveyFrame.tsx",
+      "bytes": 2660,
+      "sha256": "77e1a5aa1f56d5f507587fb38089795ef8f7562d434375a38fc3ef72c9c43ad7"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/jz01/jz01.css",
+      "bytes": 3760,
+      "sha256": "2fcdc2240d49573a39a60416dc926e16f09984227242a5d4d99657c27d926056"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/jz01/navigation.ts",
+      "bytes": 2132,
+      "sha256": "91d00e3c42c73668e228f093899a437d017e846b549c87e5a196e7905d1d671a"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/loadNativeHazards.ts",
+      "bytes": 1767,
+      "sha256": "c3f878f7082ab392b095d9bcfc51340cf1016ca6bb87b344972cb51ed0a05202"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/losslessElevation.ts",
+      "bytes": 968,
+      "sha256": "115527ef5807b0dbf17f2ebb538719342b29c90825658eabba21fd60af2d2c89"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/main.tsx",
+      "bytes": 854,
+      "sha256": "68155862ffe1a4866f1544f8343c81e26dbb6f061a3c5d35118c94a7fa574980"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/mapCoordinates.ts",
+      "bytes": 2272,
+      "sha256": "e780a6a2086f2b6b050463076afec32360b590a3081336ed20b9325543bf149a"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/mission-interface.css",
+      "bytes": 39147,
+      "sha256": "6c8b99c4d1f349b91124419c9ad9149826f7eb9e097266f52a470d9d33304925"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/missionSite.ts",
+      "bytes": 331,
+      "sha256": "59a68c93f7c2ce3b51c6e42f0541b5713e14a48c4f00ce7bcfb88383988832f6"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/nativeRouting.ts",
+      "bytes": 10283,
+      "sha256": "6288f78b63aa653d6efd8eb99cb6c59fd1d6690e5d60a760c0e6a0220c6200fa"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/nativeRouting.worker.ts",
+      "bytes": 646,
+      "sha256": "23af4e4a00bc779ea545c0caa162f16a00867a295e28b39a0b60ef1f094260ac"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/orbitalLayers.ts",
+      "bytes": 2753,
+      "sha256": "e5f95aaebd312fe0ac5c74958e439ff27f7eacb5491e229dfe11fc85ab457480"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/readability.css",
+      "bytes": 13580,
+      "sha256": "b466853f5a255aee5cc20844a6bf59dc0cd3119e6027906294c37e4ef3acf2a7"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/regional-map.css",
+      "bytes": 24172,
+      "sha256": "62bc15bac0ae8af01c9820a7550f52a38a78335c9478a16d3ea27b2047c4fe0a"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/regional-sidebar.css",
+      "bytes": 14360,
+      "sha256": "87b86ce8103fcaeca3704a9ffdc937946a8e538aa0a150fadf1392bd69e721c5"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/regionalLayers.ts",
+      "bytes": 4845,
+      "sha256": "b66a5734c0dfb20dc8481bda51332e271c5430d056faf1ceb7289999389fc105"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/regionalTileStore.ts",
+      "bytes": 7216,
+      "sha256": "fb2004b89f7b7965f5f4982693d0e598ce5b88fb81adcc33ae8b5e493ad46d9d"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/science-walking.css",
+      "bytes": 1842,
+      "sha256": "0bac7e82ad09a92cc3458021ba72b2fb21d581d6279d37e161d0b1a39f6e818c"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/scienceRouting.ts",
+      "bytes": 2130,
+      "sha256": "124ce0f25ed520047d1bc5df01cfbb8fa481e4caf9121029a60ae3020d4c83e8"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/scienceSites.ts",
+      "bytes": 786,
+      "sha256": "2fd3407c919b353f16a834d64c6c3611a4b68da1037ce8b8a708a66b915d6d02"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/sharedRegionalData.ts",
+      "bytes": 2699,
+      "sha256": "ff34d94c834be47700fde876b8779f6412c14345b26b6c0ab28a89fa33b6bcac"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/styles.css",
+      "bytes": 36130,
+      "sha256": "ff2c62447705f607bf326b1604d65c82e78ac0b8120799373ec870872b6aad41"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/suit-typography.css",
+      "bytes": 3787,
+      "sha256": "cffef21e71a32c5b3455e61957bb7b5461fb2ede77cada06226341de08cd8912"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/terrain.ts",
+      "bytes": 7742,
+      "sha256": "9fcddc79e10a31f1a49601d396bfdf03356cbfbbd329739da0e74cc94a62b337"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/travelTime.ts",
+      "bytes": 898,
+      "sha256": "1e69dca97595fcc10263adb2bb36c8844f56cf0b0dfccb0ebf9ed5af428f1959"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/useEvaMission.ts",
+      "bytes": 579,
+      "sha256": "b40ad2253c3bab85b64013c633df987210b74d2b1c484a61aec81c03e37b774a"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/useNativeRoute.ts",
+      "bytes": 3667,
+      "sha256": "59db89aedc8e7e2b8f27addd30ee060aa79d1c6d3db51e111687e4adcbca3e46"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/visor.css",
+      "bytes": 8461,
+      "sha256": "3c19855414f505437ba7f4b006ecd87e039c4f3740a0586ffa36206c9eadf2c5"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/vite-env.d.ts",
+      "bytes": 39,
+      "sha256": "424faf9241dd699dda995b367ed36665732da1e6ec1f33b2fd40394488ecac92"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/src/workspace-navigation.css",
+      "bytes": 3693,
+      "sha256": "f75657a134225a6a9bd03cd9666723f591a615f2fbbaf531604f521690fa2f08"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/environment-observations.test.ts",
+      "bytes": 3012,
+      "sha256": "a007ce7e161980601579cc1db6175fd94288e5610cbd9ec8c3098af81f7d9cb5"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/eva-mission.test.ts",
+      "bytes": 5095,
+      "sha256": "c6fd2600bef9d80b6ba8ca3302e964dbdc8a5ce270d0fda706a16a8f1ae37fbf"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/geology.test.ts",
+      "bytes": 1941,
+      "sha256": "63a1a29beab67c34fcdd10f91bd8bfd838ab39c63199047ee4716d024cfa45fa"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/jz01-navigation.test.ts",
+      "bytes": 2417,
+      "sha256": "86a4ae32e922b5024f055d19fb376ff8eed5ac3857d4f9dfc6f2fd80f71b7722"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/lossless-elevation.test.ts",
+      "bytes": 979,
+      "sha256": "aa001da625f26aba929183f5fb2d160f629d74447238ac8c3c7f9f863348bec2"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/map-coordinates.test.ts",
+      "bytes": 2617,
+      "sha256": "d5d42bfdc58acd5ec8cc2862b744bc330ac1da3c89b38d584d7e4f304a0d8e7d"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/native-routing.test.ts",
+      "bytes": 4741,
+      "sha256": "bd9fd704d7096e7ed73a690eb68bdb13c0521be5827e3ba2a9d11fb566a2b2b2"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/observed-surface.test.ts",
+      "bytes": 1849,
+      "sha256": "75116541bb2897dc27f05bc807f918ed12288a6664d4ac33633f54539c415b44"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/orbital-layers.test.ts",
+      "bytes": 2151,
+      "sha256": "eb0c990aa994d36af91aa79681488981590fe2984b3f09975f651fec49e799d7"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/regional-layers.test.ts",
+      "bytes": 3074,
+      "sha256": "6932441e7986b4077db523949b796c1050d0c6c56188951fe795c3bd18108dcc"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/regional-tile-store.test.ts",
+      "bytes": 4845,
+      "sha256": "77d68af862aa30eb0da0d128dc81aa2b4b3fc16857b57fbdd894f61291e58326"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/science-routing.test.ts",
+      "bytes": 3686,
+      "sha256": "c18688cf065a03d1318fc021817891952d2e84b6784c328f33eeafd7749c6e9b"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/science-sites.test.ts",
+      "bytes": 1607,
+      "sha256": "a40e3c4d680a2e2b2d34fc5edbf4c4b90ffd26a12e54c799d3a3ebe67f772c31"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/shared-alignment.test.ts",
+      "bytes": 2350,
+      "sha256": "9c928d3119e5871e8f9cc254e6b94b85c7c9de884761c20949cbeb1d56803945"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/terrain.test.ts",
+      "bytes": 2987,
+      "sha256": "92ce3403ec9a47679afb49c6b003effdf1ba5fb61e210dd04d3bb7af318f1e9d"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tests/travel-time.test.ts",
+      "bytes": 1464,
+      "sha256": "349d886a8bad3f4eae9e1ddbe9cbec78283b59f899221889603af76548389a18"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/tsconfig.json",
+      "bytes": 340,
+      "sha256": "399e8200f47ea0eddb545982d2a62f31d1f953f7205f40adf9518af8c697f297"
+    },
+    {
+      "file": "REFERENCE/mars-explorer-web/vite.config.ts",
+      "bytes": 1004,
+      "sha256": "0cdc5bf21eef509e3ba96b96be1d0d30dd87f9dee1951eee56ac0129dda58d02"
+    }
+  ]
+}

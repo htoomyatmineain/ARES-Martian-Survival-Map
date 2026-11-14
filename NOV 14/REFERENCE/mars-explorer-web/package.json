@@ -1,0 +1,44 @@
+{
+  "name": "ares-jezero-mission-control",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build && node scripts/build-offline.mjs",
+    "start": "node server.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "pack:regional": "node --max-old-space-size=512 scripts/pack-regional-map.mjs",
+    "check:regional-package": "node scripts/check-map-package.mjs",
+    "prepare:terrain": "node scripts/prepare-terrain.mjs",
+    "prepare:imagery": "node scripts/prepare-imagery.mjs",
+    "test:browser": "node scripts/test-real-jezero.mjs",
+    "test:science": "node scripts/browser-tests.mjs",
+    "build:blender": "\"C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe\" --background --factory-startup --python scripts/build-jezero-real.py && \"C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe\" --background --factory-startup --python scripts/refine-blender-final.py",
+    "prepare:pbr": "node scripts/prepare-final-pbr.mjs",
+    "prepare:hirise": "node scripts/prepare-jezero-surface.mjs"
+  },
+  "dependencies": {
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "geotiff": "^3.0.5",
+    "lucide-react": "^1.70.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.187.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "sharp": "^0.35.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6"
+  }
+}

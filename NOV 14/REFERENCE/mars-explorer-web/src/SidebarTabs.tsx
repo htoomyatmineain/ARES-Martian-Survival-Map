@@ -1,0 +1,5 @@
+export const SIDEBAR_PANELS=[{id:'mission',label:'Route plan'},{id:'layers',label:'Layers'},{id:'sites',label:'Sites'},{id:'sources',label:'Sources'}] as const;
+export type SidebarPanel=(typeof SIDEBAR_PANELS)[number]['id'];
+export default function SidebarTabs({value,onChange}:{value:SidebarPanel;onChange:(panel:SidebarPanel)=>void}){
+ return <div className="rm-sidebar-tabs" role="tablist" aria-label="Workspace panels">{SIDEBAR_PANELS.map((panel,index)=><button key={panel.id} id={`rm-tab-${panel.id}`} role="tab" aria-selected={value===panel.id} aria-controls={`rm-panel-${panel.id}`} tabIndex={value===panel.id?0:-1} onClick={()=>onChange(panel.id)} onKeyDown={e=>{let next:number|undefined;if(e.key==='ArrowRight')next=(index+1)%SIDEBAR_PANELS.length;if(e.key==='ArrowLeft')next=(index+SIDEBAR_PANELS.length-1)%SIDEBAR_PANELS.length;if(e.key==='Home')next=0;if(e.key==='End')next=SIDEBAR_PANELS.length-1;if(next!==undefined){e.preventDefault();const id=SIDEBAR_PANELS[next].id;onChange(id);document.getElementById(`rm-tab-${id}`)?.focus();}}}>{panel.label}</button>)}</div>;
+}
