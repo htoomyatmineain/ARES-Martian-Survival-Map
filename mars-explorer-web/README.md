@@ -1,5 +1,13 @@
 # Mars Explorer — real Jezero terrain
 
+## Current workspace status — 14 November 2026
+
+The current app opens a landing page and `/explorer` regional workspace with **Map, Mission and Emergency** navigation. Emergency Phases 1–4 are implemented and validated. The [current Emergency runbook and completed acceptance checklist](../docs/emergency-simulation.md) record exact behavior, simulation assumptions, tests and limitations.
+
+Use `npm ci` with the existing lockfile, then `npm run dev` (port 5173), or `npm run build` and `npm start` (port 4173). The regional workspace uses the configured hosted NASA-derived dataset; this checkout lacks overview files needed for the optional local preview. An offline shell is not proof of complete offline terrain availability.
+
+The implementation descriptions and script examples below cover earlier versions. Refer to the current `package.json` and linked runbook for supported commands and current Emergency behavior.
+
 The main ground-level scene now uses actual NASA/MRO HiRISE stereo elevation and orbital imagery, imported through Blender and rendered interactively with Three.js. The supplied reference controls the orange HUD, glass panels, cyan trail and survival-instrument layout.
 
 **Open:** http://localhost:4173/ after `npm run build` and `npm start`.

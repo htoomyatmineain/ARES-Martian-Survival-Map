@@ -1,5 +1,9 @@
 # Rebuild progress ledger
 
+## Existing application — Emergency completion
+
+Emergency implementation Phases 1–4: **PASSED**, implementation commit `5562d6a`. [Final acceptance checklist: 8/8; evidence and limitations](../emergency-simulation.md). This status belongs to the existing repository, not the separate clean rebuild tracked below. The clean-rebuild phase table, gates and next actions remain preparation-time records; do not interpret their NOT STARTED statuses as the current Emergency implementation status.
+
 Prepared 2026-11-14. All entries refer to the new rebuild, not historical work.
 
 | Phase | Owner | Status | Commit / hashes | Evidence or blocked reason |

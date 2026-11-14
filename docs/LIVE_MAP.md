@@ -1,5 +1,7 @@
 # Live Jezero navigation map
 
+> **Current regional integration (14 November 2026):** Map, Mission and Emergency share terrain/map utilities. Emergency uses independent selection/state, supports 2D and Tactical 3D picking, and displays independently verified return comparisons in 2D after arrival. See the [completed Emergency checklist and validation scope](emergency-simulation.md). Existing map behavior is preserved; earlier map descriptions below are historical context.
+
 The explorer now opens with the 3D scene and a live 2D navigation panel visible together. The **Field terminal** header button switches back to the planning/suit interface. **Live 2D map** restores the map.
 
 ## Connected behavior
