@@ -1,11 +1,20 @@
 import {useState} from 'react';
 import catalogue from '../../docs/resource-preparation/teammate/photos/photo-catalog.json';
+import roverPhotos from './data/rover-site-photos.json';
 import skyland from '../../docs/resource-preparation/teammate/photos/thumbnails/mars-sample-11-nlf-0495-0710900102-755ecm-n0261004ncam00709-01-095j.webp';
 import hazeltop from '../../docs/resource-preparation/teammate/photos/thumbnails/mars-sample-12-nlf-0509-0712140650-691ecm-n0261222ncam00709-01-095j.webp';
 
 const images:Record<string,string>={'skinner-ridge-skyland':skyland,'wildcat-ridge-hazeltop':hazeltop};
 export default function ScienceSitePhoto({siteId}:{siteId:string}){
  const [failed,setFailed]=useState(false);
+ const rover=roverPhotos.find(photo=>photo.siteId===siteId);
+ if(rover)return <figure className="rm-site-photo" aria-label="NASA rover photograph" style={{maxWidth:'100%',minWidth:0,overflowWrap:'anywhere'}}>
+  <span className="rm-photo-label">PERSEVERANCE ROVER VIEW · HISTORICAL</span>
+  {failed?<p role="status">Photo could not load. Open the NASA original below.</p>:<a href={rover.originalImageUrl} target="_blank" rel="noreferrer" aria-label={`Open NASA original: ${rover.sample}`}><img src={rover.src} width={rover.width} height={rover.height} alt={rover.alt} loading="lazy" decoding="async" style={{maxWidth:'100%',height:'auto'}} onError={()=>setFailed(true)}/></a>}
+  <figcaption><strong>{rover.sample} · NASA catalogue rover image</strong><span>NASA/JPL-Caltech · additional credits in source caption</span></figcaption>
+  <p className="rm-photo-association">{rover.association}</p>
+  <details><summary>Photo source &amp; caption uncertainty</summary><p>{rover.captionAsPublished}</p><p>{rover.metadataStatus}</p><a href={rover.sourcePageUrl} target="_blank" rel="noreferrer">NASA sample catalogue ↗</a><a href={rover.originalImageUrl} target="_blank" rel="noreferrer">Original NASA image ↗</a></details>
+ </figure>;
  const photo=catalogue.photos.find(p=>p.siteId===siteId);
  if(!photo||!images[siteId])return null;
  return <figure className="rm-site-photo" aria-label="NASA outcrop photograph">
