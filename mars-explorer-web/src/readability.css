@@ -238,3 +238,11 @@
 .regional-map #rm-panel-sites .rm-site-row{border:1px solid var(--map-border);border-radius:5px;margin:0 0 12px;overflow:hidden}.regional-map #rm-panel-sites .rm-site-row>button:first-child{padding:14px;text-align:left;min-width:0;flex:1}.regional-map #rm-panel-sites .rm-site-row-title{display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.5;white-space:normal}.rm-site-row-title b{font-size:11px;font-weight:400;padding:3px 5px;background:var(--map-accent-wash);color:var(--map-accent);border-radius:3px;flex-shrink:0}.regional-map #rm-panel-sites .rm-site-row small{font-size:11px;line-height:1.7;white-space:normal;margin-top:6px}.regional-map #rm-panel-sites .rm-site-row .rm-site-confidence{font-size:10px;color:var(--map-accent)}.regional-map #rm-panel-sites .rm-site-locate{min-width:44px;min-height:44px;align-self:center}.regional-map #rm-panel-sites .rm-fineprint{font-size:11px;line-height:1.8}
 
 .rm-route-peek{padding:4px 16px 12px;display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;background:var(--map-panel)}.rm-route-peek>div{min-width:0}.rm-route-peek span{display:block;font-size:10px;color:var(--map-muted);line-height:1.7}.rm-route-peek strong{display:block;font-size:23px;line-height:1.5;font-weight:400;color:var(--map-accent);overflow-wrap:anywhere}.rm-route-peek p{grid-column:1/-1;font-size:10px;line-height:1.7;color:var(--map-muted);margin:0}.regional-map .rm-sidebar .rm-telemetry-toggle{position:sticky;top:0;z-index:1;background:var(--map-panel)}
+
+/* Primary route readings stand apart from the dark planning controls. */
+.regional-map .rm-sidebar>.rm-telemetry{background:var(--map-accent);border-top-color:var(--map-accent);color:#21170f}
+.regional-map .rm-sidebar .rm-telemetry-toggle,.regional-map .rm-route-peek{background:var(--map-accent);color:#21170f}
+.regional-map .rm-sidebar .rm-telemetry-toggle span,.regional-map .rm-route-peek strong{color:#21170f}
+.regional-map .rm-route-peek span,.regional-map .rm-route-peek p{color:#352319}
+.regional-map .rm-sidebar .rm-telemetry #rm-route-data{background:var(--map-panel);color:var(--map-text);border-top:1px solid #21170f30}
+.regional-map .rm-sidebar .rm-telemetry-toggle:focus-visible{outline:2px solid #21170f;outline-offset:-4px}
