@@ -1,11 +1,11 @@
 import type { Point, Route, Terrain } from './terrain.ts';
 
 export type HazardGrid = { width: number; height: number; spacing: number; size: number; values: Float32Array };
-export type RoutingRules = { alongLimit: number; crossLimit: number; totalLimit: number; slopeWeight: number; warningFraction: number };
+export type RoutingRules = { alongLimit: number; crossLimit: number; totalLimit: number; slopeWeight: number; warningFraction: number;profileId?:string;profileName?:string;profileSource?:string;profileNote?:string };
 // Engineering demonstration choices, NOT NASA astronaut or suit operating limits.
 export const DEMO_RULES: RoutingRules = { alongLimit:18, crossLimit:12, totalLimit:28, slopeWeight:4, warningFraction:.8 };
 export type SegmentCheck = { allowed:boolean; along:number; cross:number; total:number; warning:boolean; reason?:string };
-export type NativeRoute = Route & { maxAlongSlope:number; maxCrossSlope:number; warnings:Point[][]; profileStatus:'pending'|'verified'; profileSamples:number; rules:RoutingRules; expanded:number; approach?: {requested:Point; endpoint:Point; gapMetres:number; searchRadiusMetres:number; reason:string} };
+export type NativeRoute = Route & { maxAlongSlope:number; maxCrossSlope:number; warnings:Point[][]; profileStatus:'pending'|'verified'; profileSamples:number; rules:RoutingRules; expanded:number;searchSpacingMetres?:number; approach?: {requested:Point; endpoint:Point; gapMetres:number; searchRadiusMetres:number; reason:string} };
 const DEG=180/Math.PI;
 
 export function directionalBounds(bounds: ArrayLike<number>, ux:number, uz:number) {
@@ -42,15 +42,16 @@ export function checkSegment(grid:HazardGrid,a:Point,b:Point,rules:RoutingRules,
 }
 
 export function validateRules(r:RoutingRules){if(![r.alongLimit,r.crossLimit,r.totalLimit].every(v=>Number.isFinite(v)&&v>0&&v<90)||!Number.isFinite(r.slopeWeight)||r.slopeWeight<0||!(r.warningFraction>0&&r.warningFraction<=1))throw Error('Invalid routing rules');}
-export function planNativeRoute(grid:HazardGrid,start:Point,end:Point,rules:RoutingRules=DEMO_RULES,blocked=false,approachRadius=0):NativeRoute|null {
+export function planNativeRoute(grid:HazardGrid,start:Point,end:Point,rules:RoutingRules=DEMO_RULES,blocked=false,approachRadius=0,searchSpacing=grid.spacing*2):NativeRoute|null {
   validateRules(rules);
+  if(searchSpacing!==grid.spacing&&searchSpacing!==grid.spacing*2)throw Error('Search spacing must match the hazard grid or twice its spacing');
   if(!Number.isFinite(approachRadius)||approachRadius<0||approachRadius>500)throw Error('Invalid approach search radius');
   const pointRules={...rules,alongLimit:89.999,crossLimit:89.999};
   if(!checkSegment(grid,start,start,pointRules,blocked).allowed||(approachRadius===0&&!checkSegment(grid,end,end,pointRules,blocked).allowed))return null;
-  // Cell centres every 20 m. Start/end remain exact virtual nodes, with checked connectors.
-  const n=Math.floor(grid.width/2),step=grid.spacing*2,count=n*n,source=count,goal=count+1;
-  const point=(i:number):Point=>i===source?start:i===goal?end:{x:-grid.size/2+(i%n*2+1)*grid.spacing,z:-grid.size/2+(Math.floor(i/n)*2+1)*grid.spacing};
-  const near=(p:Point)=>{const c=Math.round((p.x+grid.size/2-grid.spacing)/step),r=Math.round((p.z+grid.size/2-grid.spacing)/step),out:number[]=[];for(let y=r-1;y<=r+1;y++)for(let x=c-1;x<=c+1;x++)if(x>=0&&x<n&&y>=0&&y<n)out.push(y*n+x);return out;};
+  // Checked search lattice: normally 20 m, with a 10 m retry on the released hazard grid. No new elevation is invented.
+  const step=searchSpacing,n=Math.floor(grid.size/step),count=n*n,source=count,goal=count+1;
+  const point=(i:number):Point=>i===source?start:i===goal?end:{x:-grid.size/2+(i%n+.5)*step,z:-grid.size/2+(Math.floor(i/n)+.5)*step};
+  const near=(p:Point)=>{const c=Math.round((p.x+grid.size/2-step/2)/step),r=Math.round((p.z+grid.size/2-step/2)/step),out:number[]=[];for(let y=r-1;y<=r+1;y++)for(let x=c-1;x<=c+1;x++)if(x>=0&&x<n&&y>=0&&y<n)out.push(y*n+x);return out;};
   const goals=new Set(near(end));const cost=new Float64Array(count+2).fill(Infinity),prev=new Int32Array(count+2).fill(-1),closed=new Uint8Array(count+2);
   const heap:{i:number;f:number}[]=[];
   const push=(item:{i:number;f:number})=>{heap.push(item);let k=heap.length-1;while(k){const p=(k-1)>>1;if(heap[p].f<=item.f)break;heap[k]=heap[p];k=p;}heap[k]=item;};
@@ -73,7 +74,7 @@ export function planNativeRoute(grid:HazardGrid,start:Point,end:Point,rules:Rout
   let maxAlongSlope=0,maxCrossSlope=0,maxSlope=0,distance=0,ascent=0;const warnings:Point[][]=[];
   const height=(p:Point)=>grid.values[(Math.floor((p.z+grid.size/2)/grid.spacing)*grid.width+Math.floor((p.x+grid.size/2)/grid.spacing))*5+4];
   for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i],check=checkSegment(grid,a,b,rules,blocked);if(!check.allowed)throw Error('Final route failed validation');maxAlongSlope=Math.max(maxAlongSlope,check.along);maxCrossSlope=Math.max(maxCrossSlope,check.cross);maxSlope=Math.max(maxSlope,check.total);const dh=height(b)-height(a);distance+=Math.hypot(b.x-a.x,b.z-a.z,dh);ascent+=Math.max(0,dh);if(check.warning)warnings.push([a,b]);}
-  return {points,distance,ascent,maxSlope,maxAlongSlope,maxCrossSlope,warnings,minutes:NaN,oxygen:NaN,feasible:false,profileStatus:'pending',profileSamples:0,rules:{...rules},expanded};
+  return {points,distance,ascent,maxSlope,maxAlongSlope,maxCrossSlope,warnings,minutes:NaN,oxygen:NaN,feasible:false,profileStatus:'pending',profileSamples:0,rules:{...rules},expanded,searchSpacingMetres:step};
 }
 
 // Dense path is used for native-height measurement and terrain-following display.

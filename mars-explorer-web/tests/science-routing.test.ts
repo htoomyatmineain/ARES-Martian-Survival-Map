@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {DEMO_RULES,checkSegment,type HazardGrid} from '../src/nativeRouting.ts';
+import {DEMO_RULES,checkSegment,planNativeRoute,type HazardGrid} from '../src/nativeRouting.ts';
 import {planScienceRoute,APPROACH_RADIUS_METRES} from '../src/scienceRouting.ts';
 import {initialMission,makeSnapshot,reviewMission,missionReducer,missionReport} from '../src/evaMission.ts';
 function flat():HazardGrid{const width=100,values=new Float32Array(width*width*5);for(let i=4;i<values.length;i+=5)values[i]=-2500;return {width,height:width,size:1000,spacing:10,values};}
@@ -29,3 +29,5 @@ test('approach-only simulation cannot execute or report science at the requested
  state=missionReducer(state,{type:'tick',minutes:snapshot.oneWayMinutes});assert.equal(state.phase,'ready-return');assert.equal(state.scienceCompleted,false);assert.deepEqual(missionReducer(state,{type:'science'}),state);
  state=missionReducer(state,{type:'return'});state=missionReducer(state,{type:'tick',minutes:snapshot.oneWayMinutes});assert.equal(state.phase,'complete');const report=missionReport(state,'');assert.equal(report.outcome,'returned-without-science');assert.equal(report.scienceCompleted,false);assert.deepEqual(report.plan!.route.approach?.requested,end);
 });
+
+test('10 m retry finds a valid narrow corridor missed by 20 m without crossing missing cells',()=>{const g=flat();g.values.fill(NaN);const row=50;for(let col=0;col<g.width;col++){const i=(row*g.width+col)*5;g.values.set([0,0,0,0,-2500],i);}const a={x:-350,z:5},b={x:100,z:5};assert.equal(planNativeRoute(g,a,b,DEMO_RULES),null);const result=planScienceRoute(g,a,b,DEMO_RULES,false,false);assert.ok(result.route);assert.equal(result.route.searchSpacingMetres,10);assert.deepEqual(result.route.points.at(-1),b);assert.equal(result.route.approach,undefined);for(let i=1;i<result.route.points.length;i++)assert.equal(checkSegment(g,result.route.points[i-1],result.route.points[i],DEMO_RULES).allowed,true);g.values.fill(NaN,(row*g.width+50)*5,(row*g.width+51)*5);assert.equal(planScienceRoute(g,a,b,DEMO_RULES,false,false).route,null);});

@@ -10,14 +10,14 @@ export function diagnoseRoute(grid:HazardGrid,start:Point,end:Point,rules:Routin
   const check=checkSegment(grid,point,point,pointRules,blocked);
   if(!check.allowed)return {code,message:check.reason==='Slope rule exceeded'?`${label} cell ground-slope bound ${check.total.toFixed(1)}° exceeds the ${rules.totalLimit}° demo limit.`:`${label}: ${check.reason}.`};
  }
- return {code:'disconnected',message:'The destination cell passes the ground-slope check, but no connected 20 m search-grid path meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.'};
+ return {code:'disconnected',message:'The destination cell passes the ground-slope check, but no connected path on the 20 m search or its 10 m retry meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable.'};
 }
 export function planScienceRoute(grid:HazardGrid,start:Point,end:Point,rules:RoutingRules,blocked=false,allowApproach=false):{route:NativeRoute|null;diagnosis?:RouteDiagnosis}{
- const exact=planNativeRoute(grid,start,end,rules,blocked);
+ const exact=planNativeRoute(grid,start,end,rules,blocked)??planNativeRoute(grid,start,end,rules,blocked,0,grid.spacing);
  if(exact)return {route:exact};
  const diagnosis=diagnoseRoute(grid,start,end,rules,blocked);
  if(!allowApproach||diagnosis.code==='start-blocked'||Math.abs(end.x)>=grid.size/2||Math.abs(end.z)>=grid.size/2)return {route:null,diagnosis};
- const route=planNativeRoute(grid,start,end,rules,blocked,APPROACH_RADIUS_METRES);
+ const route=planNativeRoute(grid,start,end,rules,blocked,APPROACH_RADIUS_METRES)??planNativeRoute(grid,start,end,rules,blocked,APPROACH_RADIUS_METRES,grid.spacing);
  if(!route)return {route:null,diagnosis};
  const endpoint=route.points.at(-1)!;
  return {route:{...route,approach:{requested:{...end},endpoint:{...endpoint},gapMetres:Math.hypot(endpoint.x-end.x,endpoint.z-end.z),searchRadiusMetres:APPROACH_RADIUS_METRES,reason:diagnosis.message}},diagnosis};

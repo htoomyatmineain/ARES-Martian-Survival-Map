@@ -14,7 +14,7 @@ export function useNativeRoute(shared:SharedRegionalMap|null,destination:Point,s
     if(!grid||!shared)return;
     const w=new Worker(new URL('./nativeRouting.worker.ts',import.meta.url),{type:'module'});
     const update=(value:{route:NativeRoute|null;status:string;error:string})=>setState({...value,requestKey});
-    const id=++sequence.current,c=new AbortController();update({route:null,status:'Finding terrain-aware route…',error:''});
+    const id=++sequence.current,c=new AbortController();update({route:null,status:'Searching terrain; retrying a finer grid if needed…',error:''});
     w.onmessage=async(event:MessageEvent<{id:number;route:NativeRoute|null;diagnosis?:{message:string};error?:string}>)=>{
       const m=event.data;if(m.id!==id||c.signal.aborted)return;
       if(m.error){update({route:null,status:'Route calculation failed',error:m.error});return;}

@@ -1,0 +1,8 @@
+import type {RoutingRules} from './nativeRouting.ts';
+import type {TravelMode} from './travelTime.ts';
+export type SlopeProfile='project'|'lunar-analogue'|'custom';
+export const LTV_SOURCE='https://ntrs.nasa.gov/api/citations/20240001217/downloads/LTV%20Teleops%20Study.pdf';
+export const EVA_SOURCE='https://ntrs.nasa.gov/api/citations/20250001829/downloads/ICES%202025%20TraverseModel.pdf';
+export const LUNAR_COMPARISON:RoutingRules={alongLimit:20,crossLimit:20,totalLimit:20,slopeWeight:4,warningFraction:.8};
+export function routingEvidence(profile:SlopeProfile,mode:TravelMode){return profile==='lunar-analogue'?{profileId:profile,profileName:mode==='rover'?'Lunar LTV research analogue':'Lunar EVA research analogue',profileSource:mode==='rover'?LTV_SOURCE:EVA_SOURCE,profileNote:mode==='rover'?'NASA’s 2024 study model used ±20° up, down and cross slope. ARES also caps total ground-slope bounds at 20° as a project assumption. Lunar simulated vehicle, not validated Mars hardware.':'The 2025 NASA-funded traverse study excludes slopes outside ±20° and states reduced-gravity suit modelling remains under development. ARES applies a 20° cap to along, sideways and total slope bounds as a project interpretation, not certified suit limits.'}:{profileId:profile,profileName:profile==='custom'?'Custom project assumptions':'Original project assumptions',profileSource:undefined,profileNote:'18° along / 12° sideways / 28° ground are original team settings, not NASA limits. Edited values remain project assumptions.'};}
+export function rulesWithEvidence(rules:RoutingRules,profile:SlopeProfile,mode:TravelMode){return {...rules,...routingEvidence(profile,mode)};}

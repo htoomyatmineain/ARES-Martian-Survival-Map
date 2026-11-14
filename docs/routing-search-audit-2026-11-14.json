@@ -1,0 +1,156 @@
+{
+  "description": "Graph-level assessment only; no new native-height profile fetch or hardware validation. Default project rules, exclusion off, default habitat.",
+  "rules": {
+    "alongLimit": 18,
+    "crossLimit": 12,
+    "totalLimit": 28,
+    "slopeWeight": 4,
+    "warningFraction": 0.8
+  },
+  "sites": [
+    {
+      "id": "skinner-ridge-skyland",
+      "name": "Skinner Ridge",
+      "beforeExact": false,
+      "after": "approach",
+      "searchSpacingMetres": 20,
+      "gapMetres": 238.06439898917898,
+      "reason": "Destination cell ground-slope bound 31.7° exceeds the 28° demo limit."
+    },
+    {
+      "id": "wildcat-ridge-hazeltop",
+      "name": "Wildcat Ridge",
+      "beforeExact": false,
+      "after": "exact",
+      "searchSpacingMetres": 10,
+      "gapMetres": 0,
+      "reason": null
+    },
+    {
+      "id": "M2020-164-2",
+      "name": "Roubion / Roubion (provisional)",
+      "beforeExact": true,
+      "after": "exact",
+      "searchSpacingMetres": 20,
+      "gapMetres": 0,
+      "reason": null
+    },
+    {
+      "id": "M2020-190-3",
+      "name": "Rochette / Montdenier (provisional)",
+      "beforeExact": true,
+      "after": "exact",
+      "searchSpacingMetres": 20,
+      "gapMetres": 0,
+      "reason": null
+    },
+    {
+      "id": "M2020-196-4",
+      "name": "Rochette / Montagnac (provisional)",
+      "beforeExact": true,
+      "after": "exact",
+      "searchSpacingMetres": 20,
+      "gapMetres": 0,
+      "reason": null
+    },
+    {
+      "id": "M2020-262-5",
+      "name": "Brac / Salette (provisional)",
+      "beforeExact": true,
+      "after": "exact",
+      "searchSpacingMetres": 20,
+      "gapMetres": 0,
+      "reason": null
+    },
+    {
+      "id": "M2020-271-6",
+      "name": "Brac / Coulettes (provisional)",
+      "beforeExact": true,
+      "after": "exact",
+      "searchSpacingMetres": 20,
+      "gapMetres": 0,
+      "reason": null
+    },
+    {
+      "id": "M2020-295-7",
+      "name": "Issole / Robine (provisional)",
+      "beforeExact": true,
+      "after": "exact",
+      "searchSpacingMetres": 20,
+      "gapMetres": 0,
+      "reason": null
+    },
+    {
+      "id": "M2020-337-8",
+      "name": "Issole / Malay (provisional)",
+      "beforeExact": true,
+      "after": "exact",
+      "searchSpacingMetres": 20,
+      "gapMetres": 0,
+      "reason": null
+    },
+    {
+      "id": "M2020-371-9",
+      "name": "Sid / Hahonih (provisional)",
+      "beforeExact": true,
+      "after": "exact",
+      "searchSpacingMetres": 20,
+      "gapMetres": 0,
+      "reason": null
+    },
+    {
+      "id": "M2020-374-10",
+      "name": "Sid / Atsah (provisional)",
+      "beforeExact": true,
+      "after": "exact",
+      "searchSpacingMetres": 20,
+      "gapMetres": 0,
+      "reason": null
+    },
+    {
+      "id": "M2020-749-22",
+      "name": "Berea / Tenby / Melyn (provisional)",
+      "beforeExact": true,
+      "after": "exact",
+      "searchSpacingMetres": 20,
+      "gapMetres": 0,
+      "reason": null
+    },
+    {
+      "id": "M2020-822-23",
+      "name": "Emerald Lake / Otis Peak (provisional)",
+      "beforeExact": true,
+      "after": "exact",
+      "searchSpacingMetres": 20,
+      "gapMetres": 0,
+      "reason": null
+    },
+    {
+      "id": "M2020-882-24",
+      "name": "Dream Lake / Hague Creek / Pilot Mountain (provisional)",
+      "beforeExact": true,
+      "after": "exact",
+      "searchSpacingMetres": 20,
+      "gapMetres": 0,
+      "reason": null
+    },
+    {
+      "id": "M2020-923-25",
+      "name": "Hans Amundsen Memorial Workspace / Mandu Wall / Pelican Point (provisional)",
+      "beforeExact": false,
+      "after": "approach",
+      "searchSpacingMetres": 10,
+      "gapMetres": 249.01587522349647,
+      "reason": "The destination cell passes the ground-slope check, but no connected path on the 20 m search or its 10 m retry meets all along-route, sideways and ground-slope limits. Conservative cells can exclude possible paths; this is not proof the site is physically unreachable."
+    },
+    {
+      "id": "M2020-949-26",
+      "name": "Turquoise Bay / Lake Newell / Lefroy Bay (provisional)",
+      "beforeExact": false,
+      "after": "exact",
+      "searchSpacingMetres": 10,
+      "gapMetres": 0,
+      "reason": null
+    }
+  ]
+}
