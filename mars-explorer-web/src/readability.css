@@ -359,3 +359,11 @@
 .regional-map.rm-workspace-mission .rm-review-tabs button{flex:1;padding:10px 8px;min-height:42px;font-size:12px;background:transparent;border:1px solid transparent;border-radius:4px;color:var(--map-muted)}
 .regional-map.rm-workspace-mission .rm-review-tabs button[aria-selected=true]{background:var(--map-accent-wash);border-color:var(--map-accent);color:var(--map-accent)}
 .rm-mission-review [hidden]{display:none!important}
+
+/* Mission preparation navigation. */
+.regional-map.rm-workspace-mission .rm-plan-steps{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 24px;padding:0;border:0}
+.regional-map.rm-workspace-mission .rm-plan-steps button{display:flex;align-items:center;gap:12px;text-align:left;padding:14px 12px;min-width:0;min-height:74px;border:1px solid #ffffff1f;border-radius:6px;background:#ffffff03;color:var(--map-muted);transition:background .15s,border-color .15s}
+.regional-map.rm-workspace-mission .rm-plan-steps button[aria-pressed=true]{background:var(--map-accent-wash);border-color:var(--map-accent);color:var(--map-text)}
+.rm-plan-steps .rm-step-number{font-size:20px;color:var(--map-muted);line-height:1}.rm-plan-steps [aria-pressed=true] .rm-step-number{color:var(--map-accent)}
+.rm-plan-steps button>span:last-child{min-width:0}.rm-plan-steps strong{display:block;font-size:15px;font-weight:500;line-height:1.4}.regional-map.rm-workspace-mission .rm-plan-steps small{display:block;font-size:10px;margin-top:4px;color:var(--map-muted);line-height:1.4}
+@media(max-width:480px){.regional-map.rm-workspace-mission .rm-plan-steps button{padding:12px 8px;gap:8px}.rm-plan-steps strong{font-size:13px}.rm-plan-steps .rm-step-number{font-size:16px}}
