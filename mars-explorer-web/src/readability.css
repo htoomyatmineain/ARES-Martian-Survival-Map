@@ -299,3 +299,10 @@
 .regional-map:is(.rm-workspace-map,.rm-workspace-mission) .rm-sidebar :is(.rm-plan-heading h2,.rm-panel-intro h2,.rm-mission-phase){font-size:22px;line-height:1.3}
 .regional-map:is(.rm-workspace-map,.rm-workspace-mission) .rm-sidebar :is(h3,legend){font-size:16px;line-height:1.4}
 .regional-map:is(.rm-workspace-map,.rm-workspace-mission) .rm-sidebar .rm-mission-hero>strong{font-size:28px}
+/* Consistent Emergency-sized typography across all Map and Mission content. */
+.regional-map:is(.rm-workspace-map,.rm-workspace-mission) .rm-sidebar :is(p,li,label,button,input,select,textarea,summary,dd,.rm-site-row-title,.rm-check,.rm-primary-action){font-size:14px;line-height:1.5}
+.regional-map:is(.rm-workspace-map,.rm-workspace-mission) .rm-sidebar :is(small,dt,.rm-fineprint,.rm-coordinates,.rm-site-confidence,.rm-science-goal>span,.rm-layer-group h3 b,.rm-site-row-title b){font-size:11px;line-height:1.6}
+.regional-map:is(.rm-workspace-map,.rm-workspace-mission) .rm-sidebar :is(.rm-panel-intro>p,.rm-science-goal p,.rm-conditions p,.rm-conditions li,.rm-brief-grid p,.rm-brief-grid li){font-size:14px;line-height:1.6}
+.regional-map:is(.rm-workspace-map,.rm-workspace-mission) .rm-sidebar :is(.rm-layer-group h3,.rm-plan-step h3,.rm-science-goal h3,.rm-brief-grid h3,.rm-conditions h3,.rm-routing-basis h3){font-size:16px;line-height:1.4}
+.regional-map:is(.rm-workspace-map,.rm-workspace-mission) .rm-sidebar :is(.rm-plan-heading h2,.rm-panel-intro h2,.rm-plan-intro h2,.rm-mission-phase){font-size:22px;line-height:1.3}
+.regional-map:is(.rm-workspace-map,.rm-workspace-mission) .rm-sidebar .rm-plan-close{font-size:22px}
