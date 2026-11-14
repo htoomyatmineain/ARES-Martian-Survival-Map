@@ -323,3 +323,4 @@
 .rm-heading-strip>div:after{border-bottom:9px solid #ffad3c;filter:drop-shadow(0 0 5px #ff9b3f);z-index:2}
 .rm-heading-strip>b,.rm-heading-strip>small{display:none}
 @media(max-width:700px){.rm-heading-strip{width:240px}}
+.regional-map .rm-map2d .rm-compass{width:15px;height:15px;padding:0}
