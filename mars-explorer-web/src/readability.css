@@ -329,3 +329,28 @@
 /* Keep terrain legends in the map's lower-left corner. */
 .regional-map .rm-stage .rm-legend{position:absolute;top:auto;left:16px;right:auto;bottom:58px;width:190px;max-width:calc(100% - 32px);margin:0;pointer-events:none}
 @media(max-width:700px){.regional-map .rm-stage .rm-legend{left:10px;bottom:46px;width:160px}}
+/* Mission document layout: readable sections within the half-screen column. */
+.regional-map.rm-workspace-mission .rm-sidebar-body{padding:22px;min-width:0}
+.regional-map.rm-workspace-mission .rm-mission :is(section,fieldset,details,.rm-brief-grid){min-width:0;max-width:100%}
+.regional-map.rm-workspace-mission .rm-brief-grid{grid-template-columns:minmax(0,1fr);gap:18px}
+.regional-map.rm-workspace-mission .rm-brief-grid>section{padding:18px;margin:0}
+.regional-map.rm-workspace-mission .rm-brief-grid .rm-site-photo img{max-height:220px;object-fit:cover}
+.regional-map.rm-workspace-mission .rm-mission :is(h3,legend){margin:0 0 12px;font-weight:500}
+.regional-map.rm-workspace-mission .rm-mission p{margin:10px 0;overflow-wrap:anywhere}
+.regional-map.rm-workspace-mission .rm-brief-tasks ol{padding-left:22px;margin:14px 0}
+.regional-map.rm-workspace-mission .rm-brief-tasks li{padding:0 0 14px 4px;margin-bottom:12px;border-bottom:1px solid #ffffff12}
+.regional-map.rm-workspace-mission .rm-brief-tasks li strong{font-size:14px;font-weight:500;color:var(--map-text)}
+.regional-map.rm-workspace-mission .rm-brief-tasks li small{margin-top:6px}
+.regional-map.rm-workspace-mission .rm-mission .rm-check{display:grid;grid-template-columns:minmax(0,1fr) 18px;align-items:start;gap:14px;margin:0;padding:14px 0;border-bottom:1px solid #ffffff12;min-height:46px}
+.regional-map.rm-workspace-mission .rm-sidebar .rm-mission input[type=checkbox]{display:block;width:18px;height:18px;min-width:18px;min-height:18px;max-width:18px;padding:0;margin:2px 0 0;justify-self:end;box-shadow:none;cursor:pointer}
+.regional-map.rm-workspace-mission .rm-task-confirmations{padding:16px;margin:20px 0;border-radius:5px}
+.regional-map.rm-workspace-mission .rm-task-confirmations legend{padding:0 6px;max-width:100%;font-size:14px}
+.regional-map.rm-workspace-mission .rm-mission .rm-check small{margin-top:6px;color:var(--map-muted);font-size:11px}
+.regional-map.rm-workspace-mission .rm-mission .rm-conditions{padding:18px;margin:22px 0}
+.regional-map.rm-workspace-mission .rm-review-overview{gap:12px}
+.regional-map.rm-workspace-mission .rm-review-overview>div{padding:14px;min-width:0}
+.regional-map.rm-workspace-mission .rm-review-overview strong{font-size:24px;overflow-wrap:anywhere}
+.regional-map.rm-workspace-mission .rm-mission .rm-advanced{padding:14px 0;border-top:1px solid #ffffff14;margin-top:12px}
+.regional-map.rm-workspace-mission .rm-mission textarea{resize:vertical;min-height:100px;max-width:100%}
+.regional-map.rm-workspace-mission .rm-mission-footer{padding-top:12px;box-shadow:0 -6px 12px var(--map-panel)}
+@media(max-width:800px){.regional-map.rm-workspace-mission .rm-sidebar-body{padding:16px}.regional-map.rm-workspace-mission .rm-mission .rm-conditions{padding:14px}}
