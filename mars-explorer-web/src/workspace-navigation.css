@@ -42,3 +42,6 @@
  .regional-map.rm-workspace-mission .rm-stage{position:relative;inset:auto;min-height:360px;flex-shrink:0;order:2}
  .regional-map.rm-workspace-mission .rm-telemetry{max-height:110px}.rm-workspace-mission .rm-zone-heading p{font-size:9px}
 }
+
+/* Keep the added Emergency entry inside narrow phone headers. */
+@media(max-width:450px){.regional-map .rm-header .rm-primary-nav button{min-width:0;padding:0 7px;font-size:14px}}

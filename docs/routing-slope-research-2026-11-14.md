@@ -51,7 +51,7 @@ A missing hazard cell can also represent any missing native input needed to form
 The current 10 m hazard envelopes still cannot resolve every narrow 1 m corridor. The search lacks vehicle footprint, steering radius, wheel/soil mechanics, real rock detection and validated suited-human stability. A finer search grid does not create finer observations or prove physical safety.
 
 ## Verification
-- Full suite: 66 passed / 0 failed; see routing-research-tests-2026-11-14.txt.
+- Full suite before merge: 66 passed / 0 failed. After merging the teammate’s isolated Emergency workflow: 77 passed / 0 failed; see routing-research-tests-2026-11-14.txt.
 - New narrow-corridor test: 20 m search fails, 10 m retry succeeds, all segments pass identical rules; a missing strip then blocks both.
 - Existing gap, diagonal corner, exclusion, obstacle, endpoint, profile and real released-hazard tests pass.
 - New evidence test: correct mode-specific source, custom values have no source claim, equipment scaling preserves provenance and warning fraction.
@@ -66,3 +66,6 @@ The current 10 m hazard envelopes still cannot resolve every narrow 1 m corridor
 5. Independent end-to-end verification and operational approval.
 
 Until those exist, these remain transparent planning profiles and calculated routes—not flawless astronaut-safe clearance. No numeric limit from a different vehicle or environment can substitute for that evidence.
+
+## Parallel-work merge
+The teammate’s Emergency workflow (5562d6a) was merged during final push. The only conflict was adjacent imports in RegionalWorkspace.tsx; both imports were retained. The combined production build and 77-test suite passed. Emergency behavior was not independently browser-audited as part of this slope task.
