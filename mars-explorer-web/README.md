@@ -1,12 +1,12 @@
 # Mars Explorer — real Jezero terrain
 
-## Current workspace status — 14 November 2026
+## Current workspace status — 15 November 2026
 
-The current app opens a landing page and `/explorer` regional workspace with **Map, Mission and Emergency** navigation. Emergency Phases 1–4 are implemented and validated. The [current Emergency runbook and completed acceptance checklist](../docs/emergency-simulation.md) record exact behavior, simulation assumptions, tests and limitations.
+Open `/explorer` for **Map, Mission and Emergency**. Expanded Emergency Phases 1–4 passed the [10/10 acceptance checklist](../docs/emergency-simulation.md): location-based tasks with source/uncertainty labels, 0–100% oxygen slider (no presets), workload/equipment and EVA budgets, progressive trails, shared verified 2D/3D return comparison, and functional simulated Return/Contact Base. Existing Mission calculations remain unchanged.
 
-Use `npm ci` with the existing lockfile, then `npm run dev` (port 5173), or `npm run build` and `npm start` (port 4173). The regional workspace uses the configured hosted NASA-derived dataset; this checkout lacks overview files needed for the optional local preview. An offline shell is not proof of complete offline terrain availability.
+Use `npm ci` with the existing lockfile, then `npm run dev` (5173), or `npm run build` and `npm start` (4173). **48 targeted tests, TypeScript/build and focused Chromium checks passed**. The runbook lists exact commands, test scope, unassessed constraints and the software-WebGL zoom limitation. Hosted terrain is required because this checkout lacks complete local preview data. Offline-shell generation does not establish full offline terrain readiness. Expanded implementation is pending local work, not a claimed deployment.
 
-The implementation descriptions and script examples below cover earlier versions. Refer to the current `package.json` and linked runbook for supported commands and current Emergency behavior.
+Descriptions and commands below cover earlier versions; consult current `package.json` and the linked runbook for supported behavior.
 
 The main ground-level scene now uses actual NASA/MRO HiRISE stereo elevation and orbital imagery, imported through Blender and rendered interactively with Three.js. The supplied reference controls the orange HUD, glass panels, cyan trail and survival-instrument layout.
 

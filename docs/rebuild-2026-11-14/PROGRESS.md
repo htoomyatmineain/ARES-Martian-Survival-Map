@@ -1,8 +1,8 @@
 # Rebuild progress ledger
 
-## Existing application — Emergency completion
+## Existing application — expanded Emergency completion
 
-Emergency implementation Phases 1–4: **PASSED**, implementation commit `5562d6a`. [Final acceptance checklist: 8/8; evidence and limitations](../emergency-simulation.md). This status belongs to the existing repository, not the separate clean rebuild tracked below. The clean-rebuild phase table, gates and next actions remain preparation-time records; do not interpret their NOT STARTED statuses as the current Emergency implementation status.
+Updated 15 November 2026 (Asia/Rangoon). Expanded Emergency Phases 1–4: **PASSED for the tested hosted-data workflow**, local implementation pending publication. [Final acceptance: 10/10; 48 targeted tests, build and focused browser evidence](../emergency-simulation.md). The original `5562d6a` records the earlier MVP only. This completion does not certify the separate clean rebuild, deferred HUD, hardware performance or deployed-visitor gates below.
 
 Prepared 2026-11-14. All entries refer to the new rebuild, not historical work.
 

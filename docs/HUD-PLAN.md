@@ -1,6 +1,6 @@
 # Deferred plan: Tablet and HUD modes
 
-> **Current scope note, 14 November 2026:** the separate [Emergency Simulation](emergency-simulation.md) has passed its Phase 4 acceptance checks. This is not implementation or acceptance of the deferred HUD plan; HUD-specific checklist items retain their original status.
+> **Current scope (15 November 2026):** [Emergency Simulation](emergency-simulation.md) completed its expanded Phase 4 checks, including tasks/resources, shared 2D/3D return routes and simulated actions. This is not implementation or acceptance of the deferred HUD plan; its checklist items retain their original status.
 
 Recorded 2026-11-13 at the user's request. **Deferred; do not implement until requested.**
 

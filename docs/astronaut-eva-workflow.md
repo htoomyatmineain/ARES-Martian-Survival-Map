@@ -1,6 +1,6 @@
 # Astronaut EVA workflow — simulation
 
-> **Current addition (14 November 2026):** the independent Emergency tab is implemented and validated; see [Emergency Simulation](emergency-simulation.md). It reads Mission context at arrival without changing this EVA reducer or its calculations. Emergency Reset/tab exit ends only that simulation. Its 480-minute oxygen endurance, 2 km/h walking and 60-minute reserve are explicit assumptions, separate from the Mission plan settings below.
+> **Emergency update (15 November 2026):** the independent [Emergency Simulation](emergency-simulation.md) reads the Mission snapshot and remaining EVA budget at arrival without mutating this workflow. Selected Emergency task duration is counted once. Configurable normalized oxygen/workload, kit assumptions, critical restrictions and simulated actions are verified; they are not NASA suit-performance limits.
 
 Implemented 13 November 2026 in the Western Jezero regional workspace. This is a session-based mission demonstration using the existing native-terrain route planner, not live crew operations or operational EVA clearance.
 

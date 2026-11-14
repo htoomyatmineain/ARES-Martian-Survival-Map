@@ -1,6 +1,6 @@
 # ARES: rebuild from scratch, two-person execution plan
 
-> **Existing-repository update:** Emergency Phases 1–4 were completed and pushed in `5562d6a`; see [implementation and validation](../emergency-simulation.md). References below to unpushed Map/Mission changes and unimplemented emergencies describe the preparation-time baseline. This document still specifies a separate clean rebuild; its phases and wider Mission/HUD/deployment requirements have not been certified by the Emergency work.
+> **Existing-repository update (15 November 2026):** expanded Emergency Phases 1–4 passed the [10/10 local acceptance checklist](../emergency-simulation.md). The original MVP commit `5562d6a` and preparation-time claims below are historical; expanded code/docs are pending local work, not a claimed deployed release. This separate clean-rebuild plan and its wider Mission/HUD/deployment gates remain distinct.
 
 Prepared **14 November 2026, Asia/Rangoon**. This is an executable rebuild specification with initially unchecked checklists, not a handoff claiming the new build is finished. Read this before any phase. Start from an empty application in a separate repository/worktree; use the existing repository as read-only implementation and evidence reference. Do not destroy the working demonstration.
 

@@ -1,6 +1,6 @@
 # Teammate assignment: HUD test preparation and current 3D validation
 
-> **Status update, 14 November 2026:** [Emergency Simulation validation](emergency-simulation.md) is complete, including 2D/3D selection, oxygen endurance and independent return-route assessment. The statement below that regional oxygen/contingency models are unimplemented is historical. This does not complete the deferred shared-state HUD or the HUD-specific tests below; those checkboxes remain unchanged.
+> **Status update (15 November 2026):** [expanded Emergency validation](emergency-simulation.md) passed 10/10 scoped checks. Regional oxygen/workload, EVA-budget and return models now exist; the contrary statement in the original assignment below is historical. Software WebGL checks do not certify hardware performance, and the deferred HUD-specific checkboxes remain unchanged.
 
 Requested 2026-11-13. **The planned Tablet/HUD mode switch and shared-state HUD have not been implemented.** Existing 3D Tactical and legacy first-person views are not evidence that the planned HUD is complete. Oxygen supply and contingency models are also not implemented in the regional mission workflow.
 
