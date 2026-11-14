@@ -75,3 +75,16 @@ test('endpoint return follows its own geometry and duration; early abort retrace
  early=missionReducer(early,{type:'return',abort:true});assert.deepEqual(pointOnMission(early),position);assert.equal(returnMinutes(early),18);
  early=missionReducer(early,{type:'tick',minutes:18});assert.equal(early.phase,'complete');assert.equal(early.elapsed,36);
 });
+
+test('planned recovery consumes mission time and suit endurance without completing crew tasks',()=>{
+ const supplies={oxygenMinutes:480,batteryMinutes:420,reserveMinutes:60};
+ const input={...settings,recoveryMinutes:10,supplies};
+ const review=reviewMission(route(),input);assert.equal(review.required,174);assert.equal(review.walkBack?.worstCaseMinutes,282);
+ let s=start(input);s=missionReducer(s,{type:'tick',minutes:72});s=missionReducer(s,{type:'science'});
+ s=missionReducer(s,{type:'tick',minutes:20});assert.equal(s.phase,'science');assert.equal(s.scienceCompleted,false);
+ s=missionReducer(s,{type:'tick',minutes:10});assert.equal(s.phase,'ready-return');assert.equal(s.elapsed,102);assert.deepEqual(s.confirmedTasks,[]);
+ const report=missionReport(s,'');assert.equal(report.plan?.recoveryMinutes,10);assert.equal(report.supplyReadings[0].remaining,378);
+ assert.equal(reviewMission(route(),{...input,recoveryMinutes:-1}).ready,false);
+ assert.equal(reviewMission(route(),{...input,recoveryMinutes:NaN}).ready,false);
+ assert.equal(reviewMission(route(),{...input,recoveryMinutes:300}).ready,false);
+});
