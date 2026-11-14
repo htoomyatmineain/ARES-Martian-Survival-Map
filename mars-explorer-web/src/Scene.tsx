@@ -99,7 +99,7 @@ function Skirt({ terrain, exaggeration }: { terrain: Terrain; exaggeration: numb
 function HeadingStrip(){
   const root=useRef<HTMLDivElement>(null),direction=useMemo(()=>new THREE.Vector3(),[]);
   useFrame(({camera})=>{if(!root.current)return;camera.getWorldDirection(direction);const heading=(Math.atan2(direction.x,-direction.z)*180/Math.PI+360)%360;const value=root.current.querySelector('b');if(value)value.textContent=`${Math.round(heading)%360}°`;root.current.querySelectorAll<HTMLElement>('[data-bearing]').forEach(el=>{const delta=(Number(el.dataset.bearing)-heading+540)%360-180;el.style.transform=`translateX(${delta*2.4}px)`;el.style.visibility=Math.abs(delta)<65?'visible':'hidden';});});
-  return <Html fullscreen style={{pointerEvents:'none'}}><div ref={root} className="rm-heading-strip" aria-label="Camera heading clockwise from north"><div>{['N','NE','E','SE','S','SW','W','NW'].map((label,i)=><span key={label} data-bearing={i*45}>{label}</span>)}</div><b>0°</b><small>VIEW HEADING</small></div></Html>;
+  return <Html fullscreen style={{pointerEvents:'none'}}><div ref={root} className="rm-heading-strip" aria-label="Camera heading clockwise from north"><div>{Array.from({length:72},(_,i)=><span key={i} data-bearing={i*5} className={i%9===0?'is-cardinal':'is-tick'}>{i%9===0?['N','NE','E','SE','S','SW','W','NW'][i/9]:''}</span>)}</div><b>0°</b><small>VIEW HEADING</small></div></Html>;
 }
 function Controls({ mode, cameraAction, terrain, exaggeration }: SceneProps) {
   const ref = useRef<OrbitImpl>(null);

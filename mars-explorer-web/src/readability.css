@@ -312,3 +312,14 @@
 .rm-heading-strip>div{position:relative;height:22px;overflow:hidden;border-bottom:1px solid #ffffff35}.rm-heading-strip span{position:absolute;left:50%;margin-left:-12px;width:24px;border-bottom:4px solid #f39b58;padding-bottom:3px}.rm-heading-strip b{display:block;color:#f39b58;font-size:15px;font-weight:400}.rm-heading-strip small{display:block;font-size:8px;letter-spacing:1px;color:#bdc3cb}
 @media(max-width:700px){.rm-heading-strip{top:82px;width:210px}}
 .rm-heading-strip>div:after{content:"";position:absolute;left:50%;bottom:0;border-left:4px solid transparent;border-right:4px solid transparent;border-bottom:5px solid #f39b58;transform:translateX(-50%)}
+
+/* Thin horizon compass inspired by the supplied reference. */
+.regional-map .rm-compass{width:30px;height:30px;padding:1px}
+.rm-heading-strip{width:360px;max-width:calc(100% - 32px);padding:0 10px 8px;background:transparent;border:0;border-radius:0;text-shadow:0 1px 3px #000,0 0 5px #000}
+.rm-heading-strip>div{height:36px;border-bottom:1px solid #e5e5e56b}
+.rm-heading-strip span{bottom:0;border:0;padding-bottom:10px;font-size:12px;color:#eee}
+.rm-heading-strip .is-cardinal:after{content:"";position:absolute;bottom:0;left:50%;height:9px;border-left:1px solid #eee9}
+.rm-heading-strip .is-tick{height:5px;width:1px;margin-left:0;padding:0;background:#ddd6}
+.rm-heading-strip>div:after{border-bottom:9px solid #ffad3c;filter:drop-shadow(0 0 5px #ff9b3f);z-index:2}
+.rm-heading-strip>b,.rm-heading-strip>small{display:none}
+@media(max-width:700px){.rm-heading-strip{width:240px}}
