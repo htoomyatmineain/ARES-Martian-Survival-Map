@@ -170,7 +170,7 @@ function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | 
     <gridHelper args={[30, 60, '#4b4b40', '#36382f']} position={[0, -.56, 0]} />
     <Habitat position={ground(terrain, sites[0], exaggeration)} /></>}
     {props.mode!=='Explore'&&routePoints.length > 1 && <><Line points={routePoints} color="#0b0d10" lineWidth={6} depthTest={false} depthWrite={false} renderOrder={5}/><Line points={routePoints} color={props.storm ? '#ffad64' : props.accentColor ?? '#f5bb70'} lineWidth={3} depthTest={false} depthWrite={false} renderOrder={6}/></>}
-    {props.mode!=='Explore'&&warningLines.map((points,i)=><Line key={i} points={points} color="#ff6556" lineWidth={4} depthTest={false} depthWrite={false} renderOrder={7}/>)}
+    {props.mode!=='Explore'&&warningLines.map((points,i)=><group key={i}><Line points={points} color="#0b0d10" lineWidth={9} depthTest={false} depthWrite={false} renderOrder={7}/><Line points={points} color="#ff42dc" lineWidth={6} depthTest={false} depthWrite={false} renderOrder={8}/></group>)}
     {props.mode!=='Explore'&&cursor && progress > 0 && <mesh position={[cursor[0], cursor[1] + .055, cursor[2]]}><sphereGeometry args={[.055, 16, 16]} /><meshBasicMaterial color="#fff5c4" /></mesh>}
     {props.mode!=='Explore'&&markers && sites.map((s, i) => { const p = ground(terrain, s, exaggeration); return <group key={s.id} position={p}>
       <mesh position={[0, .025, 0]} rotation={[-Math.PI / 2, 0, 0]}><ringGeometry args={[.07, .095, 32]} /><meshBasicMaterial color={i === 0 ? '#c9dfca' : '#efb875'} side={THREE.DoubleSide} /></mesh>
