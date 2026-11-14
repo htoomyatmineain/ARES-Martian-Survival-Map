@@ -248,3 +248,24 @@
 .regional-map .rm-sidebar .rm-telemetry-toggle:focus-visible{outline:2px solid #21170f;outline-offset:-4px}
 
 .regional-map .rm-reset-layers{width:100%;margin:0 0 24px;min-height:44px}
+
+/* Mission is a document workspace, with one page scroll and a smaller sticky map. */
+.regional-map.rm-workspace-mission .rm-body{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(320px,1fr);align-items:start;gap:20px;padding:20px;overflow-y:auto;overflow-x:hidden}
+.regional-map.rm-workspace-mission .rm-sidebar{position:relative;inset:auto;width:auto;height:auto;max-height:none;overflow:visible;min-width:0}
+.regional-map.rm-workspace-mission .rm-sidebar-body,.regional-map.rm-workspace-mission .rm-mission-view,.regional-map.rm-workspace-mission #rm-panel-mission,.regional-map.rm-workspace-mission .rm-mission{height:auto;min-height:0;overflow:visible;display:block}
+.regional-map.rm-workspace-mission .rm-mission{padding:0;border:0}.regional-map.rm-workspace-mission .rm-sidebar-body{padding:26px}.regional-map.rm-workspace-mission .rm-mission-content{overflow:visible;height:auto;padding:0}
+.regional-map.rm-workspace-mission .rm-stage{position:sticky;inset:auto;top:0;height:calc(100dvh - 112px);min-height:400px;grid-column:2;grid-row:1}
+.regional-map.rm-workspace-mission .rm-map2d,.regional-map.rm-workspace-mission .rm-scene{inset:0}
+.regional-map.rm-workspace-mission .rm-mission-footer{position:sticky;bottom:-20px;z-index:12;padding:16px 0 4px;margin-top:24px;background:var(--map-panel);border-top:1px solid var(--map-border);box-shadow:0 -12px 20px var(--map-panel)}
+.regional-map.rm-workspace-mission .rm-mission-footer .rm-primary-action{width:100%;min-height:50px}.regional-map.rm-workspace-mission .rm-mission-footer .rm-fineprint{margin:8px 0;font-size:10px}
+.regional-map.rm-workspace-mission .rm-sidebar .rm-mission-phase{font-size:30px;margin:14px 0 22px}.regional-map.rm-workspace-mission .rm-mission-hero>strong{font-size:38px;color:var(--map-accent)}
+.rm-brief-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start;margin:20px 0}.rm-brief-grid>*{min-width:0;margin:0}.rm-brief-grid .rm-site-photo{max-width:100%;margin:0;border:1px solid var(--map-border);padding:12px;border-radius:5px}.rm-brief-grid .rm-site-photo img{width:100%;height:auto;max-height:260px;object-fit:cover}.rm-brief-grid>section{border:1px solid var(--map-border);padding:18px;border-radius:5px}.rm-brief-grid h3{font-size:17px;margin:0 0 12px}.rm-brief-grid p,.rm-brief-grid li{font-size:13px;line-height:1.8;color:var(--map-muted)}.rm-brief-grid .rm-load-controls{margin:0;padding:0;border:0}.rm-brief-grid ol{padding-left:20px}
+.rm-review-overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0}.rm-review-overview>div{padding:18px;background:var(--map-accent-wash);border:1px solid var(--map-border);border-radius:5px}.rm-review-overview span{font-size:11px;color:var(--map-muted)}.rm-review-overview strong{display:block;font-size:27px;font-weight:400;line-height:1.5;color:var(--map-accent);margin-top:8px}
+.regional-map.rm-workspace-mission .rm-advanced{padding:14px 0;border-bottom:1px solid var(--map-border)}.regional-map.rm-workspace-mission .rm-advanced>summary{cursor:pointer;font-size:14px}.rm-mission-brief[hidden],.rm-mission-review[hidden]{display:none!important}
+.rm-mission-map-toggle{padding:10px 14px;background:var(--map-panel);border:1px solid var(--map-border);border-radius:4px;font-size:12px}
+.regional-map.rm-workspace-mission.rm-mission-map-expanded .rm-body{grid-template-columns:0 minmax(0,1fr);gap:0}.regional-map.rm-workspace-mission.rm-mission-map-expanded .rm-sidebar{display:none}
+@media(max-width:1050px){.rm-brief-grid{grid-template-columns:1fr}.regional-map.rm-workspace-mission .rm-body{grid-template-columns:minmax(0,1.5fr) minmax(290px,1fr)}}
+@media(max-width:800px){.regional-map.rm-workspace-mission .rm-body{display:flex;flex-direction:column;padding:12px;overflow-y:auto}.regional-map.rm-workspace-mission .rm-sidebar{order:2;width:100%}.regional-map.rm-workspace-mission .rm-stage{position:relative;top:auto;order:1;width:100%;height:340px;min-height:340px;flex-shrink:0}.regional-map.rm-workspace-mission .rm-sidebar-body{padding:18px}.regional-map.rm-workspace-mission .rm-mission-footer{bottom:-12px}.regional-map.rm-workspace-mission.rm-mission-map-expanded .rm-stage{height:calc(100dvh - 96px)}.rm-review-overview{gap:10px}.rm-review-overview>div{padding:12px}.rm-review-overview strong{font-size:23px}}
+
+.rm-brief-grid:has(>:only-child){grid-template-columns:1fr}.regional-map.rm-workspace-mission .rm-north.rm-compass{top:140px}.regional-map.rm-workspace-mission .rm-map-tools{top:234px}
+.rm-mission-map-toggle{pointer-events:auto}
