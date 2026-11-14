@@ -181,3 +181,40 @@
  .rm-placement-bar{bottom:80px;flex-wrap:wrap;justify-content:center;width:max-content;font-size:11px}
  .regional-map.rm-workspace-map .rm-zone-heading{right:12px;bottom:12px}.regional-map.rm-workspace-map .rm-zone-heading h1{font-size:19px}
 }
+
+/* Route planning hierarchy: numbered inputs, then a distinct result. */
+.regional-map .rm-wordmark{display:flex;align-items:center;gap:14px;min-width:0}
+.regional-map .rm-brand-logo{width:94px;height:62px;object-fit:contain;flex-shrink:0}
+.regional-map .rm-header .rm-wordmark span{margin:0;font-size:18px;white-space:normal}
+.rm-visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.regional-map .rm-map-planner{padding-bottom:16px}
+.regional-map .rm-plan-intro h2{font-size:25px;line-height:1.2;letter-spacing:-.5px;text-transform:none;margin:0 0 10px}
+.rm-plan-intro p{font-size:13px;line-height:1.7;color:var(--map-muted);margin:0 0 24px}
+.rm-plan-step{padding:0 0 22px;margin:0 0 22px;border-bottom:1px solid var(--map-border)}
+.rm-plan-step h3{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:500;margin:0 0 16px}
+.rm-plan-step h3 b{display:grid;place-items:center;width:26px;height:26px;border:1px solid var(--map-border);border-radius:50%;font-size:13px;color:var(--map-accent);background:var(--map-accent-wash)}
+.regional-map .rm-map-planner label{font-size:13px;line-height:1.6;color:var(--map-muted)}
+.regional-map .rm-map-planner select,.regional-map .rm-map-planner input{font-size:16px;color:var(--map-text);min-height:48px}
+.regional-map .rm-map-planner .rm-travel-controls{align-items:end;gap:12px}
+.regional-map .rm-map-planner .rm-coordinates{font-size:11px;line-height:1.7;color:var(--map-muted);margin-top:10px}
+.regional-map .rm-map-planner .rm-route-preferences{border:0;padding:0;margin:0}
+.regional-map .rm-map-planner .rm-strategies{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.regional-map .rm-map-planner .rm-strategies button{min-height:64px;font-size:14px;line-height:1.5;padding:10px}
+.regional-map .rm-map-planner .rm-route-key{font-size:11px;order:2;margin:12px 0}
+.regional-map .rm-map-planner .rm-mission-plan-controls{display:flex;flex-direction:column}
+.regional-map .rm-map-planner .rm-route-rules{order:3}
+.regional-map .rm-map-planner details{font-size:12px;line-height:1.7}
+.regional-map .rm-map-planner summary{padding:8px 0}
+.rm-plan-summary{padding:18px;background:var(--map-accent-wash);border:1px solid var(--map-border);border-radius:6px;margin-bottom:18px}
+.rm-plan-status{display:block;font-size:11px;color:var(--map-accent);line-height:1.6;margin-bottom:18px}
+.regional-map .rm-plan-summary .rm-travel-result{display:block}
+.regional-map .rm-plan-summary .rm-travel-result>span{font-size:11px;color:var(--map-muted)}
+.regional-map .rm-plan-summary .rm-travel-result strong{display:block;font-size:32px;line-height:1.3;margin-top:8px;color:var(--map-accent)}
+.regional-map .rm-plan-summary .rm-travel p{font-size:11px;line-height:1.6;color:var(--map-muted)}
+.rm-plan-distance{border-top:1px solid var(--map-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:12px}
+.rm-plan-distance strong{font-size:20px;font-weight:400}
+.regional-map .rm-map-planner>.rm-primary-action{position:static;width:100%;min-height:52px;font-size:15px;margin:0}
+@media(max-width:700px){.regional-map .rm-brand-logo{width:64px;height:46px}.regional-map .rm-header .rm-wordmark span{display:none}.regional-map .rm-wordmark{gap:0}.regional-map .rm-plan-intro h2{font-size:22px}}
+
+.regional-map .rm-sidebar .rm-section .rm-plan-intro h2{font-size:25px;line-height:1.2;letter-spacing:-.5px;margin:0 0 10px}
+.regional-map .rm-map-planner .rm-travel-controls{grid-template-columns:1fr}
