@@ -1,0 +1,5 @@
+/* Application shell only; feature styles arrive in later parts. */
+:root { font-family: 'DM Sans', sans-serif; color: #e8e5dc; background: #171b1c; }
+body { margin: 0; }
+main { max-width: 48rem; margin: 10vh auto; padding: 2rem; }
+h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 2.5rem; }

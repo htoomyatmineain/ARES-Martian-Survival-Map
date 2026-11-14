@@ -1,0 +1,7 @@
+*.bin binary
+*.fits binary
+*.lbl -text -whitespace
+mars-explorer/data/science/*.xml -text -whitespace
+# Preserve scientific source checksums and browser asset copies.
+mars-explorer-web/source-data/JZ01_Codex_Handoff/** -text -whitespace
+mars-explorer-web/public/assets/mars/jz01/** -text -whitespace
