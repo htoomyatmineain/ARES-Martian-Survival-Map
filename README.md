@@ -2,11 +2,11 @@
 
 ## Current ARES regional application
 
-Open `/explorer` after running `npm ci`, `npm run build` and `npm start` in `mars-explorer-web` (development: `npm run dev`). Map, Mission and the isolated Emergency Simulation are implemented. Emergency supports 2D/3D location selection, verified terrain routes, arrival oxygen assessment and return comparison.
+Run `npm ci`, `npm run build` and `npm start` in `mars-explorer-web`, then open `/explorer` (development: `npm run dev`). Map, Mission and isolated Emergency are implemented. Emergency includes location-eligible science tasks, a 0–100% oxygen slider, workload/equipment and EVA-budget calculations, progressive travel, shared 2D/3D verified returns and simulated Return/Contact Base actions.
 
-See the [Emergency implementation, 8/8 acceptance checklist and validation results](docs/emergency-simulation.md). Phase 4 passed 34 targeted tests, the production build and focused browser validation against the hosted terrain. Local preview dataset gaps and the existing bundle warning are documented there.
+Updated 15 November 2026: [final Emergency checklist — 10/10, validation and limitations](docs/emergency-simulation.md). **48 targeted tests, TypeScript/build and focused browser checks passed** against the hosted terrain. Expanded work is local until committed/pushed; no deployment acceptance is claimed.
 
-The earlier exploration/diorama descriptions below are historical context, not the current regional-workspace acceptance checklist.
+Earlier exploration/diorama descriptions below are historical context, not the current regional-workspace runbook.
 
 ## Three.js web explorer
 

@@ -1,7 +1,7 @@
+import { calculateResources, type EmergencyResourcePlan } from './emergencyResources.ts';
 import type { MissionSnapshot, MissionState } from './evaMission.ts';
 import type { NativeRoute } from './nativeRouting.ts';
 import { sites, type Point } from './terrain.ts';
-import { estimateTravel } from './travelTime.ts';
 
 /** Route locks at departure; Mission context refreshes at arrival. Oxygen is the selected ARRIVAL value. */
 export interface EmergencyContext {
@@ -10,37 +10,75 @@ export interface EmergencyContext {
   outboundRoute: NativeRoute;
   missionSnapshot: MissionSnapshot | null;
   remainingScienceMinutes: number | null;
+  remainingEvaMinutes?: number | null;
+  resourcePlan?: EmergencyResourcePlan;
 }
 export const PLAYBACK_SECONDS = 20;
-export const WALKING_KMH = 2;
-export const FULL_OXYGEN_MINUTES = 480;
-export const RESERVE_MINUTES = 60;
-
 export function validReturn(route: NativeRoute | null, arrival: Point): route is NativeRoute {
-  // Reuse endpoint/profile checks with a reversed COPY, never mutate Mission or outbound data.
   return !!route && validOutbound({ ...route, points: [...route.points].reverse() }, arrival);
 }
-export type DecisionStatus = 'continue' | 'return' | 'no-feasible-return' | 'insufficient-data';
-export function assessEmergency(oxygen: number, science: number | null, route: NativeRoute | null,
-  arrival: Point, noTerrainRoute = false, reserve = RESERVE_MINUTES) {
-  const available = Number.isFinite(oxygen) && oxygen >= 0 && oxygen <= 100 ? oxygen / 100 * FULL_OXYGEN_MINUTES : null;
-  const eta = validReturn(route, arrival) ? estimateTravel(route.distance, WALKING_KMH)?.minutes ?? null : null;
-  const knownScience = science !== null && Number.isFinite(science) && science >= 0 ? science : null;
-  const returnRequired = eta === null ? null : eta + reserve;
-  const missionRequired = returnRequired === null || knownScience === null ? null : returnRequired + knownScience;
-  const feasible = available !== null && returnRequired !== null && returnRequired <= available;
-  let status: DecisionStatus = 'insufficient-data';
-  let explanation = 'INSUFFICIENT DATA: return routing or required measurements are unavailable.';
-  if (available !== null && noTerrainRoute) {
-    status = 'no-feasible-return'; explanation = 'CRITICAL: No complete return route was found under the configured terrain constraints.';
-  } else if (available !== null && returnRequired !== null) {
-    if (!feasible) { status = 'no-feasible-return'; explanation = 'CRITICAL: verified return travel plus reserve exceeds arrival oxygen endurance.'; }
-    else if (oxygen <= 10) { status = 'return'; explanation = 'Abort science and return to habitat. Critical-oxygen simulation policy prohibits continuation even when the time budget fits.'; }
-    else if (missionRequired === null) { explanation = 'INSUFFICIENT DATA: remaining science time is UNKNOWN. Return fits the model, but science continuation cannot be assessed.'; }
-    else if (missionRequired <= available) { status = 'continue'; explanation = 'Science continuation may be considered: remaining science, verified return travel and reserve fit arrival oxygen endurance.'; }
-    else { status = 'return'; explanation = 'Abort science and return to habitat: return plus reserve fits oxygen endurance; continuing science does not.'; }
+export type ActionAvailability={state:'allowed'|'blocked'|'unknown';reason:string};
+export function assessEmergency(plan:EmergencyResourcePlan,oxygen:number,route:NativeRoute|null,eva:number|null,criticalAt=10,noTerrainRoute=false){
+  const full=calculateResources(plan,oxygen,route,eva);
+  const partial=plan.task.partial&&!plan.shortened?calculateResources({...plan,shortened:true},oxygen,route,eva):null;
+  const returnOxygenMargin=full.available===null||full.returnCost===null||full.reserveCost===null?null:full.available-full.returnCost-full.reserveCost;
+  const returnEvaMargin=full.evaMinutes===null||full.returnMinutes===null?null:full.evaMinutes-full.returnMinutes-plan.assumptions.reserveMinutes;
+  const critical=Number.isFinite(oxygen)&&oxygen>=0&&oxygen<=criticalAt;
+  function availability(oxygenMargin:number|null,evaMargin:number|null):ActionAvailability{
+    if(oxygenMargin!==null&&oxygenMargin< -1e-9)return {state:'blocked',reason:'Required oxygen plus reserve exceeds the arrival budget.'};
+    if(evaMargin!==null&&evaMargin< -1e-9)return {state:'blocked',reason:'Required time plus reserve exceeds the remaining EVA budget.'};
+    if(oxygenMargin===null||evaMargin===null)return {state:'unknown',reason:'Verified return evidence, oxygen or remaining EVA time is unavailable.'};
+    return {state:'allowed',reason:'Oxygen and EVA time margins preserve the configured reserve under this model; unassessed constraints still apply.'};
   }
-  return { status, explanation, available, eta, science: knownScience, reserve, returnRequired, missionRequired, feasible };
+  const science=(r:typeof full):ActionAvailability=>critical?{state:'blocked',reason:'Critical oxygen policy prohibits science, even if arithmetic fits.'}:r.errors.length?{state:'blocked',reason:r.errors.join(' ')}:availability(r.oxygenMargin,r.evaMargin);
+  const returning:ActionAvailability=noTerrainRoute?{state:'blocked',reason:'Neither independent search found a complete route under the configured terrain rules.'}:availability(returnOxygenMargin,returnEvaMargin);
+  const actions={continue:science(full),shorten:partial?science(partial):{state:'blocked',reason:plan.shortened?'The selected plan already uses its predefined partial task.':'No predefined shortened task exists.'} as ActionAvailability,return:returning};
+  const recommendation:'continue'|'shorten'|'return'|'contingency'|'unknown'=actions.continue.state==='allowed'?'continue':actions.shorten.state==='allowed'?'shorten':returning.state==='allowed'?'return':returning.state==='blocked'?'contingency':'unknown';
+  const severity=critical||returning.state==='blocked'?'critical':recommendation==='unknown'?'unknown':recommendation==='return'||recommendation==='shorten'||(route?.warnings.length??0)>0?'warning':'normal';
+  const contingency:ActionAvailability={state:recommendation==='contingency'?'allowed':recommendation==='unknown'?'unknown':'blocked',reason:recommendation==='contingency'?'No evaluated return satisfies the configured constraints. Simulate requesting assistance; rescue feasibility is not assessed.':recommendation==='unknown'?'Resolve missing route/resource/EVA evidence and simulate contacting base.':'An assessed option is available; no emergency contingency is required by this model.'};
+  return {route,full,partial,returnOxygenMargin,returnEvaMargin,critical,severity,recommendation,actions:{...actions,contingency}};
+}
+/** Presentation follows calculated constraints; missing evidence is never a critical route claim. */
+export function emergencyAlert(assessment:ReturnType<typeof assessEmergency>,noTerrainRoute=false){
+  const a=assessment,r=a.full;
+  const oxygenFailure=a.returnOxygenMargin!==null&&a.returnOxygenMargin< -1e-9;
+  const timeFailure=a.returnEvaMargin!==null&&a.returnEvaMargin< -1e-9;
+  const title=a.critical||oxygenFailure?'Low Oxygen':noTerrainRoute?'No Verified Return Route':timeFailure?'EVA Time Exceeded':a.recommendation==='unknown'?'Insufficient Data':r.oxygenMargin!==null&&r.oxygenMargin< -1e-9?'Mission Oxygen Margin':r.evaMargin!==null&&r.evaMargin< -1e-9?'Mission Time Margin':(a.route?.warnings.length??0)>0?'Terrain Slope Warnings':'Resource Assessment';
+  const reason=a.critical?'Critical oxygen policy blocks science. '+a.actions.return.reason:noTerrainRoute?a.actions.return.reason:timeFailure?'Return travel plus contingency reserve exceeds the remaining EVA time.':oxygenFailure?'Return oxygen plus contingency reserve exceeds the arrival oxygen budget.':a.actions[a.recommendation==='unknown'?'return':a.recommendation].reason;
+  const amount=(n:number|null,unit:string)=>n===null?'Unknown':`${n.toFixed(1)} ${unit}`;
+  const returnOxygen=r.returnCost===null||r.reserveCost===null?null:r.returnCost+r.reserveCost;
+  const returnTime=r.returnMinutes===null?null:r.returnMinutes+r.reserveMinutes;
+  return {title,severity:a.severity,reason,evidence:[`Arrival oxygen: ${amount(r.available,'%')}; return + reserve: ${amount(returnOxygen,'percentage points')}.`,`EVA time remaining: ${amount(r.evaMinutes,'min')}; return + reserve: ${amount(returnTime,'min')}.`,`Selected science task: ${amount(r.taskMinutes,'min')}; task oxygen: ${amount(r.taskCost,'percentage points')}.`]};
+}
+export function compareEmergencyRoutes(plan:EmergencyResourcePlan,oxygen:number,eva:number|null,routes:NativeRoute[]){
+  const candidates=routes.filter(r=>!!plan.location&&validReturn(r,plan.location)).filter((r,i,valid)=>!valid.slice(0,i).some(p=>!distinctRoute(p,r)))
+    .map(route=>({route,assessment:assessEmergency(plan,oxygen,route,eva)}));
+  const preferred=candidates.find(c=>c.assessment.actions.continue.state==='allowed')??candidates.find(c=>c.assessment.actions.shorten.state==='allowed')??candidates.find(c=>c.assessment.actions.return.state==='allowed')??candidates[0]??null;
+  const alternative=preferred?candidates.find(c=>c!==preferred&&(terrainRiskier(c.route,preferred.route)||(preferred.assessment.actions.return.state==='allowed'&&c.assessment.actions.return.state==='blocked')))??null:null;
+  return {candidates,preferred,alternative};
+}
+export function traveledRoute(route:NativeRoute,fraction:number):Point[]{
+  if(!Number.isFinite(fraction)||fraction<=0)return [];if(fraction>=1)return route.points;
+  const lengths=route.points.slice(1).map((p,i)=>Math.hypot(p.x-route.points[i].x,p.z-route.points[i].z));
+  let remaining=lengths.reduce((a,b)=>a+b,0)*fraction;const result=[route.points[0]];
+  for(let i=0;i<lengths.length;i++){if(remaining<lengths[i]){result.push(pointOnOutbound(route,fraction));break;}result.push(route.points[i+1]);remaining-=lengths[i];if(remaining===0)break;}
+  return result;
+}
+export function directionArrows(points:Point[]){return points.slice(1).flatMap((p,i)=>{const a=points[i];return Math.hypot(p.x-a.x,p.z-a.z)>0&&i%Math.max(1,Math.floor((points.length-1)/4))===0?[{point:{x:(a.x+p.x)/2,z:(a.z+p.z)/2},degrees:Math.atan2(p.z-a.z,p.x-a.x)*180/Math.PI}]:[];}).slice(0,5);}
+export type EmergencyOverlay={trail?:Point[];preview?:Point[];destination?:Point|null;points:Point[];color:string;alternative:Point[];warnings:Point[][];crew:Point|null;directions:boolean};
+export type SimulatedEmergencyState={mode:'idle'|'science-selected'|'returning'|'returned'|'contingency';fraction:number;shortened:boolean;contacts:number;message:string;returnRoute:NativeRoute|null;returnCost:number;returnMinutes:number};
+export const initialEmergencyActions=():SimulatedEmergencyState=>({mode:'idle',fraction:0,shortened:false,contacts:0,message:'All actions are simulated. No real communication or physical actuation.',returnRoute:null,returnCost:0,returnMinutes:0});
+export type SimulatedEmergencyAction={type:'reset'}|{type:'contact'}|{type:'tick';fraction:number}|{type:'continue'|'shorten'|'return'|'contingency';assessment:ReturnType<typeof assessEmergency>;route:NativeRoute|null};
+export function emergencyActionReducer(s:SimulatedEmergencyState,a:SimulatedEmergencyAction):SimulatedEmergencyState{
+  if(a.type==='reset')return initialEmergencyActions();
+  if(a.type==='contact')return {...s,contacts:s.contacts+1,message:'SIMULATED communication request recorded locally. No base connection or acknowledgement.'};
+  if(a.type==='tick'){if(s.mode!=='returning'||!Number.isFinite(a.fraction))return s;const fraction=Math.max(s.fraction,Math.min(1,a.fraction));return {...s,fraction,mode:fraction===1?'returned':'returning',message:fraction===1?'Simulated return reached habitat. No real movement occurred.':s.message};}
+  if(s.mode==='returning'||s.mode==='returned'||a.assessment.actions[a.type].state!=='allowed')return s;
+  if(a.type==='return'){
+    if(!a.route||a.assessment.route!==a.route||a.assessment.full.returnCost===null||a.assessment.full.returnMinutes===null)return s;
+    return {...s,mode:'returning',fraction:0,returnRoute:structuredClone(a.route),returnCost:a.assessment.full.returnCost,returnMinutes:a.assessment.full.returnMinutes,message:'SIMULATED return guidance started along the verified return route.'};
+  }
+  return {...s,mode:a.type==='contingency'?'contingency':'science-selected',shortened:s.shortened||a.type==='shorten',message:a.type==='contingency'?'Simulated emergency contingency selected. Assistance and rescue are not evaluated.':`Simulated ${a.type==='shorten'?'predefined partial':'full'} science plan selected; science execution is not simulated.`};
 }
 export function distinctRoute(a: NativeRoute, b: NativeRoute) {
   return a.points.length !== b.points.length || a.points.some((p, i) => Math.hypot(p.x - b.points[i].x, p.z - b.points[i].z) > .01);

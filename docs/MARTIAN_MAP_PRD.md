@@ -1,6 +1,6 @@
 # Interplanetary Survival Guide: Martian Map
 
-> **Implementation status, 14 November 2026:** the scoped Emergency Simulation is complete through Phase 4; [implemented behavior and 8/8 verification](emergency-simulation.md) define its current acceptance scope. Its constant-rate 480-minute endurance and 60-minute reserve do not implement this broader PRD's mass/energy, ingress, refuge, HUD or dynamic-hazard models. Those requirements are not marked complete by the Emergency work.
+> **Implementation status (15 November 2026):** expanded Emergency Phases 1–4 passed the [10/10 scoped acceptance checklist](emergency-simulation.md), with 48 targeted tests and focused live-browser verification. Configurable normalized resource budgets do not implement this broader PRD’s calibrated suit mass/energy, ingress, refuge, HUD or dynamic-hazard requirements. Those requirements and deployment acceptance are not certified by this work.
 
 ## Product requirements document
 

@@ -40,3 +40,34 @@
 .regional-map .rm-emergency-panel .rm-mission-stats dt{font-size:11px}
 .regional-map .rm-emergency-panel .rm-mission-stats dd{font-size:14px;overflow-wrap:anywhere}
 
+
+.rm-emergency-science label{display:block;margin:12px 0}
+.rm-emergency-science select,.rm-emergency-science input[type=number],.rm-emergency-panel input[type=range]{display:block;width:100%;max-width:100%;padding:8px;color:var(--map-text);background:var(--map-bg);border:1px solid var(--map-border);font:inherit}
+.rm-emergency-science p,.rm-emergency-science a{overflow-wrap:anywhere}
+
+.rm-emergency-case{border:1px solid var(--map-border);border-radius:6px;background:var(--map-panel)}
+.regional-map .rm-emergency-panel .rm-emergency-case h2{font-size:24px;line-height:1.2;margin:12px 0;letter-spacing:.6px}
+.regional-map .rm-emergency-panel .rm-emergency-case.is-critical{border:2px solid #ff736b;background:linear-gradient(120deg,#5c2025,var(--map-panel));box-shadow:inset 3px 0 #ff736b}
+.rm-emergency-case.is-critical small{color:#ffaaa4}
+.rm-emergency-case.is-warning{border-left:3px solid var(--map-accent)}
+.rm-emergency-action{margin:16px 0}
+.rm-emergency-icon,.rm-emergency-arrow{width:26px;height:26px;display:block;pointer-events:none}
+.rm-emergency-overlay .rm-emergency-icon{width:100%;height:100%}
+.rm-emergency-overlay polyline{filter:drop-shadow(0 0 1px #ffffff66)}
+.rm-emergency-route-summary{pointer-events:auto;max-height:48%;overflow:auto}
+.rm-emergency-route-summary h3{margin:0 0 10px}
+
+/* Keep the floating comparison clear of the route viewport on narrow screens. */
+@media(max-width:700px){
+ .regional-map .rm-emergency-map.has-comparison{min-height:720px}
+ .regional-map .rm-emergency-map.has-comparison > .rm-map2d,.regional-map .rm-emergency-map.has-comparison > .rm-emergency-scene{inset:120px 0 270px}
+ .regional-map .rm-emergency-map.has-comparison > .rm-emergency-route-summary{bottom:12px;max-height:240px}
+}
+
+.rm-emergency-panel select{max-width:100%;width:100%;padding:8px;background:var(--map-bg);color:var(--map-text);border:1px solid var(--map-border);font:inherit}
+.rm-emergency-panel fieldset>label{display:block;margin:12px 0}
+.rm-emergency-icon{filter:drop-shadow(0 0 3px #38c9ff88)}
+.rm-emergency-destination-3d{display:block;white-space:nowrap;padding:4px 6px;border:1px solid var(--map-accent);border-radius:4px;background:var(--map-panel);color:var(--map-accent);font-size:10px;pointer-events:none}
+
+/* In free-pick mode, science labels must not swallow terrain clicks. */
+.rm-emergency-map.is-picking .rm-science-marker,.rm-emergency-map.is-picking .rm-science-pin{pointer-events:none}
