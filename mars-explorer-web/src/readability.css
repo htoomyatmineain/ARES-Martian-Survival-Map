@@ -354,3 +354,8 @@
 .regional-map.rm-workspace-mission .rm-mission textarea{resize:vertical;min-height:100px;max-width:100%}
 .regional-map.rm-workspace-mission .rm-mission-footer{padding-top:12px;box-shadow:0 -6px 12px var(--map-panel)}
 @media(max-width:800px){.regional-map.rm-workspace-mission .rm-sidebar-body{padding:16px}.regional-map.rm-workspace-mission .rm-mission .rm-conditions{padding:14px}}
+
+.rm-review-tabs{display:flex;flex-wrap:wrap;gap:4px;padding:0 0 12px;margin-bottom:18px;border-bottom:1px solid var(--map-border)}
+.regional-map.rm-workspace-mission .rm-review-tabs button{flex:1;padding:10px 8px;min-height:42px;font-size:12px;background:transparent;border:1px solid transparent;border-radius:4px;color:var(--map-muted)}
+.regional-map.rm-workspace-mission .rm-review-tabs button[aria-selected=true]{background:var(--map-accent-wash);border-color:var(--map-accent);color:var(--map-accent)}
+.rm-mission-review [hidden]{display:none!important}
