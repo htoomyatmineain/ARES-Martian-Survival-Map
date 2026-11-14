@@ -228,3 +228,5 @@
 .regional-map .rm-header a.rm-wordmark{display:flex;color:inherit;text-decoration:none}
 
 .rm-routing-basis{border:1px solid var(--map-border);padding:14px;margin:0 0 18px;border-radius:4px}.rm-routing-basis p,.rm-routing-basis a{font-size:12px;line-height:1.8}.rm-routing-basis p{color:var(--map-muted)}.rm-routing-basis a{color:var(--map-accent)}.rm-routing-basis label{display:block}.rm-routing-basis select{display:block;width:100%;margin-top:8px}.rm-routing-basis h3{font-size:17px;font-weight:400}
+
+.regional-map .rm-sidebar-head[hidden]{display:none!important}.rm-plan-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.regional-map .rm-sidebar .rm-section .rm-plan-heading h2{margin:0}.rm-plan-close{flex-shrink:0;display:grid;place-items:center;width:40px;min-height:40px;border:1px solid var(--map-border);border-radius:4px;background:transparent;font-size:22px!important;line-height:1}
