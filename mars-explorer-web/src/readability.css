@@ -367,3 +367,4 @@
 .rm-plan-steps .rm-step-number{font-size:20px;color:var(--map-muted);line-height:1}.rm-plan-steps [aria-pressed=true] .rm-step-number{color:var(--map-accent)}
 .rm-plan-steps button>span:last-child{min-width:0}.rm-plan-steps strong{display:block;font-size:15px;font-weight:500;line-height:1.4}.regional-map.rm-workspace-mission .rm-plan-steps small{display:block;font-size:10px;margin-top:4px;color:var(--map-muted);line-height:1.4}
 @media(max-width:480px){.regional-map.rm-workspace-mission .rm-plan-steps button{padding:12px 8px;gap:8px}.rm-plan-steps strong{font-size:13px}.rm-plan-steps .rm-step-number{font-size:16px}}
+.rm-science-goal>a{display:block;margin-top:8px}
