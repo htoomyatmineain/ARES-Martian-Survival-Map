@@ -286,3 +286,5 @@
 .regional-map .rm-map-planner .rm-route-rules input[type=number]{width:60px;height:36px;min-height:36px;padding:6px 8px;font-size:14px}
 .regional-map .rm-map-planner .rm-route-rules p{font-size:11px;line-height:1.6;margin:10px 0}
 .regional-map .rm-map-planner .rm-route-rules .rm-check{gap:12px;padding:8px 0;font-size:12px}
+
+@media(min-width:801px){.regional-map.rm-workspace-mission:not(.rm-mission-map-expanded) .rm-body{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
