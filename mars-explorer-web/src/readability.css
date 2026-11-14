@@ -326,3 +326,6 @@
 .regional-map .rm-map2d .rm-compass{width:15px;height:15px;padding:0}
 
 .rm-science-tabs{display:flex;gap:0;padding:0 10px;border-bottom:1px solid var(--map-border);flex-shrink:0;overflow-x:auto}.rm-science-tabs button{flex:1;min-width:max-content;padding:12px 9px;font-size:12px;background:transparent;color:var(--map-muted);border:0;border-bottom:2px solid transparent;cursor:pointer}.rm-science-tabs button[aria-selected=true]{color:var(--map-accent);border-bottom-color:var(--map-accent)}.rm-science-tabs button:focus-visible{outline:2px solid var(--map-accent);outline-offset:-3px}
+/* Keep terrain legends in the map's lower-left corner. */
+.regional-map .rm-stage .rm-legend{position:absolute;top:auto;left:16px;right:auto;bottom:58px;width:190px;max-width:calc(100% - 32px);margin:0;pointer-events:none}
+@media(max-width:700px){.regional-map .rm-stage .rm-legend{left:10px;bottom:46px;width:160px}}
