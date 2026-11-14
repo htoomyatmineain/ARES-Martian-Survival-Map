@@ -279,3 +279,10 @@
 .regional-map.rm-workspace-map .rm-map-planner select,
 .regional-map.rm-workspace-map .rm-map-planner input{background:#252c34;border-color:rgba(255,255,255,.24);color:#f4f3ef}
 .regional-map.rm-workspace-map .rm-map-destination{background:rgba(243,155,88,.09);border-color:rgba(243,155,88,.48)}
+
+/* Compact slope settings; checkbox must not inherit text-input sizing. */
+.regional-map .rm-map-planner .rm-route-rules input[type=checkbox]{width:18px;height:18px;min-height:18px;padding:0;flex:0 0 18px;align-self:center}
+.regional-map .rm-map-planner .rm-route-rules label:not(.rm-check){display:grid;grid-template-columns:minmax(0,1fr) 60px;gap:10px;align-items:center;margin:8px 0;font-size:12px}
+.regional-map .rm-map-planner .rm-route-rules input[type=number]{width:60px;height:36px;min-height:36px;padding:6px 8px;font-size:14px}
+.regional-map .rm-map-planner .rm-route-rules p{font-size:11px;line-height:1.6;margin:10px 0}
+.regional-map .rm-map-planner .rm-route-rules .rm-check{gap:12px;padding:8px 0;font-size:12px}
