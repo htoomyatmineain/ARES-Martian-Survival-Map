@@ -54,3 +54,24 @@ test('early return does not claim completed science; reset and invalid state act
  assert.equal(report.taskEvidence[0].crewConfirmed,true);assert.equal(report.taskEvidence[1].crewConfirmed,false);
  assert.match(report.taskEvidence[0].evidenceNote!,/photo reference/);
  });
+
+const withReturn=()=>({...route(),returnRoute:{...route(),points:[{x:3000,z:0},{x:3000,z:2000},{x:-3000,z:2000},{x:-3000,z:0}],distance:10000}});
+test('separate return must connect endpoints, pass verification and fit the full budget',()=>{
+ assert.equal(reviewMission(route(),{...settings,requireReturn:true}).ready,false);
+ const r=withReturn();const checked=reviewMission(r,{...settings,requireReturn:true});
+ assert.equal(checked.returnTravel,120);assert.equal(checked.required,212);
+ assert.equal(reviewMission({...r,returnRoute:{...r.returnRoute,profileStatus:'pending'}},settings).ready,false);
+ assert.equal(reviewMission({...r,returnRoute:{...r.returnRoute,points:[{x:0,z:0},{x:-3000,z:0}]}},settings).ready,false);
+ assert.equal(reviewMission(r,{...settings,budgetMinutes:250}).ready,false);
+});
+test('endpoint return follows its own geometry and duration; early abort retraces only travelled ground',()=>{
+ let s=missionReducer(initialMission(),{type:'start',snapshot:makeSnapshot(withReturn(),{...settings,requireReturn:true})});
+ s=missionReducer(s,{type:'tick',minutes:72});s=missionReducer(s,{type:'return'});
+ assert.equal(returnMinutes(s),120);assert.deepEqual(pointOnMission(s),{x:3000,z:0});
+ s=missionReducer(s,{type:'tick',minutes:60});assert.deepEqual(pointOnMission(s),{x:0,z:2000});assert.equal(returnMinutes(s),60);
+ s=missionReducer(s,{type:'tick',minutes:60});assert.equal(s.phase,'complete');assert.deepEqual(pointOnMission(s),{x:-3000,z:0});assert.equal(s.elapsed,192);
+ let early=missionReducer(initialMission(),{type:'start',snapshot:makeSnapshot(withReturn(),settings)});
+ early=missionReducer(early,{type:'tick',minutes:18});const position=pointOnMission(early);
+ early=missionReducer(early,{type:'return',abort:true});assert.deepEqual(pointOnMission(early),position);assert.equal(returnMinutes(early),18);
+ early=missionReducer(early,{type:'tick',minutes:18});assert.equal(early.phase,'complete');assert.equal(early.elapsed,36);
+});

@@ -5,7 +5,7 @@ export type RoutingRules = { alongLimit: number; crossLimit: number; totalLimit:
 // Engineering demonstration choices, NOT NASA astronaut or suit operating limits.
 export const DEMO_RULES: RoutingRules = { alongLimit:18, crossLimit:12, totalLimit:28, slopeWeight:4, warningFraction:.8 };
 export type SegmentCheck = { allowed:boolean; along:number; cross:number; total:number; warning:boolean; reason?:string };
-export type NativeRoute = Route & { maxAlongSlope:number; maxCrossSlope:number; warnings:Point[][]; profileStatus:'pending'|'verified'; profileSamples:number; rules:RoutingRules; expanded:number;searchSpacingMetres?:number; approach?: {requested:Point; endpoint:Point; gapMetres:number; searchRadiusMetres:number; reason:string} };
+export type NativeRoute = Route & { returnRoute?:NativeRoute; maxAlongSlope:number; maxCrossSlope:number; warnings:Point[][]; profileStatus:'pending'|'verified'; profileSamples:number; rules:RoutingRules; expanded:number;searchSpacingMetres?:number; approach?: {requested:Point; endpoint:Point; gapMetres:number; searchRadiusMetres:number; reason:string} };
 const DEG=180/Math.PI;
 
 export function directionalBounds(bounds: ArrayLike<number>, ux:number, uz:number) {
