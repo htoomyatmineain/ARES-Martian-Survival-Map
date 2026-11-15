@@ -30,14 +30,14 @@ export function useEmergencyPlanning(point:Point|null,siteId='custom'){
 }
 export function EmergencyScienceInputs({planning,locked,frozenPlan}:{planning:ReturnType<typeof useEmergencyPlanning>;locked:boolean;frozenPlan?:EmergencyResourcePlan}){
   const plan=frozenPlan??planning.plan;
-  return <fieldset disabled={locked} className="rm-emergency-science"><legend>Location-based science · proposed simulation</legend>
-    <p className="rm-fineprint">{planning.evidenceStatus}</p>
+  return <fieldset disabled={locked} className="rm-emergency-science"><legend>Science task · simulation</legend>
+
     <label>Science task<select value={plan.task.id} onChange={e=>planning.chooseTask(e.target.value)}>{(frozenPlan?[frozenPlan.task]:planning.tasks).map(t=><option key={t.id} value={t.id}>{t.title} · {t.minutes} min estimated</option>)}</select></label>
-    <p>{plan.task.description}</p><p>{plan.shortened?plan.task.partial!.minutes:plan.task.minutes} min estimated · {plan.task.equipment==='baseline'?'No kit':plan.task.equipment==='light'?'Light kit':'Heavy kit'} required</p>
-    <details><summary>Mission details</summary><p><strong>Science objective/value:</strong> {plan.task.objective}</p>
+    <p>{plan.shortened?plan.task.partial!.minutes:plan.task.minutes} min estimated · {plan.task.equipment==='baseline'?'No kit':plan.task.equipment==='light'?'Light kit':'Heavy kit'} required</p>
+    <details><summary>Mission details</summary><p>{plan.task.description}</p><p><strong>Science objective/value:</strong> {plan.task.objective}</p>
       <ul>{(plan.shortened?plan.task.partial!.tasks:plan.task.tasks).map(task=><li key={task}>{task}</li>)}</ul>
     </details>
-    <details><summary>Sources &amp; assumptions</summary>
+    <details><summary>Sources &amp; assumptions</summary><p>{planning.evidenceStatus}</p>
       <p className="rm-fineprint">Contextual evidence only; absolute position and field access remain unverified. {plan.task.provenance}. Durations, workload and equipment are simulation assumptions, not NASA-assigned EVA tasks.</p>
       {plan.task.evidence.map(text=><p className="rm-fineprint" key={text}>{text}</p>)}
       {plan.task.sources.map(source=><p key={source.url+source.label}><a href={source.url} target="_blank" rel="noreferrer">{source.label}</a></p>)}
@@ -52,16 +52,30 @@ export function EmergencyScienceInputs({planning,locked,frozenPlan}:{planning:Re
     </details>
   </fieldset>;
 }
-export function EmergencyResourceReadings({result,arrived}:{result:ReturnType<typeof calculateResources>;arrived:boolean}){
+export function EmergencyResourceReadings({result}:{result:ReturnType<typeof calculateResources>;arrived:boolean}){
   const display=(value:number|null,unit:string)=>value===null?'Unknown':`${value.toFixed(1)} ${unit}`;
-  return <section className="rm-section" aria-label="Resource calculation"><h3>Task and workload resource calculation</h3>
+  return <section className="rm-section" aria-label="Resource calculation"><h3>Resource assessment</h3>
     {result.errors.map(error=><p role="status" key={error}>{error}</p>)}
-    <dl className="rm-mission-stats"><dt>Task duration</dt><dd>{display(result.taskMinutes,'min')}</dd><dt>Effective walking</dt><dd>{display(result.effectiveWalkingKmh,'km/h')}</dd>
-      <dt>Arrival oxygen budget</dt><dd>{display(result.available,'%')}</dd><dt>Task consumption</dt><dd>{display(result.taskCost,'percentage points')}</dd>
-      <dt>Verified return time</dt><dd>{display(result.returnMinutes,'min')}</dd><dt>Return consumption</dt><dd>{display(result.returnCost,'percentage points')}</dd>
-      <dt>Reserve duration</dt><dd>{display(result.reserveMinutes,'min')}</dd><dt>Reserve consumption</dt><dd>{display(result.reserveCost,'percentage points')}</dd><dt>Oxygen margin after task + return + reserve</dt><dd>{display(result.oxygenMargin,'percentage points')}</dd>
-      <dt>{arrived?'EVA remaining at event / after activity':'Configured EVA remaining at event'}</dt><dd>{display(result.evaMinutes,'min')}</dd><dt>EVA margin after selected task + return + reserve</dt><dd>{display(result.evaMargin,'min')}</dd></dl>
-    <p className="rm-fineprint">Oxygen and EVA time are scenario inputs at the trigger point; pre-event travel and any acknowledged earlier science are not deducted again. Activity playback deducts its own task oxygen and time. The separate Mission workspace is not mutated. Terrain changes route geometry and permitted slopes; no calibrated slope/metabolism law is claimed. Return values remain Unknown until an independent return route is verified.</p>
-    <p className="rm-fineprint">Not assessed: {result.unassessed.join(', ')}. Decision Support and Route Comparison use this same selected-task and workload model. Negative margins block the corresponding action; missing margins remain Unknown.</p>
+    <dl className="rm-mission-stats">
+      {([
+        ['Task duration',result.taskMinutes,'min'],
+        ['Arrival oxygen',result.available,'%'],
+        ['Return ETA',result.returnMinutes,'min'],
+        ['Oxygen margin after task + return + reserve',result.oxygenMargin,'percentage points'],
+        ['EVA time remaining',result.evaMinutes,'min'],
+        ['EVA margin after task + return + reserve',result.evaMargin,'min'],
+      ] as [string,number|null,string][]).filter(([,value])=>value!==null&&Number.isFinite(value)).map(([label,value,unit])=><div key={label} style={{display:'contents'}}><dt>{label}</dt><dd>{display(value,unit)}</dd></div>)}
+    </dl>
+    <details><summary>Calculation breakdown</summary><dl className="rm-mission-stats">
+      {([
+        ['Walking speed',result.effectiveWalkingKmh,'km/h'],
+        ['Task oxygen',result.taskCost,'percentage points'],
+        ['Return oxygen',result.returnCost,'percentage points'],
+        ['Reserve duration',result.reserveMinutes,'min'],
+        ['Reserve oxygen',result.reserveCost,'percentage points'],
+      ] as [string,number|null,string][]).filter(([,value])=>value!==null&&Number.isFinite(value)).map(([label,value,unit])=><div key={label} style={{display:'contents'}}><dt>{label}</dt><dd>{display(value,unit)}</dd></div>)}
+    </dl></details>
+    {result.evaMinutes===null&&<p className="rm-fineprint">EVA time not assessed: no time budget available.</p>}
+    <details><summary>Simulation assumptions & limitations</summary><p className="rm-fineprint">Oxygen and EVA time apply at the event; outbound travel is not deducted again. Activity updates both. Missing return data blocks assessment.</p><p className="rm-fineprint">Not assessed: {result.unassessed.join(', ')}.</p></details>
   </section>;
 }

@@ -1,5 +1,32 @@
 # ARES Emergency Simulation — implementation and final validation
 
+## Current revision status — 15 November 2026
+
+**PARTIAL final browser acceptance. This section supersedes historical completion claims below.** Earlier 10/10 checklists and larger test counts describe previous revisions; they do not certify the latest UI.
+
+- Configuration reuses Map destination markers and route previews. Actual slope/coverage failures may prevent routing; no route is invented.
+- The arrival banner sits above both panels, appears only after reaching the configured event point, and uses calculated severity. Critical is red, warning amber, normal neutral. No planning emergency banner is shown.
+- Route Comparison is a compact lower-right map overlay with icons, separators and distance/ETA. Cyan means Model-Feasible; red dashed requires a distinct verified higher-risk alternative. Detailed evidence is expandable.
+- Instructions are short; the recommended action is highlighted. Action reasons, task descriptions, sources and assumptions remain accessible in expandable details. Missing EVA rows are omitted with an availability message.
+- Oxygen and remaining EVA minutes are standalone inputs at the event. Mission is optional read-only context; its budget is not substituted. Outbound travel is not deducted again.
+- Continue/Shorten run accelerated science, consume modeled oxygen/time and prevent duplicate execution. Shorten requires a predefined partial task. Simulated observations require separate confirmation; Return is an explicit action. Contact Base is local simulation only.
+- Default reference endurance is 480 minutes, reserve 60 minutes; rates and critical policy are simulation assumptions. No additional HUD simulation work is planned.
+
+### Current verification checklist
+
+- [x] Latest decision/scenario suite: 18 tests passed; earlier decision/planning/scenario run: 29 passed. These overlap and are not additive.
+- [x] TypeScript, production build and diff checks passed after concise-text changes.
+- [x] Chromium: no alert before arrival; calculated critical LOW OXYGEN banner visible above panels after arrival, without runtime errors. Heading size corrected and check rerun.
+- [x] Partial selection smoke: named site, repeated 2D picks, collapsed evidence and shared 3D coordinates passed.
+- [ ] Full selection smoke completion: previous browser closed after the 3D selection checks.
+- [ ] Complete current Continue/Shorten/Return/Contact/Reset browser regression after latest text edits.
+- [ ] Fresh mobile/tablet, comprehensive 2D/3D route-result and Mission/Map regression checks.
+- [ ] Deployed-visitor/cache-refresh and hardware/GPU acceptance.
+
+Local evidence: `mars-explorer-web/scripts/.cache/emergency/arrival-critical-banner.png`, `check-arrival-banner.mjs`, `concise-ui-tests.log`, `concise-ui-build.log` (untracked). Existing scenario smoke now locates the arrival banner outside the sidebar. Use `ARES_TEST_URL=http://127.0.0.1:4173/explorer` to target production preview. Hard-refresh an older open page and restart the simulation if it still shows the planning alert.
+
+## Historical implementation and validation record
+
 Updated **15 November 2026 (Asia/Rangoon)**. Expanded Emergency Phases 1–4 are complete in the local working tree. **PASS for the tested hosted-terrain demo workflow**, subject to the limitations below. The earlier MVP commit `5562d6a` is historical; it does not contain this expanded implementation. This update does not claim deployment or GitHub publication of the pending work.
 
 ## Latest selection and DSS usability update
