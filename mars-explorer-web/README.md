@@ -2,9 +2,9 @@
 
 ## Current workspace status — 15 November 2026
 
-Open `/explorer` for **Map, Mission and Emergency**. Expanded Emergency Phases 1–4 passed the [10/10 acceptance checklist](../docs/emergency-simulation.md): location-based tasks with source/uncertainty labels, 0–100% oxygen slider (no presets), workload/equipment and EVA budgets, progressive trails, shared verified 2D/3D return comparison, and functional simulated Return/Contact Base. Existing Mission calculations remain unchanged.
+Open `/explorer` for **Map, Mission and Emergency**. See the [current Emergency checklist](../docs/emergency-simulation.md): concise instructions, expandable evidence, shared Map destination previews, progressive trails, compact verified route comparison and a calculated arrival-only alert above both panels. Latest focused suite: 18 tests passed; TypeScript/build/diff checks passed. Critical banner behavior was verified in Chromium. **Final acceptance: PARTIAL** until complete current action, responsive, 3D-result and Mission/Map browser regressions are rerun. Existing Mission calculations remain unchanged. HUD simulation work is out of scope.
 
-Use `npm ci` with the existing lockfile, then `npm run dev` (5173), or `npm run build` and `npm start` (4173). **48 targeted tests, TypeScript/build and focused Chromium checks passed**. The runbook lists exact commands, test scope, unassessed constraints and the software-WebGL zoom limitation. Hosted terrain is required because this checkout lacks complete local preview data. Offline-shell generation does not establish full offline terrain readiness. Expanded implementation is pending local work, not a claimed deployment.
+Use the existing dependencies, then `npm run dev` (5173), or `npm run build` and `npm start` (4173). Historical larger test counts do not certify the latest UI. Hosted terrain is required because this checkout lacks complete local preview data. Offline-shell generation does not establish full offline terrain readiness. Hard-refresh and restart the simulation if an older page still shows the planning alert. No deployment acceptance is claimed.
 
 Descriptions and commands below cover earlier versions; consult current `package.json` and the linked runbook for supported behavior.
 

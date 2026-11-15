@@ -2,7 +2,7 @@
 
 ## Existing application — expanded Emergency completion
 
-Updated 15 November 2026 (Asia/Rangoon). Expanded Emergency Phases 1–4: **PASSED for the tested hosted-data workflow**, local implementation pending publication. [Final acceptance: 10/10; 48 targeted tests, build and focused browser evidence](../emergency-simulation.md). The original `5562d6a` records the earlier MVP only. This completion does not certify the separate clean rebuild, deferred HUD, hardware performance or deployed-visitor gates below.
+Updated 15 November 2026 (Asia/Rangoon). Current Emergency acceptance: **PARTIAL**; see the [authoritative current checklist](../emergency-simulation.md). Latest focused suite: 18 tests passed; TypeScript/build/diff checks passed. Chromium verified an arrival-only calculated critical banner above both panels. Concise UI and compact map comparison are implemented. Full current browser/action, responsive and Mission/Map regression checks remain pending. Earlier 10/10 claims are historical. This does not certify the separate clean rebuild, hardware or deployed-visitor gates below. No additional HUD simulation work is planned.
 
 Prepared 2026-11-14. All entries refer to the new rebuild, not historical work.
 

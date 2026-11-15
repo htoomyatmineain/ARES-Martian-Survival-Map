@@ -1,5 +1,16 @@
 # Emergency scenario workflow and self-test — 15 November 2026
 
+## Latest revision — authoritative status
+
+See the [current Emergency checklist](emergency-simulation.md); earlier validation below is historical. The calculated severity banner is above both panels and appears only after reaching the configured event point. Critical conditions are red; there is no pre-arrival emergency banner. Instructions are concise, the recommended action is highlighted, and reasons/sources/model details are expandable. Configuration reuses Map previews and destination markers. Missing EVA rows are omitted without inventing values. Route Comparison remains on the map, with cyan Model-Feasible and distinct verified higher-risk red alternatives only.
+
+- [x] Latest decision/scenario suite: 18 passed; TypeScript/build/diff checks passed.
+- [x] Chromium: calculated critical arrival banner above panels; no banner before arrival.
+- [ ] Full current science/return/contact/reset and Mission/Map browser regression.
+- [ ] Current responsive layouts and comprehensive Tactical 3D result checks.
+
+Final browser acceptance is PARTIAL. No additional HUD simulation work is planned.
+
 ## Workflow
 
 Emergency is isolated from Mission: choose event → choose trigger stage and factors → select science destination/custom point → wait for verified route → Start Simulation → observe event at the selected route position → review the calculated options → return, shorten/perform permitted science, or simulate contacting base/contingency → download report/reset.

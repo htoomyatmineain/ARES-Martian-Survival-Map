@@ -4,7 +4,7 @@
 
 Run `npm ci`, `npm run build` and `npm start` in `mars-explorer-web`, then open `/explorer` (development: `npm run dev`). Map, Mission and isolated Emergency are implemented. Emergency includes location-eligible science tasks, a 0–100% oxygen slider, workload/equipment and EVA-budget calculations, progressive travel, shared 2D/3D verified returns and simulated Return/Contact Base actions.
 
-Updated 15 November 2026: [final Emergency checklist — 10/10, validation and limitations](docs/emergency-simulation.md). **48 targeted tests, TypeScript/build and focused browser checks passed** against the hosted terrain. Expanded work is local until committed/pushed; no deployment acceptance is claimed.
+Updated 15 November 2026: [current Emergency checklist and limitations](docs/emergency-simulation.md). Latest focused suite: **18 tests passed**, with TypeScript/build/diff checks. Chromium verified the calculated red arrival banner above both panels, absent before arrival. The UI now uses concise instructions, expandable evidence and compact route comparison. **Final acceptance: PARTIAL** pending full current browser/action, responsive and Mission/Map regression checks. No deployment acceptance is claimed; no further HUD simulation work is planned.
 
 Earlier exploration/diorama descriptions below are historical context, not the current regional-workspace runbook.
 
