@@ -42,7 +42,7 @@ export default function RegionalWorkspace() {
   const [grid, setGrid] = useState(true);
   const [telemetryOpen, setTelemetryOpen] = useState(false);
   const [missionMapExpanded,setMissionMapExpanded]=useState(false);
-  const [workspace,setWorkspace]=useState<'map'|'mission'|'emergency'>('map');
+  const [workspace,setWorkspace]=useState<'map'|'mission'|'emergency'>(()=>new URLSearchParams(window.location.search).get('tab')==='emergency'?'emergency':'map');
   const [toolsOpen,setToolsOpen]=useState(true),[mapOnly,setMapOnly]=useState(false),[destinationConfirmed,setDestinationConfirmed]=useState(false);
   const closeMapDetails=()=>{setGeologyOpen(false);setSelectedScienceId(null);setObservationOpen(false);setOrbitalOpen(false);};
   const enterMapOnly=()=>{setMapOnly(true);setPicking(false);setDestinationConfirmed(false);closeMapDetails();};

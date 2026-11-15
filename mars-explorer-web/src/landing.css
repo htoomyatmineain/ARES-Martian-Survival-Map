@@ -15,3 +15,6 @@
 @media(prefers-reduced-motion:reduce){.ares-landing{scroll-behavior:auto}.ares-landing *{animation:none!important;transition:none!important}.will-reveal{opacity:1;transform:none}}
 
 .ares-landing{scrollbar-color:#51473c #0c0d0e}
+
+.al-emergency{background:radial-gradient(ellipse at 100% 0,#71351522,transparent 65%),#101315}.al-emergency em{font-style:normal;color:var(--al-orange)}.al-emergency .al-workflow{margin-top:40px}.al-emergency .al-workflow article{border-top-color:#f39b5860}.al-emergency-flow{display:flex;flex-wrap:wrap;gap:14px 28px;margin:20px 0 34px;font:11px/1.7 'IBM Plex Mono',monospace;color:var(--al-muted)}.al-emergency-flow span:not(:last-child):after{content:' →';margin-left:20px;color:var(--al-orange)}.al-note summary{cursor:pointer;color:var(--al-orange);padding:8px 0}.al-emergency .al-note{margin-top:22px}
+@media(max-width:600px){.al-emergency-flow{display:grid;grid-template-columns:1fr 1fr;gap:12px}.al-emergency-flow span:not(:last-child):after{display:none}.al-emergency .al-primary{font-size:14px}}
