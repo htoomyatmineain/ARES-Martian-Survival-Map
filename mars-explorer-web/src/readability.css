@@ -398,3 +398,4 @@
 @media(max-width:800px){.regional-map.rm-workspace-mission .rm-sidebar{min-height:0}.regional-map .rm-emergency{gap:0;padding-bottom:0}}
 
 .regional-map .rm-flag-tooltip-3d{position:relative;left:auto;top:auto;transform:translate(12px,calc(-100% - 12px));width:220px;pointer-events:none}
+.regional-map .rm-emergency-map>.rm-map2d,.regional-map .rm-emergency-map>.rm-emergency-scene,.regional-map .rm-emergency-map.has-comparison>.rm-map2d,.regional-map .rm-emergency-map.has-comparison>.rm-emergency-scene{top:0}
