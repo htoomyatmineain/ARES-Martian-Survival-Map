@@ -1,11 +1,11 @@
 import EmergencyRoute3D from './EmergencyRoute3D';
 import type { EmergencyOverlay } from './emergency';
-import { Component, useEffect, useMemo, useRef, type ReactNode, type RefObject } from 'react';
+import { Component, useEffect, useMemo, useRef, useState, type ReactNode, type RefObject } from 'react';
 import { Canvas, useFrame, useThree, type ThreeEvent } from '@react-three/fiber';
 import { Html, Line, OrbitControls, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import type { OrbitControls as OrbitImpl } from 'three-stdlib';
-import { elevation, sites, type Terrain, type Point, type Route } from './terrain';
+import { elevation, slope, sites, type Terrain, type Point, type Route } from './terrain';
 import ScienceWalking from './ScienceWalking';
 import { analysisPixels } from './regionalLayers';
 import { MAP_SCIENCE_SITES as SCIENCE_SITES, sciencePoint } from './scienceSites';
@@ -143,6 +143,11 @@ function MarkerProjection({ terrain, exaggeration, markerRefs }: { terrain: Terr
   });
   return null;
 }
+function FlaggedRouteSegment({points,segment,terrain}:{points:[number,number,number][];segment:Point[];terrain:Terrain}){
+ const [open,setOpen]=useState(false);
+ const detail=useMemo(()=>{const heights=segment.map(p=>elevation(terrain,p.x,p.z)).filter(Number.isFinite),a=segment[0],b=segment[segment.length-1];const bound=slope(terrain,(a.x+b.x)/2,(a.z+b.z)/2);return {height:heights.length?`${Math.min(...heights).toFixed(0)} to ${Math.max(...heights).toFixed(0)} m`:'Unavailable',slope:Number.isFinite(bound)?`${bound.toFixed(1)}°`:'Unavailable'};},[terrain,segment]);
+ return <group><Line points={points} color="#0b0d10" lineWidth={9} depthTest={false} depthWrite={false} renderOrder={7}/><Line points={points} color="#ff42dc" lineWidth={8} depthTest={false} depthWrite={false} renderOrder={8} onPointerOver={e=>{e.stopPropagation();setOpen(true);}} onPointerOut={()=>setOpen(false)} onClick={e=>{e.stopPropagation();setOpen(true);}}/>{open&&<Html position={points[Math.floor(points.length/2)]} zIndexRange={[20,10]} style={{pointerEvents:'none'}}><div className="rm-flag-tooltip rm-flag-tooltip-3d" role="tooltip" data-testid="3d-slope-details"><strong>Slope caution</strong><div><span>Est. elevation</span><b>{detail.height}</b></div><div><span>Midpoint slope{terrain.nativeSlope?' bound':''}</span><b>{detail.slope}</b></div><small>Near a configured slope limit.<br/>Heights relative to Mars datum.</small></div></Html>}</group>;
+}
 function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | null)[]>;input:RefObject<POVInput> }) {
   const { terrain, exaggeration, route, progress, markers } = props;
   const routePoints = useMemo(() => route ? drapePoints(terrain,route.points).map(p => [p.x/SCALE,(meshHeight(terrain,p)-terrain.meta.min)/SCALE*exaggeration+.0002,p.z/SCALE] as [number,number,number]) : [], [terrain, route, exaggeration]);
@@ -178,7 +183,7 @@ function Contents(props: SceneProps & { markerRefs: RefObject<(HTMLDivElement | 
     <gridHelper args={[30, 60, '#4b4b40', '#36382f']} position={[0, -.56, 0]} />
     <Habitat position={ground(terrain, sites[0], exaggeration)} /></>}
     {props.mode!=='Explore'&&routePoints.length > 1 && <><Line points={routePoints} color="#0b0d10" lineWidth={6} depthTest={false} depthWrite={false} renderOrder={5}/><Line points={routePoints} color={props.storm ? '#ffad64' : props.accentColor ?? '#f5bb70'} lineWidth={3} depthTest={false} depthWrite={false} renderOrder={6}/></>}
-    {props.mode!=='Explore'&&warningLines.map((points,i)=><group key={i}><Line points={points} color="#0b0d10" lineWidth={9} depthTest={false} depthWrite={false} renderOrder={7}/><Line points={points} color="#ff42dc" lineWidth={6} depthTest={false} depthWrite={false} renderOrder={8}/></group>)}
+    {props.mode!=='Explore'&&warningLines.map((points,i)=><FlaggedRouteSegment key={i} points={points} segment={(route as NativeRoute).warnings[i]} terrain={terrain}/>)}
     {props.mode!=='Explore'&&cursor && progress > 0 && <mesh position={[cursor[0], cursor[1] + .055, cursor[2]]}><sphereGeometry args={[.055, 16, 16]} /><meshBasicMaterial color="#fff5c4" /></mesh>}
     {props.mode!=='Explore'&&markers && sites.map((s, i) => { const p = ground(terrain, s, exaggeration); return <group key={s.id} position={p}>
       <mesh position={[0, .025, 0]} rotation={[-Math.PI / 2, 0, 0]}><ringGeometry args={[.07, .095, 32]} /><meshBasicMaterial color={i === 0 ? '#c9dfca' : '#efb875'} side={THREE.DoubleSide} /></mesh>
