@@ -1,5 +1,11 @@
 # Shared NASA regional map — 2026-11-12
 
+## Local development update — 15 November 2026
+
+The Vite development client automatically uses `/local-map-preview` on localhost, 127.0.0.1 and IPv6 loopback. Middleware serves cached files from `source-data/Western-Jezero-Web-Lossless` and downloads missing files server-side from the fixed shared-map cloud URL, checking asset size and SHA-256 before caching. Client integrity checks remain enabled. Cache files are untracked; uncached data still needs network access. Production cloud loading is unchanged. Browser tests block direct cloud requests and verify terrain loading and Emergency through habitat return using real cached data. This does not certify full offline coverage or deployed visitors.
+
+See the [current Emergency checklist](emergency-simulation.md). The earlier handoff notes below predate this local-loading update.
+
 Project: **NASA final round practice** (`qcgpyoegjwqfhvzvuhdl`).
 Bucket: **jezero-map**. Release prefix: **western-jezero-v1**.
 

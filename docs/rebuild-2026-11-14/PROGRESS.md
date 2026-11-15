@@ -2,7 +2,11 @@
 
 ## Existing application — expanded Emergency completion
 
-Updated 15 November 2026 (Asia/Rangoon). Current Emergency acceptance: **PARTIAL**; see the [authoritative current checklist](../emergency-simulation.md). Latest focused suite: 18 tests passed; TypeScript/build/diff checks passed. Chromium verified an arrival-only calculated critical banner above both panels. Concise UI and compact map comparison are implemented. Full current browser/action, responsive and Mission/Map regression checks remain pending. Earlier 10/10 claims are historical. This does not certify the separate clean rebuild, hardware or deployed-visitor gates below. No additional HUD simulation work is planned.
+Updated 15 November 2026 (Asia/Rangoon). Current Emergency changes: compact orange setup title with 18 px space below it, unnumbered fields, readable oxygen/EVA values, concise messages, recommended action first and state-aware banner. The guide and top speed controls are removed. Speed up 2× sits directly below Start Simulation; stages take 12 seconds normally or 6 seconds at 2×, without changing resource budgets.
+
+Planned routes use the same default rules as Map/Mission. Wildcat Ridge reaches the exact site under those rules. Walking return is independently checked using selected equipment; a planned outbound route does not guarantee a permitted walking return. Local development automatically serves cached real map data through /local-map-preview and fetches missing assets server-side with integrity checks. Uncached files still need network access; production cloud loading is unchanged.
+
+Current evidence: 112 unit tests, TypeScript/build and both current Emergency browser scripts passed. See the [current checklist](../emergency-simulation.md). These checks do not certify the separate clean-rebuild gates below.
 
 Prepared 2026-11-14. All entries refer to the new rebuild, not historical work.
 

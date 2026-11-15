@@ -30,26 +30,15 @@ export function useEmergencyPlanning(point:Point|null,siteId='custom'){
 }
 export function EmergencyScienceInputs({planning,locked,frozenPlan}:{planning:ReturnType<typeof useEmergencyPlanning>;locked:boolean;frozenPlan?:EmergencyResourcePlan}){
   const plan=frozenPlan??planning.plan;
-  return <fieldset disabled={locked} className="rm-emergency-science"><legend>Science task · simulation</legend>
+  return <fieldset disabled={locked} className="rm-emergency-science"><legend>Science task</legend>
 
-    <label>Science task<select value={plan.task.id} onChange={e=>planning.chooseTask(e.target.value)}>{(frozenPlan?[frozenPlan.task]:planning.tasks).map(t=><option key={t.id} value={t.id}>{t.title} · {t.minutes} min estimated</option>)}</select></label>
+    <label>Science task<select value={plan.task.id} onChange={e=>planning.chooseTask(e.target.value)}>{(frozenPlan?[frozenPlan.task]:planning.tasks).map(t=><option key={t.id} value={t.id}>{t.title==='Generic field documentation'?'Generic observation task':t.title} · {t.minutes} min</option>)}</select></label>
     <p>{plan.shortened?plan.task.partial!.minutes:plan.task.minutes} min estimated · {plan.task.equipment==='baseline'?'No kit':plan.task.equipment==='light'?'Light kit':'Heavy kit'} required</p>
     <details><summary>Mission details</summary><p>{plan.task.description}</p><p><strong>Science objective/value:</strong> {plan.task.objective}</p>
       <ul>{(plan.shortened?plan.task.partial!.tasks:plan.task.tasks).map(task=><li key={task}>{task}</li>)}</ul>
     </details>
-    <details><summary>Sources &amp; assumptions</summary><p>{planning.evidenceStatus}</p>
-      <p className="rm-fineprint">Contextual evidence only; absolute position and field access remain unverified. {plan.task.provenance}. Durations, workload and equipment are simulation assumptions, not NASA-assigned EVA tasks.</p>
-      {plan.task.evidence.map(text=><p className="rm-fineprint" key={text}>{text}</p>)}
-      {plan.task.sources.map(source=><p key={source.url+source.label}><a href={source.url} target="_blank" rel="noreferrer">{source.label}</a></p>)}
-      <p>Task workload multiplier: {plan.task.workload} (simulated).</p>
-    </details>
-    {plan.task.partial&&<label><input type="checkbox" checked={plan.shortened} onChange={e=>planning.setShortened(e.target.checked)}/> Shortened task: {plan.task.partial.title} · {plan.task.partial.minutes} min estimated</label>}
-    <label>Activity<select value="walk" onChange={()=>{}}><option value="walk">Walking · simulated</option><option value="run" disabled>Running unavailable · no supported model</option></select></label>
     <label>Carried equipment<select value={plan.equipment} onChange={e=>planning.setEquipment(e.target.value as LoadPreset)}><option value="baseline">None</option><option value="light">Light kit</option><option value="heavy">Heavy kit</option></select></label>
-    <details><summary>Configurable simulation assumptions</summary><p className="rm-fineprint">Normalized oxygen budget, not a specified suit capacity. Reference minutes apply only to the reference rate; activity and load change endurance. No NASA-calibrated Mars consumption rates are available.</p>
-      {(Object.keys(plan.assumptions) as (keyof typeof plan.assumptions)[]).map(key=><label key={key}>{({referenceMinutes:'Minutes at full oxygen at reference rate',walkingKmh:'Base walking speed (km/h)',reserveMinutes:'Reserve duration (min)',walkRate:'Walking consumption multiplier',taskRate:'Task consumption multiplier',reserveRate:'Reserve consumption multiplier',lightLoad:'Light load consumption multiplier',heavyLoad:'Heavy load consumption multiplier'})[key]}
-        <input type="number" min={key==='reserveMinutes'?0:.01} step="0.01" value={Number.isFinite(plan.assumptions[key])?plan.assumptions[key]:''} onChange={e=>planning.setAssumptions(a=>({...a,[key]:e.target.value===''?NaN:Number(e.target.value)}))}/></label>)}
-    </details>
+
   </fieldset>;
 }
 export function EmergencyResourceReadings({result}:{result:ReturnType<typeof calculateResources>;arrived:boolean}){

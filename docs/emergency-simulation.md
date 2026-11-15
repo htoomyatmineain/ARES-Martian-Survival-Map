@@ -2,28 +2,36 @@
 
 ## Current revision status — 15 November 2026
 
-**PARTIAL final browser acceptance. This section supersedes historical completion claims below.** Earlier 10/10 checklists and larger test counts describe previous revisions; they do not certify the latest UI.
+Updated 15 November 2026 (Asia/Rangoon). Current Emergency changes: compact orange setup title with 18 px space below it, unnumbered fields, readable oxygen/EVA values, concise messages, recommended action first and state-aware banner. The guide and top speed controls are removed. Speed up 2× sits directly below Start Simulation; stages take 12 seconds normally or 6 seconds at 2×, without changing resource budgets.
 
-- Configuration reuses Map destination markers and route previews. Actual slope/coverage failures may prevent routing; no route is invented.
-- The arrival banner sits above both panels, appears only after reaching the configured event point, and uses calculated severity. Critical is red, warning amber, normal neutral. No planning emergency banner is shown.
-- Route Comparison is a compact lower-right map overlay with icons, separators and distance/ETA. Cyan means Model-Feasible; red dashed requires a distinct verified higher-risk alternative. Detailed evidence is expandable.
-- Instructions are short; the recommended action is highlighted. Action reasons, task descriptions, sources and assumptions remain accessible in expandable details. Missing EVA rows are omitted with an availability message.
-- Oxygen and remaining EVA minutes are standalone inputs at the event. Mission is optional read-only context; its budget is not substituted. Outbound travel is not deducted again.
-- Continue/Shorten run accelerated science, consume modeled oxygen/time and prevent duplicate execution. Shorten requires a predefined partial task. Simulated observations require separate confirmation; Return is an explicit action. Contact Base is local simulation only.
-- Default reference endurance is 480 minutes, reserve 60 minutes; rates and critical policy are simulation assumptions. No additional HUD simulation work is planned.
+Planned routes use the same default rules as Map/Mission. Wildcat Ridge reaches the exact site under those rules. Walking return is independently checked using selected equipment; a planned outbound route does not guarantee a permitted walking return. Local development automatically serves cached real map data through /local-map-preview and fetches missing assets server-side with integrity checks. Uncached files still need network access; production cloud loading is unchanged.
 
 ### Current verification checklist
 
-- [x] Latest decision/scenario suite: 18 tests passed; earlier decision/planning/scenario run: 29 passed. These overlap and are not additive.
-- [x] TypeScript, production build and diff checks passed after concise-text changes.
-- [x] Chromium: no alert before arrival; calculated critical LOW OXYGEN banner visible above panels after arrival, without runtime errors. Heading size corrected and check rerun.
-- [x] Partial selection smoke: named site, repeated 2D picks, collapsed evidence and shared 3D coordinates passed.
-- [ ] Full selection smoke completion: previous browser closed after the 3D selection checks.
-- [ ] Complete current Continue/Shorten/Return/Contact/Reset browser regression after latest text edits.
-- [ ] Fresh mobile/tablet, comprehensive 2D/3D route-result and Mission/Map regression checks.
-- [ ] Deployed-visitor/cache-refresh and hardware/GPU acceptance.
+- [x] TypeScript, production build and all 112 unit tests passed.
+- [x] Browser: terrain and Emergency load with direct browser cloud-map requests blocked.
+- [x] Browser: all three outbound scenarios, route verification, blocked science, explicit return and habitat completion passed.
+- [x] Browser: Reset between scenarios, 2× selection and removal of guide link; no runtime page errors.
+- [x] Browser: Wildcat Ridge exact route and native profiles checked; Start enabled with Light kit.
+- [x] Browser: independent Light kit walking return remains blocked where no compliant path exists; Hold Position is offered.
+- [x] UI implemented: compact orange heading, 18 px space below, no numbered subheadings, prominent metrics and recommended action first.
+- [x] Unit test: 12-second normal / 6-second 2× playback, completion clamp and negative elapsed time handling.
+- [ ] Fresh full Continue/Shorten/Contact/export browser regression.
+- [ ] Fresh mobile/tablet, comprehensive Tactical 3D result and Mission/Map browser regression.
+- [ ] Deployed visitor, cache refresh and hardware/GPU acceptance.
 
-Local evidence: `mars-explorer-web/scripts/.cache/emergency/arrival-critical-banner.png`, `check-arrival-banner.mjs`, `concise-ui-tests.log`, `concise-ui-build.log` (untracked). Existing scenario smoke now locates the arrival banner outside the sidebar. Use `ARES_TEST_URL=http://127.0.0.1:4173/explorer` to target production preview. Hard-refresh an older open page and restart the simulation if it still shows the planning alert.
+Requested changes are implemented; broader acceptance remains PARTIAL. Historical checks below do not certify this revision.
+
+Reproduce from mars-explorer-web with npm run dev on localhost:5173:
+
+```powershell
+npm test
+npm run build
+node tests/local-emergency-smoke.mjs
+node tests/wildcat-emergency-smoke.mjs
+```
+
+Local evidence (untracked): scripts/.cache/emergency/local-emergency-fixed.png and scripts/.cache/emergency/wildcat-exact-route.png. Map cache files are also untracked. Older smoke scripts use historical UI labels.
 
 ## Historical implementation and validation record
 

@@ -4,7 +4,7 @@ export type SharedRegionalMap = { terrain: Terrain; imageryUrl: string; baseUrl:
 const CLOUD_BASE = 'https://qcgpyoegjwqfhvzvuhdl.supabase.co/storage/v1/object/public/jezero-map/western-jezero-v1';
 export async function loadSharedRegional(signal: AbortSignal): Promise<SharedRegionalMap> {
   signal = AbortSignal.any([signal, AbortSignal.timeout(120000)]);
-  const preview = location.hostname === '127.0.0.1' && new URLSearchParams(location.search).get('mapSource') === 'preview';
+  const preview = (import.meta.env.DEV && ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) || new URLSearchParams(location.search).get('mapSource') === 'preview';
   const baseUrl = preview ? '/local-map-preview' : CLOUD_BASE;
   const response = await fetch(`${baseUrl}/package-manifest.json`, { signal, cache: 'no-store' });
   if (!response.ok) throw Error(`Shared NASA map is unavailable (${response.status}). The cloud upload must be complete.`);

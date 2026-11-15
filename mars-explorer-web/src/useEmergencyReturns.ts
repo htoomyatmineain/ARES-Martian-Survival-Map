@@ -3,6 +3,7 @@ import { checkSegment, densify, profileMetrics, type HazardGrid, type NativeRout
 import { sites, toGeo } from './terrain';
 import type { SharedRegionalMap } from './sharedRegionalData';
 import { validReturn, type EmergencyContext } from './emergency';
+import { resourceRules } from './emergencyResources';
 
 type Candidate = { name: string; route: NativeRoute | null; status: 'verified' | 'no-route' | 'error'; reason: string };
 type ReturnState = { context: EmergencyContext | null; loading: boolean; candidates: Candidate[] };
@@ -12,6 +13,7 @@ export function useEmergencyReturns(context: EmergencyContext | null, grid: Haza
   useEffect(() => {
     if (!context || !grid) return;
     const controller = new AbortController(), workers: Worker[] = [];
+    const rules = context.resourcePlan ? resourceRules(context.resourcePlan) : context.outboundRoute.rules;
     setState({ context, loading: true, candidates: [] });
     const calculate = (name: string, slopeWeight: number) => new Promise<Candidate>((resolve) => {
       const profileController = new AbortController();
@@ -40,9 +42,9 @@ export function useEmergencyReturns(context: EmergencyContext | null, grid: Haza
         } catch (error) { finish({ name, route: null, status: 'error', reason: error instanceof Error ? error.message : 'Return verification failed.' }); }
       };
       worker.postMessage({ id: 1, grid, start: context.location, end: sites[0], allowApproach: false,
-        rules: { ...context.outboundRoute.rules, slopeWeight }, blocked: false });
+        rules: { ...rules, slopeWeight }, blocked: false });
     });
-    Promise.all([calculate('Slope priority', context.outboundRoute.rules.slopeWeight), calculate('Distance priority', 0)])
+    Promise.all([calculate('Slope priority', rules.slopeWeight), calculate('Distance priority', 0)])
       .then(candidates => { if (!controller.signal.aborted) setState({ context, loading: false, candidates }); })
       .catch(() => { if (!controller.signal.aborted) setState({ context, loading: false, candidates: [{ name: 'Return routing', route: null, status: 'error', reason: 'Return routing could not be initialized.' }] }); });
     return () => { controller.abort(); workers.forEach(worker => worker.terminate()); };

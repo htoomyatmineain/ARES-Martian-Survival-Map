@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {SCENARIO_DEFAULTS,eventJourney,scenarioPlan,assessScenario,validScenario} from '../src/emergencyScenario.ts';
+import {SCENARIO_DEFAULTS,advancePlayback,eventJourney,scenarioPlan,assessScenario,validScenario} from '../src/emergencyScenario.ts';
 import {initialEmergencyActions,emergencyActionReducer} from '../src/emergency.ts';
 import {RESOURCE_DEFAULTS,type EmergencyResourcePlan} from '../src/emergencyResources.ts';
 import {eligibleTasks} from '../src/emergencyTasks.ts';import {DEMO_RULES,type NativeRoute} from '../src/nativeRouting.ts';
@@ -41,4 +41,12 @@ test('all scenario and timing combinations preserve return-only rules away from 
  for(const kind of ['oxygen','rover-failure','visibility'] as const)for(const timing of ['outbound','onsite','returning'] as const){const s={...SCENARIO_DEFAULTS,kind,timing,scienceAcknowledged:true};assert.ok(eventJourney(outbound(),s));const a=assessScenario(plan(),75,back(),240,s);assert.equal(a.actions.return.state,'allowed');if(kind!=='oxygen'||timing!=='onsite')assert.equal(a.actions.continue.state,'blocked');}
  const done=assessScenario(plan(),75,back(),240,SCENARIO_DEFAULTS,false,true);assert.equal(done.recommendation,'return');assert.equal(done.actions.continue.state,'blocked');
  assert.equal(assessScenario(plan(),5,back(),240,SCENARIO_DEFAULTS).severity,'critical');
+});
+
+test('playback completes a stage in 12 seconds normally and 6 seconds at 2x',()=>{
+ assert.equal(advancePlayback(0,6000,1),.5);
+ assert.equal(advancePlayback(0,12000,1),1);
+ assert.equal(advancePlayback(0,6000,2),1);
+ assert.equal(advancePlayback(.8,12000,2),1);
+ assert.equal(advancePlayback(.4,-1000,1),.4);
 });

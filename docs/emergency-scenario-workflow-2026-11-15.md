@@ -2,14 +2,11 @@
 
 ## Latest revision — authoritative status
 
-See the [current Emergency checklist](emergency-simulation.md); earlier validation below is historical. The calculated severity banner is above both panels and appears only after reaching the configured event point. Critical conditions are red; there is no pre-arrival emergency banner. Instructions are concise, the recommended action is highlighted, and reasons/sources/model details are expandable. Configuration reuses Map previews and destination markers. Missing EVA rows are omitted without inventing values. Route Comparison remains on the map, with cyan Model-Feasible and distinct verified higher-risk red alternatives only.
+Updated 15 November 2026 (Asia/Rangoon). Current Emergency changes: compact orange setup title with 18 px space below it, unnumbered fields, readable oxygen/EVA values, concise messages, recommended action first and state-aware banner. The guide and top speed controls are removed. Speed up 2× sits directly below Start Simulation; stages take 12 seconds normally or 6 seconds at 2×, without changing resource budgets.
 
-- [x] Latest decision/scenario suite: 18 passed; TypeScript/build/diff checks passed.
-- [x] Chromium: calculated critical arrival banner above panels; no banner before arrival.
-- [ ] Full current science/return/contact/reset and Mission/Map browser regression.
-- [ ] Current responsive layouts and comprehensive Tactical 3D result checks.
+Planned routes use the same default rules as Map/Mission. Wildcat Ridge reaches the exact site under those rules. Walking return is independently checked using selected equipment; a planned outbound route does not guarantee a permitted walking return. Local development automatically serves cached real map data through /local-map-preview and fetches missing assets server-side with integrity checks. Uncached files still need network access; production cloud loading is unchanged.
 
-Final browser acceptance is PARTIAL. No additional HUD simulation work is planned.
+See the [current checklist](emergency-simulation.md) for current evidence and pending acceptance. The older manual checks below describe configurable inputs that are no longer exposed. Current values: oxygen 20% for Low oxygen, 75% for other scenarios; EVA 240 minutes; visibility 50 m and speed 50%. Varied values remain model/unit-test cases.
 
 ## Workflow
 
@@ -53,11 +50,11 @@ Missing evidence yields Insufficient Data. A failed route search is not equivale
 
 ## Execution and evidence
 
-Pre-event travel, science and return each use 20-second accelerated playback. Progress on screen is separate from calculated EVA minutes. Science consumes its selected estimated oxygen/time during playback; finishing the clock does not create science evidence. A separate crew confirmation records simulated task observations. Science cannot be started repeatedly to reset its budget. It can be interrupted by a permitted return.
+Pre-event travel, science and return each use 12-second accelerated playback, or 6 seconds at 2×. Progress on screen is separate from calculated EVA minutes. Science consumes its selected estimated oxygen/time during playback; finishing the clock does not create science evidence. A separate crew confirmation records simulated task observations. Science cannot be started repeatedly to reset its budget. It can be interrupted by a permitted return.
 
 Return uses the chosen verified corridor. The displayed end-of-return oxygen and EVA minutes subtract both simulated science and return use. Contact Base is a local request counter only; it sends no message. Contingency does not establish rescue feasibility. Reports include scenario, location, event inputs, assumptions, assessments, simulation progress and crew confirmation.
 
-## Test it yourself
+## Historical manual checks — older configurable UI
 
 Start with a nearby custom point near the simulated habitat, so long return distance does not dominate the demonstration. Browser tests used local E +2200 m, S +1600 m; the habitat is E +1900 m, S +1500 m. You can click near the habitat and read the local-coordinate field.
 
@@ -69,7 +66,7 @@ Start with a nearby custom point near the simulated habitat, so long return dist
 6. **Shortened science:** Choose a task with a predefined partial version. Lower event oxygen or EVA time until the full activity fails but the partial version plus return/reserve fits. Only then Shorten Mission is permitted. Its playback uses the shorter duration.
 7. **Views/reset:** Switch 2D/3D during an event; event position and assessment remain the same. Reset clears event, progress, science confirmation, request count and factors. Mission remains unchanged.
 
-## Verification evidence
+## Historical verification evidence
 
 - Full unit suite: 111 tests passed, including all 3 scenario × 3 timing policy combinations, geometry at intermediate trigger points, invalid/unsupported return evidence, acknowledgement gating, science consumption and duplicate-start prevention.
 - Real-data Chromium browser: on-site science/confirmation/return without active Mission; outbound critical oxygen; acknowledged return-leg rover failure with walking return; severe visibility hold/contact/contingency; 3D mounting; no JavaScript page errors.
